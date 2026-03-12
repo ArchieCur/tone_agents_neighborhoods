@@ -3,7 +3,8 @@
 **A multi-agent drift monitoring experiment series**
 **Series:** Runs 8–13 | **Dataset:** Tariff refund review pipeline | **Focus:** Neighborhood-level monitoring and Supremacy Clause design
 **Prior work:** [Tone Agent Runs 1–7](https://github.com/ArchieCur/tone_agent) — foundational drift detection series
-**Companion curriculum:** [AI System Design](https://archiecur.github.io/ai-system-design/)
+**Companion curriculum:** [AI System Design](https://archiecur.github.io/ai-system-design/)  
+**Total Cost runs 1-13 $16.46.**
 
 ---
 
