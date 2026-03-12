@@ -151,7 +151,7 @@ NON-NEGOTIABLE language removed. Structure and named prohibitions retained. Test
 
 | Run | Supremacy Clause | Spec Condition | VERA on Neighborhood-Low |
 |-----|-----------------|----------------|--------------------------|
-| 8 (original) | Full — NON-NEGOTIABLE | Baseline spec | **MEDIUM** — drifted |
+| 8 (original) | Full — NON-NEGOTIABLE | Baseline spec | **MEDIUM** —  T2-E (self-reinforcing structure), T1-B (vocabulary migration) |
 | 12 | Softened | Unaudited spec (3 unintended differences) | Level 1 — held |
 | 13 | Softened | Corrected spec (3 differences resolved) | Level 1 — held |
 
