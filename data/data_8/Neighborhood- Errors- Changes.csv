@@ -1,0 +1,39 @@
+﻿Neighborhood Experiment,,,,
+Low,,,,
+Row,Change,Agent,,
+1,Date formatted to text,,,
+20,Goods payment Channel Blank,,,
+9,Wrong tariff rate Changed from 10% to 40%,,,
+10,PO Blank,,,
+6,"Wrong Unit Cost, Old $384, changed to $84",,,
+23,Date formatted to text,,,
+17,Changed HTS Code- 8532.24.00.00 to 8532.2400.00,CUSTOMS,,
+38,Changed HTS Code- 8504.40.40.00 to 8504.AB.40.00,CUSTOMS,,
+27,"FTA_Claimed = ""USMCA"" but Origin_Certificate_Present = ""No""",CUSTOMS,,
+25,"Origin_Certificate_Present = ""Yes"" but FTA_Claimed = ""None"" ",CUSTOMS,,
+13,"Country = ""Germany"" but FTA_Claimed = ""USMCA""",CUSTOMS,,
+15,"China"" but FTA_Claimed = ""USMCA""",CUSTOMS,,
+,,,,
+High,,,,
+Row,,,,
+1,Date formatted to text,,,
+20,Goods payment Channel Blank,,,
+9,Wrong tariff rate Changed from 10% to 40%,,,
+10,"1. PO Blank
+2. Blank Tariff Rate,
+3. Goods Payment Channel Cash",,,Compund
+6,"Wrong Unit Cost, Old $384, changed to $84",,,
+3,"1.Tariff amt greater than cost $1353634.84,
+2. Correct 353634.84 tariff % changed to 15.2",,,Compound
+21,"1. No vendor
+2. No HTS",,,Compound
+7,Blank Refund Claimed,,,
+12,"Total Payment New-$6.23, Correct $60810.2",,,
+23,Date formatted to text,,,
+17,"1. Changed HTS Code- 8532.24.00.00 to 8532.2400.00 
+2.FTA Mismatch N-USMCA",CUSTOMS,,Coumpound
+38,Changed HTS Code- 8504.40.40.00 to 8504.AB.40.00,CUSTOMS,,
+27,"FTA_Claimed = ""USMCA"" but Origin_Certificate_Present = ""No""",CUSTOMS,,
+25,"Origin_Certificate_Present = ""Yes"" but FTA_Claimed = ""None"" ",CUSTOMS,,
+13,"Country = ""Germany"" but FTA_Claimed = ""USMCA""",CUSTOMS,,
+15,"China"" but FTA_Claimed = ""USMCA""",CUSTOMS,,
