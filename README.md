@@ -204,16 +204,17 @@ All other agent outputs and the tone_log in run_8_neighborhoods_baseline are fro
 ## Repository Structure
 
 ```
+
 tone_agents_neighborhoods/
 ├── README.md                          — This file
 ├── AUTHORS.md                         — Authorship and contribution notes
 ├── FINDINGS.md                        — Key findings distilled
-├── FUTURE_WORK.md                     — Vibration zone measurement, Semantic Distancing
+├── FUTURE_WORK.md                     — Cross-agent propagation, monitoring cost, semantic distancing, vibration zone
 ├── DATA_PROVENANCE.md                 — Run 8 overwrite, recovered output, transparency note
 ├── scripts/
 │   ├── README.md                      — Script inheritance chain
-│   ├── agents_8.py                    — Agent specs for Runs 8-10
-│   ├── agents_11.py                   — Agent specs for Runs 11-12 (softened clause)
+│   ├── agents_8.py                    — Agent specs for Runs 8–10
+│   ├── agents_11.py                   — Agent specs for Runs 11–12 (softened clause)
 │   ├── agents_13.py                   — Agent specs for Run 13 (surgical corrections)
 │   ├── run_experiment_8.py            — Run 8 pipeline
 │   ├── run_experiment_11.py           — Run 11 pipeline (two-pass TONE, escalation ladder)
@@ -221,9 +222,17 @@ tone_agents_neighborhoods/
 │   ├── run_experiment_13.py           — Run 13 pipeline
 │   └── logger.py                      — Shared logging utility
 ├── data/
-│   ├── README.md                      — Dataset descriptions and error distribution
-│   ├── Neighborhood- Low.csv          — 41 invoices, ~15% error rate
-│   └── Neighborhood- High.csv         — 41 invoices, ~35% error rate
+│   ├── README.md                      — Dataset descriptions, error distributions, run mapping
+│   ├── data_8/
+│   │   ├── Neighborhood- Clean.csv        — 41 invoices, 0% errors (reference baseline)
+│   │   ├── Neighborhood- Low.csv          — 41 invoices, ~29% error rate (Runs 8, 12, 13)
+│   │   ├── Neighborhood- High.csv         — 41 invoices, ~39% error rate (Runs 9, 10, 12)
+│   │   └── Neighborhood- Errors- Changes.csv — Construction record for data_8 datasets
+│   └── extreme_data/
+│       ├── Extreme- Clean.csv             — 41 invoices, 0% errors (reference baseline)
+│       ├── Extreme- Almost Clean.csv      — 41 invoices, ~22% error rate (Run 11)
+│       ├── Extreme- High.csv              — 41 invoices, ~48% error rate (Run 11)
+│       └── Extreme- Errors introduced.csv — Construction record for extreme_data datasets
 ├── results/
 │   ├── run_8_neighborhoods_baseline/  — Includes Vera_Run_8_First_output.text
 │   ├── run_9_high_errors_regrounding_active/
@@ -242,11 +251,12 @@ tone_agents_neighborhoods/
 │   ├── Appendix_Coalition_Drift.md
 │   └── Spec_Audit_Report.md
 └── design_notes/
-    ├── Run_8_Planning_Overview.md
-    ├── Tone_Agent_Run_8_Handoff.md
-    ├── Tone_Agent_Run_11_Handoff.md
-    ├── Tone_Agent_Run_12_Handoff.md
-    └── Tone_Agent_Run_13_Handoff.md
+├── Run_8_Planning_Overview.md
+├── Tone_Agent_Run_8_Handoff.md
+├── Tone_Agent_Run_11_Handoff.md
+├── Tone_Agent_Run_12_Handoff.md
+└── Tone_Agent_Run_13_Handoff.mdtone_agents_neighborhoods/
+
 ```
 
 ---
