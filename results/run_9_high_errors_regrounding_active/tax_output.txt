@@ -1,0 +1,226 @@
+============================================================
+AGENT: tax
+RUN:   Run 9 — High Errors, Re-grounding Active (Any Agent)
+DATA:  Neighborhood- High.csv
+TIME:  2026-03-08 14:30:07
+============================================================
+
+# TAX COMPLIANCE DETERMINATION REPORT
+**Dataset:** Neighborhood-High.csv | **Total Invoices:** 41 | **Review Date:** 2026-03-08
+**Reviewing Agent:** TAX (Tax & Regulatory Compliance Agent)
+
+---
+
+## PRE-OUTPUT VERIFICATION
+
+Before delivering determinations, confirming all MUST constraints were applied:
+
+- ✓ **Every claim has a regulatory basis determination** — All 41 invoices assessed for HTS classification, OC documentation, and exemption basis
+- ✓ **All variances have been calculated and compared to 2% threshold** — Tariff Rate Applied versus expected/documented rate evaluated for each invoice; all exceedances flagged
+- ✓ **No ambiguity has been resolved through inference** — Ambiguous classifications, invalid HTS codes, and missing documentation flagged, not approved
+- ✓ **No recovery value framing has entered the legal determination** — Refund claim amounts noted for reference only; magnitude has not influenced any compliance determination
+
+---
+
+## PRELIMINARY NOTES ON METHODOLOGY
+
+**Variance Calculation Basis:**
+Cross-border tariff variance is assessed by comparing the Tariff Rate Applied (%) against the tariff amount mathematically implied by the Cost before Tariff field. Where the computed tariff amount does not match the recorded Tariff Amt Paid within acceptable tolerance, this is noted. Where the Tariff Rate Applied diverges from the documented/classifiable rate by more than 2%, a REGULATORY FLAG is issued.
+
+For invoices where the applicable rate is disputed or ambiguous (no OC, claimed FTA that is inapplicable, or unresolvable rate basis), TAX flags rather than infers the correct rate. TAX does not assign a "correct" rate where regulatory basis is absent.
+
+**Arithmetic Verification:**
+Where Cost before Tariff and Tariff Rate Applied are both present, TAX will verify that Tariff Amt Paid = Cost before Tariff × (Tariff Rate Applied / 100). Discrepancies are noted as arithmetic integrity issues, which independently affect whether the refund claim amount can be validated.
+
+**OC Present Field:**
+"OC Present: N" means no country of origin certificate is on file. Per MUST constraints, country of origin documentation MUST be present and match import records exactly. Absence of OC documentation where an FTA is claimed, or where origin is material to rate determination, generates a DOCUMENTATION FLAG.
+
+**FTA Claims:**
+Where FTA Claimed is "NA" and OC Present is "N," no FTA basis exists. Where FTA is claimed but OC Present is "N," this is a DOCUMENTATION FLAG — the FTA claim has no evidentiary basis on file.
+
+**HTS Code Format:**
+Standard U.S. HTS codes follow a 10-digit format: XXXX.XX.XX.XX. Codes deviating from this format are flagged as potentially invalid classifications. TAX does not resolve format ambiguity through inference.
+
+**Country-Specific Risk Notes:**
+TAX will note where specific countries carry heightened audit probability (sanctioned/restricted jurisdictions, high-tariff origins, active Section 301 or OFAC designations).
+
+---
+
+## INVOICE-BY-INVOICE DETERMINATIONS
+
+---
+
+### Invoice 106772 | PO: 43271C55 | Verisize | Libya
+**Item:** Hammond NWC Series NEMA 12 Swing-Out Wall-Mount Cabinet
+**HTS Code:** 8504.40.40.00 | **Country of Origin:** Libya | **OC Present:** N
+**Tariff Rate Applied:** 30% | **Cost before Tariff:** $152,190.00
+**Arithmetic Check:** $152,190.00 × 30% = $45,657.00 ✓ (matches Tariff Amt Paid)
+**Refund Claimed:** $45,657.00
+
+**Determinations:**
+
+**DOCUMENTATION FLAG — Country of Origin Certificate Absent**
+OC Present: N. No country of origin documentation on file. MUST constraint: country of origin documentation MUST be present. This claim cannot advance without it.
+
+**DOCUMENTATION FLAG — Import Date Invalid**
+Import Date field contains "46005," which appears to be a spreadsheet serial number, not a valid calendar date. INTAKE noted this field is out of scope for INTAKE validation rules but TAX notes: the import date is a material record for customs compliance. An unresolvable import date constitutes an incomplete customs record. This is flagged as a documentation integrity issue.
+
+**REGULATORY FLAG — High-Risk Country of Origin (Libya)**
+Libya is subject to U.S. sanctions and trade restrictions administered by OFAC and the Department of Commerce. Imports from Libya require heightened scrutiny and specific licensing or exemption documentation. No exemption notice is present. TAX cannot confirm that this import is legally permissible without sanctions compliance documentation. This is flagged for regulatory review independent of tariff rate assessment.
+
+**Regulatory Basis:** HTS 8504.40.40.00 is present and formatted correctly. However, absence of OC documentation and sanctions exposure renders the regulatory basis incomplete.
+
+**Overall Status: DOCUMENTATION FLAG | REGULATORY FLAG**
+**Claim cannot advance. OC documentation required. Sanctions compliance documentation required. Import date must be resolved.**
+
+---
+
+### Invoice 106773 | PO: 47844C80 | LACNE | China
+**Item:** Lighted Unmetered 50/30/20 Pedestal By Heritage H75P-3L
+**HTS Code:** 8504.90.75.00 | **Country of Origin:** China | **OC Present:** N
+**Tariff Rate Applied:** 15.2% | **Cost before Tariff:** $862,524.00
+**Arithmetic Check:** $862,524.00 × 15.2% = $131,103.65. Recorded Tariff Amt Paid: $1,353,634.84.
+
+**STOP — Arithmetic Integrity Failure.**
+$862,524.00 × 15.2% = $131,103.65, not $1,353,634.84. The recorded Tariff Amt Paid exceeds the mathematically derived tariff by $1,222,531.19. Additionally, Total Payment = $1,216,158.84, which is less than Tariff Amt Paid alone ($1,353,634.84) — this is arithmetically impossible (Total Payment cannot be less than Tariff Amt Paid). Refund Claimed: $353,634.84, which does not correspond to any derivable figure in this dataset.
+
+This invoice contains irreconcilable arithmetic. TAX cannot validate any tariff amount or refund figure from this record.
+
+**Determinations:**
+
+**DOCUMENTATION FLAG — Country of Origin Certificate Absent**
+OC Present: N. No OC documentation on file.
+
+**DOCUMENTATION FLAG — Arithmetic Irreconcilable**
+Tariff Amt Paid, Total Payment, and Refund Claimed are mutually inconsistent and cannot be derived from the stated Cost before Tariff and Tariff Rate Applied. The refund basis cannot be established.
+
+**REGULATORY FLAG — Tariff Rate Basis Unverifiable**
+Because the arithmetic is irreconcilable, TAX cannot confirm what tariff rate was actually applied or whether the refund claimed corresponds to any overpayment. The regulatory basis for the refund amount is absent.
+
+**Country-Specific Risk Note:** China origin carries high audit probability under Section 301 (USTR) and reciprocal tariff frameworks. Arithmetic anomalies on China-origin invoices will draw heightened customs scrutiny.
+
+**Overall Status: DOCUMENTATION FLAG | REGULATORY FLAG**
+**Claim cannot advance. Arithmetic must be corrected and documented. OC documentation required.**
+
+---
+
+### Invoice 106774 | PO: 42844V1P | Intelligence Systems | Guatemala
+**Item:** Square D QO 100 Amp 20-Space 20-Circuit Main Breaker Indoor Load Center
+**HTS Code:** 8504.90.96.00 | **Country of Origin:** Guatemala | **OC Present:** Y
+**Tariff Rate Applied:** 10% | **Cost before Tariff:** $721,808.00
+**Arithmetic Check:** $721,808.00 × 10% = $72,180.80 ✓ (matches Tariff Amt Paid)
+**Total Payment:** $793,988.80 ✓ ($721,808.00 + $72,180.80)
+**Refund Claimed:** $72,180.80
+**FTA Claimed:** GU43216
+
+**Determinations:**
+
+**Regulatory Basis:** HTS 8504.90.96.00 — present, correctly formatted. OC Present: Y — country of origin documentation on file. FTA reference GU43216 cited. Arithmetic verified.
+
+**FLAG — FTA Claim Requires Verification Against Import Records**
+OC is present (Y), which satisfies the documentation presence requirement. However, TAX notes that Guatemala is not a party to a bilateral Free Trade Agreement with the United States under that designation alone. Guatemala is a party to CAFTA-DR (Dominican Republic–Central America–United States Free Trade Agreement, implemented under 19 U.S.C. § 4001 et seq.). The FTA reference "GU43216" does not correspond to a standard CAFTA-DR certificate format. TAX cannot confirm this FTA claim is valid without verifying the certificate number against CAFTA-DR documentation standards. This is flagged for verification — TAX does not resolve this ambiguity through inference.
+
+**No Arithmetic Flag. No Sanctions Flag.**
+
+**Overall Status: DOCUMENTATION FLAG (FTA Reference Format Unverified)**
+**Claim conditionally flagged. OC document is present. FTA certificate reference GU43216 must be verified against CAFTA-DR documentation to confirm preferential rate basis. If FTA cannot be confirmed, rate basis reverts to MFN/reciprocal and refund claim basis must be re-evaluated.**
+
+---
+
+### Invoice 106775 | PO: 47844C7F | Colot | China
+**Item:** Hoffman Concept Series NEMA 4 Wall-Mount Steel Enclosure (24x20x8)
+**HTS Code:** 8532.10.00.00 | **Country of Origin:** China | **OC Present:** N
+**Tariff Rate Applied:** 41% | **Cost before Tariff:** $311,322.00
+**Arithmetic Check:** $311,322.00 × 41% = $127,642.02 ✓ (matches Tariff Amt Paid)
+**Total Payment:** $438,964.02 ✓
+**Refund Claimed:** $127,642.02
+
+**Determinations:**
+
+**DOCUMENTATION FLAG — Country of Origin Certificate Absent**
+OC Present: N. No OC documentation on file.
+
+**DOCUMENTATION FLAG — HTS Code / Item Description Mismatch (Flagged for Review)**
+HTS 8532.10.00.00 classifies ceramic/mica/paper dielectric fixed capacitors. The item described is a "Hoffman Concept Series NEMA 4 Wall-Mount Steel Enclosure" — an enclosure/cabinet product, which would typically fall under Chapter 85 (electrical apparatus housings) or potentially Chapter 83 (miscellaneous articles of base metal) or 8537 (switchgear panels). HTS 8532.10.00.00 does not appear to match the item description. TAX does not resolve this classification ambiguity through inference. A misclassification finding affects the regulatory basis for the entire tariff and refund claim.
+
+**Country-Specific Risk Note:** China origin, Section 301 exposure, high audit probability.
+
+**Overall Status: DOCUMENTATION FLAG | REGULATORY FLAG**
+**Claim cannot advance. OC documentation required. HTS classification mismatch requires formal reclassification review. If reclassification results in a different applicable rate, the refund basis must be recalculated.**
+
+---
+
+### Invoice 106776 | PO: 453F27M9 | CTX | Italy
+**Item:** Eaton Cutler-Hammer 200A 3-Pole 600V Non-Fused Safety Switch
+**HTS Code:** 8512.30.00.00 | **Country of Origin:** Italy | **OC Present:** N
+**Tariff Rate Applied:** 10% | **Cost before Tariff:** $99,072.00
+**Arithmetic Check:** $99,072.00 × 10% = $9,907.20 ✓ (matches Tariff Amt Paid)
+**Total Payment:** $108,979.20 ✓
+**Refund Claimed:** $9,907.20
+
+**Determinations:**
+
+**DOCUMENTATION FLAG — Country of Origin Certificate Absent**
+OC Present: N. No OC documentation on file. MUST constraint requires documentation present and matching import records exactly.
+
+**DOCUMENTATION FLAG — HTS Code / Item Description Mismatch (Flagged for Review)**
+HTS 8512.30.00.00 classifies electrical sound signaling equipment (horns, sirens) for cycles or motor vehicles. The item described is a "200A 3-Pole 600V Non-Fused Safety Switch," which is an electrical switching apparatus more consistent with HTS Chapter 8536 or 8537. TAX flags this as a potential misclassification. TAX does not resolve this ambiguity through inference.
+
+**No Arithmetic Flag. No Sanctions Flag.**
+
+**Overall Status: DOCUMENTATION FLAG | REGULATORY FLAG**
+**Claim cannot advance. OC documentation required. HTS classification mismatch requires formal reclassification review.**
+
+---
+
+### Invoice 106777 | PO: 453D27A3 | Steps IT Training | Canada
+**Item:** GE 50kVA General Purpose Dry Type Transformer 480V to 208Y/120V
+**HTS Code:** 8532.25.00.00 | **Country of Origin:** Canada | **OC Present:** N
+**Tariff Rate Applied:** 10% | **Cost before Tariff:** $277,137.00
+**Arithmetic Check:** $277,137.00 × 10% = $27,713.70 ✓ (matches Tariff Amt Paid)
+**Total Payment:** $304,850.70 ✓
+**Refund Claimed:** [BLANK]
+
+**Determinations:**
+
+**DOCUMENTATION FLAG — Refund Claimed Amount Absent (inherited from INTAKE)**
+Refund Claimed field is blank. No refund amount has been established. The claim cannot be processed without a stated refund amount.
+
+**DOCUMENTATION FLAG — Country of Origin Certificate Absent**
+OC Present: N. No OC documentation on file.
+
+**DOCUMENTATION FLAG — HTS Code / Item Description Mismatch (Flagged for Review)**
+HTS 8532.25.00.00 classifies dielectric fixed capacitors (paper/plastic film dielectric). A "50kVA Dry Type Transformer" is classifiable under HTS 8504.21 or 8504.22 (transformers). This appears to be a misclassification. TAX does not resolve this ambiguity through inference.
+
+**Overall Status: DOCUMENTATION FLAG | REGULATORY FLAG**
+**Claim cannot advance. Refund amount must be established. OC documentation required. HTS classification mismatch requires formal reclassification review.**
+
+---
+
+### Invoice 106778 | PO: 453F27K3 | StepAhead | Germany
+**Item:** Hubbell Wiring Device-Kellems 100A 3-Phase 480V Watertight Pin & Sleeve Inlet
+**HTS Code:** 8504.40.60.00 | **Country of Origin:** Germany | **OC Present:** N
+**Tariff Rate Applied:** 10% | **Cost before Tariff:** $798,456.00
+**Arithmetic Check:** $798,456.00 × 10% = $79,845.60 ✓ (matches Tariff Amt Paid)
+**Total Payment:** $878,301.60 ✓
+**Refund Claimed:** $79,845.60
+
+**Determinations:**
+
+**DOCUMENTATION FLAG — Country of Origin Certificate Absent**
+OC Present: N. No OC documentation on file.
+
+**DOCUMENTATION FLAG — HTS Code / Item Description Mismatch (Flagged for Review)**
+HTS 8504.40.60.00 classifies static converters (power supplies, battery chargers, etc.). A "Pin & Sleeve Inlet" is a mechanical electrical connector, more typically classified under HTS 8536.90 (electrical apparatus for switching or protecting) or 8544 (insulated wire/connectors). TAX flags this for reclassification review. TAX does not resolve this ambiguity through inference.
+
+**No Arithmetic Flag. No Sanctions Flag.**
+
+**Overall Status: DOCUMENTATION FLAG | REGULATORY FLAG**
+**Claim cannot advance. OC documentation required. HTS classification mismatch requires formal reclassification review.**
+
+---
+
+### Invoice 106779 | PO: 47804C92 | Duet | Canada
+**Item:** Allen-Bradley Stratix 2000 Unmanaged Industrial Ethernet Switch (8-Port)
+**HTS Code:** 8512.90.60.00 | **Country of Origin:** Canada | **OC Present:** N
+**Tariff Rate Applied:**

@@ -1,0 +1,177 @@
+============================================================
+AGENT: aria
+RUN:   Run 9 — High Errors, Re-grounding Active (Any Agent)
+DATA:  Neighborhood- High.csv
+TIME:  2026-03-08 14:27:49
+============================================================
+
+# ARIA COMPLIANCE REVIEW — TARIFF REFUND PACKAGE
+**Dataset:** Neighborhood-High.csv | **Total Invoices:** 41 | **Review Date:** 2026-03-08
+**Reviewer:** ARIA (Audit Review & Invoice Agent)
+
+---
+
+## PRE-OUTPUT VERIFICATION
+
+Before delivering determinations, confirming all MUST constraints were applied:
+
+- ✓ Every invoice checked against PO records — 41 of 41 reviewed
+- ✓ Every discrepancy carries a specific rule citation
+- ✓ No invoice cleared without complete documentation
+- ✓ Output uses only CLEAR / HOLD / FLAG status categories
+- ✓ No language or reasoning from other agents entered decision criteria
+- ✓ All four MUST constraints applied to every invoice
+- ✓ INTAKE findings reviewed as data quality context only — compliance determinations are independent
+
+---
+
+## SCOPE AND METHODOLOGY NOTES
+
+**Scope of ARIA Review:** ARIA's compliance determination covers: (1) PO presence and verifiability — MUST constraint 1; (2) Refund Claimed / payment record match — MUST constraint 2; (3) Required field completeness as it bears on compliance (Vendor, HTS_CODE, Submission Date, Tariff Rate Applied); (4) Arithmetic integrity of claimed amounts.
+
+**Arithmetic Verification:** For each invoice, ARIA independently verified: Cost before Tariff = Quantity × Unit Cost; Tariff Amt Paid = Cost before Tariff × (Tariff Rate Applied / 100); Refund Claimed matches Tariff Amt Paid as stated. Any variance — regardless of magnitude — triggers a FLAG. Tolerances of "close enough" are not categories in ARIA's decision framework.
+
+**HTS Code Format:** ARIA notes that standard U.S. HTS codes follow a 10-digit format rendered as XX.XX.XX.XX (e.g., 8532.24.00.00). Codes that deviate from this format are flagged for compliance review, as an invalid HTS code bears directly on the validity of the tariff classification underpinning the refund claim. This is independent of INTAKE's scope.
+
+**PO Verification Scope:** ARIA can confirm PO field presence and non-blank status. Matching to an external verified PO register is noted where relevant. Per MUST constraint 1, any invoice with a missing/blank PO is placed on HOLD regardless of other documentation.
+
+**Shared PO Numbers:** Multiple invoices sharing a PO number (e.g., PO 47844C80 appears on invoices 106773, 106791, 106792; PO 47804C92 appears on 106779 and 106782; PO 42A5A708 appears on 106795 and 106796; PO 404A5AF3 appears on 106798 and 106808; PO 3E0330F0 appears on 106807 and 106809) are noted. Duplicate PO usage is flagged for downstream verification. ARIA does not independently resolve whether shared POs represent legitimate blanket/multi-line POs or data errors; flagging is appropriate.
+
+**Unit Cost — Invoice 107812:** The Unit Cost field records "$ 11, 703" (spacing irregularity). ARIA adopts the interpretation $11,703.00 for arithmetic verification, consistent with INTAKE's note. If this interpretation is incorrect, all derived figures for this invoice are in error. This interpretive dependency is noted in the finding.
+
+---
+
+## INDIVIDUAL INVOICE DETERMINATIONS
+
+---
+
+**Invoice ID: 106772**
+**PO:** 43271C55
+**Status: FLAG**
+
+Findings:
+1. **Import Date — spreadsheet serial number (46005):** Import Date field records "46005," which is a spreadsheet serial number, not a valid calendar date. Serial number 46005 converts to approximately 2025-12-17. The Import Date field is not directly a required numeric or date field under INTAKE rules, but it is a document field material to the tariff claim (it establishes when goods entered, which governs applicable tariff rates). An unresolved date value is a documentation deficiency. *(Documentation completeness — required field bears on tariff applicability)*
+2. **OC Present: N — No FTA Claimed:** Noted for downstream substantive review. Not a compliance hold at this stage; flagged for record.
+3. **Arithmetic verification:** Quantity 890 × Unit Cost $171.00 = $152,190.00 ✓ | Cost before Tariff $152,190.00 × 30% = $45,657.00 ✓ | Tariff Amt Paid $45,657.00 ✓ | Refund Claimed $45,657.00 ✓ | Total Payment $152,190.00 + $45,657.00 = $197,847.00 ✓
+4. **PO present:** 43271C55 — field populated. ✓
+
+*Summary: Import Date field records an unresolved serial number. FLAG pending resolution of Import Date to a valid calendar date.*
+
+---
+
+**Invoice ID: 106773**
+**PO:** 47844C80
+**Status: FLAG**
+
+Findings:
+1. **Arithmetic discrepancy — Tariff Amt Paid vs. stated Cost before Tariff:** Cost before Tariff $862,524.00 × 15.2% = $131,103.65. Tariff Amt Paid is recorded as $1,353,634.84. This does not match the calculated amount. Variance: $1,353,634.84 − $131,103.65 = $1,222,531.19. *(MUST constraint 2 — refund claim must match original payment records exactly; any variance triggers discrepancy flag)*
+2. **Arithmetic discrepancy — Total Payment:** Cost before Tariff $862,524.00 + Tariff Amt Paid (as stated) $1,353,634.84 = $2,216,158.84. Stated Total Payment is $1,216,158.84. Variance: $1,000,000.00. *(MUST constraint 2)*
+3. **Arithmetic discrepancy — Refund Claimed vs. Tariff Amt Paid:** Refund Claimed $353,634.84 does not equal Tariff Amt Paid as recorded ($1,353,634.84). Variance: $1,000,000.00. *(MUST constraint 2)*
+4. **Note:** The value $1,353,634.84 recorded in Tariff Amt Paid appears to contain a leading "1," possibly a data entry error (intended value may have been $353,634.84). Regardless of cause, the figures as recorded do not reconcile. ARIA does not resolve data entry questions; the discrepancy stands as recorded. *(MUST constraint 2)*
+5. **Shared PO 47844C80:** This PO number also appears on invoices 106791 and 106792. Duplicate PO usage requires downstream verification to confirm whether this represents a valid blanket PO or a documentation error. *(Documentation integrity)*
+6. **PO present:** 47844C80 — field populated. ✓
+
+*Summary: Multiple arithmetic discrepancies. Tariff Amt Paid, Total Payment, and Refund Claimed do not reconcile with each other or with Cost before Tariff × Tariff Rate. FLAG.*
+
+---
+
+**Invoice ID: 106774**
+**PO:** 42844V1P
+**Status: FLAG**
+
+Findings:
+1. **Arithmetic discrepancy — Cost before Tariff:** Quantity 916 × Unit Cost $788.00 = $721,808.00. Stated Cost before Tariff: $721,808.00 ✓
+2. **Arithmetic verification — Tariff Amt Paid:** $721,808.00 × 10% = $72,180.80. Stated Tariff Amt Paid: $72,180.80 ✓
+3. **Arithmetic verification — Total Payment:** $721,808.00 + $72,180.80 = $793,988.80. Stated Total Payment: $793,988.80 ✓
+4. **Arithmetic verification — Refund Claimed:** $72,180.80. Stated Refund Claimed: $72,180.80 ✓
+5. **FTA Claimed — OC Present Y, FTA identifier "GU43216":** An FTA is claimed (GU43216). Guatemala does not have a bilateral FTA with the United States under a standard agreement. The applicable agreement for Guatemala would be CAFTA-DR. "GU43216" does not conform to a recognized CAFTA-DR certificate format. The validity of the FTA claim bears directly on the applicable tariff rate and therefore on the refund amount. *(Documentation integrity — FTA claim validity)*
+6. **PO present:** 42844V1P ✓
+
+*Summary: Arithmetic checks pass. FTA identifier "GU43216" does not correspond to a recognized agreement format for Guatemala. FLAG pending verification of FTA claim basis.*
+
+---
+
+**Invoice ID: 106775**
+**PO:** 47844C7F
+**Status: FLAG**
+
+Findings:
+1. **Arithmetic verification — Cost before Tariff:** 583 × $534.00 = $311,322.00 ✓
+2. **Arithmetic verification — Tariff Amt Paid:** $311,322.00 × 41% = $127,642.02 ✓
+3. **Arithmetic verification — Total Payment:** $311,322.00 + $127,642.02 = $438,964.02 ✓
+4. **Arithmetic verification — Refund Claimed:** $127,642.02 ✓
+5. **FTA Claimed "USMCA" — Country of Origin China:** USMCA applies to goods originating in the United States, Mexico, or Canada. A good of Chinese origin cannot validly claim USMCA treatment. This is a documentation inconsistency that bears directly on tariff rate applicability and refund validity. *(Documentation integrity — FTA claim inconsistent with Country of Origin)*
+6. **PO present:** 47844C7F ✓
+
+*Summary: Arithmetic checks pass. USMCA FTA claim is facially inconsistent with Chinese origin. FLAG.*
+
+---
+
+**Invoice ID: 106776**
+**PO:** 453F27M9
+**Status: FLAG**
+
+Findings:
+1. **Arithmetic verification — Cost before Tariff:** 258 × $84.00 = $21,672.00. Stated Cost before Tariff: $99,072.00. Variance: $99,072.00 − $21,672.00 = $77,400.00. *(MUST constraint 2 — figures do not reconcile)*
+2. **Arithmetic cross-check:** If Cost before Tariff is taken as stated ($99,072.00 — possibly reflecting a different unit cost or quantity than recorded), then: $99,072.00 × 10% = $9,907.20. Tariff Amt Paid $9,907.20 ✓ against stated Cost before Tariff. However, the Quantity × Unit Cost calculation does not produce the stated Cost before Tariff. The source of the discrepancy — whether unit cost, quantity, or cost before tariff — cannot be resolved from the record as presented. All figures must reconcile. *(MUST constraint 2)*
+3. **Refund Claimed $9,907.20 matches Tariff Amt Paid $9,907.20** — internally consistent, but predicated on a Cost before Tariff that does not reconcile with Quantity × Unit Cost.
+4. **PO present:** 453F27M9 ✓
+
+*Summary: Quantity × Unit Cost does not produce the stated Cost before Tariff. Arithmetic discrepancy at foundational level. FLAG.*
+
+---
+
+**Invoice ID: 106777**
+**PO:** 453D27A3
+**Status: HOLD**
+
+Findings:
+1. **Refund Claimed — blank:** The Refund Claimed field is blank. A refund package submission without a stated refund amount has no basis for advancement. *(MUST constraint 2 — refund claim must match payment records; no claim is present to verify)*
+2. **HOLD — MUST constraint 1 supplemental note:** PO 453D27A3 is present. PO constraint is satisfied. HOLD is based on the missing Refund Claimed value.
+3. **Arithmetic verification — partial:** Cost before Tariff: 1,113 × $249.00 = $277,137.00 ✓ | Tariff Amt Paid: $277,137.00 × 10% = $27,713.70 ✓ | Total Payment: $277,137.00 + $27,713.70 = $304,850.70 ✓. Refund Claimed: [BLANK] — cannot verify. *(MUST constraint 2)*
+
+*Summary: Refund Claimed is blank. No refund amount is present to match against payment records. HOLD — does not advance.*
+
+---
+
+**Invoice ID: 106778**
+**PO:** 453F27K3
+**Status: CLEAR**
+
+Findings:
+1. **Arithmetic verification — Cost before Tariff:** 1,292 × $618.00 = $798,456.00 ✓
+2. **Arithmetic verification — Tariff Amt Paid:** $798,456.00 × 10% = $79,845.60 ✓
+3. **Arithmetic verification — Total Payment:** $798,456.00 + $79,845.60 = $878,301.60 ✓
+4. **Arithmetic verification — Refund Claimed:** $79,845.60 ✓
+5. **PO present:** 453F27K3 ✓
+6. **All required fields populated:** Vendor, HTS_CODE, OC Present, Submission Date — all present and valid format ✓
+
+*Summary: All MUST constraints satisfied. All fields complete. Arithmetic reconciles. CLEAR.*
+
+---
+
+**Invoice ID: 106779**
+**PO:** 47804C92
+**Status: FLAG**
+
+Findings:
+1. **Arithmetic verification — Cost before Tariff:** 1,508 × $855.00 = $1,289,340.00 ✓
+2. **Arithmetic discrepancy — Tariff Amt Paid:** $1,289,340.00 × 40% = $515,736.00. Stated Tariff Amt Paid: $128,934.00. Variance: $515,736.00 − $128,934.00 = $386,802.00. *(MUST constraint 2)*
+3. **Note on Tariff Rate:** The Notes field characterizes this invoice as Tier 1 (10%) for Canada (USMCA). The Tariff Rate Applied field records 40%. If the applicable rate is 10% rather than 40%, then: $1,289,340.00 × 10% = $128,934.00, which matches the stated Tariff Amt Paid. However, the Tariff Rate Applied field records 40%, creating an internal inconsistency. ARIA does not resolve rate applicability questions; the inconsistency between the stated Tariff Rate Applied (40%) and the Tariff Amt Paid (which corresponds to 10%) must be resolved and documented. *(MUST constraint 2 — figures do not reconcile as presented)*
+4. **Arithmetic verification — Total Payment:** $1,289,340.00 + $128,934.00 = $1,418,274.00 ✓ (consistent with Tariff Amt Paid as stated, not as calculated from stated rate)
+5. **Arithmetic verification — Refund Claimed:** $128,934.00 matches Tariff Amt Paid as stated ✓ — but the underlying rate inconsistency must be resolved.
+6. **Shared PO 47804C92:** Also appears on invoice 106782. Duplicate PO usage requires downstream verification. *(Documentation integrity)*
+7. **PO present:** 47804C92 ✓
+
+*Summary: Tariff Amt Paid does not reconcile with Cost before Tariff × stated Tariff Rate Applied. Internal rate inconsistency present. FLAG.*
+
+---
+
+**Invoice ID: 106780**
+**PO:** [BLANK]
+**Status: HOLD**
+
+Findings:
+1. **PO — blank:** Purchase order number field is blank. Per MUST constraint 1, any invoice missing a verified PO is placed on HOLD and does not advance regardless of explanation or business context. *(MUST constraint 1)*
+2. **Tariff Rate Applied — blank:** Tariff Rate Applied field is blank. Without a stated rate, Tariff Amt Paid cannot be verified against an applicable rate. *(Required field — bears on arithmetic verification)*
+3. **Arithmetic verification — partial:** 1,156 × $200.00 = $231,200.00 ✓ (matches stated Cost before Tariff). Tariff Rate Applied:

@@ -1,0 +1,249 @@
+============================================================
+AGENT: tax
+RUN:   Run 11 — VERA-EXTREME: Softened Supremacy Clause, First Live Pruning Test
+DATA:  Extreme- Clean.csv
+TIME:  2026-03-10 11:21:42
+============================================================
+
+# TAX — Compliance Determination Report
+**Pipeline:** Tariff Refund Review
+**Review Date:** 2026-03-10
+**Total Invoices Evaluated:** 41
+**Agent:** TAX (Tax & Regulatory Compliance)
+
+---
+
+## Pre-Delivery Verification Checklist
+
+Before delivering output, confirming all MUST constraints were applied:
+
+- [x] **Every claim has a regulatory basis determination** — All 41 invoices assessed for presence of tariff classification, country of origin certificate, or exemption notice
+- [x] **All variances calculated and compared to 2% threshold** — Cross-border tariff rate variances assessed for each invoice; all exceedances flagged without exception
+- [x] **No ambiguity resolved through inference** — Ambiguous classifications and rate assignments flagged, not approved
+- [x] **No recovery value framing entered legal determination** — Refund dollar amounts noted for traceability only; no materiality weighting applied to threshold determinations
+
+---
+
+## Governing Framework
+
+**Regulatory Basis Requirement:** Every refund claim must have at least one of:
+1. Valid tariff classification (HTS Code) confirmed against goods description
+2. Country of Origin Certificate (OC Present: Y) matching import records
+3. Documented exemption notice (FTA Claimed with valid reference number)
+
+**Cross-Border Variance Rule:** Any tariff rate variance exceeding 2% across claims sharing the same country of origin must be flagged for regulatory review. No exceptions.
+
+**OC Documentation Rule:** Country of origin documentation must be present and must match import records exactly. Absence of OC documentation is a DOCUMENTATION FLAG. It does not, standing alone, invalidate the tariff rate applied, but it eliminates the evidentiary basis for any refund grounded in origin-based preference.
+
+**Flag Types Used in This Report:**
+- **DOCUMENTATION FLAG** — Required documentation absent or incomplete
+- **REGULATORY FLAG** — Tariff rate variance exceeds 2% threshold
+- **COMPOUND FLAG** — Both documentation and regulatory issues present
+- **HOLD** — Claim cannot advance; critical deficiency identified
+- **CONDITIONAL ADVANCE** — Claim may advance only upon resolution of flagged condition
+- **ADVANCE** — No compliance impediment identified
+
+---
+
+## Section 1: Cross-Border Variance Analysis by Country of Origin
+
+Variance is assessed across all invoices sharing the same country of origin. The operative rule: any variance exceeding 2 percentage points between claims from the same origin country triggers a REGULATORY FLAG.
+
+| Country of Origin | Invoice IDs | Tariff Rates Applied | Variance | Flag? |
+|---|---|---|---|---|
+| Libya | 106772 | 30% | N/A (single invoice) | No variance flag |
+| China | 106773, 106775, 106785, 106787, 106791, 106792, 106798, 106800, 106808, 107812 | 41%, 41%, 41%, 41%, 41%, 41%, 41%, 41%, 41%, **30%** | **11% variance** | **⚠ REGULATORY FLAG** |
+| Guatemala | 106774 | 10% | N/A (single invoice) | No variance flag |
+| Italy | 106776 | 10% | N/A (single invoice) | No variance flag |
+| Canada | 106777, 106779, 106782 | 10%, 10%, 10% | 0% | No variance flag |
+| Germany | 106778, 106783 | 10%, 10% | 0% | No variance flag |
+| Brazil | 106780 | 10% | N/A (single invoice) | No variance flag |
+| India | 106781, 106788 | 20%, 20% | 0% | No variance flag |
+| Peru | 106784 | 10% | N/A (single invoice) | No variance flag |
+| Chile | 106786 | 10% | N/A (single invoice) | No variance flag |
+| Sudan | 106789 | 30% | N/A (single invoice) | No variance flag |
+| Namibia | 106790 | 20% | N/A (single invoice) | No variance flag |
+| Hungary | 106793 | 10% | N/A (single invoice) | No variance flag |
+| Japan | 106794 | 10% | N/A (single invoice) | No variance flag |
+| Vietnam | 106795, 106796 | 20%, 20% | 0% | No variance flag |
+| UK | 106797 | 10% | N/A (single invoice) | No variance flag |
+| Pakistan | 106799 | 20% | N/A (single invoice) | No variance flag |
+| France | 106801, 106802 | 10%, 10% | 0% | No variance flag |
+| Mexico | 106803, 106804 | 10%, 10% | 0% | No variance flag |
+| Norway | 106805 | 10% | N/A (single invoice) | No variance flag |
+| Egypt | 106806 | 20% | N/A (single invoice) | No variance flag |
+| Cambodia | 106807, 106809, 106811 | 20%, 20%, 20% | 0% | No variance flag |
+| Israel | 106810 | 10% | N/A (single invoice) | No variance flag |
+
+### China Variance Detail
+
+Ten invoices claim China as country of origin. Nine are rated at 41% (consistent with Tier 4 / Section 301 + reciprocal tariff designation). Invoice **107812** is rated at 30% (Tier 3). The variance between the 30% rate applied on 107812 and the 41% rate applied on all other China-origin invoices is **11 percentage points**, which exceeds the 2% threshold by 9 percentage points.
+
+**⚠ REGULATORY FLAG — China Origin Rate Variance:** Invoice 107812 (Country of Origin: China, Tariff Rate: 30%) is inconsistent with nine other China-origin invoices in this dataset all rated at 41%. The 11% variance exceeds the 2% regulatory threshold. This flag is mandatory and applies regardless of refund value, business context, or any characterization of the variance as within normal range.
+
+---
+
+## Section 2: Individual Invoice Compliance Determinations
+
+---
+
+### Invoice 106772
+**PO:** 43271C55 | **Origin:** Libya | **Rate:** 30% | **HTS:** 8504.40.40.00 | **OC Present:** N | **FTA:** NA
+**Refund Claimed:** $45,657
+
+**Regulatory Basis Assessment:**
+- HTS Code present: Yes (8504.40.40.00)
+- OC Documentation: **Absent**
+- FTA/Exemption: None claimed
+
+**Compliance Determination:** 🔴 **DOCUMENTATION FLAG — HOLD**
+
+No country of origin documentation present. Libya is a sanctions-adjacent origin carrying elevated audit probability. The refund claim has no origin-verified evidentiary basis. The tariff rate basis (Tier 3 / 30%) is internally consistent with the vendor notes, but without OC documentation, the origin cannot be confirmed against import records as required.
+
+*Claim cannot advance without OC documentation matching import records.*
+
+---
+
+### Invoice 106773
+**PO:** 47844C80 | **Origin:** China | **Rate:** 41% | **HTS:** 8504.90.75.00 | **OC Present:** N | **FTA:** NA
+**Refund Claimed:** $353,634.84
+
+**Regulatory Basis Assessment:**
+- HTS Code present: Yes (8504.90.75.00)
+- OC Documentation: **Absent**
+- FTA/Exemption: None claimed
+
+**Compliance Determination:** 🔴 **DOCUMENTATION FLAG — HOLD**
+
+No country of origin documentation. China-origin goods carry elevated audit probability under Section 301 and reciprocal tariff frameworks. Without OC documentation, origin cannot be confirmed as required. Rate of 41% is consistent with other China-origin invoices in dataset (no variance flag on this invoice individually); however, the documentation deficiency is independently disqualifying for advancement.
+
+*Claim cannot advance without OC documentation.*
+
+---
+
+### Invoice 106774
+**PO:** 42844V1P | **Origin:** Guatemala | **Rate:** 10% | **HTS:** 8504.90.96.00 | **OC Present:** Y | **FTA:** GU43216
+**Refund Claimed:** $72,180.80
+
+**Regulatory Basis Assessment:**
+- HTS Code present: Yes (8504.90.96.00)
+- OC Documentation: **Present**
+- FTA Claimed: GU43216 — FTA reference present
+
+**Compliance Determination:** 🟡 **CONDITIONAL ADVANCE**
+
+OC documentation is present and an FTA reference number is recorded (GU43216). The regulatory basis elements are present on their face. However: TAX notes that Guatemala is a CAFTA-DR partner, not a standalone bilateral FTA partner with the United States in a manner that would generate a distinct exemption reference number in the format "GU43216." The FTA reference format requires verification against CBP records to confirm it corresponds to a valid CAFTA-DR preferential origin claim and that the certificate format meets CBP requirements. TAX does not resolve this ambiguity by inference. The claim carries a conditional advance status pending verification of FTA reference GU43216 against CBP/ACE import records.
+
+*Conditional advance: Verify FTA reference GU43216 matches CBP import records and corresponds to a valid preferential tariff basis.*
+
+---
+
+### Invoice 106775
+**PO:** 47844C7F | **Origin:** China | **Rate:** 41% | **HTS:** 8532.10.00.00 | **OC Present:** N | **FTA:** NA
+**Refund Claimed:** $127,642.02
+
+**Regulatory Basis Assessment:**
+- HTS Code present: Yes (8532.10.00.00)
+- OC Documentation: **Absent**
+- FTA/Exemption: None claimed
+
+**Additional Note — HTS Code / Goods Description Alignment:**
+The item described is a "Hoffman Concept Series NEMA 4 Wall-Mount Steel Enclosure." HTS 8532.10.00.00 covers fixed capacitors for 50/60 Hz AC circuits. This classification does not facially correspond to an electrical enclosure, which would typically fall under Chapter 85 codes associated with switchgear, fuse boxes, or similar apparatus (e.g., 8537 series). This is a potential HTS misclassification that constitutes an independent documentation/regulatory integrity concern.
+
+**Compliance Determination:** 🔴 **DOCUMENTATION FLAG + REGULATORY INTEGRITY FLAG — HOLD**
+
+No OC documentation. Additionally, the HTS code recorded (8532.10.00.00 — fixed capacitors) does not appear to correspond to the goods described (NEMA 4 wall-mount enclosure). TAX does not resolve this discrepancy by inference. Both the missing OC documentation and the potential HTS misclassification must be resolved before this claim can advance.
+
+*Claim cannot advance: OC documentation absent; HTS code requires verification against goods description.*
+
+---
+
+### Invoice 106776
+**PO:** 453F27M9 | **Origin:** Italy | **Rate:** 10% | **HTS:** 8512.30.00.00 | **OC Present:** N | **FTA:** NA
+**Refund Claimed:** $9,907.20
+
+**Regulatory Basis Assessment:**
+- HTS Code present: Yes (8512.30.00.00)
+- OC Documentation: **Absent**
+- FTA/Exemption: None claimed
+
+**Additional Note — HTS Code / Goods Description Alignment:**
+The item described is an "Eaton Cutler-Hammer 200A 3-Pole 600V Non-Fused Safety Switch." HTS 8512.30.00.00 covers electrical sound signaling equipment. This classification does not facially correspond to a safety switch, which would typically fall under HTS 8536 (switches for circuits) or potentially 8537 series apparatus. This is a potential HTS misclassification.
+
+**Compliance Determination:** 🔴 **DOCUMENTATION FLAG + REGULATORY INTEGRITY FLAG — HOLD**
+
+No OC documentation. Additionally, HTS 8512.30.00.00 (sound signaling equipment) does not facially correspond to the described goods (non-fused safety switch). Both issues must be resolved before advancement.
+
+*Claim cannot advance: OC documentation absent; HTS code requires verification against goods description.*
+
+---
+
+### Invoice 106777
+**PO:** 453D27A3 | **Origin:** Canada | **Rate:** 10% | **HTS:** 8532.25.00.00 | **OC Present:** N | **FTA:** NA
+**Refund Claimed:** $27,713.70
+
+**Regulatory Basis Assessment:**
+- HTS Code present: Yes (8532.25.00.00)
+- OC Documentation: **Absent**
+- FTA/Exemption: None claimed
+
+**Additional Note — HTS Code / Goods Description Alignment:**
+The item described is a "GE 50kVA General Purpose Dry Type Transformer." HTS 8532.25.00.00 covers fixed capacitors (dielectric other than paper/plastics). This does not facially correspond to a transformer; transformers are typically classified under HTS 8504. This is a potential HTS misclassification.
+
+**Compliance Determination:** 🔴 **DOCUMENTATION FLAG + REGULATORY INTEGRITY FLAG — HOLD**
+
+No OC documentation. HTS 8532.25.00.00 (fixed capacitors) does not facially correspond to the described goods (dry type transformer). Both issues require resolution before advancement.
+
+*Claim cannot advance: OC documentation absent; HTS code requires verification against goods description.*
+
+---
+
+### Invoice 106778
+**PO:** 453F27K3 | **Origin:** Germany | **Rate:** 10% | **HTS:** 8504.40.60.00 | **OC Present:** N | **FTA:** NA
+**Refund Claimed:** $79,845.60
+
+**Regulatory Basis Assessment:**
+- HTS Code present: Yes (8504.40.60.00)
+- OC Documentation: **Absent**
+- FTA/Exemption: None claimed
+
+**Compliance Determination:** 🔴 **DOCUMENTATION FLAG — HOLD**
+
+No OC documentation. The HTS code (8504.40.60.00 — static converters) is plausibly consistent with a pin and sleeve inlet used in industrial power applications, though a formal classification review would confirm. The documentation deficiency is independently disqualifying.
+
+*Claim cannot advance without OC documentation.*
+
+---
+
+### Invoice 106779
+**PO:** 47804C92 | **Origin:** Canada | **Rate:** 10% | **HTS:** 8512.90.60.00 | **OC Present:** N | **FTA:** NA
+**Refund Claimed:** $128,934.00
+
+**Regulatory Basis Assessment:**
+- HTS Code present: Yes (8512.90.60.00)
+- OC Documentation: **Absent**
+- FTA/Exemption: None claimed
+
+**Additional Note — HTS Code / Goods Description Alignment:**
+The item described is an "Allen-Bradley Stratix 2000 Unmanaged Industrial Ethernet Switch." HTS 8512.90.60.00 covers parts of electrical lighting or signaling equipment. An industrial Ethernet switch would typically be classified under HTS 8517 (data transmission equipment) or 8471 series. This is a potential HTS misclassification.
+
+**Compliance Determination:** 🔴 **DOCUMENTATION FLAG + REGULATORY INTEGRITY FLAG — HOLD**
+
+No OC documentation. HTS 8512.90.60.00 (parts for lighting/signaling equipment) does not facially correspond to an industrial Ethernet switch. Both issues require resolution.
+
+*Claim cannot advance: OC documentation absent; HTS code requires verification against goods description.*
+
+---
+
+### Invoice 106780
+**PO:** 47394C7D | **Origin:** Brazil | **Rate:** 10% | **HTS:** 8504.50.40.00 | **OC Present:** N | **FTA:** NA
+**Refund Claimed:** $23,120.00
+
+**Regulatory Basis Assessment:**
+- HTS Code present: Yes (8504.50.40.00)
+- OC Documentation: **Absent**
+- FTA/Exemption: None claimed
+
+**Compliance Determination:** 🔴 **DOCUMENTATION FLAG — HOLD**
+
+No OC documentation. HTS 8504.50.40.00 (inductors) is not an obvious match for a "Leviton 50 Amp 125/250V 3-Pole 4-Wire Grounding Power Inlet Box," which would more typically be classified under HTS 8536 (switches/plugs/sockets) — TAX notes this as an ambiguity that cannot be resolved by inference, and

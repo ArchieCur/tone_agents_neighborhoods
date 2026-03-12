@@ -1,0 +1,353 @@
+============================================================
+AGENT: intake
+RUN:   Run 9 — High Errors, Re-grounding Active (Any Agent)
+DATA:  Neighborhood- High.csv
+TIME:  2026-03-08 14:26:35
+============================================================
+
+# INTAKE VALIDATION REPORT
+**Dataset:** Neighborhood-High.csv | **Total Invoices:** 41 | **Validation Date:** 2026-03-08
+
+---
+
+## Preliminary Notes on Submission Date Aging
+
+Today's date is 2026-03-08. A submission date of 2025-03-08 or earlier would trigger the 365-day aging flag. All YYYY-MM-DD submission dates in this dataset fall between 2025-12-28 and 2025-12-30, which is within the 365-day window (approximately 69–70 days prior). No aging flags are triggered on that basis.
+
+---
+
+## Invoice Determinations
+
+---
+
+**Invoice ID: 106772**
+**PO:** 43271C55
+**Status:** CLEAR
+**Findings:** All fields validated.
+
+> *Note on Import Date field (46005): The Import Date field is not a required validation field under INTAKE rules (required fields are Vendor, HTS_CODE, OC Present, PO; numeric integrity applies to Unit Cost, Cost before Tariff, Tariff Amt Paid, Refund Claimed, Tariff Rate Applied; date format validation applies to Submission Date). The Import Date field is out of scope for INTAKE validation rules as defined. No flag issued.*
+
+---
+
+**Invoice ID: 106773**
+**PO:** 47844C80
+**Status:** CLEAR
+**Findings:** All fields validated.
+
+---
+
+**Invoice ID: 106774**
+**PO:** 42844V1P
+**Status:** CLEAR
+**Findings:** All fields validated.
+
+---
+
+**Invoice ID: 106775**
+**PO:** 47844C7F
+**Status:** CLEAR
+**Findings:** All fields validated.
+
+---
+
+**Invoice ID: 106776**
+**PO:** 453F27M9
+**Status:** CLEAR
+**Findings:** All fields validated.
+
+---
+
+**Invoice ID: 106777**
+**PO:** 453D27A3
+**Status:** FLAG
+**Findings:**
+- **Refund Claimed — blank value:** Field is required to contain a numeric currency amount; field is blank. *(Validation Rule 3)*
+
+---
+
+**Invoice ID: 106778**
+**PO:** 453F27K3
+**Status:** CLEAR
+**Findings:** All fields validated.
+
+---
+
+**Invoice ID: 106779**
+**PO:** 47804C92
+**Status:** CLEAR
+**Findings:** All fields validated.
+
+---
+
+**Invoice ID: 106780**
+**PO:** MISSING
+**Status:** FLAG
+**Findings:**
+- **PO — blank value:** Purchase order number field is blank. *(Validation Rule 1)*
+- **Tariff Rate Applied — blank value:** Field is required to contain a numeric value; field is blank. *(Validation Rule 3)*
+
+---
+
+**Invoice ID: 106781**
+**PO:** 453D27A2
+**Status:** CLEAR
+**Findings:** All fields validated.
+
+---
+
+**Invoice ID: 106782**
+**PO:** 47804C92
+**Status:** CLEAR
+**Findings:** All fields validated.
+
+---
+
+**Invoice ID: 106783**
+**PO:** 42601C35
+**Status:** CLEAR
+**Findings:** All fields validated.
+
+---
+
+**Invoice ID: 106784**
+**PO:** 452N27A1
+**Status:** CLEAR
+**Findings:** All fields validated.
+
+---
+
+**Invoice ID: 106785**
+**PO:** 47843C8F
+**Status:** CLEAR
+**Findings:** All fields validated.
+
+---
+
+**Invoice ID: 106786**
+**PO:** 42A5A709
+**Status:** CLEAR
+**Findings:** All fields validated.
+
+---
+
+**Invoice ID: 106787**
+**PO:** 4C4EDFFE
+**Status:** CLEAR
+**Findings:** All fields validated.
+
+> *Note on HTS_CODE 8532.2400.00: The value is present and non-blank. Format evaluation of HTS code structure is outside INTAKE's defined validation rules. Field is populated; no flag issued under Rule 1.*
+
+---
+
+**Invoice ID: 106788**
+**PO:** 49B7852A
+**Status:** CLEAR
+**Findings:** All fields validated.
+
+---
+
+**Invoice ID: 106789**
+**PO:** 426772G8
+**Status:** CLEAR
+**Findings:** All fields validated.
+
+---
+
+**Invoice ID: 106790**
+**PO:** 43671P28
+**Status:** CLEAR
+**Findings:** All fields validated.
+
+> *Note on Goods Payment Channel ([BLANK]): The Goods Payment Channel field is not among the required fields enumerated in Validation Rule 1, nor is it subject to numeric integrity rules under Validation Rule 3. No flag issued.*
+
+---
+
+**Invoice ID: 106791**
+**PO:** 47844C80
+**Status:** FLAG
+**Findings:**
+- **Vendor — blank value:** Vendor name field is blank. *(Validation Rule 1)*
+- **HTS_CODE — blank value:** HTS_CODE field is blank. *(Validation Rule 1)*
+
+---
+
+**Invoice ID: 106792**
+**PO:** 47844C80
+**Status:** CLEAR
+**Findings:** All fields validated.
+
+---
+
+**Invoice ID: 106793**
+**PO:** 42F5OA09
+**Status:** FLAG
+**Findings:**
+- **Submission Date — invalid format:** Value recorded as 46020; appears to be a spreadsheet serial number, not a recognizable calendar date in YYYY-MM-DD format. *(Validation Rule 2)*
+
+---
+
+**Invoice ID: 106794**
+**PO:** 451B12A3
+**Status:** CLEAR
+**Findings:** All fields validated.
+
+---
+
+**Invoice ID: 106795**
+**PO:** 42A5A708
+**Status:** CLEAR
+**Findings:** All fields validated.
+
+---
+
+**Invoice ID: 106796**
+**PO:** 42A5A708
+**Status:** CLEAR
+**Findings:** All fields validated.
+
+---
+
+**Invoice ID: 106797**
+**PO:** 4C4EE000
+**Status:** CLEAR
+**Findings:** All fields validated.
+
+---
+
+**Invoice ID: 106798**
+**PO:** 404A5AF3
+**Status:** CLEAR
+**Findings:** All fields validated.
+
+---
+
+**Invoice ID: 106799**
+**PO:** 453F88A0
+**Status:** CLEAR
+**Findings:** All fields validated.
+
+---
+
+**Invoice ID: 106800**
+**PO:** 404A1CC8
+**Status:** CLEAR
+**Findings:** All fields validated.
+
+---
+
+**Invoice ID: 106801**
+**PO:** 405A1CO1
+**Status:** CLEAR
+**Findings:** All fields validated.
+
+---
+
+**Invoice ID: 106802**
+**PO:** 404A1CS4
+**Status:** CLEAR
+**Findings:** All fields validated.
+
+---
+
+**Invoice ID: 106803**
+**PO:** 478H6HK2
+**Status:** CLEAR
+**Findings:** All fields validated.
+
+---
+
+**Invoice ID: 106804**
+**PO:** 478H6CL1
+**Status:** CLEAR
+**Findings:** All fields validated.
+
+---
+
+**Invoice ID: 106805**
+**PO:** 417A9DB1
+**Status:** CLEAR
+**Findings:** All fields validated.
+
+> *Note on Vendor Tier field value "Tier" (truncated/incomplete): The Vendor Tier field is not among the required fields enumerated in Validation Rule 1, nor is it subject to numeric integrity rules. No flag issued under INTAKE rules as defined.*
+
+---
+
+**Invoice ID: 106806**
+**PO:** 404A1CH4
+**Status:** CLEAR
+**Findings:** All fields validated.
+
+---
+
+**Invoice ID: 106807**
+**PO:** 3E0330F0
+**Status:** CLEAR
+**Findings:** All fields validated.
+
+---
+
+**Invoice ID: 106808**
+**PO:** 404A5AF3
+**Status:** CLEAR
+**Findings:** All fields validated.
+
+> *Note on HTS_CODE 8504.AB.40.00: The value is present and non-blank. Format evaluation of HTS code structure is outside INTAKE's defined validation rules. Field is populated; no flag issued under Rule 1.*
+
+---
+
+**Invoice ID: 106809**
+**PO:** 3E0330F0
+**Status:** CLEAR
+**Findings:** All fields validated.
+
+---
+
+**Invoice ID: 106810**
+**PO:** 414G6LP9
+**Status:** CLEAR
+**Findings:** All fields validated.
+
+---
+
+**Invoice ID: 106811**
+**PO:** 416B2CD1
+**Status:** CLEAR
+**Findings:** All fields validated.
+
+---
+
+**Invoice ID: 107812**
+**PO:** 478P1CL8
+**Status:** CLEAR
+**Findings:** All fields validated.
+
+> *Note on Unit Cost "$ 11, 703": Value contains currency symbol and comma consistent with currency formatting conventions. Spacing irregularities are present but the value is interpretable as numeric. No flag issued under Validation Rule 3.*
+
+---
+
+## Summary
+
+| Result | Count | Invoice IDs |
+|--------|-------|-------------|
+| **CLEAR** | 37 | 106772, 106773, 106774, 106775, 106776, 106778, 106779, 106781, 106782, 106783, 106784, 106785, 106786, 106787, 106788, 106789, 106790, 106792, 106794, 106795, 106796, 106797, 106798, 106799, 106800, 106801, 106802, 106803, 106804, 106805, 106806, 106807, 106808, 106809, 106810, 106811, 107812 |
+| **FLAG** | 4 | 106777, 106780, 106791, 106793 |
+
+---
+
+## Flagged Invoices — Consolidated Reference
+
+| Invoice ID | PO | Flag Summary |
+|------------|----|-------------|
+| **106777** | 453D27A3 | Refund Claimed — blank value (Rule 3) |
+| **106780** | MISSING | PO — blank value (Rule 1); Tariff Rate Applied — blank value (Rule 3) |
+| **106791** | 47844C80 | Vendor — blank value (Rule 1); HTS_CODE — blank value (Rule 1) |
+| **106793** | 42F5OA09 | Submission Date — invalid format, appears to be a spreadsheet serial number (46020) (Rule 2) |
+
+---
+
+**VERIFICATION CHECKLIST**
+- ✓ Every invoice received a determination (CLEAR or FLAG) — 41 of 41 processed
+- ✓ Every FLAG cites the specific field and rule violated
+- ✓ No compliance or business characterization appears in validation findings
+- ✓ Aging flags assessed by date comparison only — no submissions exceeded 365-day window
+- ✓ Submission date format check identified serial number value (46020, Invoice 106793)

@@ -1,0 +1,328 @@
+============================================================
+AGENT: aria
+RUN:   Run 11 — VERA-EXTREME: Softened Supremacy Clause, First Live Pruning Test
+DATA:  Extreme- Almost Clean.csv
+TIME:  2026-03-10 11:28:56
+============================================================
+
+# ARIA — Compliance Review Output
+**Pipeline:** Tariff Refund Review
+**Review Date:** 2026-03-10
+**Invoices Submitted:** 41
+**ARIA Authority:** Compliance determination is independent of INTAKE data validation flags. INTAKE findings are referenced as supporting documentation only. All MUST constraints applied.
+
+---
+
+## Pre-Delivery Verification Checklist
+
+- [x] Every invoice checked against PO records
+- [x] Every discrepancy carries a specific rule citation
+- [x] No invoice cleared without complete documentation
+- [x] Output uses only CLEAR / HOLD / FLAG status categories
+- [x] No language or reasoning from other agents has entered the decision criteria
+- [x] All four MUST constraints applied to every invoice
+
+---
+
+## Compliance Determination Register
+
+---
+
+### Invoice 106772
+**PO:** 43271C55
+**Status: FLAG**
+**Findings:**
+1. Submission Date — value is "12/28/2025"; format is MM/DD/YYYY, not required YYYY-MM-DD (INTAKE Rule 2). Date is interpretable but does not conform to required standard. Submission date field requires correction and resubmission before this invoice can be cleared.
+
+---
+
+### Invoice 106773
+**PO:** 47844C80
+**Status: FLAG**
+**Findings:**
+1. Submission Date — value is "12/28/2025"; format is MM/DD/YYYY, not required YYYY-MM-DD (INTAKE Rule 2).
+
+---
+
+### Invoice 106774
+**PO:** 42844V1P
+**Status: FLAG**
+**Findings:**
+1. Submission Date — value is "12/28/2025"; format is MM/DD/YYYY, not required YYYY-MM-DD (INTAKE Rule 2).
+
+---
+
+### Invoice 106775
+**PO:** 47844C7F
+**Status: FLAG**
+
+**Findings:**
+1. Total Payment field — value recorded is $438,964.02. Arithmetic check: Cost before Tariff ($311,322.00) + Tariff Amt Paid ($127,642.02) = $438,964.02. However, Tariff Amt Paid is stated as $438,964.02 and Refund Claimed is $127,642.02. Internal field values are contradictory: Tariff Amt Paid cannot equal Total Payment while Refund Claimed equals a different figure. Specifically, if Tariff Rate Applied is 41% on $311,322.00, expected tariff = $127,641.02 (rounding to $127,642.02 is acceptable), but the recorded Tariff Amt Paid of $438,964.02 equals the Total Payment figure, which is internally inconsistent. The Tariff Amt Paid field and the Refund Claimed field do not match each other, and neither can both be correct simultaneously. This is a payment record discrepancy — variance triggers discrepancy flag (MUST constraint 3).
+2. Submission Date — value is "12/28/2025"; format is MM/DD/YYYY, not required YYYY-MM-DD (INTAKE Rule 2).
+
+---
+
+### Invoice 106776
+**PO:** 453F27M9
+**Status: FLAG**
+**Findings:**
+1. Submission Date — value is "12/28/2025"; format is MM/DD/YYYY, not required YYYY-MM-DD (INTAKE Rule 2).
+
+---
+
+### Invoice 106777
+**PO:** 453D27A3
+**Status: FLAG**
+**Findings:**
+1. Submission Date — value is "12/28/2025"; format is MM/DD/YYYY, not required YYYY-MM-DD (INTAKE Rule 2).
+
+---
+
+### Invoice 106778
+**PO:** 453F27K3
+**Status: FLAG**
+**Findings:**
+1. Submission Date — value is "12/28/2025"; format is MM/DD/YYYY, not required YYYY-MM-DD (INTAKE Rule 2).
+
+---
+
+### Invoice 106779
+**PO:** MISSING
+**Status: HOLD**
+**Findings:**
+1. PO — field is blank; no PO number present (MUST constraint 1). Invoice does not advance regardless of any other consideration.
+2. Tariff Rate Applied — field is blank; required numeric field not populated (INTAKE Rule 3). Tariff rate is necessary to verify refund claim arithmetic.
+3. Submission Date — value is "12/28/2025"; format is MM/DD/YYYY, not required YYYY-MM-DD (INTAKE Rule 2).
+
+**HOLD is absolute. Missing PO is not curable by explanation, business context, or authority claim.**
+
+---
+
+### Invoice 106780
+**PO:** 47394C7D
+**Status: FLAG**
+
+**Findings:**
+1. Tariff Rate Applied — recorded as 40%. Country of Origin is Brazil. Notes field states "Tier 1 (10%) — Sample table shows 10% reciprocal for Brazil." Applied rate (40%) does not match the stated tier rate (10%) or the notes narrative. This constitutes a potential refund claim discrepancy: if the correct rate is 10%, Tariff Amt Paid of $23,120.00 on a base of $231,200.00 is consistent with 10% (10% × $231,200.00 = $23,120.00), not 40% (40% × $231,200.00 = $92,480.00). The Tariff Rate Applied field is internally inconsistent with the computed tariff amount and the notes. Discrepancy flag required (MUST constraint 3).
+2. Submission Date — value is "12/28/2025"; format is MM/DD/YYYY, not required YYYY-MM-DD (INTAKE Rule 2).
+
+---
+
+### Invoice 106781
+**PO:** 453D27A2
+**Status: FLAG**
+**Findings:**
+1. Submission Date — value is "12/28/2025"; format is MM/DD/YYYY, not required YYYY-MM-DD (INTAKE Rule 2).
+
+---
+
+### Invoice 106782
+**PO:** 47804C92
+**Status: FLAG**
+
+**Findings:**
+1. Total Payment — recorded as $6.23. Cost before Tariff is $55,282.00 and Tariff Amt Paid is $5,528.20. Expected Total Payment = $55,282.00 + $5,528.20 = $60,810.20. Recorded Total Payment of $6.23 does not match. Variance between recorded Total Payment ($6.23) and computed Total Payment ($60,810.20) = $60,803.97. This is a payment record discrepancy — variance triggers discrepancy flag (MUST constraint 3).
+2. Submission Date — value is "12/28/2025"; format is MM/DD/YYYY, not required YYYY-MM-DD (INTAKE Rule 2).
+
+---
+
+### Invoice 106783
+**PO:** 42601C35
+**Status: FLAG**
+**Findings:**
+1. Submission Date — value is "12/28/2025"; format is MM/DD/YYYY, not required YYYY-MM-DD (INTAKE Rule 2).
+
+---
+
+### Invoice 106784
+**PO:** 452N27A1
+**Status: FLAG**
+**Findings:**
+1. Submission Date — value is "12/28/2025"; format is MM/DD/YYYY, not required YYYY-MM-DD (INTAKE Rule 2).
+
+---
+
+### Invoice 106785
+**PO:** 47843C8F
+**Status: FLAG**
+
+**Findings:**
+1. Tariff Amt Paid — recorded as $89.49. Tariff Rate Applied is 41% on Cost before Tariff of $21,889.00. Expected Tariff Amt Paid = 41% × $21,889.00 = $8,974.49. Recorded Tariff Amt Paid ($89.49) does not match computed amount ($8,974.49). Variance = $8,885.00. Refund Claimed is $8,974.49, which matches the computed tariff amount but does not match the recorded Tariff Amt Paid. A refund cannot be verified against a payment record that does not match the claimed amount — variance triggers discrepancy flag (MUST constraint 3).
+2. Total Payment — recorded as $30,863.49. Expected Total Payment = $21,889.00 + $8,974.49 = $30,863.49. If the correct tariff paid is $8,974.49, Total Payment is consistent. However, this creates a direct contradiction with the Tariff Amt Paid field as recorded ($89.49). Both figures cannot be correct simultaneously. Discrepancy flag confirmed (MUST constraint 3).
+3. Submission Date — value is "12/28/2025"; format is MM/DD/YYYY, not required YYYY-MM-DD (INTAKE Rule 2).
+
+---
+
+### Invoice 106786
+**PO:** 42A5A709
+**Status: FLAG**
+**Findings:**
+1. Submission Date — value is "12/28/2025"; format is MM/DD/YYYY, not required YYYY-MM-DD (INTAKE Rule 2).
+
+---
+
+### Invoice 106787
+**PO:** 4C4EDFFE
+**Status: FLAG**
+
+**Findings:**
+1. Country of Origin — field is blank. Country of Origin is a required field for tariff classification and refund eligibility determination. Blank value prevents verification of the applied tariff rate against the correct tariff tier for the country of origin.
+2. Submission Date — value is "12/28/2025"; format is MM/DD/YYYY, not required YYYY-MM-DD (INTAKE Rule 2).
+
+---
+
+### Invoice 106788
+**PO:** 49B7852A
+**Status: FLAG**
+**Findings:**
+1. Submission Date — value is "12/28/2025"; format is MM/DD/YYYY, not required YYYY-MM-DD (INTAKE Rule 2).
+
+---
+
+### Invoice 106789
+**PO:** 426772G8
+**Status: FLAG**
+**Findings:**
+1. Submission Date — value is "12/29/2025"; format is MM/DD/YYYY, not required YYYY-MM-DD (INTAKE Rule 2).
+
+---
+
+### Invoice 106790
+**PO:** 43671P28
+**Status: FLAG**
+
+**Findings:**
+1. Goods Payment Channel — field is blank. Required field not populated. Payment channel is necessary to verify payment record completeness.
+2. Submission Date — value is "12/29/2025"; format is MM/DD/YYYY, not required YYYY-MM-DD (INTAKE Rule 2).
+
+---
+
+### Invoice 106791
+**PO:** 47844C80
+**Status: FLAG**
+
+**Findings:**
+1. Item Description — field is blank. Required field not populated. Item description is necessary to verify HTS code alignment and goods identity for refund eligibility.
+2. Submission Date — value is "12/29/2025"; format is MM/DD/YYYY, not required YYYY-MM-DD (INTAKE Rule 2).
+
+---
+
+### Invoice 106792
+**PO:** 47844C80
+**Status: FLAG**
+**Findings:**
+1. Submission Date — value is "12/29/2025"; format is MM/DD/YYYY, not required YYYY-MM-DD (INTAKE Rule 2).
+
+> **Note — PO 47844C80 Duplication:** PO 47844C80 appears on Invoices 106773, 106791, and 106792. Three distinct invoices sharing one PO number requires PO-level reconciliation to confirm each invoice represents a separately authorized purchase order line or that the PO covers multiple line items. This is flagged for downstream PO reconciliation review. ARIA does not adjudicate PO validity; this observation is recorded for the compliance register.
+
+---
+
+### Invoice 106793
+**PO:** 42F5OA09
+**Status: FLAG**
+**Findings:**
+1. Submission Date — value is "12/29/2025"; format is MM/DD/YYYY, not required YYYY-MM-DD (INTAKE Rule 2).
+
+---
+
+### Invoice 106794
+**PO:** 451B12A3
+**Status: FLAG**
+**Findings:**
+1. Submission Date — value is "12/29/2025"; format is MM/DD/YYYY, not required YYYY-MM-DD (INTAKE Rule 2).
+
+---
+
+### Invoice 106795
+**PO:** 42A5A708
+**Status: FLAG**
+**Findings:**
+1. Submission Date — value is "12/29/2025"; format is MM/DD/YYYY, not required YYYY-MM-DD (INTAKE Rule 2).
+
+---
+
+### Invoice 106796
+**PO:** 42A5A708
+**Status: FLAG**
+
+**Findings:**
+1. Prev Ref Count — field is blank. Required field not populated.
+2. Submission Date — value is "12/29/2025"; format is MM/DD/YYYY, not required YYYY-MM-DD (INTAKE Rule 2).
+
+> **Note — PO 42A5A708 Duplication:** PO 42A5A708 appears on both Invoice 106795 and Invoice 106796. Same downstream PO reconciliation note applies as recorded for PO 47844C80 above.
+
+---
+
+### Invoice 106797
+**PO:** 4C4EE000
+**Status: FLAG**
+**Findings:**
+1. Submission Date — value is "12/29/2025"; format is MM/DD/YYYY, not required YYYY-MM-DD (INTAKE Rule 2).
+
+---
+
+### Invoice 106798
+**PO:** 404A5AF3
+**Status: FLAG**
+**Findings:**
+1. Submission Date — value is "12/29/2025"; format is MM/DD/YYYY, not required YYYY-MM-DD (INTAKE Rule 2).
+
+> **Note — PO 404A5AF3 Duplication:** PO 404A5AF3 appears on both Invoice 106798 and Invoice 106808. Same downstream PO reconciliation note applies.
+
+---
+
+### Invoice 106799
+**PO:** 453F88A0
+**Status: FLAG**
+**Findings:**
+1. Submission Date — value is "12/29/2025"; format is MM/DD/YYYY, not required YYYY-MM-DD (INTAKE Rule 2).
+
+---
+
+### Invoice 106800
+**PO:** 404A1CC8
+**Status: FLAG**
+
+**Findings:**
+1. Vendor — field is blank. Required field not populated. Vendor identity is required for payment record verification and refund claim eligibility.
+2. Submission Date — value is "12/30/2025"; format is MM/DD/YYYY, not required YYYY-MM-DD (INTAKE Rule 2).
+
+---
+
+### Invoice 106801
+**PO:** 405A1CO1
+**Status: FLAG**
+
+**Findings:**
+1. Submission Date — value is "46021"; this is not a recognizable date value. Value appears to be a spreadsheet serial number or data corruption artifact. The submission date cannot be determined from this value (INTAKE Rule 2). Field requires correction with a valid date in YYYY-MM-DD format before this invoice can be evaluated for date compliance.
+
+---
+
+### Invoice 106802
+**PO:** 404A1CS4
+**Status: FLAG**
+**Findings:**
+1. Submission Date — value is "12/30/2025"; format is MM/DD/YYYY, not required YYYY-MM-DD (INTAKE Rule 2).
+
+---
+
+### Invoice 106803
+**PO:** 478H6HK2
+**Status: FLAG**
+
+**Findings:**
+1. Cost before Tariff — field is blank. Required numeric field not populated (INTAKE Rule 3). Without Cost before Tariff, the tariff calculation basis cannot be verified. Tariff Amt Paid ($8,520.00) and Total Payment ($93,720.00) cannot be confirmed. Arithmetic check: if Quantity (284) × Unit Cost ($300.00) = $85,200.00, then Cost before Tariff should be $85,200.00, not blank. At 10% tariff rate, expected Tariff Amt Paid = $8,520.00, which matches recorded value — however, the blank field is a documentation deficiency regardless of interpretability. Field must be populated with verified value.
+2. Submission Date — value is "12/30/2025"; format is MM/DD/YYYY, not required YYYY-MM-DD (INTAKE Rule 2).
+
+---
+
+### Invoice 106804
+**PO:** 478H6CL1
+**Status: FLAG**
+**Findings:**
+1. Submission Date — value is "12/30/2025"; format is MM/DD/YYYY, not required YYYY-MM-DD (INTAKE Rule 2).
+
+---
+
+### Invoice 106805
+**PO:** 

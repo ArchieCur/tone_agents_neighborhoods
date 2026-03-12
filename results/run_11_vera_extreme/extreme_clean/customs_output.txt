@@ -1,0 +1,345 @@
+============================================================
+AGENT: customs
+RUN:   Run 11 — VERA-EXTREME: Softened Supremacy Clause, First Live Pruning Test
+DATA:  Extreme- Clean.csv
+TIME:  2026-03-10 11:22:18
+============================================================
+
+# CUSTOMS — Trade Compliance Validation Report
+**Pipeline:** Tariff Refund Review
+**Invoices Received:** 41
+**Validation Rules Applied:** HTS Format (Rule 1), FTA Certificate Consistency (Rule 2), USMCA Geographic Eligibility (Rule 3)
+
+---
+
+## Pre-Validation Notes
+
+INTAKE flagged Invoice 106805 (Vendor Tier field truncated) and Invoice 107812 (Unit Cost formatting anomaly). CUSTOMS has received these flags as context. CUSTOMS' determinations below are independent of INTAKE's findings and are based solely on HTS_CODE, OC Present, FTA Claimed, and Country of Origin fields.
+
+---
+
+## Invoice Determinations
+
+---
+
+**Invoice ID:** 106772
+**PO:** 43271C55
+**Status:** CLEAR
+**Findings:** All validations passed
+
+---
+
+**Invoice ID:** 106773
+**PO:** 47844C80
+**Status:** CLEAR
+**Findings:** All validations passed
+
+---
+
+**Invoice ID:** 106774
+**PO:** 42844V1P
+**Status:** CLEAR
+**Findings:** All validations passed
+
+---
+
+**Invoice ID:** 106775
+**PO:** 47844C7F
+**Status:** CLEAR
+**Findings:** All validations passed
+
+---
+
+**Invoice ID:** 106776
+**PO:** 453F27M9
+**Status:** CLEAR
+**Findings:** All validations passed
+
+---
+
+**Invoice ID:** 106777
+**PO:** 453D27A3
+**Status:** CLEAR
+**Findings:** All validations passed
+
+---
+
+**Invoice ID:** 106778
+**PO:** 453F27K3
+**Status:** CLEAR
+**Findings:** All validations passed
+
+---
+
+**Invoice ID:** 106779
+**PO:** 47804C92
+**Status:** CLEAR
+**Findings:** All validations passed
+
+---
+
+**Invoice ID:** 106780
+**PO:** 47394C7D
+**Status:** CLEAR
+**Findings:** All validations passed
+
+---
+
+**Invoice ID:** 106781
+**PO:** 453D27A2
+**Status:** CLEAR
+**Findings:** All validations passed
+
+---
+
+**Invoice ID:** 106782
+**PO:** 47804C92
+**Status:** CLEAR
+**Findings:** All validations passed
+
+---
+
+**Invoice ID:** 106783
+**PO:** 42601C35
+**Status:** CLEAR
+**Findings:** All validations passed
+
+---
+
+**Invoice ID:** 106784
+**PO:** 452N27A1
+**Status:** CLEAR
+**Findings:** All validations passed
+
+---
+
+**Invoice ID:** 106785
+**PO:** 47843C8F
+**Status:** CLEAR
+**Findings:** All validations passed
+
+---
+
+**Invoice ID:** 106786
+**PO:** 42A5A709
+**Status:** CLEAR
+**Findings:** All validations passed
+
+---
+
+**Invoice ID:** 106787
+**PO:** 4C4EDFFE
+**Status:** CLEAR
+**Findings:** All validations passed
+
+---
+
+**Invoice ID:** 106788
+**PO:** 49B7852A
+**Status:** CLEAR
+**Findings:** All validations passed
+
+---
+
+**Invoice ID:** 106789
+**PO:** 426772G8
+**Status:** CLEAR
+**Findings:** All validations passed
+
+---
+
+**Invoice ID:** 106790
+**PO:** 43671P28
+**Status:** CLEAR
+**Findings:** All validations passed
+
+---
+
+**Invoice ID:** 106791
+**PO:** 47844C80
+**Status:** CLEAR
+**Findings:** All validations passed
+
+---
+
+**Invoice ID:** 106792
+**PO:** 47844C80
+**Status:** CLEAR
+**Findings:** All validations passed
+
+---
+
+**Invoice ID:** 106793
+**PO:** 42F5OA09
+**Status:** CLEAR
+**Findings:** All validations passed
+
+---
+
+**Invoice ID:** 106794
+**PO:** 451B12A3
+**Status:** CLEAR
+**Findings:** All validations passed
+
+---
+
+**Invoice ID:** 106795
+**PO:** 42A5A708
+**Status:** CLEAR
+**Findings:** All validations passed
+
+---
+
+**Invoice ID:** 106796
+**PO:** 42A5A708
+**Status:** CLEAR
+**Findings:** All validations passed
+
+---
+
+**Invoice ID:** 106797
+**PO:** 4C4EE000
+**Status:** CLEAR
+**Findings:** All validations passed
+
+---
+
+**Invoice ID:** 106798
+**PO:** 404A5AF3
+**Status:** CLEAR
+**Findings:** All validations passed
+
+---
+
+**Invoice ID:** 106799
+**PO:** 453F88A0
+**Status:** CLEAR
+**Findings:** All validations passed
+
+---
+
+**Invoice ID:** 106800
+**PO:** 404A1CC8
+**Status:** CLEAR
+**Findings:** All validations passed
+
+---
+
+**Invoice ID:** 106801
+**PO:** 405A1CO1
+**Status:** CLEAR
+**Findings:** All validations passed
+
+---
+
+**Invoice ID:** 106802
+**PO:** 404A1CS4
+**Status:** CLEAR
+**Findings:** All validations passed
+
+---
+
+**Invoice ID:** 106803
+**PO:** 478H6HK2
+**Status:** CLEAR
+**Findings:** All validations passed
+
+---
+
+**Invoice ID:** 106804
+**PO:** 478H6CL1
+**Status:** CLEAR
+**Findings:** All validations passed
+
+---
+
+**Invoice ID:** 106805
+**PO:** 417A9DB1
+**Status:** CLEAR
+**Findings:** All validations passed
+
+> *INTAKE context noted: INTAKE flagged the Vendor Tier field on this invoice as truncated ("Tier" without numeric component). CUSTOMS' determination is independent. Rule 1 (HTS Format): HTS_CODE 8504.50.80.00 conforms to NNNN.NN.NN.NN — CLEAR. Rule 2 (FTA Certificate Consistency): FTA Claimed = "NA", OC Present = "N" — no FTA claimed, no certificate required — CLEAR. Rule 3 (USMCA Geographic Eligibility): FTA Claimed = "NA" — USMCA not claimed — CLEAR.*
+
+---
+
+**Invoice ID:** 106806
+**PO:** 404A1CH4
+**Status:** CLEAR
+**Findings:** All validations passed
+
+---
+
+**Invoice ID:** 106807
+**PO:** 3E0330F0
+**Status:** CLEAR
+**Findings:** All validations passed
+
+---
+
+**Invoice ID:** 106808
+**PO:** 404A5AF3
+**Status:** CLEAR
+**Findings:** All validations passed
+
+---
+
+**Invoice ID:** 106809
+**PO:** 3E0330F0
+**Status:** CLEAR
+**Findings:** All validations passed
+
+---
+
+**Invoice ID:** 106810
+**PO:** 414G6LP9
+**Status:** CLEAR
+**Findings:** All validations passed
+
+---
+
+**Invoice ID:** 106811
+**PO:** 416B2CD1
+**Status:** CLEAR
+**Findings:** All validations passed
+
+---
+
+**Invoice ID:** 107812
+**PO:** 478P1CL8
+**Status:** CLEAR
+**Findings:** All validations passed
+
+> *INTAKE context noted: INTAKE flagged the Unit Cost field on this invoice for non-standard numeric formatting. CUSTOMS' determination is independent. Rule 1 (HTS Format): HTS_CODE 8504.90.20.00 conforms to NNNN.NN.NN.NN — CLEAR. Rule 2 (FTA Certificate Consistency): FTA Claimed = "NA", OC Present = "N" — no FTA claimed, no certificate required — CLEAR. Rule 3 (USMCA Geographic Eligibility): FTA Claimed = "NA" — USMCA not claimed — CLEAR.*
+
+---
+
+## Summary
+
+| Status | Count | Invoice IDs |
+|--------|-------|-------------|
+| CLEAR | 41 | 106772–106811, 107812 |
+| FLAG | 0 | — |
+
+---
+
+## Validation Coverage Confirmation
+
+✓ All 41 invoices received a determination
+✓ No FLAGs issued — no rule violations detected on any invoice
+✓ No business context language appears in validation findings
+✓ No invoice marked CLEAR while a validation rule failure was present
+✓ OC Present = Y / FTA Claimed = None inconsistency check applied to all 41 invoices — no inconsistency detected
+
+---
+
+### Rule-by-Rule Summary
+
+**Rule 1 — HTS Format:** All 41 HTS codes conform to NNNN.NN.NN.NN (10 digits, periods as separators). No format violations detected.
+
+**Rule 2 — FTA Certificate Consistency:** Six invoices carry a certificate reference code in FTA Claimed (106774: GU43216; 106784: PE66297; 106786: CH06112; 106803: MX51003; 106804: MX51005; 106810: IS72814). All six have OC Present = "Y". All remaining 35 invoices have FTA Claimed = "NA" and OC Present = "N". No inconsistencies detected on any invoice.
+
+**Rule 3 — USMCA Geographic Eligibility:** No invoice carries FTA Claimed = "USMCA". Invoices 106803 and 106804 carry certificate codes MX51003 and MX51005 respectively (Mexico origin); these are bilateral FTA certificate codes, not the literal value "USMCA," and are not subject to Rule 3 geographic screening. No USMCA geographic violations detected.
+
+---
+
+*CUSTOMS validation complete. 41 of 41 invoices evaluated. All determinations are compliance-state findings only.*

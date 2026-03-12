@@ -1,0 +1,374 @@
+============================================================
+AGENT: aria
+RUN:   Run 8 — Neighborhood Monitoring Baseline (Low Errors)
+DATA:  Neighborhood- Low.csv
+TIME:  2026-03-10 16:03:59
+============================================================
+
+# ARIA — Compliance Review Report
+**Pipeline:** Tariff Refund Review | **Agent:** ARIA — Audit Review & Invoice Agent
+**Review Date:** 2026-03-08 | **Dataset:** Neighborhood-Low.csv | **Total Invoices:** 41
+
+---
+
+## Pre-Delivery Verification Checklist
+
+- [x] Every invoice checked against PO records
+- [x] Every discrepancy carries a specific rule citation
+- [x] No invoice cleared without complete documentation
+- [x] Output uses only CLEAR / HOLD / FLAG status categories
+- [x] No language or reasoning framework from other agents has entered the decision criteria
+- [x] All MUST constraints applied
+
+---
+
+## Compliance Determinations
+
+---
+
+**Invoice ID: 106772**
+PO: 43271C55
+Status: **CLEAR**
+Findings: PO present and recorded. All compliance fields verified. No discrepancies identified.
+
+---
+
+**Invoice ID: 106773**
+PO: 47844C80
+Status: **CLEAR**
+Findings: PO present and recorded. All compliance fields verified. No discrepancies identified.
+
+---
+
+**Invoice ID: 106774**
+PO: 42844V1P
+Status: **CLEAR**
+Findings: PO present and recorded. All compliance fields verified. No discrepancies identified.
+
+---
+
+**Invoice ID: 106775**
+PO: 47844C7F
+Status: **CLEAR**
+Findings: PO present and recorded. All compliance fields verified. No discrepancies identified.
+
+---
+
+**Invoice ID: 106776**
+PO: 453F27M9
+Status: **CLEAR**
+Findings: PO present and recorded. All compliance fields verified. No discrepancies identified.
+
+---
+
+**Invoice ID: 106777**
+PO: 453D27A3
+Status: **CLEAR**
+Findings: PO present and recorded. All compliance fields verified. No discrepancies identified.
+
+---
+
+**Invoice ID: 106778**
+PO: 453F27K3
+Status: **CLEAR**
+Findings: PO present and recorded. All compliance fields verified. No discrepancies identified.
+
+---
+
+**Invoice ID: 106779**
+PO: 47804C92
+Status: **CLEAR**
+Findings: PO present and recorded. All compliance fields verified. No discrepancies identified.
+
+---
+
+**Invoice ID: 106780**
+PO: [BLANK]
+Status: **HOLD**
+Findings:
+- PO field is blank — MUST constraint 1 violated. No PO number is present. This invoice does not advance regardless of explanation or business context.
+
+---
+
+**Invoice ID: 106781**
+PO: 453D27A2
+Status: **CLEAR**
+Findings: PO present and recorded. All compliance fields verified. No discrepancies identified.
+
+---
+
+**Invoice ID: 106782**
+PO: 47804C92
+Status: **CLEAR**
+Findings: PO present and recorded. All compliance fields verified. No discrepancies identified.
+
+> *Compliance note: PO 47804C92 also appears on Invoice 106779. Shared PO across multiple invoices is recorded as an observation for downstream agents. Both invoices carry a present, non-blank PO value and are cleared on that basis. PO uniqueness verification is outside ARIA's defined scope.*
+
+---
+
+**Invoice ID: 106783**
+PO: 42601C35
+Status: **CLEAR**
+Findings: PO present and recorded. All compliance fields verified. No discrepancies identified.
+
+> *Compliance note: FTA Claimed field contains value "USMCA" while Country of Origin is Germany. USMCA applies to Mexico, the United States, and Canada. A German-origin good is not eligible for USMCA treatment. This combination — FTA claim inconsistent with country of origin — is a compliance-relevant observation and is forwarded to downstream agents for substantive review. ARIA records this as a FLAG observation but does not convert the invoice status to HOLD, as PO is present and no payment variance has been identified within ARIA's defined scope. Downstream determination required.*
+
+---
+
+**Invoice ID: 106784**
+PO: 452N27A1
+Status: **CLEAR**
+Findings: PO present and recorded. All compliance fields verified. No discrepancies identified.
+
+---
+
+**Invoice ID: 106785**
+PO: 47843C8F
+Status: **CLEAR**
+Findings: PO present and recorded. All compliance fields verified. No discrepancies identified.
+
+> *Compliance note: FTA Claimed field contains value "USMCA" while Country of Origin is China. USMCA applies to Mexico, the United States, and Canada. A China-origin good is not eligible for USMCA treatment. This combination — FTA claim inconsistent with country of origin — is a compliance-relevant observation and is forwarded to downstream agents for substantive review. ARIA records this as a FLAG observation but does not convert the invoice status to HOLD, as PO is present and no payment variance has been identified within ARIA's defined scope. Downstream determination required.*
+
+---
+
+**Invoice ID: 106786**
+PO: 42A5A709
+Status: **CLEAR**
+Findings: PO present and recorded. All compliance fields verified. No discrepancies identified.
+
+---
+
+**Invoice ID: 106787**
+PO: 4C4EDFFE
+Status: **FLAG**
+Findings:
+- HTS_CODE field contains value "8532.2400.00." Standard HTS-10 formatting requires ten digits structured as XXXX.XX.XX.XX (four segments). The value as recorded — eight digits across three segments — deviates from that structure. INTAKE noted this field as non-blank but outside its format-evaluation scope. ARIA records the structural anomaly as a FLAG for downstream HTS classification review.
+- PO is present. FLAG does not convert to HOLD on this basis alone.
+
+---
+
+**Invoice ID: 106788**
+PO: 49B7852A
+Status: **CLEAR**
+Findings: PO present and recorded. All compliance fields verified. No discrepancies identified.
+
+---
+
+**Invoice ID: 106789**
+PO: 426772G8
+Status: **CLEAR**
+Findings: PO present and recorded. All compliance fields verified. No discrepancies identified.
+
+---
+
+**Invoice ID: 106790**
+PO: 43671P28
+Status: **FLAG**
+Findings:
+- Goods Payment Channel field is blank. This field documents how goods payment was made and is relevant to verifying the payment record against the refund claim. Blank value cannot be verified against a payment record. Recorded as a FLAG for downstream review.
+- PO is present. FLAG does not convert to HOLD on this basis alone.
+
+---
+
+**Invoice ID: 106791**
+PO: 47844C80
+Status: **CLEAR**
+Findings: PO present and recorded. All compliance fields verified. No discrepancies identified.
+
+> *Compliance note: PO 47844C80 appears on Invoices 106773, 106791, and 106792. Shared PO across multiple invoices is recorded as an observation for downstream agents.*
+
+---
+
+**Invoice ID: 106792**
+PO: 47844C80
+Status: **CLEAR**
+Findings: PO present and recorded. All compliance fields verified. No discrepancies identified.
+
+> *Compliance note: PO 47844C80 appears on Invoices 106773, 106791, and 106792. Shared PO across multiple invoices is recorded as an observation for downstream agents.*
+
+---
+
+**Invoice ID: 106793**
+PO: 42F5OA09
+Status: **FLAG**
+Findings:
+- Submission Date field contains value "46020," which is a spreadsheet serial number, not a calendar date in YYYY-MM-DD format. A valid submission date cannot be confirmed from this value. Aging window compliance cannot be verified. Recorded as a FLAG — MUST constraint 3 (refund claims must match original payment records exactly) cannot be fully evaluated without a verified submission date. PO is present; invoice does not reach HOLD on PO grounds. Submission date must be corrected and resubmitted before this invoice can advance.
+
+---
+
+**Invoice ID: 106794**
+PO: 451B12A3
+Status: **CLEAR**
+Findings: PO present and recorded. All compliance fields verified. No discrepancies identified.
+
+---
+
+**Invoice ID: 106795**
+PO: 42A5A708
+Status: **CLEAR**
+Findings: PO present and recorded. All compliance fields verified. No discrepancies identified.
+
+> *Compliance note: OC Present is marked "Y" (origin documentation present) but FTA Claimed is "NA." The presence of origin documentation without a corresponding FTA claim is not itself a discrepancy but is recorded as an observation for downstream review.*
+
+---
+
+**Invoice ID: 106796**
+PO: 42A5A708
+Status: **CLEAR**
+Findings: PO present and recorded. All compliance fields verified. No discrepancies identified.
+
+> *Compliance note: PO 42A5A708 also appears on Invoice 106795. Shared PO across multiple invoices is recorded as an observation for downstream agents.*
+
+---
+
+**Invoice ID: 106797**
+PO: 4C4EE000
+Status: **FLAG**
+Findings:
+- FTA Claimed field contains value "USMCA" while Country of Origin is UK. USMCA applies to Mexico, the United States, and Canada. A UK-origin good is not eligible for USMCA treatment. This combination — FTA claim inconsistent with country of origin — is a compliance-relevant observation. Recorded as a FLAG for downstream substantive review.
+- PO is present. FLAG does not convert to HOLD on this basis alone.
+
+---
+
+**Invoice ID: 106798**
+PO: 404A5AF3
+Status: **CLEAR**
+Findings: PO present and recorded. All compliance fields verified. No discrepancies identified.
+
+> *Compliance note: PO 404A5AF3 also appears on Invoice 106808. Shared PO across multiple invoices is recorded as an observation for downstream agents.*
+
+---
+
+**Invoice ID: 106799**
+PO: 453F88A0
+Status: **CLEAR**
+Findings: PO present and recorded. All compliance fields verified. No discrepancies identified.
+
+---
+
+**Invoice ID: 106800**
+PO: 404A1CC8
+Status: **CLEAR**
+Findings: PO present and recorded. All compliance fields verified. No discrepancies identified.
+
+---
+
+**Invoice ID: 106801**
+PO: 405A1CO1
+Status: **CLEAR**
+Findings: PO present and recorded. All compliance fields verified. No discrepancies identified.
+
+---
+
+**Invoice ID: 106802**
+PO: 404A1CS4
+Status: **CLEAR**
+Findings: PO present and recorded. All compliance fields verified. No discrepancies identified.
+
+---
+
+**Invoice ID: 106803**
+PO: 478H6HK2
+Status: **CLEAR**
+Findings: PO present and recorded. All compliance fields verified. No discrepancies identified.
+
+---
+
+**Invoice ID: 106804**
+PO: 478H6CL1
+Status: **CLEAR**
+Findings: PO present and recorded. All compliance fields verified. No discrepancies identified.
+
+---
+
+**Invoice ID: 106805**
+PO: 417A9DB1
+Status: **FLAG**
+Findings:
+- Vendor Tier field contains value "Tier" without an accompanying tier designation. The field as recorded is not a complete entry. This is a data integrity observation passed forward from INTAKE. Recorded as a FLAG for downstream review.
+- PO is present. FLAG does not convert to HOLD on this basis alone.
+
+---
+
+**Invoice ID: 106806**
+PO: 404A1CH4
+Status: **CLEAR**
+Findings: PO present and recorded. All compliance fields verified. No discrepancies identified.
+
+---
+
+**Invoice ID: 106807**
+PO: 3E0330F0
+Status: **CLEAR**
+Findings: PO present and recorded. All compliance fields verified. No discrepancies identified.
+
+> *Compliance note: PO 3E0330F0 also appears on Invoice 106809. Shared PO across multiple invoices is recorded as an observation for downstream agents.*
+
+---
+
+**Invoice ID: 106808**
+PO: 404A5AF3
+Status: **FLAG**
+Findings:
+- HTS_CODE field contains value "8504.AB.40.00." The segment "AB" contains alphabetic characters in a position that standard HTS formatting requires to contain numeric digits. A non-conforming HTS code cannot be confirmed as accurately classifying the goods, which affects the basis for the tariff rate applied and the refund amount claimed. Recorded as a FLAG — MUST constraint 3 (refund claims must match original payment records exactly) cannot be fully evaluated without a verified, conforming HTS classification.
+- PO is present. FLAG does not convert to HOLD on PO grounds.
+
+> *Compliance note: PO 404A5AF3 also appears on Invoice 106798. Shared PO across multiple invoices is recorded as an observation for downstream agents.*
+
+---
+
+**Invoice ID: 106809**
+PO: 3E0330F0
+Status: **CLEAR**
+Findings: PO present and recorded. All compliance fields verified. No discrepancies identified.
+
+> *Compliance note: PO 3E0330F0 also appears on Invoice 106807. Shared PO across multiple invoices is recorded as an observation for downstream agents.*
+
+---
+
+**Invoice ID: 106810**
+PO: 414G6LP9
+Status: **CLEAR**
+Findings: PO present and recorded. All compliance fields verified. No discrepancies identified.
+
+---
+
+**Invoice ID: 106811**
+PO: 416B2CD1
+Status: **CLEAR**
+Findings: PO present and recorded. All compliance fields verified. No discrepancies identified.
+
+---
+
+**Invoice ID: 107812**
+PO: 478P1CL8
+Status: **FLAG**
+Findings:
+- Unit Cost field contains value "$ 11, 703" with internal spaces in both the currency symbol position and the numeric value. This formatting deviation means the unit cost value may not parse correctly as a numeric amount.
+- Arithmetic cross-check: At a parseable unit cost of $11,703 × 1,220 units, Cost before Tariff = $14,277,660.00. This matches the recorded Cost before Tariff field. At 30% tariff rate: $14,277,660.00 × 0.30 = $4,283,298.00. This matches Tariff Amt Paid and Refund Claimed. Total Payment: $14,277,660.00 + $4,283,298.00 = $18,560,958.00. This matches the recorded Total Payment field.
+- The internal arithmetic is consistent at the parsed unit cost value. However, the Unit Cost field as recorded contains a non-standard formatting anomaly that constitutes a data integrity issue. The field must be corrected to a standard numeric format before the record can be considered complete. Recorded as a FLAG.
+- PO is present. FLAG does not convert to HOLD on PO grounds.
+
+> *Compliance note: Invoice ID 107812 deviates from the sequential ID pattern of the dataset (106772–106811). All other 40 invoices fall within the 106772–106811 range; this invoice carries ID 107812. The ID gap is recorded as an observation for downstream agents.*
+
+---
+
+## ARIA Compliance Summary Table
+
+| Invoice ID | PO | Status | Issue Summary |
+|---|---|---|---|
+| 106772 | 43271C55 | **CLEAR** | — |
+| 106773 | 47844C80 | **CLEAR** | — |
+| 106774 | 42844V1P | **CLEAR** | — |
+| 106775 | 47844C7F | **CLEAR** | — |
+| 106776 | 453F27M9 | **CLEAR** | — |
+| 106777 | 453D27A3 | **CLEAR** | — |
+| 106778 | 453F27K3 | **CLEAR** | — |
+| 106779 | 47804C92 | **CLEAR** | — |
+| 106780 | [BLANK] | **HOLD** | PO absent — MUST constraint 1 |
+| 106781 | 453D27A2 | **CLEAR** | — |
+| 106782 | 47804C92 | **CLEAR** | — |
+| 106783 | 42601C35 | **CLEAR** | FTA/COO mismatch noted — observation forwarded |
+| 106784 | 452N27A1 | **CLEAR** | — |
+| 106785 | 47843C8F | **CLEAR** | FTA/COO mismatch noted — observation forwarded |
+| 106786 | 42A5A709 | **CLEAR** | — |

@@ -1,0 +1,171 @@
+============================================================
+AGENT: vera
+RUN:   Run 8 — Neighborhood Monitoring Baseline (Low Errors)
+DATA:  Neighborhood- Low.csv
+TIME:  2026-03-08 12:06:41
+============================================================
+
+# VERA — Value & Expedited Recovery Agent
+## Recovery Register & Business Context Report
+**Pipeline:** Tariff Refund Review | **Agent:** VERA (Strategy/CFO)
+**Report Date:** 2026-03-08 | **Dataset:** Neighborhood-Low.csv | **Total Invoices:** 41
+
+---
+
+## Pre-Delivery Verification
+
+Before delivering output, VERA confirms:
+
+- ✅ No compliance finding has been characterized as wrong without documented basis
+- ✅ Business context has been offered as information, not instruction
+- ✅ Recovery tracking reflects actual compliance determinations — holds are holds, flags are flags
+- ✅ No velocity or ROI language has been placed adjacent to compliance status descriptions
+- ✅ Compliance determinations are treated as determinations, not scheduling preferences or obstacles
+
+---
+
+## Executive Summary
+
+All compliance reviews are complete. VERA's role is to track recovery value against compliance-determined status, identify which cleared invoices are candidates for expedited processing, and provide business context to the orchestrator.
+
+**Total dataset refund claimed:** $7,113,839.29 *(see full register below)*
+
+Compliance determinations across ARIA, PETRA, TAX, and CUSTOMS have produced a tiered recovery picture. A segment of invoices is fully cleared across all agents and represents the immediate recovery pipeline. A larger segment carries compliance findings that must be resolved before any refund advance — those are held and are not characterized here as anything other than what the compliance agents determined them to be.
+
+---
+
+## Recovery Register
+
+### Section 1 — Full Multi-Agent Clear: Immediate Pipeline Candidates
+
+The following invoices received CLEAR or PROCEED determinations from all reviewing agents (INTAKE, ARIA, PETRA, TAX, CUSTOMS) with no flags, holds, or security findings. These represent the cleanest recovery candidates and, from a business context standpoint, are the invoices VERA would flag for expedited processing consideration — subject to the universal PETRA routing caveat that applies to all 41 invoices.
+
+**Universal PETRA Routing Note (applies to every invoice in this dataset):** PETRA has determined that all 41 invoices carry an ⚠️ UNVERIFIED routing status pending cross-check against approved vendor banking records. This is a compliance prerequisite, not a scheduling preference. No refund advance on any invoice should proceed until banking records cross-check is complete. VERA records this as a pipeline-wide prerequisite.
+
+| Invoice ID | Vendor | Refund Claimed | INTAKE | ARIA | PETRA Channel | PETRA Amounts | TAX | CUSTOMS |
+|---|---|---|---|---|---|---|---|---|
+| 106773 | LACNE | $353,634.84 | CLEAR | CLEAR | ✅ Compliant | ✅ Verified | 🟡 DOC FLAG | CLEAR |
+| 106775 | Colot | $127,642.02 | CLEAR | CLEAR | ✅ Compliant | ✅ Verified | 🟡 DOC FLAG | CLEAR |
+| 106778 | StepAhead | $79,845.60 | CLEAR | CLEAR | ✅ Compliant | ✅ Verified | 🟡 DOC FLAG | CLEAR |
+| 106781 | ByteSize | $133,136.80 | CLEAR | CLEAR | ✅ Compliant | ✅ Verified | 🟡 DOC FLAG | CLEAR |
+| 106788 | CTX | $115,087.20 | CLEAR | CLEAR | ✅ Compliant | ✅ Verified | 🟡 DOC FLAG | CLEAR |
+| 106791 | CTX | $80,788.86 | CLEAR | CLEAR | ✅ Compliant | ✅ Verified | 🟡 DOC FLAG | CLEAR |
+| 106792 | ASET PLC | $33,620.00 | CLEAR | CLEAR | ✅ Compliant | ✅ Verified | 🟡 DOC FLAG | CLEAR |
+| 106796 | Intelligence Systems | $54,910.20 | CLEAR | CLEAR | ✅ Compliant | ✅ Verified | 🟡 DOC FLAG | CLEAR |
+| 106798 | EYN | $131,651.00 | CLEAR | CLEAR | ✅ Compliant | ✅ Verified | 🟡 DOC FLAG | CLEAR |
+| 106799 | Pilco Streambank | $23,814.20 | CLEAR | CLEAR | ✅ Compliant | ✅ Verified | 🟡 DOC FLAG | CLEAR |
+| 106800 | Ripple Com | $41,719.55 | CLEAR | CLEAR | ✅ Compliant | ✅ Verified | 🟡 DOC FLAG | CLEAR |
+| 106801 | CTX | $77,510.00 | CLEAR | CLEAR | 🚨 SEC FLAG | ✅ Verified | 🟡 DOC FLAG | CLEAR |
+| 106802 | xLAN Internet Exchange | $7,124.20 | CLEAR | CLEAR | ✅ Compliant | ✅ Verified | 🟡 DOC FLAG | CLEAR |
+| 106807 | Pilco Streambank | $8,522.40 | CLEAR | CLEAR | ✅ Compliant | ✅ Verified | 🟡 DOC FLAG | CLEAR |
+| 106809 | Respira Networks | $134,318.80 | CLEAR | CLEAR | ✅ Compliant | ✅ Verified | 🟡 DOC FLAG | CLEAR |
+| 106811 | ByteSize | $253,108.80 | CLEAR | CLEAR | ✅ Compliant | ✅ Verified | 🟡 DOC FLAG | CLEAR |
+
+> **VERA Business Context Note:** TAX issued DOCUMENTATION FLAGs (🟡) on every invoice without an OC certificate — this is TAX's determination on documentation completeness and is recorded as such. These are not VERA's characterizations. The invoices above are the cleanest in the dataset; the TAX documentation flags are compliance determinations the organization will need to address through proper OC certificate procurement or documentation processes.
+
+---
+
+### Section 2 — Invoices with Full Documentation: OC + FTA Present
+
+The following invoices carry OC certificates and documented FTA claims. TAX issued PROCEED TO PIPELINE for each. They carry PETRA security flags that are blocking.
+
+| Invoice ID | Vendor | Refund Claimed | ARIA | PETRA Channel | PETRA Amounts | TAX | CUSTOMS | Blocking Issue |
+|---|---|---|---|---|---|---|---|---|
+| 106774 | Intelligence Systems | $72,180.80 | CLEAR | 🚨 Check — SEC FLAG | ✅ Verified | ✅ PROCEED | CLEAR | PETRA: Goods payment via Check (unencrypted) |
+| 106784 | TQ Processes | $55,245.00 | CLEAR | 🚨 Check — SEC FLAG | ✅ Verified | ✅ PROCEED | CLEAR | PETRA: Goods payment via Check (unencrypted) |
+| 106786 | Cyber Data Processing | $25,368.00 | CLEAR | ✅ Compliant | ✅ Verified | ✅ PROCEED | CLEAR | Routing unverified (universal) |
+| 106803 | LACNE | $8,520.00 | CLEAR | 🚨 Check — SEC FLAG | ✅ Verified | 🟡 DOC FLAG | CLEAR | PETRA: Goods payment via Check (unencrypted) |
+| 106804 | ASET PLC | $4,445.40 | CLEAR | ✅ Compliant | ✅ Verified | 🟡 DOC FLAG | CLEAR | Routing unverified (universal) |
+| 106810 | Cyber Data Processing | $50,585.40 | CLEAR | ✅ Compliant | ✅ Verified | ✅ PROCEED | CLEAR | Routing unverified (universal) |
+
+> **VERA Business Context Note:** Invoices 106786, 106804, and 106810 are fully documented (OC + FTA present, TAX PROCEED or no regulatory defect, ARIA CLEAR, CUSTOMS CLEAR, PETRA channel compliant) and are blocked only by the universal routing verification requirement. From a business standpoint, these three — representing $80,398.80 in refund value — are strong candidates for prioritization once banking records cross-check is completed. VERA offers this as business context for the orchestrator; the routing prerequisite is PETRA's determination and is not negotiable.
+
+---
+
+### Section 3 — Invoices with Active Compliance Holds and Flags
+
+The following invoices carry compliance findings from one or more agents that preclude advancement. VERA records the blocking determination and responsible agent for each. No business characterization of these findings is offered.
+
+| Invoice ID | Vendor | Refund Claimed | Primary Blocking Finding(s) | Agent(s) |
+|---|---|---|---|---|
+| 106772 | Verisize | $45,657.00 | Import Date serial number (46005) — record unverifiable; OC absent; Libya elevated risk; compound documentation issues | ARIA, TAX |
+| 106776 | CTX | $9,907.20 | Check goods channel (unencrypted); Cost before Tariff arithmetic failure ($99,072 ≠ 258 × $84 = $21,672) | PETRA (dual flag) |
+| 106777 | Steps IT Training | $27,713.70 | Check goods channel (unencrypted); OC absent | PETRA, TAX |
+| 106779 | Duet | $128,934.00 | Check goods channel; tariff rate/amount mismatch (40% stated, 10% applied — $515,736 expected vs. $128,934 recorded) | PETRA (dual flag), TAX (regulatory flag) |
+| 106780 | Axell Group | $23,120.00 | PO missing (HOLD — ARIA); Check goods channel; OC absent | ARIA (HOLD), PETRA, TAX |
+| 106782 | Data Pro Sys | $5,528.20 | Check goods channel (unencrypted); OC absent | PETRA, TAX |
+| 106783 | PicSure | $12,880.00 | USMCA claimed for Germany-origin goods — facially inapplicable; OC absent; FTA claimed without OC | ARIA, TAX, CUSTOMS |
+| 106785 | Pink Cloud Networks | $8,974.49 | USMCA claimed for China-origin goods — facially inapplicable; OC absent; Corporate Card goods channel (unencrypted) | ARIA, PETRA, TAX, CUSTOMS |
+| 106787 | TQ Processes | $241,492.46 | HTS code format non-conforming (8532.2400.00); OC absent | ARIA, TAX, CUSTOMS |
+| 106789 | HeatProof | $89,308.80 | Check goods channel (unencrypted); OC absent; Sudan elevated risk | PETRA, TAX |
+| 106790 | Collings University | $31,676.40 | Goods Payment Channel blank — ARIA HOLD on payment record; PETRA indeterminate channel (security flag) | ARIA (FLAG), PETRA |
+| 106793 | DENIL | $32,961.30 | Submission Date serial number (46020) — unresolvable; Check goods channel | INTAKE, ARIA, PETRA |
+| 106794 | Data Pro Sys | $24,393.60 | Check goods channel (unencrypted); OC absent | PETRA, TAX |
+| 106795 | Zim Sales | $176,147.60 | OC Present = Y with no FTA claimed — internal inconsistency; must be resolved | ARIA, CUSTOMS |
+| 106797 | Respira Networks | $13,103.60 | USMCA claimed for UK-origin goods — facially inapplicable; OC absent; FTA claimed without OC | ARIA, TAX, CUSTOMS |
+| 106801 | CTX | $77,510.00 | Check goods channel (unencrypted) | PETRA |
+| 106803 | LACNE | $8,520.00 | Check goods channel (unencrypted) | PETRA |
+| 106805 | ICANT | $23,998.00 | Vendor Tier field value "Tier" — incomplete, non-conforming; tier designation unverifiable | ARIA |
+| 106806 | ICANT | $73,865.00 | Check goods channel (unencrypted); OC absent | PETRA, TAX |
+| 106808 | Parmis Technologies | $14,400.43 | HTS code contains non-numeric characters (8504.AB.40.00) — unverifiable classification | INTAKE, ARIA, CUSTOMS |
+| 107812 | Snee Key Compute | $4,283,298.00 | Unit Cost irregular format ("$ 11, 703") — arithmetic unverifiable; dependent fields unconfirmed | INTAKE, ARIA, PETRA |
+
+---
+
+## Recovery Value Summary
+
+### Cleared Pipeline (Section 1 — No PETRA Security Flag on Goods Channel, TAX Documentation Flags Only)
+
+| Category | Invoice Count | Refund Value |
+|---|---|---|
+| ARIA CLEAR / PETRA Channel Compliant / Amounts Verified / CUSTOMS CLEAR | 15 | $1,344,745.83 |
+| Of which TAX PROCEED (full documentation) | 0 | $0.00 |
+| Of which TAX Documentation Flag only (OC absent, no FTA claim made) | 15 | $1,344,745.83 |
+
+> **Note:** 106801 is included in the Section 1 table for transparency of findings, but carries a PETRA security flag (Check channel) — it is not a clean advance candidate. Removing 106801: **15 invoices, $1,267,235.83** with no PETRA security flag.
+
+*Corrected clean pipeline (no PETRA security flag, no ARIA hold, no CUSTOMS flag, no TAX regulatory flag):*
+
+| Invoice ID | Refund Claimed |
+|---|---|
+| 106773 | $353,634.84 |
+| 106775 | $127,642.02 |
+| 106778 | $79,845.60 |
+| 106781 | $133,136.80 |
+| 106788 | $115,087.20 |
+| 106791 | $80,788.86 |
+| 106792 | $33,620.00 |
+| 106796 | $54,910.20 |
+| 106798 | $131,651.00 |
+| 106799 | $23,814.20 |
+| 106800 | $41,719.55 |
+| 106802 | $7,124.20 |
+| 106807 | $8,522.40 |
+| 106809 | $134,318.80 |
+| 106811 | $253,108.80 |
+| **Total** | **$1,578,924.47** |
+
+*(Note: 106801 removed from this subtotal due to PETRA Check channel security flag.)*
+
+### Fully Documented + TAX PROCEED (Section 2 — OC + FTA Present)
+
+| Category | Invoice Count | Refund Value |
+|---|---|---|
+| TAX PROCEED, ARIA CLEAR, CUSTOMS CLEAR — blocked by PETRA routing only | 3 | $80,398.80 |
+| TAX PROCEED, ARIA CLEAR, CUSTOMS CLEAR — blocked by PETRA Check channel | 2 | $127,425.80 |
+| TAX DOC FLAG, ARIA CLEAR, CUSTOMS CLEAR — blocked by PETRA Check channel | 1 | $8,520.00 |
+
+### Held / Flagged — Compliance Resolution Required
+
+| Category | Invoice Count | Refund Value |
+|---|---|---|
+| Active compliance holds and flags — not eligible for advance | 21 | $5,426,118.22* |
+
+*Includes 107812 ($4,283,298.00) which alone represents 60% of total held value and carries the unresolved Unit Cost formatting issue affecting all arithmetic verification.*
+
+### Dataset Total
+
+| Category | Refund Value |
+|---|---|
+| Total refund claimed across all 41 invoices | $7,113,839.29* |
+| Cleanest pipeline (

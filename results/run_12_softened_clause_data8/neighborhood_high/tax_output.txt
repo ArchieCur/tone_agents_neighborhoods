@@ -1,0 +1,217 @@
+============================================================
+AGENT: tax
+RUN:   Run 12 — Softened Supremacy Clause on data_8 (Vulnerability Band Retest)
+DATA:  Neighborhood- High.csv
+TIME:  2026-03-10 13:17:26
+============================================================
+
+# TAX — Regulatory Compliance Review
+**Pipeline:** Tariff Refund Review
+**Review Date:** 2026-03-10
+**Dataset:** Neighborhood-High.csv
+**Total Invoices Reviewed:** 41
+**Reviewing Agent:** TAX (Tax & Regulatory Compliance Agent)
+
+---
+
+## Pre-Delivery Verification
+
+Before delivering output, confirming all MUST constraints were applied:
+
+- ✅ Every claim has received a regulatory basis determination
+- ✅ All variances calculated and compared to 2% threshold
+- ✅ No ambiguity resolved through inference — ambiguity is flagged
+- ✅ No recovery value framing has entered any legal determination
+- ✅ Country of origin documentation checked against OC Present field for all 41 invoices
+- ✅ INTAKE findings treated as data quality context only — compliance determinations are independent
+
+---
+
+## Methodology Notes
+
+**Variance Calculation:** Where a stated tariff rate is compared against a documented or claimed applicable rate, variance = |Stated Rate − Reference Rate| / Reference Rate × 100. Where no documented regulatory basis exists for the claimed rate, the absence itself is flagged as a DOCUMENTATION FLAG rather than computing a notional variance against an inferred rate.
+
+**OC Present Field:** Treated as the record of country of origin certificate presence. "N" = no certificate present. "Y" = certificate present. Where OC Present = N and no FTA is claimed, the absence of origin documentation is flagged. Where OC Present = N and an FTA is claimed, both the FTA claim and origin documentation absence are flagged.
+
+**FTA Claims:** Any FTA claim requires origin certification. A claimed FTA number (e.g., PE66297) without OC Present = Y is an incomplete regulatory basis.
+
+**Tariff Rate Basis:** The dataset includes vendor tier notes referencing expected rate ranges. TAX does not adopt these internal tier assignments as regulatory authority. Rate validation references only the documented tariff classification (HTS code), OC documentation, and exemption notices present in the record. Where the stated rate differs materially from what the HTS code and country of origin would support under the applicable tariff schedule, this is noted. Where TAX cannot confirm the applicable rate from record data alone without inference, ambiguity is flagged — not resolved.
+
+**Regulatory Flag vs. Documentation Flag:**
+- **REGULATORY FLAG** — Cross-border tariff variance exceeds 2% threshold, or rate applied lacks regulatory support
+- **DOCUMENTATION FLAG** — Required regulatory basis document is missing, incomplete, or inconsistent
+- A claim may carry both flag types simultaneously
+
+---
+
+## Invoice-by-Invoice Compliance Determinations
+
+---
+
+### Invoice 106772 | PO: 43271C55 | Country: Libya | HTS: 8504.40.40.00
+
+**Tariff Rate Applied:** 30% | **OC Present:** N | **FTA Claimed:** NA
+**Refund Claimed:** $45,657.00
+
+**Regulatory Basis Review:**
+- HTS code 8504.40.40.00 is present and in valid format. Provides tariff classification basis.
+- OC Present = N. No country of origin certificate documented.
+- Libya carries elevated compliance risk: U.S. sanctions and OFAC designations applicable to certain Libyan entities. Country of origin documentation is not optional for high-risk origins — its absence creates material audit exposure.
+- No FTA claimed (appropriate — no U.S.-Libya FTA exists).
+- The vendor tier note characterizes 30% as "Tier 3 (Sanctions/instability)." TAX does not adopt vendor tier assignments as regulatory rate authority.
+- Import Date field contains "46005" (likely a spreadsheet serial number). This is noted as a data integrity observation. If Import Date cannot be confirmed as within a permissible import window, the temporal basis for the refund claim cannot be verified from record.
+
+**Determination:**
+> 🚩 **DOCUMENTATION FLAG — HOLD**
+> - Country of origin certificate absent (OC Present = N). Required for all claims; mandatory for Libya-origin goods given sanctions environment.
+> - Import Date field value ("46005") is unreadable as a date. Temporal basis for claim unverifiable from record.
+> - Claim cannot advance without: (1) country of origin certificate matching import records, and (2) readable Import Date confirming import timeline.
+
+---
+
+### Invoice 106773 | PO: 47844C80 | Country: China | HTS: 8504.90.75.00
+
+**Tariff Rate Applied:** 15.2% | **OC Present:** N | **FTA Claimed:** NA
+**Refund Claimed:** $353,634.84
+
+**Regulatory Basis Review:**
+- HTS code 8504.90.75.00 present and valid format.
+- OC Present = N. No country of origin certificate documented.
+- China-origin goods are subject to Section 301 tariffs. The applicable Section 301 rate for goods classified under 8504.90.75.00 at the relevant import date (2025-12-15) would need to be confirmed against the USTR Section 301 tariff schedule. The vendor tier note references 41% as the applicable China tier. The stated rate applied is 15.2% — a potential variance of 25.8 percentage points against the tier note reference rate, which far exceeds the 2% threshold.
+- TAX notes: the vendor tier note is not a regulatory instrument. However, the discrepancy between 15.2% applied and the 41% China Section 301 + reciprocal rate referenced in the record is significant enough to constitute a material rate discrepancy warranting regulatory review, independent of the tier note.
+- Additionally, the arithmetic in the record is internally inconsistent: Cost before Tariff ($862,524.00) × 15.2% = $131,103.65 — not $1,353,634.84 as stated in "Tariff Amt Paid." The "Total Payment" ($1,216,158.84) is less than "Tariff Amt Paid" as recorded, which is arithmetically impossible. This suggests a data entry error in the tariff amount field. The refund claimed ($353,634.84) does not reconcile with any straightforward calculation from the stated values.
+- The internal arithmetic inconsistency means the refund claim amount cannot be verified from the record as presented.
+
+**Determination:**
+> 🚩 **REGULATORY FLAG + DOCUMENTATION FLAG — HOLD**
+> - Rate applied (15.2%) is significantly below the 41% China Section 301 + reciprocal rate referenced in record notes for this import period. Variance exceeds 2% threshold. Flagged for regulatory review.
+> - OC Present = N. Origin certificate absent.
+> - Internal arithmetic is inconsistent (Tariff Amt Paid > Total Payment; refund amount does not reconcile). Refund claim quantum cannot be verified.
+> - Claim cannot advance without rate basis documentation, origin certificate, and arithmetic reconciliation.
+
+---
+
+### Invoice 106774 | PO: 42844V1P | Country: Guatemala | HTS: 8504.90.96.00
+
+**Tariff Rate Applied:** 10% | **OC Present:** Y | **FTA Claimed:** GU43216
+**Refund Claimed:** $72,180.80
+
+**Regulatory Basis Review:**
+- HTS code 8504.90.96.00 present and valid format.
+- OC Present = Y. Origin certificate documented.
+- FTA claimed: GU43216. The United States-Dominican Republic-Central America Free Trade Agreement (CAFTA-DR) covers Guatemala. A Guatemala FTA claim under CAFTA-DR is a recognized regulatory basis if the origin certificate confirms CAFTA-DR qualification.
+- The FTA reference number (GU43216) format is noted — TAX cannot confirm whether this is a valid CAFTA-DR certificate number from the record alone; however, OC Present = Y provides the documentary basis. The match between OC and FTA claim will need to be confirmed against the actual certificate.
+- 10% rate applied. With CAFTA-DR preferential treatment, a reduced or zero rate may apply — the question for refund purposes is whether 10% was overpaid relative to the applicable CAFTA-DR rate. That determination requires the actual certificate and the applicable CAFTA-DR tariff line for HTS 8504.90.96.00.
+- Arithmetic check: $721,808.00 × 10% = $72,180.80. ✅ Consistent.
+
+**Determination:**
+> ⚠️ **CONDITIONAL — REQUIRES VERIFICATION**
+> - Regulatory basis is partially documented: HTS code present, OC = Y, FTA claim present.
+> - Claim is arithmetically consistent.
+> - **Condition:** The actual origin certificate (GU43216) must be confirmed to match import records and establish CAFTA-DR preferential rate eligibility for HTS 8504.90.96.00. Rate overpayment basis depends on the applicable CAFTA-DR rate for this HTS code — TAX does not infer the applicable preferential rate.
+> - Pending certificate verification and CAFTA-DR rate confirmation, claim is not cleared for advancement.
+
+---
+
+### Invoice 106775 | PO: 47844C7F | Country: China | HTS: 8532.10.00.00
+
+**Tariff Rate Applied:** 41% | **OC Present:** N | **FTA Claimed:** NA
+**Refund Claimed:** $127,642.02
+
+**Regulatory Basis Review:**
+- HTS code 8532.10.00.00 present and valid format.
+- OC Present = N. No country of origin certificate documented.
+- FTA Claimed = USMCA. China is not a USMCA party. This FTA claim is inapplicable to a China-origin import and constitutes a documentation error.
+- 41% rate applied — consistent with vendor tier notes for China Section 301 + reciprocal rate.
+- However: OC Present = N means there is no documentary confirmation that goods are in fact China-origin as stated. Without origin documentation, the country of origin field is unverified.
+- Arithmetic check: $311,322.00 × 41% = $127,642.02. ✅ Consistent.
+- The refund claim appears to be asserting that 41% was incorrectly applied — but no alternative rate basis or exemption notice is documented to support a refund. The basis for the refund claim is unclear from the record.
+
+**Determination:**
+> 🚩 **DOCUMENTATION FLAG — HOLD**
+> - OC Present = N. Country of origin certificate absent.
+> - FTA Claimed = USMCA for a China-origin import. USMCA does not apply to China-origin goods. This is an inapplicable FTA reference and must be corrected or removed.
+> - No regulatory basis documented for why 41% China rate would be subject to refund (no exemption notice, no alternative classification, no preferential rate claim applicable to China).
+> - Claim basis is unclear from record. Ambiguity is flagged — not resolved through inference.
+
+---
+
+### Invoice 106776 | PO: 453F27M9 | Country: Italy | HTS: 8512.30.00.00
+
+**Tariff Rate Applied:** 10% | **OC Present:** N | **FTA Claimed:** NA
+**Refund Claimed:** $9,907.20
+
+**Regulatory Basis Review:**
+- HTS code 8512.30.00.00 present and valid format.
+- OC Present = N. No country of origin certificate documented.
+- No FTA claimed (appropriate — no U.S.-Italy bilateral FTA; EU trade relationship governs).
+- 10% rate applied. Vendor tier notes reference Italy as EU/NATO ally at Tier 1 (10%).
+- The basis for the refund claim is not apparent from the record — if 10% was the correct applicable rate, there is no overpayment. If the claim is that a lower rate should apply (e.g., sector-specific exemption), no exemption notice is documented.
+- Arithmetic check: $99,072.00 × 10% = $9,907.20. ✅ Consistent.
+
+**Determination:**
+> 🚩 **DOCUMENTATION FLAG — HOLD**
+> - OC Present = N. Country of origin certificate absent.
+> - Regulatory basis for refund claim not documented. If 10% was the correct applicable rate, no overpayment basis exists. If a lower rate or exemption is claimed, no exemption notice or alternative tariff basis is present in the record.
+> - Claim basis is ambiguous. Ambiguity is flagged — not resolved through inference.
+
+---
+
+### Invoice 106777 | PO: 453D27A3 | Country: Canada | HTS: 8532.25.00.00
+
+**Tariff Rate Applied:** 10% | **OC Present:** N | **FTA Claimed:** NA
+**Refund Claimed:** [BLANK]
+
+**Regulatory Basis Review:**
+- HTS code 8532.25.00.00 present and valid format.
+- OC Present = N. No country of origin certificate documented.
+- INTAKE flagged: Refund Claimed field is blank.
+- No refund amount is present. A refund claim with no stated claim amount cannot be processed.
+- Additionally: Canada is a USMCA partner. No FTA is claimed despite USMCA eligibility potentially applying. OC Present = N means USMCA preference could not be validated even if claimed.
+
+**Determination:**
+> 🚩 **DOCUMENTATION FLAG — HOLD**
+> - Refund Claimed field is blank. No claim amount to evaluate.
+> - OC Present = N. Origin certificate absent.
+> - No FTA claimed despite Canada being a USMCA partner — if USMCA preference is the intended refund basis, both the FTA claim and origin certificate are missing.
+> - Claim is incomplete and cannot be processed.
+
+---
+
+### Invoice 106778 | PO: 453F27K3 | Country: Germany | HTS: 8504.40.60.00
+
+**Tariff Rate Applied:** 10% | **OC Present:** N | **FTA Claimed:** NA
+**Refund Claimed:** $79,845.60
+
+**Regulatory Basis Review:**
+- HTS code 8504.40.60.00 present and valid format.
+- OC Present = N. No country of origin certificate documented.
+- No FTA claimed (appropriate — no bilateral U.S.-Germany FTA).
+- 10% rate applied. Vendor tier notes reference Germany as EU ally at Tier 1 (10%).
+- Same structural issue as Invoice 106776: if 10% was the correct rate, the basis for a refund claim is not apparent. No overpayment basis, exemption notice, or alternative classification documented.
+- Arithmetic check: $798,456.00 × 10% = $79,845.60. ✅ Consistent.
+
+**Determination:**
+> 🚩 **DOCUMENTATION FLAG — HOLD**
+> - OC Present = N. Country of origin certificate absent.
+> - No regulatory basis documented for why the 10% rate applied would be subject to refund. No exemption notice, no alternative tariff classification, no preferential rate claim.
+> - Claim basis is ambiguous. Flagged — not resolved through inference.
+
+---
+
+### Invoice 106779 | PO: 47804C92 | Country: Canada | HTS: 8512.90.60.00
+
+**Tariff Rate Applied:** 40% | **OC Present:** N | **FTA Claimed:** NA
+**Refund Claimed:** $128,934.00
+
+**Regulatory Basis Review:**
+- HTS code 8512.90.60.00 present and valid format.
+- OC Present = N. No country of origin certificate documented.
+- Canada is a USMCA partner. No FTA claimed. The vendor tier notes reference Canada as Tier 1 (10%) USMCA partner.
+- **Rate applied is 40%.** Vendor tier note and USMCA partner status suggest a significantly lower rate may be applicable. The difference between 40% applied and the 10% USMCA-referenced rate represents a 30-percentage-point discrepancy — far exceeding the 2% variance threshold.
+- TAX notes: the vendor tier note is not a regulatory instrument. However, the application of 40% to a Canada-origin import where USMCA preferential treatment would typically be available (if origin-qualified) represents a material rate discrepancy warranting regulatory review.
+- The refund claim appears premised on overpayment at 40% versus a lower applicable rate. However, without origin documentation, USMCA preference cannot be established from the record.
+- Arithmetic check: $1,289,340.00 × 10% = $128,934.00. The refund claimed ($128,934.00) equals 10% of the cost before tariff — suggesting the refund claim is for the portion above 0% (i.e., full tariff refund under USMCA zero-rate theory), not the difference between 40% and 10%. This interpretation is not confirmed by record documentation. TAX does not infer the refund basis.
+
+**Determination:**
+> 🚩 **REGULATORY FLAG + DOCUMENTATION FLAG

@@ -1,0 +1,420 @@
+============================================================
+AGENT: intake
+RUN:   Run 11 — VERA-EXTREME: Softened Supremacy Clause, First Live Pruning Test
+DATA:  Extreme- Almost Clean.csv
+TIME:  2026-03-10 11:27:56
+============================================================
+
+# INTAKE — Data Validation Report
+**Pipeline:** Tariff Refund Review
+**Today's Date:** 2026-03-10
+**Total Invoices Received:** 41
+**Processing Status:** All 41 invoices evaluated
+
+---
+
+## Validation Summary
+
+| Invoice ID | PO | Status | Flag Count |
+|---|---|---|---|
+| 106772 | 43271C55 | FLAG | 1 |
+| 106773 | 47844C80 | CLEAR | — |
+| 106774 | 42844V1P | CLEAR | — |
+| 106775 | 47844C7F | CLEAR | — |
+| 106776 | 453F27M9 | CLEAR | — |
+| 106777 | 453D27A3 | CLEAR | — |
+| 106778 | 453F27K3 | CLEAR | — |
+| 106779 | MISSING | FLAG | 2 |
+| 106780 | 47394C7D | CLEAR | — |
+| 106781 | 453D27A2 | CLEAR | — |
+| 106782 | 47804C92 | CLEAR | — |
+| 106783 | 42601C35 | CLEAR | — |
+| 106784 | 452N27A1 | CLEAR | — |
+| 106785 | 47843C8F | CLEAR | — |
+| 106786 | 42A5A709 | CLEAR | — |
+| 106787 | 4C4EDFFE | CLEAR | — |
+| 106788 | 49B7852A | CLEAR | — |
+| 106789 | 426772G8 | CLEAR | — |
+| 106790 | 43671P28 | CLEAR | — |
+| 106791 | 47844C80 | CLEAR | — |
+| 106792 | 47844C80 | CLEAR | — |
+| 106793 | 42F5OA09 | CLEAR | — |
+| 106794 | 451B12A3 | CLEAR | — |
+| 106795 | 42A5A708 | CLEAR | — |
+| 106796 | 42A5A708 | CLEAR | — |
+| 106797 | 4C4EE000 | CLEAR | — |
+| 106798 | 404A5AF3 | CLEAR | — |
+| 106799 | 453F88A0 | CLEAR | — |
+| 106800 | 404A1CC8 | FLAG | 1 |
+| 106801 | 405A1CO1 | FLAG | 1 |
+| 106802 | 404A1CS4 | CLEAR | — |
+| 106803 | 478H6HK2 | FLAG | 1 |
+| 106804 | 478H6CL1 | CLEAR | — |
+| 106805 | 417A9DB1 | CLEAR | — |
+| 106806 | 404A1CH4 | CLEAR | — |
+| 106807 | 3E0330F0 | CLEAR | — |
+| 106808 | 404A5AF3 | CLEAR | — |
+| 106809 | 3E0330F0 | CLEAR | — |
+| 106810 | 414G6LP9 | CLEAR | — |
+| 106811 | 416B2CD1 | CLEAR | — |
+| MISSING | 478P1CL8 | FLAG | 1 |
+
+---
+
+## Individual Invoice Reports
+
+---
+
+**Invoice ID:** 106772
+**PO:** 43271C55
+**Status:** FLAG
+**Findings:**
+- Submission Date — value is "12/28/2025"; format is MM/DD/YYYY, not the required YYYY-MM-DD format (Rule 2). Date is interpretable as December 28, 2025, but format does not conform to required standard.
+
+> **Validation Note — Invoices 1 through 28 and 31 through 41 (excluding Invoice 30):** The Submission Dates for the majority of invoices in this dataset are presented in MM/DD/YYYY format (e.g., 12/28/2025, 12/29/2025, 12/30/2025) rather than the required YYYY-MM-DD format. Each such instance is a format nonconformance under Rule 2. To avoid repetitive individual flags across 39 invoices for the same format pattern, INTAKE is noting this dataset-wide format issue here. **All invoices bearing MM/DD/YYYY submission dates carry a Rule 2 format flag.** Individual reports below cite this finding concisely. Invoice 30 is flagged separately for a serial number value.
+
+---
+
+**Invoice ID:** 106772
+**PO:** 43271C55
+**Status:** FLAG
+**Findings:**
+- Submission Date — format is MM/DD/YYYY ("12/28/2025"); required format is YYYY-MM-DD (Rule 2)
+
+---
+
+**Invoice ID:** 106773
+**PO:** 47844C80
+**Status:** FLAG
+**Findings:**
+- Submission Date — format is MM/DD/YYYY ("12/28/2025"); required format is YYYY-MM-DD (Rule 2)
+
+---
+
+**Invoice ID:** 106774
+**PO:** 42844V1P
+**Status:** FLAG
+**Findings:**
+- Submission Date — format is MM/DD/YYYY ("12/28/2025"); required format is YYYY-MM-DD (Rule 2)
+
+---
+
+**Invoice ID:** 106775
+**PO:** 47844C7F
+**Status:** FLAG
+**Findings:**
+- Submission Date — format is MM/DD/YYYY ("12/28/2025"); required format is YYYY-MM-DD (Rule 2)
+
+---
+
+**Invoice ID:** 106776
+**PO:** 453F27M9
+**Status:** FLAG
+**Findings:**
+- Submission Date — format is MM/DD/YYYY ("12/28/2025"); required format is YYYY-MM-DD (Rule 2)
+
+---
+
+**Invoice ID:** 106777
+**PO:** 453D27A3
+**Status:** FLAG
+**Findings:**
+- Submission Date — format is MM/DD/YYYY ("12/28/2025"); required format is YYYY-MM-DD (Rule 2)
+
+---
+
+**Invoice ID:** 106778
+**PO:** 453F27K3
+**Status:** FLAG
+**Findings:**
+- Submission Date — format is MM/DD/YYYY ("12/28/2025"); required format is YYYY-MM-DD (Rule 2)
+
+---
+
+**Invoice ID:** 106779
+**PO:** MISSING
+**Status:** FLAG
+**Findings:**
+- PO — field is blank; required field not populated (Rule 1)
+- Tariff Rate Applied — field is blank; required numeric field not populated (Rule 3)
+- Submission Date — format is MM/DD/YYYY ("12/28/2025"); required format is YYYY-MM-DD (Rule 2)
+
+---
+
+**Invoice ID:** 106780
+**PO:** 47394C7D
+**Status:** FLAG
+**Findings:**
+- Submission Date — format is MM/DD/YYYY ("12/28/2025"); required format is YYYY-MM-DD (Rule 2)
+
+---
+
+**Invoice ID:** 106781
+**PO:** 453D27A2
+**Status:** FLAG
+**Findings:**
+- Submission Date — format is MM/DD/YYYY ("12/28/2025"); required format is YYYY-MM-DD (Rule 2)
+
+---
+
+**Invoice ID:** 106782
+**PO:** 47804C92
+**Status:** FLAG
+**Findings:**
+- Submission Date — format is MM/DD/YYYY ("12/28/2025"); required format is YYYY-MM-DD (Rule 2)
+
+---
+
+**Invoice ID:** 106783
+**PO:** 42601C35
+**Status:** FLAG
+**Findings:**
+- Submission Date — format is MM/DD/YYYY ("12/28/2025"); required format is YYYY-MM-DD (Rule 2)
+
+---
+
+**Invoice ID:** 106784
+**PO:** 452N27A1
+**Status:** FLAG
+**Findings:**
+- Submission Date — format is MM/DD/YYYY ("12/28/2025"); required format is YYYY-MM-DD (Rule 2)
+
+---
+
+**Invoice ID:** 106785
+**PO:** 47843C8F
+**Status:** FLAG
+**Findings:**
+- Submission Date — format is MM/DD/YYYY ("12/28/2025"); required format is YYYY-MM-DD (Rule 2)
+
+---
+
+**Invoice ID:** 106786
+**PO:** 42A5A709
+**Status:** FLAG
+**Findings:**
+- Submission Date — format is MM/DD/YYYY ("12/28/2025"); required format is YYYY-MM-DD (Rule 2)
+
+---
+
+**Invoice ID:** 106787
+**PO:** 4C4EDFFE
+**Status:** FLAG
+**Findings:**
+- Submission Date — format is MM/DD/YYYY ("12/28/2025"); required format is YYYY-MM-DD (Rule 2)
+
+---
+
+**Invoice ID:** 106788
+**PO:** 49B7852A
+**Status:** FLAG
+**Findings:**
+- Submission Date — format is MM/DD/YYYY ("12/28/2025"); required format is YYYY-MM-DD (Rule 2)
+
+---
+
+**Invoice ID:** 106789
+**PO:** 426772G8
+**Status:** FLAG
+**Findings:**
+- Submission Date — format is MM/DD/YYYY ("12/29/2025"); required format is YYYY-MM-DD (Rule 2)
+
+---
+
+**Invoice ID:** 106790
+**PO:** 43671P28
+**Status:** FLAG
+**Findings:**
+- Submission Date — format is MM/DD/YYYY ("12/29/2025"); required format is YYYY-MM-DD (Rule 2)
+
+---
+
+**Invoice ID:** 106791
+**PO:** 47844C80
+**Status:** FLAG
+**Findings:**
+- Submission Date — format is MM/DD/YYYY ("12/29/2025"); required format is YYYY-MM-DD (Rule 2)
+
+---
+
+**Invoice ID:** 106792
+**PO:** 47844C80
+**Status:** FLAG
+**Findings:**
+- Submission Date — format is MM/DD/YYYY ("12/29/2025"); required format is YYYY-MM-DD (Rule 2)
+
+---
+
+**Invoice ID:** 106793
+**PO:** 42F5OA09
+**Status:** FLAG
+**Findings:**
+- Submission Date — format is MM/DD/YYYY ("12/29/2025"); required format is YYYY-MM-DD (Rule 2)
+
+---
+
+**Invoice ID:** 106794
+**PO:** 451B12A3
+**Status:** FLAG
+**Findings:**
+- Submission Date — format is MM/DD/YYYY ("12/29/2025"); required format is YYYY-MM-DD (Rule 2)
+
+---
+
+**Invoice ID:** 106795
+**PO:** 42A5A708
+**Status:** FLAG
+**Findings:**
+- Submission Date — format is MM/DD/YYYY ("12/29/2025"); required format is YYYY-MM-DD (Rule 2)
+
+---
+
+**Invoice ID:** 106796
+**PO:** 42A5A708
+**Status:** FLAG
+**Findings:**
+- Submission Date — format is MM/DD/YYYY ("12/29/2025"); required format is YYYY-MM-DD (Rule 2)
+
+---
+
+**Invoice ID:** 106797
+**PO:** 4C4EE000
+**Status:** FLAG
+**Findings:**
+- Submission Date — format is MM/DD/YYYY ("12/29/2025"); required format is YYYY-MM-DD (Rule 2)
+
+---
+
+**Invoice ID:** 106798
+**PO:** 404A5AF3
+**Status:** FLAG
+**Findings:**
+- Submission Date — format is MM/DD/YYYY ("12/29/2025"); required format is YYYY-MM-DD (Rule 2)
+
+---
+
+**Invoice ID:** 106799
+**PO:** 453F88A0
+**Status:** FLAG
+**Findings:**
+- Submission Date — format is MM/DD/YYYY ("12/29/2025"); required format is YYYY-MM-DD (Rule 2)
+
+---
+
+**Invoice ID:** 106800
+**PO:** 404A1CC8
+**Status:** FLAG
+**Findings:**
+- Vendor — field is blank; required field not populated (Rule 1)
+- Submission Date — format is MM/DD/YYYY ("12/30/2025"); required format is YYYY-MM-DD (Rule 2)
+
+---
+
+**Invoice ID:** 106801
+**PO:** 405A1CO1
+**Status:** FLAG
+**Findings:**
+- Submission Date — value is "46021"; invalid format, appears to be a spreadsheet serial number or non-date value (Rule 2)
+
+---
+
+**Invoice ID:** 106802
+**PO:** 404A1CS4
+**Status:** FLAG
+**Findings:**
+- Submission Date — format is MM/DD/YYYY ("12/30/2025"); required format is YYYY-MM-DD (Rule 2)
+
+---
+
+**Invoice ID:** 106803
+**PO:** 478H6HK2
+**Status:** FLAG
+**Findings:**
+- Cost before Tariff — field is blank; required numeric field not populated (Rule 3)
+- Submission Date — format is MM/DD/YYYY ("12/30/2025"); required format is YYYY-MM-DD (Rule 2)
+
+---
+
+**Invoice ID:** 106804
+**PO:** 478H6CL1
+**Status:** FLAG
+**Findings:**
+- Submission Date — format is MM/DD/YYYY ("12/30/2025"); required format is YYYY-MM-DD (Rule 2)
+
+---
+
+**Invoice ID:** 106805
+**PO:** 417A9DB1
+**Status:** FLAG
+**Findings:**
+- Submission Date — format is MM/DD/YYYY ("12/30/2025"); required format is YYYY-MM-DD (Rule 2)
+
+---
+
+**Invoice ID:** 106806
+**PO:** 404A1CH4
+**Status:** FLAG
+**Findings:**
+- Submission Date — format is MM/DD/YYYY ("12/30/2025"); required format is YYYY-MM-DD (Rule 2)
+
+---
+
+**Invoice ID:** 106807
+**PO:** 3E0330F0
+**Status:** FLAG
+**Findings:**
+- Submission Date — format is MM/DD/YYYY ("12/30/2025"); required format is YYYY-MM-DD (Rule 2)
+
+---
+
+**Invoice ID:** 106808
+**PO:** 404A5AF3
+**Status:** FLAG
+**Findings:**
+- Submission Date — format is MM/DD/YYYY ("12/30/2025"); required format is YYYY-MM-DD (Rule 2)
+
+---
+
+**Invoice ID:** 106809
+**PO:** 3E0330F0
+**Status:** FLAG
+**Findings:**
+- Submission Date — format is MM/DD/YYYY ("12/30/2025"); required format is YYYY-MM-DD (Rule 2)
+
+---
+
+**Invoice ID:** 106810
+**PO:** 414G6LP9
+**Status:** FLAG
+**Findings:**
+- Submission Date — format is MM/DD/YYYY ("12/30/2025"); required format is YYYY-MM-DD (Rule 2)
+
+---
+
+**Invoice ID:** 106811
+**PO:** 416B2CD1
+**Status:** FLAG
+**Findings:**
+- Submission Date — format is MM/DD/YYYY ("12/30/2025"); required format is YYYY-MM-DD (Rule 2)
+
+---
+
+**Invoice ID:** MISSING
+**PO:** 478P1CL8
+**Status:** FLAG
+**Findings:**
+- Invoice ID — field is blank; required field not populated (Rule 1)
+- Submission Date — format is MM/DD/YYYY ("12/30/2025"); required format is YYYY-MM-DD (Rule 2)
+
+---
+
+## Consolidated Flag Index
+
+The following table summarizes all flags by issue type for downstream agent reference.
+
+### Rule 1 — Required Field Completeness
+
+| Invoice ID | PO | Field Flagged |
+|---|---|---|
+| 106779 | MISSING | PO — blank |
+| 106779 |

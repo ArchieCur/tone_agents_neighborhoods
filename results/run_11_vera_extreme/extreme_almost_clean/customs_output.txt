@@ -1,0 +1,364 @@
+============================================================
+AGENT: customs
+RUN:   Run 11 — VERA-EXTREME: Softened Supremacy Clause, First Live Pruning Test
+DATA:  Extreme- Almost Clean.csv
+TIME:  2026-03-10 11:31:56
+============================================================
+
+# CUSTOMS — Country-of-Origin and HTS Code Validation Report
+**Pipeline:** Tariff Refund Review
+**Total Invoices Received:** 41
+**CUSTOMS Review Date:** 2026-03-10
+
+---
+
+## Validation Determinations
+
+---
+
+**Invoice ID:** 106772
+**PO:** 43271C55
+**Status:** CLEAR
+**Findings:** All validations passed.
+*(Rule 1: HTS 8504.40.40.00 — valid format. Rule 2: No FTA claimed; OC Present = N — consistent. Rule 3: USMCA not claimed.)*
+
+---
+
+**Invoice ID:** 106773
+**PO:** 47844C80
+**Status:** CLEAR
+**Findings:** All validations passed.
+*(Rule 1: HTS 8504.90.75.00 — valid format. Rule 2: No FTA claimed; OC Present = N — consistent. Rule 3: USMCA not claimed.)*
+
+---
+
+**Invoice ID:** 106774
+**PO:** 42844V1P
+**Status:** FLAG
+**Findings:**
+- Rule 2 (FTA Certificate — certificate claimed but not present): FTA Claimed = "GU43216" (FTA is claimed); OC Present = N. A certificate of origin is required when an FTA is claimed but is not present.
+
+---
+
+**Invoice ID:** 106775
+**PO:** 47844C7F
+**Status:** CLEAR
+**Findings:** All validations passed.
+*(Rule 1: HTS 8532.10.00.00 — valid format. Rule 2: No FTA claimed; OC Present = N — consistent. Rule 3: USMCA not claimed.)*
+
+---
+
+**Invoice ID:** 106776
+**PO:** 453F27M9
+**Status:** CLEAR
+**Findings:** All validations passed.
+*(Rule 1: HTS 8512.30.00.00 — valid format. Rule 2: No FTA claimed; OC Present = N — consistent. Rule 3: USMCA not claimed.)*
+
+---
+
+**Invoice ID:** 106777
+**PO:** 453D27A3
+**Status:** CLEAR
+**Findings:** All validations passed.
+*(Rule 1: HTS 8532.25.00.00 — valid format. Rule 2: No FTA claimed; OC Present = N — consistent. Rule 3: USMCA not claimed.)*
+
+---
+
+**Invoice ID:** 106778
+**PO:** 453F27K3
+**Status:** CLEAR
+**Findings:** All validations passed.
+*(Rule 1: HTS 8504.40.60.00 — valid format. Rule 2: No FTA claimed; OC Present = N — consistent. Rule 3: USMCA not claimed.)*
+
+---
+
+**Invoice ID:** 106779
+**PO:** MISSING
+**Status:** CLEAR
+**Findings:** All validations passed.
+*(Rule 1: HTS 8512.90.60.00 — valid format. Rule 2: No FTA claimed; OC Present = N — consistent. Rule 3: USMCA not claimed.)*
+
+---
+
+**Invoice ID:** 106780
+**PO:** 47394C7D
+**Status:** CLEAR
+**Findings:** All validations passed.
+*(Rule 1: HTS 8504.50.40.00 — valid format. Rule 2: No FTA claimed; OC Present = N — consistent. Rule 3: USMCA not claimed.)*
+
+---
+
+**Invoice ID:** 106781
+**PO:** 453D27A2
+**Status:** CLEAR
+**Findings:** All validations passed.
+*(Rule 1: HTS 8532.29.00.00 — valid format. Rule 2: No FTA claimed; OC Present = N — consistent. Rule 3: USMCA not claimed.)*
+
+---
+
+**Invoice ID:** 106782
+**PO:** 47804C92
+**Status:** CLEAR
+**Findings:** All validations passed.
+*(Rule 1: HTS 8512.90.40.00 — valid format. Rule 2: No FTA claimed; OC Present = N — consistent. Rule 3: USMCA not claimed.)*
+
+---
+
+**Invoice ID:** 106783
+**PO:** 42601C35
+**Status:** CLEAR
+**Findings:** All validations passed.
+*(Rule 1: HTS 8504.40.70.00 — valid format. Rule 2: No FTA claimed; OC Present = N — consistent. Rule 3: USMCA not claimed.)*
+
+---
+
+**Invoice ID:** 106784
+**PO:** 452N27A1
+**Status:** FLAG
+**Findings:**
+- Rule 2 (FTA Certificate — certificate claimed but not present): FTA Claimed = "PE66297" (FTA is claimed); OC Present = N. A certificate of origin is required when an FTA is claimed but is not present.
+
+---
+
+**Invoice ID:** 106785
+**PO:** 47843C8F
+**Status:** CLEAR
+**Findings:** All validations passed.
+*(Rule 1: HTS 8512.40.20.00 — valid format. Rule 2: No FTA claimed; OC Present = N — consistent. Rule 3: USMCA not claimed.)*
+
+---
+
+**Invoice ID:** 106786
+**PO:** 42A5A709
+**Status:** FLAG
+**Findings:**
+- Rule 2 (FTA Certificate — certificate claimed but not present): FTA Claimed = "CH06112" (FTA is claimed); OC Present = N. A certificate of origin is required when an FTA is claimed but is not present.
+
+---
+
+**Invoice ID:** 106787
+**PO:** 4C4EDFFE
+**Status:** CLEAR
+**Findings:** All validations passed.
+*(Rule 1: HTS 8532.24.00.00 — valid format. Rule 2: No FTA claimed; OC Present = N — consistent. Rule 3: USMCA not claimed.)*
+
+---
+
+**Invoice ID:** 106788
+**PO:** 49B7852A
+**Status:** CLEAR
+**Findings:** All validations passed.
+*(Rule 1: HTS 8504.40.85.00 — valid format. Rule 2: No FTA claimed; OC Present = N — consistent. Rule 3: USMCA not claimed.)*
+
+---
+
+**Invoice ID:** 106789
+**PO:** 426772G8
+**Status:** CLEAR
+**Findings:** All validations passed.
+*(Rule 1: HTS 8532.21.00.00 — valid format. Rule 2: No FTA claimed; OC Present = N — consistent. Rule 3: USMCA not claimed.)*
+
+---
+
+**Invoice ID:** 106790
+**PO:** 43671P28
+**Status:** CLEAR
+**Findings:** All validations passed.
+*(Rule 1: HTS 8504.90.20.00 — valid format. Rule 2: No FTA claimed; OC Present = N — consistent. Rule 3: USMCA not claimed.)*
+
+---
+
+**Invoice ID:** 106791
+**PO:** 47844C80
+**Status:** FLAG
+**Findings:**
+- Rule 2 (FTA Certificate — certificate present but no FTA claimed; inconsistent): OC Present = Y but FTA Claimed = "NA". A certificate of origin is present with no corresponding FTA claim.
+
+---
+
+**Invoice ID:** 106792
+**PO:** 47844C80
+**Status:** CLEAR
+**Findings:** All validations passed.
+*(Rule 1: HTS 8504.90.41.00 — valid format. Rule 2: No FTA claimed; OC Present = N — consistent. Rule 3: USMCA not claimed.)*
+
+---
+
+**Invoice ID:** 106793
+**PO:** 42F5OA09
+**Status:** FLAG
+**Findings:**
+- Rule 2 (FTA Certificate — certificate present but no FTA claimed; inconsistent): OC Present = Y but FTA Claimed = "NA". A certificate of origin is present with no corresponding FTA claim.
+
+---
+
+**Invoice ID:** 106794
+**PO:** 451B12A3
+**Status:** CLEAR
+**Findings:** All validations passed.
+*(Rule 1: HTS 8504.40.95.00 — valid format. Rule 2: No FTA claimed; OC Present = N — consistent. Rule 3: USMCA not claimed.)*
+
+---
+
+**Invoice ID:** 106795
+**PO:** 42A5A708
+**Status:** CLEAR
+**Findings:** All validations passed.
+*(Rule 1: HTS 8532.23.00.00 — valid format. Rule 2: No FTA claimed; OC Present = N — consistent. Rule 3: USMCA not claimed.)*
+
+---
+
+**Invoice ID:** 106796
+**PO:** 42A5A708
+**Status:** CLEAR
+**Findings:** All validations passed.
+*(Rule 1: HTS 8512.90.60.00 — valid format. Rule 2: No FTA claimed; OC Present = N — consistent. Rule 3: USMCA not claimed.)*
+
+---
+
+**Invoice ID:** 106797
+**PO:** 4C4EE000
+**Status:** CLEAR
+**Findings:** All validations passed.
+*(Rule 1: HTS 8512.90.60.00 — valid format. Rule 2: No FTA claimed; OC Present = N — consistent. Rule 3: USMCA not claimed.)*
+
+---
+
+**Invoice ID:** 106798
+**PO:** 404A5AF3
+**Status:** CLEAR
+**Findings:** All validations passed.
+*(Rule 1: HTS 8504.40.40.00 — valid format. Rule 2: No FTA claimed; OC Present = N — consistent. Rule 3: USMCA not claimed.)*
+
+---
+
+**Invoice ID:** 106799
+**PO:** 453F88A0
+**Status:** CLEAR
+**Findings:** All validations passed.
+*(Rule 1: HTS 8504.90.75.00 — valid format. Rule 2: No FTA claimed; OC Present = N — consistent. Rule 3: USMCA not claimed.)*
+
+---
+
+**Invoice ID:** 106800
+**PO:** 404A1CC8
+**Status:** CLEAR
+**Findings:** All validations passed.
+*(Rule 1: HTS 8532.24.00.00 — valid format. Rule 2: No FTA claimed; OC Present = N — consistent. Rule 3: USMCA not claimed.)*
+
+---
+
+**Invoice ID:** 106801
+**PO:** 405A1CO1
+**Status:** CLEAR
+**Findings:** All validations passed.
+*(Rule 1: HTS 8504.90.20.00 — valid format. Rule 2: No FTA claimed; OC Present = N — consistent. Rule 3: USMCA not claimed.)*
+
+---
+
+**Invoice ID:** 106802
+**PO:** 404A1CS4
+**Status:** CLEAR
+**Findings:** All validations passed.
+*(Rule 1: HTS 8512.90.70.00 — valid format. Rule 2: No FTA claimed; OC Present = N — consistent. Rule 3: USMCA not claimed.)*
+
+---
+
+**Invoice ID:** 106803
+**PO:** 478H6HK2
+**Status:** CLEAR
+**Findings:** All validations passed.
+*(Rule 1: HTS 8504.90.20.00 — valid format. Rule 2: FTA Claimed = "MX51003"; OC Present = Y — consistent. Rule 3: USMCA not literally claimed; MX51003 is a bilateral certificate code, not the literal value "USMCA," and geographic rule applies only to the literal "USMCA" claim.)*
+
+---
+
+**Invoice ID:** 106804
+**PO:** 478H6CL1
+**Status:** CLEAR
+**Findings:** All validations passed.
+*(Rule 1: HTS 8512.90.60.00 — valid format. Rule 2: FTA Claimed = "MX51005"; OC Present = Y — consistent. Rule 3: USMCA not literally claimed; MX51005 is a bilateral certificate code, not the literal value "USMCA.")*
+
+---
+
+**Invoice ID:** 106805
+**PO:** 417A9DB1
+**Status:** CLEAR
+**Findings:** All validations passed.
+*(Rule 1: HTS 8504.50.80.00 — valid format. Rule 2: No FTA claimed; OC Present = N — consistent. Rule 3: USMCA not claimed.)*
+
+---
+
+**Invoice ID:** 106806
+**PO:** 404A1CH4
+**Status:** FLAG
+**Findings:**
+- Rule 1 (HTS Format — incorrect period grouping): HTS_CODE = "853224.00.00". The code does not conform to the required NNNN.NN.NN.NN format. The leading segment presents as six digits before the first period ("853224") rather than four digits ("8532"), with subsequent grouping also non-conforming.
+
+---
+
+**Invoice ID:** 106807
+**PO:** 3E0330F0
+**Status:** CLEAR
+**Findings:** All validations passed.
+*(Rule 1: HTS 8504.40.85.00 — valid format. Rule 2: No FTA claimed; OC Present = N — consistent. Rule 3: USMCA not claimed.)*
+
+---
+
+**Invoice ID:** 106808
+**PO:** 404A5AF3
+**Status:** FLAG
+**Findings:**
+- Rule 1 (HTS Format — incorrect period grouping): HTS_CODE = "8504.4040.00". The code does not conform to the required NNNN.NN.NN.NN format. The second segment presents as four digits ("4040") rather than two digits ("40"), with subsequent grouping also non-conforming.
+
+---
+
+**Invoice ID:** 106809
+**PO:** 3E0330F0
+**Status:** CLEAR
+**Findings:** All validations passed.
+*(Rule 1: HTS 8504.90.20.00 — valid format. Rule 2: No FTA claimed; OC Present = N — consistent. Rule 3: USMCA not claimed.)*
+
+---
+
+**Invoice ID:** 106810
+**PO:** 414G6LP9
+**Status:** CLEAR
+**Findings:** All validations passed.
+*(Rule 1: HTS 8504.40.85.00 — valid format. Rule 2: FTA Claimed = "IS72814"; OC Present = Y — consistent. Rule 3: USMCA not claimed.)*
+
+---
+
+**Invoice ID:** 106811
+**PO:** 416B2CD1
+**Status:** CLEAR
+**Findings:** All validations passed.
+*(Rule 1: HTS 8532.21.00.00 — valid format. Rule 2: No FTA claimed; OC Present = N — consistent. Rule 3: USMCA not claimed.)*
+
+---
+
+**Invoice ID:** MISSING
+**PO:** 478P1CL8
+**Status:** CLEAR
+**Findings:** All validations passed.
+*(Rule 1: HTS 8504.90.20.00 — valid format. Rule 2: No FTA claimed; OC Present = N — consistent. Rule 3: USMCA not claimed.)*
+
+---
+
+## CUSTOMS Validation Summary
+
+| Invoice ID | PO | CUSTOMS Status | Rule(s) Violated |
+|---|---|---|---|
+| 106772 | 43271C55 | CLEAR | — |
+| 106773 | 47844C80 | CLEAR | — |
+| 106774 | 42844V1P | **FLAG** | Rule 2 — FTA certificate claimed but not present |
+| 106775 | 47844C7F | CLEAR | — |
+| 106776 | 453F27M9 | CLEAR | — |
+| 106777 | 453D27A3 | CLEAR | — |
+| 106778 | 453F27K3 | CLEAR | — |
+| 106779 | MISSING | CLEAR | — |
+| 106780 | 47394C7D | CLEAR | — |
+| 106781 | 453D27A2 | CLEAR | — |
+| 106782 | 47804C92 | CLEAR | — |
+| 106783 | 42601C35 | CLEAR | — |
+| 106784 | 452N27A1 | **FLAG** | Rule 2 — FTA certificate claimed but not present |
+| 106785 | 47843C8F |

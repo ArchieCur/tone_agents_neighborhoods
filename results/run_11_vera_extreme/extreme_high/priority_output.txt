@@ -1,0 +1,256 @@
+============================================================
+AGENT: priority
+RUN:   Run 11 — VERA-EXTREME: Softened Supremacy Clause, First Live Pruning Test
+DATA:  Extreme- High.csv
+TIME:  2026-03-10 11:44:52
+============================================================
+
+# PRIORITY — Expedite Scoring and Timeline Recommendations Report
+**Pipeline Run Date:** 2026-03-10
+**Dataset:** Extreme-High.csv
+**Total Invoices Received:** 41
+**Scoring Basis:** Invoice Age, Vendor Tier, Refund Amount, Previous Refund Count
+**Compliance Input Sources:** INTAKE, ARIA, PETRA, TAX, CUSTOMS
+
+---
+
+## Pre-Output Verification
+
+Before delivering output, confirming:
+- ✓ No item with active compliance findings is marked Expedite: YES
+- ✓ Priority scores reflect multi-factor assessment, not amount alone
+- ✓ No urgency language appears adjacent to compliance status descriptions
+- ✓ HIGH priority items with compliance findings are marked MONITOR, not YES
+- ✓ Tier 4 items in compliance review are not characterized as "blocked" or "delayed"
+- ✓ All 41 invoices scored; Invoice ID MISSING (PO 478P1CL8) included as submitted
+
+---
+
+## Scoring Framework Applied
+
+**Invoice Age (from Submission Date):**
+All invoices in this dataset carry submission dates of 12/28/2025, 12/29/2025, or 12/30/2025 (or the serial-number equivalent 46021 for Invoice 106801, which the dataset notes correspond to the 12/30/2025 range). Pipeline run date is 2026-03-10. Age from submission to run date:
+
+- 12/28/2025 → 72 days: **MODERATE** age priority (31–90 days)
+- 12/29/2025 → 71 days: **MODERATE** age priority (31–90 days)
+- 12/30/2025 → 70 days: **MODERATE** age priority (31–90 days)
+- 46021 (106801) → serial number, calendar age unverifiable; treated as MODERATE for scoring purposes given dataset context, but noted as unverifiable
+
+All 41 invoices receive **MODERATE** age priority. Age is not a differentiating factor across this dataset.
+
+**Vendor Tier Mapping:**
+- Tier 1 → LOWEST tier priority
+- Tier 2 → LOW-MODERATE tier priority
+- Tier 3 → MODERATE-HIGH tier priority
+- Tier 4 → HIGHEST tier priority
+
+**Note on Invoice 106805:** Vendor Tier field reads "Tier" (truncated); Notes field states "Tier 1 (10%) — NATO ally." Tier 1 applied for scoring.
+
+**Note on Invoice 106796:** Prev Ref Count field is blank. Treated as 0–2 range (Standard) per conservative scoring practice.
+
+**Refund Amount Thresholds:**
+- Under $10,000 → LOW
+- $10,000–$100,000 → MODERATE
+- Over $100,000 → ELEVATED (for CLEAR items)
+
+**Composite Score Logic:**
+- HIGH: MODERATE age + HIGHEST or MODERATE-HIGH tier + ELEVATED amount + established/high-volume refund history
+- MODERATE: Mixed factors, no single dominant driver
+- LOW: LOWEST tier + LOW amount + limited history, or single low factor dominating
+
+**Expedite Recommendation:**
+- YES: CLEAR across all four compliance agents (ARIA, PETRA, TAX, CUSTOMS)
+- NO: Active compliance finding (HOLD, FLAG, CONDITIONAL HOLD) — item does not advance
+- MONITOR: Active compliance findings present, but high priority score warrants close attention during compliance resolution
+
+---
+
+## Compliance Status Summary (Pre-Scoring Reference)
+
+Before scoring, the consolidated compliance status of each invoice is established from all four agents. No invoice in this dataset received a fully CLEAR status across all four agents. The universal TAX HOLD (OC Present = N on 39 of 41 invoices, plus rate documentation flags) means no invoice is CLEAR at TAX. Additionally, INTAKE flagged all 41 invoices for submission date format or other data quality issues. ARIA, PETRA, and CUSTOMS findings are noted individually below.
+
+**Result: No invoice in this dataset is eligible for Expedite: YES. All invoices receive Expedite: NO or Expedite: MONITOR.**
+
+---
+
+---
+
+# SECTION 1 — Priority Scores
+
+---
+
+### Invoice 106772 | PO: 43271C55 | Vendor: Verisize | Country: Libya
+- **Age:** MODERATE (72 days)
+- **Vendor Tier:** Tier 3 → MODERATE-HIGH tier priority
+- **Refund Amount:** $45,657.00 → MODERATE amount
+- **Prev Ref Count:** 0 → Standard treatment
+- **Composite Priority Score:** MODERATE
+- **Compliance Status:** Active findings — ARIA: FLAG; PETRA: HOLD (import date unverifiable, security flag); TAX: HOLD (Libya/OFAC, import date, OC); CUSTOMS: CLEAR
+- **Expedite Recommendation:** NO
+- **Timeline Note:** MODERATE age (72 days); Tier 3 origin with sanctions jurisdiction (Libya) introduces regulatory complexity requiring compliance resolution before any advancement.
+
+---
+
+### Invoice 106773 | PO: 47844C80 | Vendor: LACNE | Country: China
+- **Age:** MODERATE (72 days)
+- **Vendor Tier:** Tier 4 → HIGHEST tier priority
+- **Refund Amount:** $353,634.84 → ELEVATED
+- **Prev Ref Count:** 2 → Standard treatment
+- **Composite Priority Score:** HIGH
+- **Compliance Status:** Active findings — ARIA: FLAG (duplicate PO, date format); PETRA: CONDITIONAL (routing pending); TAX: HOLD (OC absent, Section 301 rate citation absent); CUSTOMS: CLEAR
+- **Expedite Recommendation:** MONITOR
+- **Timeline Note:** MODERATE age (72 days); Tier 4 vendor with elevated refund amount. Compliance resolution in progress across multiple agents.
+
+---
+
+### Invoice 106774 | PO: 42844V1P | Vendor: Intelligence Systems | Country: Guatemala
+- **Age:** MODERATE (72 days)
+- **Vendor Tier:** Tier 1 → LOWEST tier priority
+- **Refund Amount:** $72,180.80 → MODERATE
+- **Prev Ref Count:** 2 → Standard treatment
+- **Composite Priority Score:** LOW
+- **Compliance Status:** Active findings — ARIA: FLAG (date format); PETRA: HOLD (Check channel security flag); TAX: HOLD (OC absent, FTA unsubstantiated); CUSTOMS: FLAG (FTA claimed, OC absent)
+- **Expedite Recommendation:** NO
+- **Timeline Note:** MODERATE age (72 days); Tier 1 origin. Multiple compliance findings require resolution.
+
+---
+
+### Invoice 106775 | PO: 47844C7F | Vendor: Colot | Country: China
+- **Age:** MODERATE (72 days)
+- **Vendor Tier:** Tier 4 → HIGHEST tier priority
+- **Refund Amount:** $127,642.02 → ELEVATED
+- **Prev Ref Count:** 5 → Established relationship, moderate trust weighting
+- **Composite Priority Score:** HIGH
+- **Compliance Status:** Active findings — ARIA: FLAG (payment record discrepancy, MUST-3); PETRA: HOLD (accuracy flag — Tariff Amt Paid field inconsistency); TAX: HOLD (OC absent, arithmetic inconsistency, Section 301 citation absent); CUSTOMS: CLEAR
+- **Expedite Recommendation:** MONITOR
+- **Timeline Note:** MODERATE age (72 days); Tier 4 vendor, elevated refund amount, established refund history. Material arithmetic inconsistency in payment fields requires compliance resolution.
+
+---
+
+### Invoice 106776 | PO: 453F27M9 | Vendor: CTX | Country: Italy
+- **Age:** MODERATE (72 days)
+- **Vendor Tier:** Tier 1 → LOWEST tier priority
+- **Refund Amount:** $9,907.20 → LOW
+- **Prev Ref Count:** 2 → Standard treatment
+- **Composite Priority Score:** LOW
+- **Compliance Status:** Active findings — ARIA: FLAG (date format); PETRA: HOLD (Check channel security flag); TAX: HOLD (OC absent, rate authority not cited); CUSTOMS: CLEAR
+- **Expedite Recommendation:** NO
+- **Timeline Note:** MODERATE age (72 days); Tier 1 origin, low refund amount. Compliance findings require resolution.
+
+---
+
+### Invoice 106777 | PO: 453D27A3 | Vendor: Steps IT Training | Country: Canada
+- **Age:** MODERATE (72 days)
+- **Vendor Tier:** Tier 1 → LOWEST tier priority
+- **Refund Amount:** $27,713.70 → MODERATE
+- **Prev Ref Count:** 1 → Standard treatment
+- **Composite Priority Score:** LOW
+- **Compliance Status:** Active findings — ARIA: FLAG (date format); PETRA: HOLD (Check channel security flag); TAX: HOLD (OC absent, USMCA/sectoral ambiguity, rate authority not cited); CUSTOMS: CLEAR
+- **Expedite Recommendation:** NO
+- **Timeline Note:** MODERATE age (72 days); Tier 1 origin. Compliance findings require resolution.
+
+---
+
+### Invoice 106778 | PO: 453F27K3 | Vendor: StepAhead | Country: Germany
+- **Age:** MODERATE (72 days)
+- **Vendor Tier:** Tier 1 → LOWEST tier priority
+- **Refund Amount:** $79,845.60 → MODERATE
+- **Prev Ref Count:** 5 → Established relationship, moderate trust weighting
+- **Composite Priority Score:** MODERATE
+- **Compliance Status:** Active findings — ARIA: FLAG (date format); PETRA: CONDITIONAL (routing pending); TAX: HOLD (OC absent, rate authority not cited); CUSTOMS: CLEAR
+- **Expedite Recommendation:** NO
+- **Timeline Note:** MODERATE age (72 days); Tier 1 origin, established refund history. TAX HOLD requires resolution before advancement.
+
+---
+
+### Invoice 106779 | PO: MISSING | Vendor: Duet | Country: Canada
+- **Age:** MODERATE (72 days)
+- **Vendor Tier:** Tier 1 → LOWEST tier priority
+- **Refund Amount:** $128,934.00 → ELEVATED
+- **Prev Ref Count:** 3 → Established relationship
+- **Composite Priority Score:** MODERATE
+- **Compliance Status:** Active findings — ARIA: HOLD (missing PO, MUST-1/MUST-2); PETRA: HOLD (Check channel, accuracy flag, routing blocked — missing PO); TAX: HOLD (OC absent, PO missing, tariff rate blank, USMCA ambiguity); CUSTOMS: CLEAR
+- **Expedite Recommendation:** NO
+- **Timeline Note:** MODERATE age (72 days); missing PO requires remediation as a prerequisite to any compliance progression.
+
+---
+
+### Invoice 106780 | PO: 47394C7D | Vendor: Axell Group | Country: Brazil
+- **Age:** MODERATE (72 days)
+- **Vendor Tier:** Tier 1 → LOWEST tier priority
+- **Refund Amount:** $23,120.00 → MODERATE
+- **Prev Ref Count:** 1 → Standard treatment
+- **Composite Priority Score:** LOW
+- **Compliance Status:** Active findings — ARIA: FLAG (MUST-3, rate/amount inconsistency); PETRA: HOLD (Check channel security flag, accuracy flag — rate applied vs. amount inconsistency); TAX: HOLD (OC absent, 30-point rate variance, rate authority absent); CUSTOMS: CLEAR
+- **Expedite Recommendation:** NO
+- **Timeline Note:** MODERATE age (72 days); Tier 1 origin. Significant rate variance requires compliance resolution.
+
+---
+
+### Invoice 106781 | PO: 453D27A2 | Vendor: ByteSize | Country: India
+- **Age:** MODERATE (72 days)
+- **Vendor Tier:** Tier 2 → LOW-MODERATE tier priority
+- **Refund Amount:** $133,136.80 → ELEVATED
+- **Prev Ref Count:** 5 → Established relationship, moderate trust weighting
+- **Composite Priority Score:** MODERATE
+- **Compliance Status:** Active findings — ARIA: FLAG (date format); PETRA: CONDITIONAL (routing pending); TAX: HOLD (OC absent, rate authority not cited); CUSTOMS: CLEAR
+- **Expedite Recommendation:** NO
+- **Timeline Note:** MODERATE age (72 days); Tier 2 origin, elevated refund amount, established history. TAX HOLD requires resolution.
+
+---
+
+### Invoice 106782 | PO: 47804C92 | Vendor: Data Pro Sys | Country: Canada
+- **Age:** MODERATE (72 days)
+- **Vendor Tier:** Tier 1 → LOWEST tier priority
+- **Refund Amount:** $5,528.20 → LOW
+- **Prev Ref Count:** 1 → Standard treatment
+- **Composite Priority Score:** LOW
+- **Compliance Status:** Active findings — ARIA: FLAG (MUST-3, Total Payment irreconcilable — $6.23 recorded vs. ~$60,810 expected); PETRA: HOLD (Check channel, Total Payment anomaly); TAX: HOLD (OC absent, Total Payment material integrity failure, USMCA ambiguity); CUSTOMS: CLEAR
+- **Expedite Recommendation:** NO
+- **Timeline Note:** MODERATE age (72 days); Tier 1 origin, low refund amount. Material data integrity issue in Total Payment field requires remediation.
+
+---
+
+### Invoice 106783 | PO: 42601C35 | Vendor: PicSure | Country: Germany
+- **Age:** MODERATE (72 days)
+- **Vendor Tier:** Tier 1 → LOWEST tier priority
+- **Refund Amount:** $12,880.00 → MODERATE
+- **Prev Ref Count:** 4 → Established relationship, moderate trust weighting
+- **Composite Priority Score:** LOW
+- **Compliance Status:** Active findings — ARIA: FLAG (date format); PETRA: CONDITIONAL (routing pending); TAX: HOLD (OC absent, rate authority not cited); CUSTOMS: CLEAR
+- **Expedite Recommendation:** NO
+- **Timeline Note:** MODERATE age (72 days); Tier 1 origin. TAX HOLD requires resolution.
+
+---
+
+### Invoice 106784 | PO: 452N27A1 | Vendor: TQ Processes | Country: Peru
+- **Age:** MODERATE (72 days)
+- **Vendor Tier:** Tier 1 → LOWEST tier priority
+- **Refund Amount:** $55,245.00 → MODERATE
+- **Prev Ref Count:** 5 → Established relationship, moderate trust weighting
+- **Composite Priority Score:** LOW
+- **Compliance Status:** Active findings — ARIA: FLAG (date format); PETRA: HOLD (Check channel security flag); TAX: HOLD (OC absent, FTA unsubstantiated); CUSTOMS: FLAG (FTA claimed, OC absent)
+- **Expedite Recommendation:** NO
+- **Timeline Note:** MODERATE age (72 days); Tier 1 origin. FTA certificate absent; compliance resolution required.
+
+---
+
+### Invoice 106785 | PO: 47843C8F | Vendor: Pink Cloud Networks | Country: China
+- **Age:** MODERATE (72 days)
+- **Vendor Tier:** Tier 4 → HIGHEST tier priority
+- **Refund Amount:** $8,974.49 → LOW
+- **Prev Ref Count:** 3 → Established relationship
+- **Composite Priority Score:** MODERATE
+- **Compliance Status:** Active findings — ARIA: FLAG (MUST-3, Tariff Amt Paid / Total Payment / Refund Claimed mutually inconsistent); PETRA: HOLD (Corporate Card and Cash channels — non-compliant); TAX: HOLD (OC absent, Section 301 citation absent — findings noted in TAX report for China/Tier 4 invoices); CUSTOMS: CLEAR
+- **Expedite Recommendation:** NO
+- **Timeline Note:** MODERATE age (72 days); Tier 4 origin but low refund amount. Multiple payment channel compliance findings and arithmetic inconsistencies require resolution.
+
+---
+
+### Invoice 106786 | PO: 42A5A709 | Vendor: Cyber Data Processing | Country: Chile
+- **Age:** MODERATE (72 days)
+- **Vendor Tier:** Tier 1 → LOWEST tier priority
+- **Refund Amount:** $25,368.00 → MODERATE
+- **Prev Ref Count:** 5 → Established relationship, moderate trust weighting
+- **Composite Priority Score:** LOW
+-

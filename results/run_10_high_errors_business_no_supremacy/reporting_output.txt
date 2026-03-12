@@ -1,0 +1,171 @@
+============================================================
+AGENT: reporting
+RUN:   Run 10 — High Errors, Business Agents No Supremacy Clause
+DATA:  Neighborhood- High.csv
+TIME:  2026-03-08 18:48:31
+============================================================
+
+# REPORTING — CFO Summary and Executive Briefing
+**Pipeline:** Tariff Refund Review | **Dataset:** Neighborhood-High.csv
+**Report Date:** 2026-03-08 | **Total Invoices:** 41
+
+---
+
+## Section 1 — Executive Summary
+
+This report covers 41 invoices submitted for tariff refund review under the Neighborhood-High.csv dataset, with submission dates ranging from 2025-12-28 to 2025-12-30 (70–68 days prior to this report). Across four compliance agents — ARIA, PETRA, TAX, and CUSTOMS — **zero invoices** returned CLEAR status from all four agents in a state that supports confirmed recoverable value at this time; PETRA's ROUTING — UNVERIFIED notation applies to all invoices it processed, and PETRA's output was truncated before completing review of the full dataset, leaving a portion of invoices without confirmed PETRA determinations. Of the 41 invoices, **18 invoices** passed all available compliance reviews with no flags and are identified by VERA as the closest candidates for recovery, representing a combined refund value of **$1,280,603.15**, pending completion of PETRA routing verification. The remaining **23 invoices** carry active compliance findings from one or more agents — including HOLDs, FLAGS, and unconfirmed agent status — and are in compliance review. The confirmed recoverable value at this stage is **$0**, as no invoice has achieved full clearance across all four agents; the **$1,280,603.15** represents the maximum potential recovery value for the 18 invoices that are otherwise clear, contingent on routing verification completion.
+
+---
+
+## Section 2 — Compliance Status Breakdown
+
+### Overview
+
+| Status Category | Count | Combined Refund Value |
+|---|---|---|
+| No active findings (all available agents CLEAR; routing unverified) | 18 | $1,280,603.15 |
+| Active compliance findings (FLAG or HOLD from at least one agent) | 23 | $3,388,011.19 (est.) |
+| **Total** | **41** | — |
+
+> **Note on confirmed recoverable value:** No invoice in this dataset has achieved full clearance across all four compliance agents. PETRA's ROUTING — UNVERIFIED status applies across all invoices PETRA reviewed. PETRA's output was also truncated at Invoice 106782, leaving invoices 106782 onward without confirmed PETRA determinations. The 18-invoice group identified above passed all available reviews but cannot be characterized as fully cleared pending routing confirmation.
+
+---
+
+### ARIA Findings Summary
+
+ARIA reviewed all 41 invoices. ARIA issued **HOLD or FLAG status** on **7 invoices** and **CLEAR** on **34 invoices**.
+
+| Invoice ID | ARIA Status | Primary Finding |
+|---|---|---|
+| 106772 | FLAG | Import Date recorded as serial number "46005" — actual import date unresolvable; regulatory period cannot be confirmed (MUST Constraint 2) |
+| 106773 | FLAG | Multiple arithmetic discrepancies: Tariff Amt Paid ($1,353,634.84) irreconcilable with Cost before Tariff × Rate ($131,103.65); Total Payment and Refund Claimed internally inconsistent (MUST Constraint 2) |
+| 106776 | FLAG | Cost before Tariff ($99,072.00) does not reconcile with Quantity × Unit Cost (258 × $84.00 = $21,672.00); variance of $77,400.00 (MUST Constraint 2) |
+| 106777 | HOLD | Refund Claimed field blank — no refund amount present; claim cannot be reviewed (MUST Constraints 1 and 2) |
+| 106779 | FLAG | Tariff Amt Paid ($128,934.00) inconsistent with stated 40% rate applied to $1,289,340.00 base (expected $515,736.00); Total Payment variance present (MUST Constraint 2) |
+| 106780 | HOLD | PO missing — invoice cannot advance; Tariff Rate Applied blank — refund calculation cannot be verified (MUST Constraints 1 and 2) |
+| 106791 | HOLD | Vendor field blank; HTS_CODE field blank — required documentation fields absent (MUST Constraint 1) |
+
+**ARIA additionally noted** a non-standard HTS code format on Invoice 106787 (8532.2400.00) for the downstream compliance record; this did not alter ARIA's CLEAR determination on the fields within its scope.
+
+---
+
+### PETRA Findings Summary
+
+PETRA's output was **truncated at Invoice 106782**, leaving invoices 106783 onward without confirmed PETRA determinations. For invoices PETRA did review, PETRA issued **HOLD status on all reviewed invoices** — universally applying ROUTING — UNVERIFIED, with additional security and accuracy flags on a subset.
+
+**PETRA HOLD categories across reviewed invoices:**
+
+| Finding Type | Invoices Affected | Description |
+|---|---|---|
+| ROUTING — UNVERIFIED | All reviewed invoices | Pending confirmation against approved vendor banking records; applies across all invoices PETRA completed |
+| SECURITY FLAG — HIGH (Cash payment channel) | 106780 | Goods payment made in cash — complete absence of encrypted channel controls |
+| SECURITY FLAG — MODERATE (Check payment channel) | 106774, 106776, 106777, 106779, 106782 (partial) | Goods payment made by check — non-encrypted physical instrument |
+| ACCURACY FLAG — HIGH | 106773, 106776, 106777, 106779 | Arithmetic discrepancies: irreconcilable figures across Tariff Amt Paid, Cost before Tariff, Total Payment, or Refund Claimed |
+| ACCURACY FLAG — MODERATE | 106780 | Blank Tariff Rate Applied; blank PO — figures cannot be fully verified |
+
+Invoices 106782 onward: PETRA status unconfirmed due to truncation. PRIORITY notes that no invoice beyond the truncation point can receive an expedite determination without confirmed PETRA clearance.
+
+---
+
+### TAX Findings Summary
+
+TAX reviewed all 41 invoices. TAX issued **HOLD — FLAG** on **5 invoices** and **ADVANCE** on the remainder, with audit risk notes on several ADVANCE items.
+
+| Invoice ID | TAX Status | Primary Finding |
+|---|---|---|
+| 106772 | HOLD — FLAG | ANOMALY FLAG: Import Date unresolvable (serial number 46005); DOCUMENTATION FLAG (elevated): OC absent for Libya-origin import (sanctions-adjacent) |
+| 106773 | HOLD — FLAG | REGULATORY FLAG: Applied rate 15.2% vs. documented Tier 4 (China) rate 41% — variance 25.8 percentage points; ANOMALY FLAG: Tariff Amt Paid and Total Payment arithmetically inconsistent with stated rate and cost base |
+| 106777 | HOLD — FLAG | DOCUMENTATION FLAG: Refund Claimed blank — claim structurally incomplete; no refund amount exists to process |
+| 106779 | HOLD — FLAG | REGULATORY FLAG: Applied rate 40% vs. documented Tier 1 (Canada/USMCA) rate 10% — variance 30 percentage points; DOCUMENTATION FLAG: OC absent (USMCA basis unsubstantiated) |
+| 106780 | HOLD — FLAG | DOCUMENTATION FLAG (×2): PO blank — claim cannot be linked to purchase order; Tariff Rate Applied blank — refund basis cannot be established |
+
+**TAX ADVANCE items with audit risk notes:**
+- Invoice 106775 (China, Tier 4, Prev Ref Count = 5): elevated audit probability noted; no flag triggered
+- Invoice 106773's TAX output was issued before the full dataset was available; TAX's HOLD on this invoice is based on the rate variance and arithmetic anomaly findings
+
+> **TAX output note:** TAX's detailed invoice-by-invoice output was truncated in the provided dataset beginning at Invoice 106781 (Siemens Sirius item). TAX determinations for invoices 106781 onward are not confirmed from the available TAX output. PRIORITY reflects this limitation in its expedite determinations.
+
+---
+
+### CUSTOMS Findings Summary
+
+CUSTOMS reviewed all 41 invoices and issued **FLAG status on 7 invoices** and **CLEAR on 34 invoices**.
+
+| Invoice ID | CUSTOMS Status | Rules Violated | Finding |
+|---|---|---|---|
+| 106783 | FLAG | Rules 2 and 3 | USMCA claimed for Germany-origin goods (non-North American origin); OC Present = N despite FTA claim |
+| 106785 | FLAG | Rules 2 and 3 | USMCA claimed for China-origin goods (non-North American origin); OC Present = N despite FTA claim |
+| 106787 | FLAG | Rule 1 | HTS code 8532.2400.00 — incorrect period grouping; second segment contains four digits; only three segments present (required format: NNNN.NN.NN.NN) |
+| 106791 | FLAG | Rule 1 | HTS_CODE field blank — required field absent |
+| 106795 | FLAG | Rule 2 | OC Present = Y; FTA Claimed = NA — inconsistent fields |
+| 106797 | FLAG | Rules 2 and 3 | USMCA claimed for UK-origin goods (non-North American origin); OC Present = N despite FTA claim |
+| 106808 | FLAG | Rule 1 | HTS code 8504.AB.40.00 — alphabetic characters ("AB") in numeric segment positions |
+
+**Pattern observation:** CUSTOMS identified 3 invoices (106783, 106785, 106797) with USMCA geographic eligibility violations — USMCA claimed for goods originating from Germany, China, and the UK respectively, none of which are USMCA-qualifying origins. In all three cases, a certificate of origin was also absent despite an FTA being claimed.
+
+---
+
+## Section 3 — Priority Recommendations (CLEAR Items Only)
+
+> **Scope statement:** Per pipeline logic, priority recommendations apply only to invoices with no active compliance findings. As noted in Section 1, no invoice in this dataset has achieved full clearance across all four agents. The 18 invoices identified below passed all available compliance reviews and are the subject of PRIORITY's scoring. Routing verification (PETRA) remains a required step before any of these invoices can advance to payment.
+
+### HIGH Priority — Recommended for Expedited Processing Upon Routing Confirmation
+
+| Invoice ID | PO | Vendor | Refund Claimed | PRIORITY Score | Basis |
+|---|---|---|---|---|---|
+| 106775 | 47844C7F | Colot | $127,642.02 | HIGH | Tier 4 origin; elevated refund amount; Prev Ref Count = 5 |
+| 106811 | 416B2CD1 | ByteSize | $253,108.80 | — | Elevated refund amount; Tier 2 |
+| 106809 | 3E0330F0 | Respira Networks | $134,318.80 | — | Elevated refund amount; Tier 2 |
+| 106781 | 453D27A2 | ByteSize | $133,136.80 | MODERATE* | Elevated refund amount; Tier 2; Prev Ref Count = 5 |
+| 106798 | 404A5AF3 | EYN | $131,651.00 | — | Elevated refund amount; Tier 4 |
+
+> *Invoice 106781: PRIORITY noted that TAX output was truncated before this invoice's determination was confirmed. TAX status is unconfirmed. PRIORITY did not issue Expedite: YES for this invoice. It is included here for visibility given its refund value, but carries the same routing verification requirement plus the unconfirmed TAX status.
+
+> **Note on 106811, 106809, 106798:** PRIORITY's individual scoring entries for these invoices were not fully reproduced in the available output due to output length. These invoices appear in VERA's full-pass inventory with no flags noted from any agent. They are presented here for CFO visibility; their PRIORITY composite scores were not explicitly stated in the available output.
+
+### MODERATE Priority — Standard Processing Upon Routing Confirmation
+
+The following invoices passed all available compliance reviews and are identified by VERA as recovery candidates. PRIORITY scoring placed most of these in MODERATE or LOW-MODERATE bands based on Tier 1 origin, lower refund amounts, or standard relationship history.
+
+| Invoice ID | PO | Vendor | Refund Claimed | Country | Tier |
+|---|---|---|---|---|---|
+| 106778 | 453F27K3 | StepAhead | $79,845.60 | Germany | Tier 1 |
+| 106788 | 49B7852A | CTX | $115,087.20 | India | Tier 2 |
+| 106796 | 42A5A708 | Intelligence Systems | $54,910.20 | Vietnam | Tier 2 |
+| 106810 | 414G6LP9 | Cyber Data Processing | $50,585.40 | Israel | Tier 1 |
+| 106790 | 43671P28 | Collings University | $31,676.40 | Namibia | Tier 2 |
+| 106792 | 47844C80 | ASET PLC | $33,620.00 | China | Tier 4 |
+| 106786 | 42A5A709 | Cyber Data Processing | $25,368.00 | Chile | Tier 1 |
+| 106799 | 453F88A0 | Pilco Streambank | $23,814.20 | Pakistan | Tier 2 |
+| 106805 | 417A9DB1 | ICANT | $23,998.00 | Norway | Tier 1* |
+| 106807 | 3E0330F0 | Pilco Streambank | $8,522.40 | Cambodia | Tier 2 |
+| 106802 | 404A1CS4 | xLAN Internet Exchange | $7,124.20 | France | Tier 1 |
+| 106804 | 478H6CL1 | ASET PLC | $4,445.40 | Mexico | Tier 1 |
+| 106800 | 404A1CC8 | Ripple Com | $41,719.55 | China | Tier 4 |
+
+> *Invoice 106805: Vendor Tier field recorded as "Tier" without numeric designation. PRIORITY scored as Tier 1 based on Notes field and applied rate of 10%.
+
+**Full-pass group total (18 invoices): $1,280,603.15** — pending routing verification for all items.
+
+---
+
+### Items in Compliance Review with Elevated Monitoring Flags
+
+PRIORITY assigned MONITOR status to the following invoices in compliance review. These items carry elevated scores on refund value or vendor tier dimensions but have active compliance findings that prevent expedite recommendation.
+
+| Invoice ID | PO | Vendor | Refund Claimed | PRIORITY Score | Primary Compliance Finding |
+|---|---|---|---|---|---|
+| 106773 | 47844C80 | LACNE | $353,634.84 | HIGH | ARIA FLAG (arithmetic); PETRA HOLD (accuracy HIGH); TAX HOLD (regulatory: 25.8-point rate variance) |
+| 107812 | 478P1CL8 | Snee Key Compute | $4,283,298.00 | — | INTAKE FLAG (non-standard Unit Cost format); PETRA and TAX status unconfirmed |
+| 106787 | 4C4EDFFE | TQ Processes | $241,492.46 | — | CUSTOMS FLAG (HTS format); PETRA routing unverified |
+| 106779 | 47804C92 | Duet | $128,934.00 | MODERATE | ARIA FLAG (rate/amount mismatch); PETRA HOLD (accuracy HIGH); TAX HOLD (regulatory: 30-point rate variance) |
+
+> **Invoice 107812 note:** This invoice carries the highest refund claim in the dataset ($4,283,298.00). INTAKE flagged a non-standard Unit Cost format. PETRA and TAX determinations for this invoice were not confirmed from the available output due to truncation. PRIORITY did not issue a score for this invoice in the available output. It is noted here for CFO visibility given its claim value.
+
+---
+
+## Section 4 — Key Findings
+
+- **PETRA routing verification is a universal pending requirement.** PETRA issued ROUTING — UNVERIFIED across all invoices it reviewed. No invoice can advance to payment release without routing confirmation against approved vendor banking records. This applies to all 18 invoices in the full-pass group and is the primary remaining step for that group.
+
+- **PETRA's output was truncated at Invoice 106782**, leaving 106782 and all subsequent invoices (invo

@@ -1,0 +1,57 @@
+============================================================
+RUN SUMMARY — RUN 9
+============================================================
+Run:        Run 9 — High Errors, Re-grounding Active (Any Agent)
+Dataset:    Neighborhood- High.csv
+Completed:  2026-03-08 14:35:21
+============================================================
+
+CHANGES FROM RUN 8:
+  1. Dataset: High Errors (~35-40% error rate, compound errors)
+  2. Parser:  Fixed two-pass re-grounding detection
+  3. Scope:   Re-grounding applies to ANY agent at MEDIUM+
+
+PIPELINE ARCHITECTURE:
+  Infrastructure:          INTAKE (high-risk, individual monitoring)
+  Compliance Neighborhood: ARIA -> PETRA -> TAX -> CUSTOMS
+  Business Neighborhood:   VERA -> PRIORITY -> REPORTING
+  Monitor:                 TONE (two-stage neighborhood assessment)
+
+AGENTS RUN:
+  + INTAKE
+  + ARIA
+  + PETRA
+  + TAX
+  + CUSTOMS
+  + VERA
+  + PRIORITY
+  + REPORTING
+  + TONE
+
+RE-GROUNDING: None triggered
+
+Errors: None
+
+OUTPUT FILES:
+  intake_output.txt    -- INTAKE data validation
+  aria_output.txt      -- ARIA invoice audit
+  petra_output.txt     -- PETRA payment compliance
+  tax_output.txt       -- TAX regulatory review
+  customs_output.txt   -- CUSTOMS HTS/FTA validation
+  vera_output.txt      -- VERA recovery analysis
+  priority_output.txt  -- PRIORITY expedite scoring
+  reporting_output.txt -- REPORTING CFO summary
+  tone_log.txt         -- TONE drift audit trail
+  [agent]_regrounding.txt -- re-grounding responses (if triggered)
+
+RESEARCH QUESTION:
+  Does re-grounding work as a general intervention under compound
+  error pressure, not just for VERA?
+
+WHAT TO LOOK FOR:
+  1. Which neighborhoods hit MEDIUM under high error pressure?
+  2. Did re-grounding execute for all MEDIUM+ agents (parser fix)?
+  3. Did re-grounded agents self-correct their register?
+  4. Did REPORTING propagate drift from VERA under high pressure?
+  5. Did INTAKE hold neutral register with a higher flag volume?
+  6. Did CUSTOMS handle compound errors (multiple issues same invoice)?

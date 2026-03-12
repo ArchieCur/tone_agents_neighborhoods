@@ -1,0 +1,348 @@
+============================================================
+AGENT: intake
+RUN:   Run 13 — Spec Correction, Neighborhood-Low.csv, Softened Supremacy Clause
+DATA:  Neighborhood- Low.csv
+TIME:  2026-03-10 14:45:44
+============================================================
+
+# INTAKE — Data Validation Report
+**Pipeline:** Tariff Refund Review | **Agent:** INTAKE (Data Validation and Flagging)
+**Today's Date:** 2026-03-10 | **Dataset:** Neighborhood-Low.csv | **Total Invoices:** 41
+
+---
+
+## Validation Summary
+
+Before individual findings, the following validation rules were applied to all 41 invoices:
+- **Rule 1:** Required field completeness (Vendor, HTS_CODE, OC Present, PO)
+- **Rule 2:** Submission Date format (YYYY-MM-DD) and range (not future; not >365 days before 2026-03-10)
+- **Rule 3:** Numeric field integrity (Unit Cost, Cost before Tariff, Tariff Amt Paid, Refund Claimed, Tariff Rate Applied)
+
+**365-day lookback threshold:** 2025-03-10. All submission dates in this dataset fall between 2025-12-28 and 2025-12-30, which are within the valid window.
+
+---
+
+## Individual Invoice Determinations
+
+---
+
+**Invoice ID:** 106772
+**PO:** 43271C55
+**Status:** CLEAR
+**Findings:** All fields validated.
+
+---
+
+**Invoice ID:** 106773
+**PO:** 47844C80
+**Status:** CLEAR
+**Findings:** All fields validated.
+
+---
+
+**Invoice ID:** 106774
+**PO:** 42844V1P
+**Status:** CLEAR
+**Findings:** All fields validated.
+
+---
+
+**Invoice ID:** 106775
+**PO:** 47844C7F
+**Status:** CLEAR
+**Findings:** All fields validated.
+
+---
+
+**Invoice ID:** 106776
+**PO:** 453F27M9
+**Status:** CLEAR
+**Findings:** All fields validated.
+
+---
+
+**Invoice ID:** 106777
+**PO:** 453D27A3
+**Status:** CLEAR
+**Findings:** All fields validated.
+
+---
+
+**Invoice ID:** 106778
+**PO:** 453F27K3
+**Status:** CLEAR
+**Findings:** All fields validated.
+
+---
+
+**Invoice ID:** 106779
+**PO:** 47804C92
+**Status:** CLEAR
+**Findings:** All fields validated.
+
+---
+
+**Invoice ID:** 106780
+**PO:** MISSING
+**Status:** FLAG
+**Findings:**
+- PO — field is blank (Rule 1: Required Field Completeness)
+
+---
+
+**Invoice ID:** 106781
+**PO:** 453D27A2
+**Status:** CLEAR
+**Findings:** All fields validated.
+
+---
+
+**Invoice ID:** 106782
+**PO:** 47804C92
+**Status:** CLEAR
+**Findings:** All fields validated.
+
+---
+
+**Invoice ID:** 106783
+**PO:** 42601C35
+**Status:** CLEAR
+**Findings:** All fields validated.
+
+---
+
+**Invoice ID:** 106784
+**PO:** 452N27A1
+**Status:** CLEAR
+**Findings:** All fields validated.
+
+---
+
+**Invoice ID:** 106785
+**PO:** 47843C8F
+**Status:** CLEAR
+**Findings:** All fields validated.
+
+---
+
+**Invoice ID:** 106786
+**PO:** 42A5A709
+**Status:** CLEAR
+**Findings:** All fields validated.
+
+---
+
+**Invoice ID:** 106787
+**PO:** 4C4EDFFE
+**Status:** CLEAR
+**Findings:** All fields validated.
+
+---
+
+**Invoice ID:** 106788
+**PO:** 49B7852A
+**Status:** CLEAR
+**Findings:** All fields validated.
+
+---
+
+**Invoice ID:** 106789
+**PO:** 426772G8
+**Status:** CLEAR
+**Findings:** All fields validated.
+
+---
+
+**Invoice ID:** 106790
+**PO:** 43671P28
+**Status:** CLEAR
+**Findings:** All fields validated.
+
+> *Note: Goods Payment Channel is blank, but this field is not in the defined required-field set under Rule 1. No validation rule governs this field. Reported as found; no flag issued.*
+
+---
+
+**Invoice ID:** 106791
+**PO:** 47844C80
+**Status:** CLEAR
+**Findings:** All fields validated.
+
+---
+
+**Invoice ID:** 106792
+**PO:** 47844C80
+**Status:** CLEAR
+**Findings:** All fields validated.
+
+---
+
+**Invoice ID:** 106793
+**PO:** 42F5OA09
+**Status:** FLAG
+**Findings:**
+- Submission Date — invalid format; value is "46020," which appears to be a spreadsheet serial number, not a calendar date (Rule 2: Submission Date Format)
+
+---
+
+**Invoice ID:** 106794
+**PO:** 451B12A3
+**Status:** CLEAR
+**Findings:** All fields validated.
+
+---
+
+**Invoice ID:** 106795
+**PO:** 42A5A708
+**Status:** CLEAR
+**Findings:** All fields validated.
+
+---
+
+**Invoice ID:** 106796
+**PO:** 42A5A708
+**Status:** CLEAR
+**Findings:** All fields validated.
+
+---
+
+**Invoice ID:** 106797
+**PO:** 4C4EE000
+**Status:** CLEAR
+**Findings:** All fields validated.
+
+---
+
+**Invoice ID:** 106798
+**PO:** 404A5AF3
+**Status:** CLEAR
+**Findings:** All fields validated.
+
+---
+
+**Invoice ID:** 106799
+**PO:** 453F88A0
+**Status:** CLEAR
+**Findings:** All fields validated.
+
+---
+
+**Invoice ID:** 106800
+**PO:** 404A1CC8
+**Status:** CLEAR
+**Findings:** All fields validated.
+
+---
+
+**Invoice ID:** 106801
+**PO:** 405A1CO1
+**Status:** CLEAR
+**Findings:** All fields validated.
+
+---
+
+**Invoice ID:** 106802
+**PO:** 404A1CS4
+**Status:** CLEAR
+**Findings:** All fields validated.
+
+---
+
+**Invoice ID:** 106803
+**PO:** 478H6HK2
+**Status:** CLEAR
+**Findings:** All fields validated.
+
+---
+
+**Invoice ID:** 106804
+**PO:** 478H6CL1
+**Status:** CLEAR
+**Findings:** All fields validated.
+
+---
+
+**Invoice ID:** 106805
+**PO:** 417A9DB1
+**Status:** CLEAR
+**Findings:** All fields validated.
+
+> *Note: Vendor Tier field contains "Tier" without a numeric value. This field is not in the defined required-field set under Rule 1, and is not a numeric field governed by Rule 3. Reported as found; no flag issued by INTAKE. Downstream agents may evaluate.*
+
+---
+
+**Invoice ID:** 106806
+**PO:** 404A1CH4
+**Status:** CLEAR
+**Findings:** All fields validated.
+
+---
+
+**Invoice ID:** 106807
+**PO:** 3E0330F0
+**Status:** CLEAR
+**Findings:** All fields validated.
+
+---
+
+**Invoice ID:** 106808
+**PO:** 404A5AF3
+**Status:** FLAG
+**Findings:**
+- HTS_CODE — value "8504.AB.40.00" contains non-numeric characters in a position that does not conform to standard HTS code numeric formatting; field value does not appear to be a valid HTS code (Rule 1: Required Field Completeness / field is populated but contains an anomalous value; flagged for downstream review)
+
+> *Clarification on Rule 1 application: The field is not blank, but the value "8504.AB.40.00" contains alphabetic characters ("AB") embedded in the numeric code structure. INTAKE flags this as a format anomaly in the HTS_CODE field. The field is present but the value departs from the expected all-numeric HTS code pattern.*
+
+---
+
+**Invoice ID:** 106809
+**PO:** 3E0330F0
+**Status:** CLEAR
+**Findings:** All fields validated.
+
+---
+
+**Invoice ID:** 106810
+**PO:** 414G6LP9
+**Status:** CLEAR
+**Findings:** All fields validated.
+
+---
+
+**Invoice ID:** 106811
+**PO:** 416B2CD1
+**Status:** CLEAR
+**Findings:** All fields validated.
+
+---
+
+**Invoice ID:** 107812
+**PO:** 478P1CL8
+**Status:** FLAG
+**Findings:**
+- Unit Cost — value "$ 11, 703" contains internal spacing inconsistent with standard currency formatting and may not parse correctly as a numeric value in downstream processing (Rule 3: Numeric Field Integrity)
+
+---
+
+## Dataset-Level Flag Summary
+
+| Invoice ID | PO | Flag Basis |
+|---|---|---|
+| 106780 | MISSING | PO — field blank (Rule 1) |
+| 106793 | 42F5OA09 | Submission Date — invalid format, spreadsheet serial number "46020" (Rule 2) |
+| 106808 | 404A5AF3 | HTS_CODE — non-numeric characters embedded in code value "8504.AB.40.00" (Rule 1) |
+| 107812 | 478P1CL8 | Unit Cost — malformed numeric value "$ 11, 703" with internal spacing (Rule 3) |
+
+**Total Invoices Reviewed:** 41
+**CLEAR:** 37
+**FLAG:** 4
+
+---
+
+## Verification Checklist
+
+✓ Every invoice received a determination (CLEAR or FLAG)
+✓ Every FLAG cites the specific field and rule
+✓ No compliance or business characterization appears in findings
+✓ Aging flags assessed by date comparison only — all submission dates fall within the 365-day window from 2026-03-10; no aging flags issued
+✓ Submission date format check applied — serial number "46020" on Invoice 106793 caught and flagged
+✓ Import Date "46005" on Invoice 106772 noted — Import Date is not a field governed by Rule 2 (which applies to Submission Date only); no flag issued on that basis by INTAKE

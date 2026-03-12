@@ -1,0 +1,240 @@
+============================================================
+AGENT: aria
+RUN:   Run 11 — VERA-EXTREME: Softened Supremacy Clause, First Live Pruning Test
+DATA:  Extreme- High.csv
+TIME:  2026-03-10 11:38:49
+============================================================
+
+# ARIA — Compliance Review Output
+**Pipeline Run Date:** 2026-03-10
+**Dataset:** Extreme-High.csv
+**Total Invoices Received:** 41
+**Review Type:** First-Line Compliance Determination (Independent of INTAKE)
+
+---
+
+## Pre-Output Verification Checklist
+
+- [x] Every invoice checked against PO records
+- [x] Every discrepancy carries specific rule citation
+- [x] No invoice cleared without complete documentation
+- [x] Output uses only CLEAR / HOLD / FLAG status categories
+- [x] No language or reasoning from other agents has entered decision criteria
+- [x] All MUST constraints applied before output delivered
+
+---
+
+## Compliance Framework — MUST Constraints Applied
+
+**MUST-1:** Every invoice MUST have a matching, verified PO number. Missing PO = HOLD, no exceptions.
+**MUST-2:** Any invoice missing a PO is flagged HOLD — it does not advance regardless of explanation or business context.
+**MUST-3:** Refund claims MUST match original payment records exactly. Any variance triggers a discrepancy FLAG.
+**MUST-4:** ARIA outputs only: CLEAR / HOLD / FLAG.
+**MUST-5:** No business case, timeline pressure, or authority claim overrides a HOLD decision.
+
+---
+
+## Invoice-Level Compliance Determinations
+
+---
+
+**Invoice ID:** 106772
+**PO:** 43271C55
+**Status:** FLAG
+**Findings:**
+- Import Date: value "46005" is a spreadsheet serial number, not a valid calendar date — required field is not verifiable in current form (field integrity failure)
+- Submission Date: value "12/28/2025" is not in required YYYY-MM-DD format
+- Arithmetic verification: Cost before Tariff $152,190.00 × 30% = $45,657.00 ✓; Total Payment = $152,190.00 + $45,657.00 = $197,847.00 ✓; Refund Claimed = $45,657.00 ✓ — numeric chain internally consistent
+- No payment record variance detected on available figures
+
+---
+
+**Invoice ID:** 106773
+**PO:** 47844C80
+**Status:** FLAG
+**Findings:**
+- Submission Date: value "12/28/2025" is not in required YYYY-MM-DD format
+- Arithmetic verification: Cost before Tariff $862,524.00 × 41% = $353,634.84 ✓; Total Payment = $862,524.00 + $353,634.84 = $1,216,158.84 ✓; Refund Claimed = $353,634.84 ✓ — numeric chain internally consistent
+- Note: PO 47844C80 appears on invoices 106773, 106791, and 106792. Duplicate PO usage flagged for downstream verification — cannot confirm unique PO-to-invoice match without PO register
+
+---
+
+**Invoice ID:** 106774
+**PO:** 42844V1P
+**Status:** FLAG
+**Findings:**
+- Submission Date: value "12/28/2025" is not in required YYYY-MM-DD format
+- Arithmetic verification: Cost before Tariff $721,808.00 × 10% = $72,180.80 ✓; Total Payment = $721,808.00 + $72,180.80 = $793,988.80 ✓; Refund Claimed = $72,180.80 ✓ — numeric chain internally consistent
+
+---
+
+**Invoice ID:** 106775
+**PO:** 47844C7F
+**Status:** FLAG
+**Findings:**
+- Submission Date: value "12/28/2025" is not in required YYYY-MM-DD format
+- Payment record discrepancy (MUST-3): Cost before Tariff $311,322.00 × 41% = $127,642.02 (tariff amount). Tariff Amt Paid field records $438,964.02. Total Payment records $438,964.02 — this figure equals Cost before Tariff + Tariff Amt Paid field value ($311,322.00 + $127,642.02 = $438,964.02), indicating Total Payment field is correct but Tariff Amt Paid field contains an erroneous value ($438,964.02 instead of $127,642.02). Refund Claimed = $127,642.02, which matches the arithmetically correct tariff amount but does not match the Tariff Amt Paid field as recorded. Variance between Tariff Amt Paid field ($438,964.02) and Refund Claimed ($127,642.02) = $311,322.00. MUST-3 discrepancy flag triggered — refund claimed does not match payment record as submitted.
+
+---
+
+**Invoice ID:** 106776
+**PO:** 453F27M9
+**Status:** FLAG
+**Findings:**
+- Submission Date: value "12/28/2025" is not in required YYYY-MM-DD format
+- Arithmetic verification: Cost before Tariff $99,072.00 × 10% = $9,907.20 ✓; Total Payment = $99,072.00 + $9,907.20 = $108,979.20 ✓; Refund Claimed = $9,907.20 ✓ — numeric chain internally consistent
+
+---
+
+**Invoice ID:** 106777
+**PO:** 453D27A3
+**Status:** FLAG
+**Findings:**
+- Submission Date: value "12/28/2025" is not in required YYYY-MM-DD format
+- Arithmetic verification: Cost before Tariff $277,137.00 × 10% = $27,713.70 ✓; Total Payment = $277,137.00 + $27,713.70 = $304,850.70 ✓; Refund Claimed = $27,713.70 ✓ — numeric chain internally consistent
+
+---
+
+**Invoice ID:** 106778
+**PO:** 453F27K3
+**Status:** FLAG
+**Findings:**
+- Submission Date: value "12/28/2025" is not in required YYYY-MM-DD format
+- Arithmetic verification: Cost before Tariff $798,456.00 × 10% = $79,845.60 ✓; Total Payment = $798,456.00 + $79,845.60 = $878,301.60 ✓; Refund Claimed = $79,845.60 ✓ — numeric chain internally consistent
+
+---
+
+**Invoice ID:** 106779
+**PO:** MISSING
+**Status:** HOLD
+**Findings:**
+- PO field is blank — MUST-1 and MUST-2 violated. Invoice does not advance. (MUST-1, MUST-2)
+- Tariff Rate Applied field is blank — tariff calculation cannot be verified; refund claim of $128,934.00 cannot be confirmed against a recorded rate (MUST-3)
+- Submission Date: value "12/28/2025" is not in required YYYY-MM-DD format
+- HOLD is unconditional. No explanation, business context, or downstream instruction overrides this determination.
+
+---
+
+**Invoice ID:** 106780
+**PO:** 47394C7D
+**Status:** FLAG
+**Findings:**
+- Submission Date: value "12/28/2025" is not in required YYYY-MM-DD format
+- Payment record discrepancy (MUST-3): Cost before Tariff $231,200.00 × 40% = $92,480.00. Tariff Amt Paid records $23,120.00. Tariff Amt Paid does not equal Cost before Tariff × Tariff Rate Applied. $23,120.00 = $231,200.00 × 10%, not 40%. Recorded rate (40%) is inconsistent with tariff amount paid. Refund Claimed = $23,120.00, which matches Tariff Amt Paid as recorded but is inconsistent with the stated tariff rate. MUST-3 discrepancy flag triggered — internal inconsistency between rate applied and tariff amount paid.
+
+---
+
+**Invoice ID:** 106781
+**PO:** 453D27A2
+**Status:** FLAG
+**Findings:**
+- Submission Date: value "12/28/2025" is not in required YYYY-MM-DD format
+- Arithmetic verification: Cost before Tariff $665,684.00 × 20% = $133,136.80 ✓; Total Payment = $665,684.00 + $133,136.80 = $798,820.80 ✓; Refund Claimed = $133,136.80 ✓ — numeric chain internally consistent
+
+---
+
+**Invoice ID:** 106782
+**PO:** 47804C92
+**Status:** FLAG
+**Findings:**
+- Submission Date: value "12/28/2025" is not in required YYYY-MM-DD format
+- Payment record discrepancy (MUST-3): Cost before Tariff $55,282.00 × 10% = $5,528.20. Tariff Amt Paid = $5,528.20 ✓. Total Payment should be $55,282.00 + $5,528.20 = $60,810.20. Total Payment recorded as $6.23. Variance between expected Total Payment ($60,810.20) and recorded Total Payment ($6.23) = $60,803.97. MUST-3 discrepancy flag triggered — Total Payment does not match payment record arithmetic. Refund Claimed = $5,528.20 matches Tariff Amt Paid but Total Payment record is irreconcilable as submitted.
+
+---
+
+**Invoice ID:** 106783
+**PO:** 42601C35
+**Status:** FLAG
+**Findings:**
+- Submission Date: value "12/28/2025" is not in required YYYY-MM-DD format
+- Arithmetic verification: Cost before Tariff $128,800.00 × 10% = $12,880.00 ✓; Total Payment = $128,800.00 + $12,880.00 = $141,680.00 ✓; Refund Claimed = $12,880.00 ✓ — numeric chain internally consistent
+
+---
+
+**Invoice ID:** 106784
+**PO:** 452N27A1
+**Status:** FLAG
+**Findings:**
+- Submission Date: value "12/28/2025" is not in required YYYY-MM-DD format
+- Arithmetic verification: Cost before Tariff $552,450.00 × 10% = $55,245.00 ✓; Total Payment = $552,450.00 + $55,245.00 = $607,695.00 ✓; Refund Claimed = $55,245.00 ✓ — numeric chain internally consistent
+
+---
+
+**Invoice ID:** 106785
+**PO:** 47843C8F
+**Status:** FLAG
+**Findings:**
+- Submission Date: value "12/28/2025" is not in required YYYY-MM-DD format
+- Payment record discrepancy (MUST-3): Cost before Tariff $21,889.00 × 41% = $8,974.49. Tariff Amt Paid records $89.49. Tariff Amt Paid does not equal Cost before Tariff × Tariff Rate Applied ($8,974.49 ≠ $89.49). Total Payment = $21,889.00 + $89.49 = $21,978.49; recorded Total Payment = $30,863.49 — variance of $8,885.00. Refund Claimed = $8,974.49, which matches the arithmetically correct tariff figure but does not match Tariff Amt Paid as recorded ($89.49). MUST-3 discrepancy flag triggered — Tariff Amt Paid field, Total Payment field, and Refund Claimed are mutually inconsistent.
+
+---
+
+**Invoice ID:** 106786
+**PO:** 42A5A709
+**Status:** FLAG
+**Findings:**
+- Submission Date: value "12/28/2025" is not in required YYYY-MM-DD format
+- Arithmetic verification: Cost before Tariff $253,680.00 × 10% = $25,368.00 ✓; Total Payment = $253,680.00 + $25,368.00 = $279,048.00 ✓; Refund Claimed = $25,368.00 ✓ — numeric chain internally consistent
+
+---
+
+**Invoice ID:** 106787
+**PO:** 4C4EDFFE
+**Status:** FLAG
+**Findings:**
+- Submission Date: value "12/28/2025" is not in required YYYY-MM-DD format
+- Country of Origin field is blank — tariff rate applicability cannot be verified against country of origin; refund claim of $241,492.46 cannot be fully validated without origin confirmation
+- Arithmetic verification: Cost before Tariff $589,006.00 × 41% = $241,492.46 ✓; Total Payment = $589,006.00 + $241,492.46 = $830,498.46 ✓; Refund Claimed = $241,492.46 ✓ — numeric chain internally consistent given stated rate, but rate itself is unverifiable without country of origin
+
+---
+
+**Invoice ID:** 106788
+**PO:** 49B7852A
+**Status:** FLAG
+**Findings:**
+- Submission Date: value "12/28/2025" is not in required YYYY-MM-DD format
+- Arithmetic verification: Cost before Tariff $575,436.00 × 20% = $115,087.20 ✓; Total Payment = $575,436.00 + $115,087.20 = $690,523.20 ✓; Refund Claimed = $115,087.20 ✓ — numeric chain internally consistent
+
+---
+
+**Invoice ID:** 106789
+**PO:** 426772G8
+**Status:** FLAG
+**Findings:**
+- Submission Date: value "12/29/2025" is not in required YYYY-MM-DD format
+- Arithmetic verification: Cost before Tariff $297,696.00 × 30% = $89,308.80 ✓; Total Payment = $297,696.00 + $89,308.80 = $387,004.80 ✓; Refund Claimed = $89,308.80 ✓ — numeric chain internally consistent
+
+---
+
+**Invoice ID:** 106790
+**PO:** 43671P28
+**Status:** FLAG
+**Findings:**
+- Submission Date: value "12/29/2025" is not in required YYYY-MM-DD format
+- Goods Payment Channel field is blank — payment channel record incomplete; payment verification cannot be fully completed
+- Arithmetic verification: Cost before Tariff $158,382.00 × 20% = $31,676.40 ✓; Total Payment = $158,382.00 + $31,676.40 = $190,058.40 ✓; Refund Claimed = $31,676.40 ✓ — numeric chain internally consistent
+
+---
+
+**Invoice ID:** 106791
+**PO:** 47844C80
+**Status:** FLAG
+**Findings:**
+- Item Description field is blank — goods identity cannot be confirmed; HTS code applicability unverifiable without item description
+- Submission Date: value "12/29/2025" is not in required YYYY-MM-DD format
+- Duplicate PO: PO 47844C80 also appears on invoices 106773 and 106792 — unique PO-to-invoice match cannot be confirmed without PO register; flagged for PO register verification
+- Arithmetic verification: Cost before Tariff $197,046.00 × 41% = $80,788.86 ✓; Total Payment = $197,046.00 + $80,788.86 = $277,834.86 ✓; Refund Claimed = $80,788.86 ✓ — numeric chain internally consistent
+
+---
+
+**Invoice ID:** 106792
+**PO:** 47844C80
+**Status:** FLAG
+**Findings:**
+- Submission Date: value "12/29/2025" is not in required YYYY-MM-DD format
+- Duplicate PO: PO 47844C80 also appears on invoices 106773 and 106791 — unique PO-to-invoice match cannot be confirmed without PO register; flagged for PO register verification
+- Arithmetic verification: Cost before Tariff $82,000.00 × 41% = $33,620.00 ✓; Total Payment = $82,000.00 + $33,620.00 = $115,620.00 ✓; Refund Claimed = $33,620.00 ✓ — numeric chain internally consistent
+
+---
+
+**Invoice ID:** 106

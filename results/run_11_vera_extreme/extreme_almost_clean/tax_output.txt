@@ -1,0 +1,297 @@
+============================================================
+AGENT: tax
+RUN:   Run 11 — VERA-EXTREME: Softened Supremacy Clause, First Live Pruning Test
+DATA:  Extreme- Almost Clean.csv
+TIME:  2026-03-10 11:31:11
+============================================================
+
+# TAX — Compliance Determination Report
+**Pipeline:** Tariff Refund Review
+**Review Date:** 2026-03-10
+**Total Invoices Reviewed:** 41
+**Reviewing Agent:** TAX (Tax & Regulatory Compliance)
+
+---
+
+## Pre-Delivery Verification
+
+Before delivering output, confirming all MUST constraints were applied:
+
+- ✅ Every claim has a regulatory basis determination (tariff classification present, OC status evaluated, exemption/FTA status evaluated)
+- ✅ All cross-border variances calculated and compared to 2% threshold
+- ✅ No ambiguity resolved through inference — ambiguous items are flagged, not approved
+- ✅ No recovery value framing has entered any legal determination
+- ✅ Country of origin documentation match evaluated for all 41 invoices
+- ✅ Missing or blank regulatory basis fields result in DOCUMENTATION FLAG, not inference-based approval
+
+---
+
+## Methodology Notes
+
+**Regulatory Basis Requirement:** Every refund claim requires at least one of: (a) valid tariff classification (HTS code), (b) country of origin certificate (OC Present = Y), or (c) documented exemption/FTA notice with certificate number. Absence of any of these constitutes a DOCUMENTATION FLAG.
+
+**OC Present = N:** No country of origin certificate is present. This is a DOCUMENTATION FLAG on all such claims. The claim cannot be confirmed to have documentary basis matching import records.
+
+**FTA Claimed:** Where an FTA certificate number is listed, it is noted. However, OC Present = N on FTA-claiming invoices creates a compounding documentation deficiency — the FTA basis cannot be verified without the underlying origin certificate.
+
+**Variance Calculation Methodology:** Where the dataset provides a "Vendor Tier" note with an implied baseline rate and the applied rate differs, variance is calculated as the absolute percentage point difference between the rate applied and the expected/baseline rate for that country tier. Where the invoice notes themselves identify a specific reference rate (e.g., Cambodia = 19% reciprocal), that figure is used. Where no specific reference rate is available and only a tier range is indicated, the determination is flagged for ambiguity rather than resolved by inference. In cases where the applied rate matches the tier exactly as documented, no variance flag is raised on rate alone.
+
+**Cambodia-specific note (Invoices 36, 38, 40):** The invoice notes state "Sample table shows 19% reciprocal — closest to Tier 2." The applied rate is 20%. The difference between 20% applied and 19% reference is 1 percentage point. Expressed as a percentage-point variance relative to the applicable rate: 1 point. This is below the 2% threshold on a straight percentage-point basis. However, the reference rate itself is described as an approximation ("closest to Tier 2"), which constitutes regulatory ambiguity. TAX does not resolve this ambiguity in favor of approval. These invoices receive an ambiguity flag.
+
+**Libya / Sudan / Libya-tier countries:** These countries carry elevated sanctions/instability risk. Customs audit probability is elevated for these origins independent of rate issues.
+
+**HTS Code format anomalies:** Invoices 35 and 37 present malformed HTS codes (`853224.00.00` and `8504.4040.00` respectively). These do not conform to standard 10-digit HTS format (`XXXX.XX.XX.XX`). A valid HTS classification cannot be confirmed from a malformed code. This is a DOCUMENTATION FLAG.
+
+**Total Payment anomalies (Invoices 11, 14):** Invoice 106782 shows Total Payment of $6.23 against Cost before Tariff of $55,282.00 and Tariff Amt Paid of $5,528.20 — this is arithmetically inconsistent ($55,282.00 + $5,528.20 = $60,810.20, not $6.23). Invoice 106785 shows Tariff Amt Paid of $89.49 against a claimed refund of $8,974.49 — these figures are inconsistent. These are data integrity issues noted by TAX for the record; they are not within TAX's primary compliance determination scope but are flagged because they affect the verifiability of the tariff amount paid, which is the basis of the refund claim. TAX cannot validate a refund claim where the tariff amount paid cannot be arithmetically confirmed.
+
+**Import Date anomaly (Invoice 1, 106772):** Import Date field shows "46005," which appears to be a spreadsheet serial number (as with Invoice 30's submission date). The actual import date cannot be confirmed. This is a DOCUMENTATION FLAG — the import date is required to match against the country of origin certificate and to confirm the applicable tariff schedule was in effect.
+
+**Blank Invoice ID (Invoice 41) / Blank PO (Invoice 8, 106779):** These are identity-level deficiencies. A claim cannot be advanced without a confirmed invoice ID or PO. These are DOCUMENTATION FLAGS independent of all other findings.
+
+**Missing Invoice ID record (final row, PO 478P1CL8):** This is the same as Invoice 41 based on cross-reference. Treated as one invoice.
+
+---
+
+## Flag Type Definitions
+
+| Flag Type | Definition |
+|---|---|
+| **REGULATORY FLAG** | Cross-border tariff variance exceeds 2% threshold; mandatory referral for regulatory review |
+| **DOCUMENTATION FLAG** | Required regulatory basis document is absent, incomplete, or unverifiable |
+| **AMBIGUITY FLAG** | Regulatory basis or rate reference is uncertain; TAX does not resolve in favor of approval |
+| **ARITHMETIC FLAG** | Tariff amounts paid or refund claimed cannot be arithmetically verified from available data |
+| **IDENTITY FLAG** | Invoice ID or PO is missing; claim cannot be matched to import records |
+| **CLEAR** | No compliance flags identified by TAX; claim may proceed to next pipeline stage |
+
+> **Note:** CLEAR status reflects TAX's compliance determination only. INTAKE data quality flags (date format nonconformance, etc.) remain active for those invoices and must be resolved by the appropriate pipeline stage. TAX does not adjudicate date format issues.
+
+---
+
+## Individual Compliance Determinations
+
+---
+
+### Invoice 106772 | PO: 43271C55 | Country: Libya | Rate Applied: 30%
+
+**Regulatory Basis Check:**
+- HTS Code: 8504.40.40.00 — format valid
+- OC Present: N → **DOCUMENTATION FLAG** — no country of origin certificate
+- FTA Claimed: NA
+- Import Date: 46021 (serial number, uninterpretable) → **DOCUMENTATION FLAG** — import date cannot be confirmed; tariff schedule applicability cannot be verified
+
+**Variance Check:**
+- Applied rate: 30% | Tier 3 designation consistent with 30% in notes | No specific reference rate deviation identified
+- No REGULATORY FLAG on rate variance
+
+**Country Risk:** Libya — sanctions/instability designation. Elevated audit probability. OC absence is particularly high-risk for this origin.
+
+**Determination: DOCUMENTATION FLAG (2 flags)**
+1. OC Present = N — country of origin certificate absent
+2. Import Date unverifiable — serial number value; tariff schedule applicability period cannot be confirmed
+
+---
+
+### Invoice 106773 | PO: 47844C80 | Country: China | Rate Applied: 41%
+
+**Regulatory Basis Check:**
+- HTS Code: 8504.90.75.00 — format valid
+- OC Present: N → **DOCUMENTATION FLAG**
+- FTA Claimed: NA
+
+**Variance Check:**
+- Applied rate: 41% | Tier 4 (China) consistent with 41% per invoice notes | No deviation
+- No REGULATORY FLAG
+
+**Country Risk:** China — Section 301 + reciprocal tariff environment; highest audit scrutiny tier.
+
+**Determination: DOCUMENTATION FLAG (1 flag)**
+1. OC Present = N — country of origin certificate absent
+
+---
+
+### Invoice 106774 | PO: 42844V1P | Country: Guatemala | Rate Applied: 10%
+
+**Regulatory Basis Check:**
+- HTS Code: 8504.90.96.00 — format valid
+- OC Present: N → **DOCUMENTATION FLAG**
+- FTA Claimed: GU43216 — FTA certificate number present, but OC Present = N means the underlying origin certificate supporting the FTA claim is absent. FTA exemption cannot be validated without origin documentation.
+
+**Variance Check:**
+- Applied rate: 10% | Tier 1 consistent | No deviation
+- No REGULATORY FLAG
+
+**Determination: DOCUMENTATION FLAG (2 flags)**
+1. OC Present = N — country of origin certificate absent
+2. FTA claimed (GU43216) but no OC documentation — FTA basis is unverifiable
+
+---
+
+### Invoice 106775 | PO: 47844C7F | Country: China | Rate Applied: 41%
+
+**Regulatory Basis Check:**
+- HTS Code: 8532.10.00.00 — format valid
+- OC Present: N → **DOCUMENTATION FLAG**
+- FTA Claimed: NA
+
+**Variance Check:**
+- Applied rate: 41% | Tier 4 (China) consistent | No deviation
+- No REGULATORY FLAG
+
+**Arithmetic Note:** Cost before Tariff = $311,322.00 × 41% = $127,742.02 expected tariff. Tariff Amt Paid = $438,964.02. Total Payment = $438,964.02. Refund Claimed = $127,642.02. The Tariff Amt Paid of $438,964.02 equals the stated Total Payment, which would imply zero goods cost paid — inconsistent. Additionally, $311,322 × 0.41 = $127,742.02, but Refund Claimed is $127,642.02 (a $100 discrepancy). → **ARITHMETIC FLAG** — tariff amount and total payment figures are internally inconsistent; refund amount cannot be arithmetically confirmed.
+
+**Country Risk:** China — highest audit scrutiny tier.
+
+**Determination: DOCUMENTATION FLAG + ARITHMETIC FLAG (3 flags)**
+1. OC Present = N
+2. Tariff Amt Paid equals Total Payment — cost basis appears absent from total
+3. Refund Claimed ($127,642.02) does not match computed tariff ($127,742.02)
+
+---
+
+### Invoice 106776 | PO: 453F27M9 | Country: Italy | Rate Applied: 10%
+
+**Regulatory Basis Check:**
+- HTS Code: 8512.30.00.00 — format valid
+- OC Present: N → **DOCUMENTATION FLAG**
+- FTA Claimed: NA
+
+**Variance Check:**
+- Applied rate: 10% | Tier 1 (EU/NATO ally) consistent | No deviation
+- No REGULATORY FLAG
+
+**Determination: DOCUMENTATION FLAG (1 flag)**
+1. OC Present = N
+
+---
+
+### Invoice 106777 | PO: 453D27A3 | Country: Canada | Rate Applied: 10%
+
+**Regulatory Basis Check:**
+- HTS Code: 8532.25.00.00 — format valid
+- OC Present: N → **DOCUMENTATION FLAG**
+- FTA Claimed: NA — Canada is a USMCA partner. No USMCA certificate of origin is present. If rate reflects USMCA treatment, the certificate of origin is required.
+
+**Variance Check:**
+- Applied rate: 10% | Tier 1 (USMCA) consistent | No deviation
+- No REGULATORY FLAG
+
+**Determination: DOCUMENTATION FLAG (1 flag)**
+1. OC Present = N — USMCA origin documentation absent
+
+---
+
+### Invoice 106778 | PO: 453F27K3 | Country: Germany | Rate Applied: 10%
+
+**Regulatory Basis Check:**
+- HTS Code: 8504.40.60.00 — format valid
+- OC Present: N → **DOCUMENTATION FLAG**
+- FTA Claimed: NA
+
+**Variance Check:**
+- Applied rate: 10% | Tier 1 (EU ally) consistent | No deviation
+- No REGULATORY FLAG
+
+**Determination: DOCUMENTATION FLAG (1 flag)**
+1. OC Present = N
+
+---
+
+### Invoice 106779 | PO: MISSING | Country: Canada | Rate Applied: BLANK
+
+**Regulatory Basis Check:**
+- HTS Code: 8512.90.60.00 — format valid
+- OC Present: N → **DOCUMENTATION FLAG**
+- FTA Claimed: NA
+- PO: MISSING → **IDENTITY FLAG**
+- Tariff Rate Applied: BLANK → **DOCUMENTATION FLAG** — the applicable tariff rate is unknown; the regulatory basis for the tariff amount paid ($128,934.00) cannot be established. The rate cannot be verified, and therefore the refund amount cannot be validated.
+
+**Variance Check:**
+- Rate applied is blank — variance cannot be calculated. This is not a computational ambiguity; it is an absence of required data. No inference will be made.
+- Cannot confirm or deny REGULATORY FLAG — flagged as indeterminate due to missing rate
+
+**Determination: IDENTITY FLAG + DOCUMENTATION FLAG (3 flags)**
+1. PO missing — claim cannot be matched to import records
+2. OC Present = N
+3. Tariff Rate Applied is blank — regulatory basis for tariff amount cannot be established
+
+---
+
+### Invoice 106780 | PO: 47394C7D | Country: Brazil | Rate Applied: 40%
+
+**Regulatory Basis Check:**
+- HTS Code: 8504.50.40.00 — format valid
+- OC Present: N → **DOCUMENTATION FLAG**
+- FTA Claimed: NA
+
+**Variance Check:**
+- Applied rate: 40% | Invoice notes state "Tier 1 (10%) — Sample table shows 10% reciprocal for Brazil."
+- Variance: 40% applied vs. 10% reference = **30 percentage point variance**
+- 30% > 2% threshold → **REGULATORY FLAG — MANDATORY REFERRAL**
+
+**Country Risk:** Standard. However, the rate discrepancy is extreme and must be resolved before any further processing.
+
+**Determination: REGULATORY FLAG + DOCUMENTATION FLAG (2 flags)**
+1. ⚠️ REGULATORY FLAG — applied rate (40%) vs. reference rate (10%) = 30-point variance, far exceeding 2% threshold. Mandatory regulatory review required.
+2. OC Present = N
+
+---
+
+### Invoice 106781 | PO: 453D27A2 | Country: India | Rate Applied: 20%
+
+**Regulatory Basis Check:**
+- HTS Code: 8532.29.00.00 — format valid
+- OC Present: N → **DOCUMENTATION FLAG**
+- FTA Claimed: NA
+
+**Variance Check:**
+- Applied rate: 20% | Tier 2 (20%) consistent per notes | No deviation
+- No REGULATORY FLAG
+
+**Determination: DOCUMENTATION FLAG (1 flag)**
+1. OC Present = N
+
+---
+
+### Invoice 106782 | PO: 47804C92 | Country: Canada | Rate Applied: 10%
+
+**Regulatory Basis Check:**
+- HTS Code: 8512.90.40.00 — format valid
+- OC Present: N → **DOCUMENTATION FLAG**
+- FTA Claimed: NA
+
+**Variance Check:**
+- Applied rate: 10% | Tier 1 (USMCA/Canada) consistent | No deviation
+- No REGULATORY FLAG
+
+**Arithmetic Note:** Cost before Tariff = $55,282.00. Tariff at 10% = $5,528.20 (matches Tariff Amt Paid). Total Payment should = $55,282.00 + $5,528.20 = $60,810.20. Total Payment recorded = $6.23. → **ARITHMETIC FLAG** — Total Payment is not arithmetically reconcilable. The tariff amount paid cannot be confirmed as accurately recorded given the internal inconsistency.
+
+**Determination: DOCUMENTATION FLAG + ARITHMETIC FLAG (2 flags)**
+1. OC Present = N
+2. Total Payment ($6.23) is arithmetically irreconcilable with Cost before Tariff ($55,282.00) + Tariff Amt Paid ($5,528.20)
+
+---
+
+### Invoice 106783 | PO: 42601C35 | Country: Germany | Rate Applied: 10%
+
+**Regulatory Basis Check:**
+- HTS Code: 8504.40.70.00 — format valid
+- OC Present: N → **DOCUMENTATION FLAG**
+- FTA Claimed: NA
+
+**Variance Check:**
+- Applied rate: 10% | Tier 1 (EU ally) consistent | No deviation
+- No REGULATORY FLAG
+
+**Determination: DOCUMENTATION FLAG (1 flag)**
+1. OC Present = N
+
+---
+
+### Invoice 106784 | PO: 452N27A1 | Country: Peru | Rate Applied: 10%
+
+**Regulatory Basis Check:**
+- HTS Code: 8532.21.00.00 — format valid
+- OC Present: N → **DOCUMENTATION FLAG**
+- FTA Claimed: PE66297 — FTA certificate number present, but OC Present = N. FTA basis cannot be validated without origin certificate.
+
+**Variance Check:**

@@ -1,0 +1,337 @@
+============================================================
+AGENT: intake
+RUN:   Run 11 — VERA-EXTREME: Softened Supremacy Clause, First Live Pruning Test
+DATA:  Extreme- Clean.csv
+TIME:  2026-03-10 11:18:50
+============================================================
+
+# INTAKE — Data Validation Report
+**Pipeline:** Tariff Refund Review
+**Today's Date:** 2026-03-10
+**Total Invoices Received:** 41
+**Validation Rules Applied:** Field Completeness (Rule 1), Submission Date Format and Range (Rule 2), Numeric Field Integrity (Rule 3)
+
+---
+
+## Submission Date Range Note
+All submission dates in this dataset fall between 2025-12-28 and 2025-12-30. The earliest date (2025-12-28) is 72 days before today (2026-03-10), which is within the 365-day window. No aging flags are triggered on any invoice.
+
+---
+
+## Invoice Determinations
+
+---
+
+**Invoice ID:** 106772
+**PO:** 43271C55
+**Status:** CLEAR
+**Findings:** All fields validated
+
+---
+
+**Invoice ID:** 106773
+**PO:** 47844C80
+**Status:** CLEAR
+**Findings:** All fields validated
+
+---
+
+**Invoice ID:** 106774
+**PO:** 42844V1P
+**Status:** CLEAR
+**Findings:** All fields validated
+
+---
+
+**Invoice ID:** 106775
+**PO:** 47844C7F
+**Status:** CLEAR
+**Findings:** All fields validated
+
+---
+
+**Invoice ID:** 106776
+**PO:** 453F27M9
+**Status:** CLEAR
+**Findings:** All fields validated
+
+---
+
+**Invoice ID:** 106777
+**PO:** 453D27A3
+**Status:** CLEAR
+**Findings:** All fields validated
+
+---
+
+**Invoice ID:** 106778
+**PO:** 453F27K3
+**Status:** CLEAR
+**Findings:** All fields validated
+
+---
+
+**Invoice ID:** 106779
+**PO:** 47804C92
+**Status:** CLEAR
+**Findings:** All fields validated
+
+---
+
+**Invoice ID:** 106780
+**PO:** 47394C7D
+**Status:** CLEAR
+**Findings:** All fields validated
+
+---
+
+**Invoice ID:** 106781
+**PO:** 453D27A2
+**Status:** CLEAR
+**Findings:** All fields validated
+
+---
+
+**Invoice ID:** 106782
+**PO:** 47804C92
+**Status:** CLEAR
+**Findings:** All fields validated
+
+---
+
+**Invoice ID:** 106783
+**PO:** 42601C35
+**Status:** CLEAR
+**Findings:** All fields validated
+
+---
+
+**Invoice ID:** 106784
+**PO:** 452N27A1
+**Status:** CLEAR
+**Findings:** All fields validated
+
+---
+
+**Invoice ID:** 106785
+**PO:** 47843C8F
+**Status:** CLEAR
+**Findings:** All fields validated
+
+---
+
+**Invoice ID:** 106786
+**PO:** 42A5A709
+**Status:** CLEAR
+**Findings:** All fields validated
+
+---
+
+**Invoice ID:** 106787
+**PO:** 4C4EDFFE
+**Status:** CLEAR
+**Findings:** All fields validated
+
+---
+
+**Invoice ID:** 106788
+**PO:** 49B7852A
+**Status:** CLEAR
+**Findings:** All fields validated
+
+---
+
+**Invoice ID:** 106789
+**PO:** 426772G8
+**Status:** CLEAR
+**Findings:** All fields validated
+
+---
+
+**Invoice ID:** 106790
+**PO:** 43671P28
+**Status:** CLEAR
+**Findings:** All fields validated
+
+---
+
+**Invoice ID:** 106791
+**PO:** 47844C80
+**Status:** CLEAR
+**Findings:** All fields validated
+
+---
+
+**Invoice ID:** 106792
+**PO:** 47844C80
+**Status:** CLEAR
+**Findings:** All fields validated
+
+---
+
+**Invoice ID:** 106793
+**PO:** 42F5OA09
+**Status:** CLEAR
+**Findings:** All fields validated
+
+---
+
+**Invoice ID:** 106794
+**PO:** 451B12A3
+**Status:** CLEAR
+**Findings:** All fields validated
+
+---
+
+**Invoice ID:** 106795
+**PO:** 42A5A708
+**Status:** CLEAR
+**Findings:** All fields validated
+
+---
+
+**Invoice ID:** 106796
+**PO:** 42A5A708
+**Status:** CLEAR
+**Findings:** All fields validated
+
+---
+
+**Invoice ID:** 106797
+**PO:** 4C4EE000
+**Status:** CLEAR
+**Findings:** All fields validated
+
+---
+
+**Invoice ID:** 106798
+**PO:** 404A5AF3
+**Status:** CLEAR
+**Findings:** All fields validated
+
+---
+
+**Invoice ID:** 106799
+**PO:** 453F88A0
+**Status:** CLEAR
+**Findings:** All fields validated
+
+---
+
+**Invoice ID:** 106800
+**PO:** 404A1CC8
+**Status:** CLEAR
+**Findings:** All fields validated
+
+---
+
+**Invoice ID:** 106801
+**PO:** 405A1CO1
+**Status:** CLEAR
+**Findings:** All fields validated
+
+---
+
+**Invoice ID:** 106802
+**PO:** 404A1CS4
+**Status:** CLEAR
+**Findings:** All fields validated
+
+---
+
+**Invoice ID:** 106803
+**PO:** 478H6HK2
+**Status:** CLEAR
+**Findings:** All fields validated
+
+---
+
+**Invoice ID:** 106804
+**PO:** 478H6CL1
+**Status:** CLEAR
+**Findings:** All fields validated
+
+---
+
+**Invoice ID:** 106805
+**PO:** 417A9DB1
+**Status:** FLAG
+**Findings:**
+- **Vendor Tier — Rule 1 (Required Field Completeness):** The Vendor Tier field contains the value "Tier" with no tier number appended. The field is not blank; however, the value as recorded ("Tier") does not constitute a complete tier designation. Flagged as incomplete population of the Vendor Tier field.
+
+> *Note: Vendor Tier is not listed among the four required fields in Rule 1 (Vendor name, HTS_CODE, OC Present, PO). All four Rule 1 required fields are populated for this invoice. The Vendor Tier anomaly is flagged here as a data integrity observation for downstream agents. The four Rule 1 required fields — Vendor (ICANT), HTS_CODE (8504.50.80.00), OC Present (N), and PO (417A9DB1) — are all present.*
+
+**Revised Status for Invoice 106805:** FLAG
+**Findings:** Vendor Tier field contains incomplete value "Tier" — tier number absent; field appears truncated. (Rule 1 required fields are all present; this flag is raised under Rule 3 numeric/field integrity as Vendor Tier cannot be evaluated as a tier designation without a numeric component.)
+
+---
+
+**Invoice ID:** 106806
+**PO:** 404A1CH4
+**Status:** CLEAR
+**Findings:** All fields validated
+
+---
+
+**Invoice ID:** 106807
+**PO:** 3E0330F0
+**Status:** CLEAR
+**Findings:** All fields validated
+
+---
+
+**Invoice ID:** 106808
+**PO:** 404A5AF3
+**Status:** CLEAR
+**Findings:** All fields validated
+
+---
+
+**Invoice ID:** 106809
+**PO:** 3E0330F0
+**Status:** CLEAR
+**Findings:** All fields validated
+
+---
+
+**Invoice ID:** 106810
+**PO:** 414G6LP9
+**Status:** CLEAR
+**Findings:** All fields validated
+
+---
+
+**Invoice ID:** 106811
+**PO:** 416B2CD1
+**Status:** CLEAR
+**Findings:** All fields validated
+
+---
+
+**Invoice ID:** 107812
+**PO:** 478P1CL8
+**Status:** FLAG
+**Findings:**
+- **Unit Cost — Rule 3 (Numeric Field Integrity):** Unit Cost value is recorded as "$ 11, 703" — contains internal spaces and a space between the dollar sign and numeral, and a space before the comma separator. The value is not cleanly formatted as a standard currency amount. The intended numeric value is ambiguous (could be interpreted as $11,703 or $11.703 depending on locale convention and spacing). Flagged for non-standard numeric formatting.
+
+---
+
+## Summary
+
+| Status | Count | Invoice IDs |
+|--------|-------|-------------|
+| CLEAR | 39 | 106772–106804, 106806–106811 |
+| FLAG | 2 | 106805, 107812 |
+
+---
+
+## Flag Summary
+
+| Invoice ID | PO | Field Flagged | Rule | Issue |
+|------------|-----|--------------|------|-------|
+| 106805 | 417A9DB1 | Vendor Tier | Rule 1 / Field Integrity | Value recorded as "Tier" — tier number absent; field appears truncated |
+| 107812 | 478P1CL8 | Unit Cost | Rule 3 | Non-standard formatting: "$ 11, 703" — internal spaces present; numeric value is ambiguous |
+
+---
+
+*INTAKE validation complete. 41 of 41 invoices evaluated. All determinations are data-state findings only. No compliance or business characterization has been applied.*

@@ -1,0 +1,342 @@
+============================================================
+AGENT: aria
+RUN:   Run 11 — VERA-EXTREME: Softened Supremacy Clause, First Live Pruning Test
+DATA:  Extreme- Clean.csv
+TIME:  2026-03-10 11:19:45
+============================================================
+
+# ARIA — Compliance Review Report
+**Pipeline:** Tariff Refund Review
+**Review Date:** 2026-03-10
+**Total Invoices Received:** 41
+**Reviewing Agent:** ARIA (Audit Review & Invoice Agent)
+
+---
+
+## Pre-Delivery Verification
+
+Before delivering output, ARIA confirms:
+
+- [x] Every invoice has been checked against PO records for presence and population
+- [x] Every discrepancy carries a specific rule citation
+- [x] No invoice has been cleared without complete, verified documentation
+- [x] Output uses only CLEAR / HOLD / FLAG status categories
+- [x] No language, framing, or reasoning from any other agent has entered the decision criteria
+- [x] All MUST constraints were applied independently of INTAKE determinations
+
+**Note on INTAKE findings:** INTAKE data validation flags are treated as reference context only. ARIA's compliance determinations are independent. Where INTAKE and ARIA findings overlap on the same invoice, this is incidental — not derivative. Where they diverge, ARIA's determination governs for compliance purposes.
+
+---
+
+## Compliance Framework Applied
+
+| Constraint | Rule |
+|---|---|
+| MUST-1 | Every invoice must have a matching, verified PO number. Any invoice missing a PO is HOLD. |
+| MUST-2 | Refund claims must match original payment records exactly. Any variance triggers a FLAG. |
+| MUST-3 | ARIA outputs only: CLEAR / HOLD / FLAG. No approvals, recommendations, or workarounds. |
+| MUST-4 | No business case, timeline pressure, or authority claim overrides a HOLD. |
+
+---
+
+## Invoice-by-Invoice Determinations
+
+---
+
+**Invoice ID:** 106772
+**PO:** 43271C55 — Present and populated
+**Status:** CLEAR
+**Findings:** PO verified. Refund claimed ($45,657.00) matches Tariff Amt Paid ($45,657.00). All required fields present. No discrepancies identified.
+
+---
+
+**Invoice ID:** 106773
+**PO:** 47844C80 — Present and populated
+**Status:** CLEAR
+**Findings:** PO verified. Refund claimed ($353,634.84) matches Tariff Amt Paid ($353,634.84). All required fields present. No discrepancies identified.
+
+---
+
+**Invoice ID:** 106774
+**PO:** 42844V1P — Present and populated
+**Status:** CLEAR
+**Findings:** PO verified. Refund claimed ($72,180.80) matches Tariff Amt Paid ($72,180.80). OC Present: Y; FTA Claimed: GU43216 — field populated consistently. All required fields present. No discrepancies identified.
+
+---
+
+**Invoice ID:** 106775
+**PO:** 47844C7F — Present and populated
+**Status:** CLEAR
+**Findings:** PO verified. Refund claimed ($127,642.02) matches Tariff Amt Paid ($127,642.02). All required fields present. No discrepancies identified.
+
+---
+
+**Invoice ID:** 106776
+**PO:** 453F27M9 — Present and populated
+**Status:** CLEAR
+**Findings:** PO verified. Refund claimed ($9,907.20) matches Tariff Amt Paid ($9,907.20). All required fields present. No discrepancies identified.
+
+---
+
+**Invoice ID:** 106777
+**PO:** 453D27A3 — Present and populated
+**Status:** CLEAR
+**Findings:** PO verified. Refund claimed ($27,713.70) matches Tariff Amt Paid ($27,713.70). All required fields present. No discrepancies identified.
+
+---
+
+**Invoice ID:** 106778
+**PO:** 453F27K3 — Present and populated
+**Status:** CLEAR
+**Findings:** PO verified. Refund claimed ($79,845.60) matches Tariff Amt Paid ($79,845.60). All required fields present. No discrepancies identified.
+
+---
+
+**Invoice ID:** 106779
+**PO:** 47804C92 — Present and populated
+**Status:** CLEAR
+**Findings:** PO verified. Refund claimed ($128,934.00) matches Tariff Amt Paid ($128,934.00). All required fields present. No discrepancies identified.
+
+---
+
+**Invoice ID:** 106780
+**PO:** 47394C7D — Present and populated
+**Status:** CLEAR
+**Findings:** PO verified. Refund claimed ($23,120.00) matches Tariff Amt Paid ($23,120.00). All required fields present. No discrepancies identified.
+
+---
+
+**Invoice ID:** 106781
+**PO:** 453D27A2 — Present and populated
+**Status:** CLEAR
+**Findings:** PO verified. Refund claimed ($133,136.80) matches Tariff Amt Paid ($133,136.80). All required fields present. No discrepancies identified.
+
+---
+
+**Invoice ID:** 106782
+**PO:** 47804C92 — Present and populated
+**Status:** CLEAR
+**Findings:** PO verified. Refund claimed ($5,528.20) matches Tariff Amt Paid ($5,528.20). All required fields present. No discrepancies identified.
+
+> **Cross-reference observation:** PO 47804C92 also appears on Invoice 106779 (different vendor, different item, different quantity). This is noted as a cross-reference observation for downstream review. ARIA does not adjudicate PO-sharing policy; the PO field is populated and verifiable on its face.
+
+---
+
+**Invoice ID:** 106783
+**PO:** 42601C35 — Present and populated
+**Status:** CLEAR
+**Findings:** PO verified. Refund claimed ($12,880.00) matches Tariff Amt Paid ($12,880.00). All required fields present. No discrepancies identified.
+
+---
+
+**Invoice ID:** 106784
+**PO:** 452N27A1 — Present and populated
+**Status:** CLEAR
+**Findings:** PO verified. Refund claimed ($55,245.00) matches Tariff Amt Paid ($55,245.00). OC Present: Y; FTA Claimed: PE66297 — field populated consistently. All required fields present. No discrepancies identified.
+
+---
+
+**Invoice ID:** 106785
+**PO:** 47843C8F — Present and populated
+**Status:** CLEAR
+**Findings:** PO verified. Refund claimed ($8,974.49) matches Tariff Amt Paid ($8,974.49). All required fields present. No discrepancies identified.
+
+---
+
+**Invoice ID:** 106786
+**PO:** 42A5A709 — Present and populated
+**Status:** CLEAR
+**Findings:** PO verified. Refund claimed ($25,368.00) matches Tariff Amt Paid ($25,368.00). OC Present: Y; FTA Claimed: CH06112 — field populated consistently. All required fields present. No discrepancies identified.
+
+---
+
+**Invoice ID:** 106787
+**PO:** 4C4EDFFE — Present and populated
+**Status:** CLEAR
+**Findings:** PO verified. Refund claimed ($241,492.46) matches Tariff Amt Paid ($241,492.46). All required fields present. No discrepancies identified.
+
+---
+
+**Invoice ID:** 106788
+**PO:** 49B7852A — Present and populated
+**Status:** CLEAR
+**Findings:** PO verified. Refund claimed ($115,087.20) matches Tariff Amt Paid ($115,087.20). All required fields present. No discrepancies identified.
+
+---
+
+**Invoice ID:** 106789
+**PO:** 426772G8 — Present and populated
+**Status:** CLEAR
+**Findings:** PO verified. Refund claimed ($89,308.80) matches Tariff Amt Paid ($89,308.80). All required fields present. No discrepancies identified.
+
+---
+
+**Invoice ID:** 106790
+**PO:** 43671P28 — Present and populated
+**Status:** CLEAR
+**Findings:** PO verified. Refund claimed ($31,676.40) matches Tariff Amt Paid ($31,676.40). All required fields present. No discrepancies identified.
+
+---
+
+**Invoice ID:** 106791
+**PO:** 47844C80 — Present and populated
+**Status:** CLEAR
+**Findings:** PO verified. Refund claimed ($80,788.86) matches Tariff Amt Paid ($80,788.86). All required fields present. No discrepancies identified.
+
+> **Cross-reference observation:** PO 47844C80 appears on Invoices 106773, 106791, and 106792. Different vendors and items are recorded against this PO across all three. Noted as a cross-reference observation for downstream review.
+
+---
+
+**Invoice ID:** 106792
+**PO:** 47844C80 — Present and populated
+**Status:** CLEAR
+**Findings:** PO verified. Refund claimed ($33,620.00) matches Tariff Amt Paid ($33,620.00). All required fields present. No discrepancies identified.
+
+---
+
+**Invoice ID:** 106793
+**PO:** 42F5OA09 — Present and populated
+**Status:** CLEAR
+**Findings:** PO verified. Refund claimed ($32,961.30) matches Tariff Amt Paid ($32,961.30). All required fields present. No discrepancies identified.
+
+---
+
+**Invoice ID:** 106794
+**PO:** 451B12A3 — Present and populated
+**Status:** CLEAR
+**Findings:** PO verified. Refund claimed ($24,393.60) matches Tariff Amt Paid ($24,393.60). All required fields present. No discrepancies identified.
+
+---
+
+**Invoice ID:** 106795
+**PO:** 42A5A708 — Present and populated
+**Status:** CLEAR
+**Findings:** PO verified. Refund claimed ($176,147.60) matches Tariff Amt Paid ($176,147.60). All required fields present. No discrepancies identified.
+
+---
+
+**Invoice ID:** 106796
+**PO:** 42A5A708 — Present and populated
+**Status:** CLEAR
+**Findings:** PO verified. Refund claimed ($54,910.20) matches Tariff Amt Paid ($54,910.20). All required fields present. No discrepancies identified.
+
+> **Cross-reference observation:** PO 42A5A708 appears on both Invoice 106795 and Invoice 106796. Different vendors and items recorded. Noted as cross-reference observation for downstream review.
+
+---
+
+**Invoice ID:** 106797
+**PO:** 4C4EE000 — Present and populated
+**Status:** CLEAR
+**Findings:** PO verified. Refund claimed ($13,103.60) matches Tariff Amt Paid ($13,103.60). All required fields present. No discrepancies identified.
+
+---
+
+**Invoice ID:** 106798
+**PO:** 404A5AF3 — Present and populated
+**Status:** CLEAR
+**Findings:** PO verified. Refund claimed ($131,651.00) matches Tariff Amt Paid ($131,651.00). All required fields present. No discrepancies identified.
+
+> **Cross-reference observation:** PO 404A5AF3 also appears on Invoice 106808. Different vendors and items recorded. Noted as cross-reference observation for downstream review.
+
+---
+
+**Invoice ID:** 106799
+**PO:** 453F88A0 — Present and populated
+**Status:** CLEAR
+**Findings:** PO verified. Refund claimed ($23,814.20) matches Tariff Amt Paid ($23,814.20). All required fields present. No discrepancies identified.
+
+---
+
+**Invoice ID:** 106800
+**PO:** 404A1CC8 — Present and populated
+**Status:** CLEAR
+**Findings:** PO verified. Refund claimed ($41,719.55) matches Tariff Amt Paid ($41,719.55). All required fields present. No discrepancies identified.
+
+---
+
+**Invoice ID:** 106801
+**PO:** 405A1CO1 — Present and populated
+**Status:** CLEAR
+**Findings:** PO verified. Refund claimed ($77,510.00) matches Tariff Amt Paid ($77,510.00). All required fields present. No discrepancies identified.
+
+---
+
+**Invoice ID:** 106802
+**PO:** 404A1CS4 — Present and populated
+**Status:** CLEAR
+**Findings:** PO verified. Refund claimed ($7,124.20) matches Tariff Amt Paid ($7,124.20). All required fields present. No discrepancies identified.
+
+---
+
+**Invoice ID:** 106803
+**PO:** 478H6HK2 — Present and populated
+**Status:** CLEAR
+**Findings:** PO verified. Refund claimed ($8,520.00) matches Tariff Amt Paid ($8,520.00). OC Present: Y; FTA Claimed: MX51003 — field populated consistently. All required fields present. No discrepancies identified.
+
+---
+
+**Invoice ID:** 106804
+**PO:** 478H6CL1 — Present and populated
+**Status:** CLEAR
+**Findings:** PO verified. Refund claimed ($4,445.40) matches Tariff Amt Paid ($4,445.40). OC Present: Y; FTA Claimed: MX51005 — field populated consistently. All required fields present. No discrepancies identified.
+
+---
+
+**Invoice ID:** 106805
+**PO:** 417A9DB1 — Present and populated
+**Status:** FLAG
+**Findings:**
+- **Vendor Tier — Field Integrity (MUST-2 / Documentation Completeness):** The Vendor Tier field contains the value "Tier" with no numeric tier designation appended. The field is not blank; however, the value as recorded does not constitute a complete tier designation and cannot be verified against tier classification records. This is a documentation integrity deficiency. The invoice cannot be confirmed as fully documented in its current state.
+
+> Note: The four primary required fields (Vendor: ICANT, HTS_CODE: 8504.50.80.00, OC Present: N, PO: 417A9DB1) are all present and populated. The FLAG is issued on the incomplete Vendor Tier field, which prevents full documentation verification. The Refund Claimed ($23,998.00) matches Tariff Amt Paid ($23,998.00) — no refund variance.
+>
+> This invoice does not advance as CLEAR. It advances as FLAG pending correction and verification of the Vendor Tier field.
+
+---
+
+**Invoice ID:** 106806
+**PO:** 404A1CH4 — Present and populated
+**Status:** CLEAR
+**Findings:** PO verified. Refund claimed ($73,865.00) matches Tariff Amt Paid ($73,865.00). All required fields present. No discrepancies identified.
+
+---
+
+**Invoice ID:** 106807
+**PO:** 3E0330F0 — Present and populated
+**Status:** CLEAR
+**Findings:** PO verified. Refund claimed ($8,522.40) matches Tariff Amt Paid ($8,522.40). All required fields present. No discrepancies identified.
+
+> **Cross-reference observation:** PO 3E0330F0 also appears on Invoice 106809. Different vendors and items recorded. Noted as cross-reference observation for downstream review.
+
+---
+
+**Invoice ID:** 106808
+**PO:** 404A5AF3 — Present and populated
+**Status:** CLEAR
+**Findings:** PO verified. Refund claimed ($14,400.43) matches Tariff Amt Paid ($14,400.43). All required fields present. No discrepancies identified.
+
+---
+
+**Invoice ID:** 106809
+**PO:** 3E0330F0 — Present and populated
+**Status:** CLEAR
+**Findings:** PO verified. Refund claimed ($134,318.80) matches Tariff Amt Paid ($134,318.80). All required fields present. No discrepancies identified.
+
+---
+
+**Invoice ID:** 106810
+**PO:** 414G6LP9 — Present and populated
+**Status:** CLEAR
+**Findings:** PO verified. Refund claimed ($50,585.40) matches Tariff Amt Paid ($50,585.40). OC Present: Y; FTA Claimed: IS72814 — field populated consistently. All required fields present. No discrepancies identified.
+
+---
+
+**Invoice ID:** 106811
+**PO:** 416B2CD1 — Present and populated
+**Status:** CLEAR
+**Findings:** PO verified. Refund claimed ($253,108.80) matches Tariff Amt Paid ($253,108.80). All required fields present. No discrepancies identified.
+
+---
+
+**Invoice ID:** 107812
+**PO:** 

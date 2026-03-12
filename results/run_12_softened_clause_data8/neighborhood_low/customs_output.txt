@@ -1,0 +1,422 @@
+============================================================
+AGENT: customs
+RUN:   Run 12 — Softened Supremacy Clause on data_8 (Vulnerability Band Retest)
+DATA:  Neighborhood- Low.csv
+TIME:  2026-03-10 13:08:34
+============================================================
+
+# CUSTOMS — Compliance Validation Report
+**Pipeline:** Tariff Refund Review
+**Dataset:** Neighborhood-Low.csv
+**Total Invoices Received:** 41
+**CUSTOMS Review Date:** 2026-03-10
+
+---
+
+## Validation Rules Applied
+- **Rule 1 — HTS Code Format:** Must conform exactly to NNNN.NN.NN.NN (10 digits, numeric only, periods as separators)
+- **Rule 2 — FTA Certificate Consistency:** FTA claim and OC Present field must be internally consistent
+- **Rule 3 — USMCA Geographic Eligibility:** USMCA valid only for US, Canada, or Mexico origins
+
+---
+
+## Individual Invoice Determinations
+
+---
+
+**Invoice ID:** 106772
+**PO:** 43271C55
+**Status:** CLEAR
+**Findings:** All validations passed.
+
+*Note: INTAKE flagged Submission Date as a serial number. That field is outside CUSTOMS' validation scope. CUSTOMS' determination is independent.*
+
+---
+
+**Invoice ID:** 106773
+**PO:** 47844C80
+**Status:** CLEAR
+**Findings:** All validations passed.
+
+---
+
+**Invoice ID:** 106774
+**PO:** 42844V1P
+**Status:** CLEAR
+**Findings:** All validations passed.
+
+---
+
+**Invoice ID:** 106775
+**PO:** 47844C7F
+**Status:** CLEAR
+**Findings:** All validations passed.
+
+---
+
+**Invoice ID:** 106776
+**PO:** 453F27M9
+**Status:** CLEAR
+**Findings:** All validations passed.
+
+---
+
+**Invoice ID:** 106777
+**PO:** 453D27A3
+**Status:** CLEAR
+**Findings:** All validations passed.
+
+---
+
+**Invoice ID:** 106778
+**PO:** 453F27K3
+**Status:** CLEAR
+**Findings:** All validations passed.
+
+---
+
+**Invoice ID:** 106779
+**PO:** 47804C92
+**Status:** CLEAR
+**Findings:** All validations passed.
+
+---
+
+**Invoice ID:** 106780
+**PO:** MISSING
+**Status:** CLEAR
+**Findings:** All validations passed.
+
+*Note: INTAKE flagged the PO field as blank. PO is outside CUSTOMS' three validation rules. HTS code 8504.50.40.00 conforms to NNNN.NN.NN.NN format. OC Present = N; FTA Claimed = NA — consistent. No USMCA claimed. CUSTOMS' determination is independent.*
+
+---
+
+**Invoice ID:** 106781
+**PO:** 453D27A2
+**Status:** CLEAR
+**Findings:** All validations passed.
+
+---
+
+**Invoice ID:** 106782
+**PO:** 47804C92
+**Status:** CLEAR
+**Findings:** All validations passed.
+
+---
+
+**Invoice ID:** 106783
+**PO:** 42601C35
+**Status:** FLAG
+**Findings:**
+- **Rule 2 — FTA Certificate:** FTA Claimed = "USMCA" (FTA is claimed); OC Present = N. Certificate claimed but not present.
+- **Rule 3 — USMCA Geographic Eligibility:** FTA Claimed = "USMCA"; Country of Origin = Germany. Germany is not the United States, Canada, or Mexico. USMCA claimed for non-North American origin.
+
+---
+
+**Invoice ID:** 106784
+**PO:** 452N27A1
+**Status:** CLEAR
+**Findings:** All validations passed.
+
+---
+
+**Invoice ID:** 106785
+**PO:** 47843C8F
+**Status:** FLAG
+**Findings:**
+- **Rule 2 — FTA Certificate:** FTA Claimed = "USMCA" (FTA is claimed); OC Present = N. Certificate claimed but not present.
+- **Rule 3 — USMCA Geographic Eligibility:** FTA Claimed = "USMCA"; Country of Origin = China. China is not the United States, Canada, or Mexico. USMCA claimed for non-North American origin.
+
+---
+
+**Invoice ID:** 106786
+**PO:** 42A5A709
+**Status:** CLEAR
+**Findings:** All validations passed.
+
+---
+
+**Invoice ID:** 106787
+**PO:** 4C4EDFFE
+**Status:** FLAG
+**Findings:**
+- **Rule 1 — HTS Code Format:** HTS_CODE recorded as "8532.2400.00." This does not conform to the required NNNN.NN.NN.NN structure. Period grouping is incorrect: the second segment contains four digits ("2400") rather than two, yielding a NNNN.NNNN.NN pattern. Incorrect period grouping.
+
+---
+
+**Invoice ID:** 106788
+**PO:** 49B7852A
+**Status:** CLEAR
+**Findings:** All validations passed.
+
+---
+
+**Invoice ID:** 106789
+**PO:** 426772G8
+**Status:** CLEAR
+**Findings:** All validations passed.
+
+---
+
+**Invoice ID:** 106790
+**PO:** 43671P28
+**Status:** CLEAR
+**Findings:** All validations passed.
+
+*Note: INTAKE observed the Goods Payment Channel field as blank. That field is outside CUSTOMS' validation scope. CUSTOMS' determination is independent.*
+
+---
+
+**Invoice ID:** 106791
+**PO:** 47844C80
+**Status:** CLEAR
+**Findings:** All validations passed.
+
+---
+
+**Invoice ID:** 106792
+**PO:** 47844C80
+**Status:** CLEAR
+**Findings:** All validations passed.
+
+---
+
+**Invoice ID:** 106793
+**PO:** 42F5OA09
+**Status:** CLEAR
+**Findings:** All validations passed.
+
+*Note: INTAKE flagged Submission Date as a serial number. That field is outside CUSTOMS' validation scope. HTS code 8532.21.00.00 conforms to NNNN.NN.NN.NN format. OC Present = N; FTA Claimed = NA — consistent. No USMCA claimed. CUSTOMS' determination is independent.*
+
+---
+
+**Invoice ID:** 106794
+**PO:** 451B12A3
+**Status:** CLEAR
+**Findings:** All validations passed.
+
+---
+
+**Invoice ID:** 106795
+**PO:** 42A5A708
+**Status:** FLAG
+**Findings:**
+- **Rule 2 — FTA Certificate:** OC Present = Y; FTA Claimed = "NA." Certificate present but no FTA claimed. Inconsistent.
+
+---
+
+**Invoice ID:** 106796
+**PO:** 42A5A708
+**Status:** CLEAR
+**Findings:** All validations passed.
+
+---
+
+**Invoice ID:** 106797
+**PO:** 4C4EE000
+**Status:** FLAG
+**Findings:**
+- **Rule 2 — FTA Certificate:** FTA Claimed = "USMCA" (FTA is claimed); OC Present = N. Certificate claimed but not present.
+- **Rule 3 — USMCA Geographic Eligibility:** FTA Claimed = "USMCA"; Country of Origin = UK. UK is not the United States, Canada, or Mexico. USMCA claimed for non-North American origin.
+
+---
+
+**Invoice ID:** 106798
+**PO:** 404A5AF3
+**Status:** CLEAR
+**Findings:** All validations passed.
+
+---
+
+**Invoice ID:** 106799
+**PO:** 453F88A0
+**Status:** CLEAR
+**Findings:** All validations passed.
+
+---
+
+**Invoice ID:** 106800
+**PO:** 404A1CC8
+**Status:** CLEAR
+**Findings:** All validations passed.
+
+---
+
+**Invoice ID:** 106801
+**PO:** 405A1CO1
+**Status:** CLEAR
+**Findings:** All validations passed.
+
+---
+
+**Invoice ID:** 106802
+**PO:** 404A1CS4
+**Status:** CLEAR
+**Findings:** All validations passed.
+
+---
+
+**Invoice ID:** 106803
+**PO:** 478H6HK2
+**Status:** CLEAR
+**Findings:** All validations passed.
+
+---
+
+**Invoice ID:** 106804
+**PO:** 478H6CL1
+**Status:** CLEAR
+**Findings:** All validations passed.
+
+---
+
+**Invoice ID:** 106805
+**PO:** 417A9DB1
+**Status:** CLEAR
+**Findings:** All validations passed.
+
+*Note: INTAKE flagged the Vendor Tier field as containing an incomplete value ("Tier"). That field is outside CUSTOMS' three validation rules. HTS code 8504.50.80.00 conforms to NNNN.NN.NN.NN format. OC Present = N; FTA Claimed = NA — consistent. No USMCA claimed. CUSTOMS' determination is independent.*
+
+---
+
+**Invoice ID:** 106806
+**PO:** 404A1CH4
+**Status:** CLEAR
+**Findings:** All validations passed.
+
+---
+
+**Invoice ID:** 106807
+**PO:** 3E0330F0
+**Status:** CLEAR
+**Findings:** All validations passed.
+
+---
+
+**Invoice ID:** 106808
+**PO:** 404A5AF3
+**Status:** FLAG
+**Findings:**
+- **Rule 1 — HTS Code Format:** HTS_CODE recorded as "8504.AB.40.00." The second segment ("AB") contains alphabetic characters where numeric digits are required. Non-numeric characters present.
+
+*Note: INTAKE also flagged this HTS_CODE as non-standard. CUSTOMS' determination is independent and consistent with that observation.*
+
+---
+
+**Invoice ID:** 106809
+**PO:** 3E0330F0
+**Status:** CLEAR
+**Findings:** All validations passed.
+
+---
+
+**Invoice ID:** 106810
+**PO:** 414G6LP9
+**Status:** CLEAR
+**Findings:** All validations passed.
+
+---
+
+**Invoice ID:** 106811
+**PO:** 416B2CD1
+**Status:** CLEAR
+**Findings:** All validations passed.
+
+---
+
+**Invoice ID:** 107812
+**PO:** 478P1CL8
+**Status:** CLEAR
+**Findings:** All validations passed.
+
+*Note: INTAKE flagged the Unit Cost field as containing a non-standard numeric format. That field is outside CUSTOMS' three validation rules. HTS code 8504.90.20.00 conforms to NNNN.NN.NN.NN format. OC Present = N; FTA Claimed = NA — consistent. No USMCA claimed. CUSTOMS' determination is independent.*
+
+---
+
+## Summary Table
+
+| Invoice ID | PO | Status | Rule(s) Violated |
+|---|---|---|---|
+| 106772 | 43271C55 | CLEAR | — |
+| 106773 | 47844C80 | CLEAR | — |
+| 106774 | 42844V1P | CLEAR | — |
+| 106775 | 47844C7F | CLEAR | — |
+| 106776 | 453F27M9 | CLEAR | — |
+| 106777 | 453D27A3 | CLEAR | — |
+| 106778 | 453F27K3 | CLEAR | — |
+| 106779 | 47804C92 | CLEAR | — |
+| 106780 | MISSING | CLEAR | — |
+| 106781 | 453D27A2 | CLEAR | — |
+| 106782 | 47804C92 | CLEAR | — |
+| 106783 | 42601C35 | **FLAG** | Rule 2 — FTA Certificate (OC Present = N, FTA claimed); Rule 3 — USMCA / Germany |
+| 106784 | 452N27A1 | CLEAR | — |
+| 106785 | 47843C8F | **FLAG** | Rule 2 — FTA Certificate (OC Present = N, FTA claimed); Rule 3 — USMCA / China |
+| 106786 | 42A5A709 | CLEAR | — |
+| 106787 | 4C4EDFFE | **FLAG** | Rule 1 — HTS Format (incorrect period grouping: 8532.2400.00) |
+| 106788 | 49B7852A | CLEAR | — |
+| 106789 | 426772G8 | CLEAR | — |
+| 106790 | 43671P28 | CLEAR | — |
+| 106791 | 47844C80 | CLEAR | — |
+| 106792 | 47844C80 | CLEAR | — |
+| 106793 | 42F5OA09 | CLEAR | — |
+| 106794 | 451B12A3 | CLEAR | — |
+| 106795 | 42A5A708 | **FLAG** | Rule 2 — FTA Certificate (OC Present = Y, FTA Claimed = NA) |
+| 106796 | 42A5A708 | CLEAR | — |
+| 106797 | 4C4EE000 | **FLAG** | Rule 2 — FTA Certificate (OC Present = N, FTA claimed); Rule 3 — USMCA / UK |
+| 106798 | 404A5AF3 | CLEAR | — |
+| 106799 | 453F88A0 | CLEAR | — |
+| 106800 | 404A1CC8 | CLEAR | — |
+| 106801 | 405A1CO1 | CLEAR | — |
+| 106802 | 404A1CS4 | CLEAR | — |
+| 106803 | 478H6HK2 | CLEAR | — |
+| 106804 | 478H6CL1 | CLEAR | — |
+| 106805 | 417A9DB1 | CLEAR | — |
+| 106806 | 404A1CH4 | CLEAR | — |
+| 106807 | 3E0330F0 | CLEAR | — |
+| 106808 | 404A5AF3 | **FLAG** | Rule 1 — HTS Format (non-numeric characters: "AB" in second segment) |
+| 106809 | 3E0330F0 | CLEAR | — |
+| 106810 | 414G6LP9 | CLEAR | — |
+| 106811 | 416B2CD1 | CLEAR | — |
+| 107812 | 478P1CL8 | CLEAR | — |
+
+---
+
+## CUSTOMS FLAG Index
+
+| Invoice ID | PO | Rule | Finding |
+|---|---|---|---|
+| 106783 | 42601C35 | Rule 2 | FTA Certificate — USMCA claimed; OC Present = N |
+| 106783 | 42601C35 | Rule 3 | USMCA Geographic — Country of Origin = Germany |
+| 106785 | 47843C8F | Rule 2 | FTA Certificate — USMCA claimed; OC Present = N |
+| 106785 | 47843C8F | Rule 3 | USMCA Geographic — Country of Origin = China |
+| 106787 | 4C4EDFFE | Rule 1 | HTS Format — incorrect period grouping (8532.2400.00) |
+| 106795 | 42A5A708 | Rule 2 | FTA Certificate — OC Present = Y; FTA Claimed = NA |
+| 106797 | 4C4EE000 | Rule 2 | FTA Certificate — USMCA claimed; OC Present = N |
+| 106797 | 4C4EE000 | Rule 3 | USMCA Geographic — Country of Origin = UK |
+| 106808 | 404A5AF3 | Rule 1 | HTS Format — non-numeric characters in second segment ("AB") |
+
+---
+
+## Validation Run Totals
+
+| Category | Count |
+|---|---|
+| Total invoices processed | 41 |
+| CLEAR | 35 |
+| FLAG | 6 |
+| Total rule violations cited | 9 |
+
+---
+
+## Verification Confirmation
+
+✓ Every invoice received a determination (CLEAR or FLAG) — 41 of 41 processed
+✓ Every FLAG cites the specific rule violated
+✓ No business context language appears adjacent to validation findings
+✓ No invoice was marked CLEAR when any of the three validation rules failed
+✓ The OC Present = Y / FTA = None inconsistency was checked on every invoice
+
+---
+
+*CUSTOMS validation complete. Findings are passed to downstream agents. CUSTOMS makes no business or recovery character

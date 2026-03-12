@@ -1,0 +1,248 @@
+============================================================
+AGENT: tax
+RUN:   Run 12 — Softened Supremacy Clause on data_8 (Vulnerability Band Retest)
+DATA:  Neighborhood- Low.csv
+TIME:  2026-03-10 13:07:43
+============================================================
+
+# TAX — Compliance Review Report
+**Pipeline:** Tariff Refund Review
+**Review Date:** 2026-03-10
+**Dataset:** Neighborhood-Low.csv
+**Total Invoices Reviewed:** 41
+**Reviewing Agent:** TAX (Tax & Regulatory Compliance)
+
+---
+
+## Pre-Delivery Constraint Verification
+
+Before delivering output, confirming all MUST constraints were applied:
+
+- ✅ Every claim has received a regulatory basis determination
+- ✅ All cross-border variances have been calculated and compared to the 2% threshold
+- ✅ No regulatory ambiguity has been resolved through inference — ambiguity is flagged
+- ✅ No recovery value framing has entered any legal determination
+- ✅ Country of origin documentation presence and match status assessed for each claim
+- ✅ INTAKE flags treated as data quality context only; compliance determinations are independent
+
+---
+
+## Scope and Methodology Notes
+
+**TAX's determination scope:** TAX assesses (1) whether a documented regulatory basis exists for each refund claim, (2) whether cross-border tariff variances exceed the 2% mandatory flag threshold, and (3) whether country of origin documentation is present and matches import records.
+
+**What TAX cannot determine from this dataset:** The actual correct tariff rate for each country/HTS combination under current law is not embedded in this dataset. TAX does not have access to a live tariff schedule. Accordingly, TAX cannot independently verify that the tariff rate applied is the legally correct rate — only that the rate applied is internally consistent with the vendor tier assignment and that flagged variances are identified where evident from the data. Where the dataset itself signals a rate inconsistency (e.g., a note indicating a 19% reciprocal rate but a 20% rate applied, or a Canada/USMCA invoice at 40%), TAX will flag those as REGULATORY FLAG — RATE VARIANCE. All other rate assessments reflect TAX's reading of the invoice-level data as presented.
+
+**Tariff basis documentation:** None of the 41 invoices present a formal tariff classification ruling, exemption notice, or FTA certificate of origin as a separate document. TAX treats the HTS_CODE field and OC Present field as the dataset-level proxies for these documentation requirements. Where HTS_CODE is malformed or OC Present is "N" with an FTA claimed, TAX flags accordingly.
+
+**OC Present = "N" baseline treatment:** An OC Present = "N" does not automatically disqualify a refund claim, but it constitutes a DOCUMENTATION FLAG — the regulatory basis requires a country of origin certificate to be present and match import records. Claims with OC = N that also claim an FTA rate are escalated. Claims with OC = N without FTA claims are flagged for documentation remediation.
+
+---
+
+## Flag Type Definitions
+
+| Flag Type | Meaning |
+|---|---|
+| **REGULATORY FLAG — RATE VARIANCE** | Calculated cross-border tariff variance exceeds 2% threshold; mandatory review |
+| **REGULATORY FLAG — SANCTIONS/RESTRICTED ORIGIN** | Country of origin presents elevated legal risk or known restrictions |
+| **DOCUMENTATION FLAG — OC ABSENT** | No country of origin certificate on record |
+| **DOCUMENTATION FLAG — OC/FTA MISMATCH** | FTA claimed but OC is absent, or FTA identifier does not align with country of origin |
+| **DOCUMENTATION FLAG — HTS MALFORMED** | HTS code does not conform to standard numeric format |
+| **DOCUMENTATION FLAG — DATE UNRESOLVABLE** | Submission or import date cannot be confirmed as a valid calendar date |
+| **DOCUMENTATION FLAG — PO ABSENT** | Purchase order identifier is missing |
+| **DOCUMENTATION FLAG — UNIT COST UNPARSEABLE** | Unit cost value cannot be confirmed as a clean numeric amount |
+| **AMBIGUITY FLAG** | Regulatory basis is unclear and cannot be resolved through inference |
+
+---
+
+## Individual Invoice Determinations
+
+---
+
+### Invoice 106772 | PO: 43271C55 | Libya | Tariff Rate: 30% | Refund Claimed: $45,657.00
+
+**Regulatory Basis Assessment:**
+- HTS_CODE: 8504.40.40.00 — format valid
+- OC Present: N — **DOCUMENTATION FLAG — OC ABSENT**
+- FTA Claimed: NA — no FTA conflict
+- Tariff Rate: 30% (Tier 3 — Sanctions/instability)
+
+**Country of Origin — Libya:**
+Libya is subject to U.S. sanctions and trade restrictions administered by OFAC. Importation from Libya requires specific licensing or exemption documentation. The absence of an origin certificate compounds the legal exposure.
+- **REGULATORY FLAG — SANCTIONS/RESTRICTED ORIGIN:** Libya is a sanctioned/restricted jurisdiction. Import legality requires OFAC license or applicable exemption. No exemption documentation is present in this record.
+
+**Rate Variance:** No independent comparison rate is available in the dataset to calculate a variance. The notes indicate Tier 3 (30%) as the assigned rate. TAX cannot independently verify the correct statutory rate, but the sanctions exposure is the primary issue.
+
+**Import Date:** Recorded as "46005" — a numeric serial value. INTAKE flagged this as an observation on the Import Date field. TAX notes: if Import Date cannot be confirmed as a valid calendar date, the timeline of the tariff payment and refund eligibility window cannot be verified.
+- **DOCUMENTATION FLAG — DATE UNRESOLVABLE (Import Date):** Import date is a serial number, not a calendar date. Refund eligibility window cannot be confirmed.
+- **DOCUMENTATION FLAG — DATE UNRESOLVABLE (Submission Date):** INTAKE flagged Submission Date as "46005." TAX concurs this is unresolvable.
+
+**Determination: HOLD — Multiple Flags**
+Do not advance. Sanctions jurisdiction requires OFAC documentation. OC absent. Dates unresolvable.
+
+---
+
+### Invoice 106773 | PO: 47844C80 | China | Tariff Rate: 41% | Refund Claimed: $353,634.84
+
+**Regulatory Basis Assessment:**
+- HTS_CODE: 8504.90.75.00 — format valid
+- OC Present: N — **DOCUMENTATION FLAG — OC ABSENT**
+- FTA Claimed: NA — no FTA conflict
+- Tariff Rate: 41% (Tier 4 — Section 301 + reciprocal)
+
+**Rate Variance:** No comparison rate is provided in the dataset. The notes assign Tier 4 at 41%. TAX cannot independently verify the current statutory Section 301 rate for this HTS code without a live tariff schedule. The rate is presented as internally consistent with the Tier 4 designation.
+
+**AMBIGUITY FLAG — TARIFF BASIS:** The notes characterize the 41% rate as "likely highest tier post-Nov 2025." The word "likely" introduces ambiguity into the regulatory basis. TAX does not resolve this in favor of approval. The applicable Section 301 rate for HTS 8504.90.75.00 should be confirmed against the current published Federal Register rate.
+
+**Determination: HOLD — Documentation and Ambiguity Flags**
+OC absent. Tariff rate basis characterized as "likely" — requires confirmation against published rate schedule before advancing.
+
+---
+
+### Invoice 106774 | PO: 42844V1P | Guatemala | Tariff Rate: 10% | Refund Claimed: $72,180.80
+
+**Regulatory Basis Assessment:**
+- HTS_CODE: 8504.90.96.00 — format valid
+- OC Present: Y — present
+- FTA Claimed: GU43216 — FTA identifier present
+
+**FTA/OC Alignment:** OC is present and an FTA number is provided. Guatemala is a CAFTA-DR partner. The FTA identifier "GU43216" is recorded. TAX notes: the OC document must match the import record exactly (vendor, quantity, HTS, origin). This cannot be verified at the dataset level — the OC document itself must be reviewed.
+- **DOCUMENTATION FLAG — OC MATCH UNVERIFIABLE AT DATASET LEVEL:** OC is present but physical document match to import record cannot be confirmed from dataset alone.
+
+**Rate Variance:** Guatemala/CAFTA-DR: 10% rate assigned. Notes indicate "baseline reciprocal rate." TAX cannot independently verify without a live schedule. No internal inconsistency visible.
+
+**Determination: CONDITIONAL — Advance Pending OC Document Verification**
+OC present and FTA claimed. Physical OC document must be verified against import record before claim is finalized.
+
+---
+
+### Invoice 106775 | PO: 47844C7F | China | Tariff Rate: 41% | Refund Claimed: $127,642.02
+
+**Regulatory Basis Assessment:**
+- HTS_CODE: 8532.10.00.00 — format valid
+- OC Present: N — **DOCUMENTATION FLAG — OC ABSENT**
+- FTA Claimed: NA — no FTA conflict
+- Tariff Rate: 41% (Tier 4)
+
+**AMBIGUITY FLAG — TARIFF BASIS:** Same "likely" characterization as 106773. Rate requires confirmation against published Federal Register schedule for HTS 8532.10.00.00.
+
+**Determination: HOLD — Documentation and Ambiguity Flags**
+OC absent. Rate basis requires confirmation.
+
+---
+
+### Invoice 106776 | PO: 453F27M9 | Italy | Tariff Rate: 10% | Refund Claimed: $9,907.20
+
+**Regulatory Basis Assessment:**
+- HTS_CODE: 8512.30.00.00 — format valid
+- OC Present: N — **DOCUMENTATION FLAG — OC ABSENT**
+- FTA Claimed: NA — no FTA conflict
+- Tariff Rate: 10% (Tier 1 — EU/NATO)
+
+**Rate Variance:** Notes indicate 10% as reciprocal rate for EU. No FTA claimed. TAX notes Italy as an EU member subject to the EU-wide reciprocal tariff framework. The 10% rate appears internally consistent with the Tier 1 designation. No variance is calculable from the dataset.
+
+**Determination: HOLD — Documentation Flag**
+OC absent. Documentation required before advancing.
+
+---
+
+### Invoice 106777 | PO: 453D27A3 | Canada | Tariff Rate: 10% | Refund Claimed: $27,713.70
+
+**Regulatory Basis Assessment:**
+- HTS_CODE: 8532.25.00.00 — format valid
+- OC Present: N — **DOCUMENTATION FLAG — OC ABSENT**
+- FTA Claimed: NA — no FTA conflict
+- Tariff Rate: 10% (Tier 1 — USMCA)
+
+**Rate Variance — Canada/USMCA:**
+Canada is a USMCA partner. Under USMCA, qualifying goods may be eligible for 0% or preferential tariff treatment. A 10% rate applied to a Canada-origin import raises a potential rate variance question depending on whether the goods qualify for USMCA preferential treatment. If USMCA preference applies, the variance between 0% (USMCA) and 10% applied could exceed the 2% threshold.
+
+However: no FTA is claimed, and OC is absent. Without an FTA claim and OC documentation, USMCA preference is not established. TAX cannot determine whether USMCA preference should apply without the OC document. This is flagged as ambiguity.
+- **AMBIGUITY FLAG — USMCA PREFERENCE APPLICABILITY:** 10% rate applied to Canada-origin goods. If USMCA preference applies to this HTS code and origin, the correct rate may be 0%, creating a variance exceeding 2%. No FTA claimed, no OC present. Cannot be resolved through inference.
+
+**Determination: HOLD — Documentation and Ambiguity Flags**
+OC absent. USMCA preference applicability unresolved.
+
+---
+
+### Invoice 106778 | PO: 453F27K3 | Germany | Tariff Rate: 10% | Refund Claimed: $79,845.60
+
+**Regulatory Basis Assessment:**
+- HTS_CODE: 8504.40.60.00 — format valid
+- OC Present: N — **DOCUMENTATION FLAG — OC ABSENT**
+- FTA Claimed: NA — no FTA conflict
+- Tariff Rate: 10% (Tier 1 — EU)
+
+**Rate Variance:** Same EU/Tier 1 logic as Italy (106776). No independent comparison rate available. Notes indicate 10% as EU reciprocal rate. No internal inconsistency.
+
+**Determination: HOLD — Documentation Flag**
+OC absent.
+
+---
+
+### Invoice 106779 | PO: 47804C92 | Canada | Tariff Rate: 40% | Refund Claimed: $128,934.00
+
+**Regulatory Basis Assessment:**
+- HTS_CODE: 8512.90.60.00 — format valid
+- OC Present: N — **DOCUMENTATION FLAG — OC ABSENT**
+- FTA Claimed: NA — no FTA conflict
+- Vendor Tier: Tier 1 — Notes assign Tier 1 (10%) to Canada
+
+**REGULATORY FLAG — RATE VARIANCE (CRITICAL):**
+The Tariff Rate Applied is recorded as **40%**, but the Vendor Tier is Tier 1 with a notes assignment of 10% for Canada (USMCA). The variance between the applied rate (40%) and the tier-assigned rate (10%) is **30 percentage points**, which is 30% in absolute terms — vastly exceeding the 2% mandatory flag threshold.
+
+This is an extreme internal inconsistency. Either:
+(a) The tariff rate applied was incorrect (wrong rate applied at entry), or
+(b) The tier assignment in the notes is incorrect, or
+(c) A different legal basis (e.g., Section 232 steel/aluminum, fentanyl-related measures) was applied that is not documented in this record.
+
+TAX does not resolve this inconsistency through inference. The variance is flagged as a mandatory regulatory review item.
+
+**Determination: HOLD — REGULATORY FLAG — RATE VARIANCE (30% variance; threshold 2%)**
+This invoice cannot advance. The rate variance is the largest in the dataset and requires immediate regulatory review. If the 40% rate was applied in error, a refund claim may have merit — but that determination requires a customs entry review, not a refund pipeline approval.
+
+---
+
+### Invoice 106780 | PO: [BLANK] | Brazil | Tariff Rate: 10% | Refund Claimed: $23,120.00
+
+**Regulatory Basis Assessment:**
+- HTS_CODE: 8504.50.40.00 — format valid
+- OC Present: N — **DOCUMENTATION FLAG — OC ABSENT**
+- FTA Claimed: NA — no FTA conflict
+- **DOCUMENTATION FLAG — PO ABSENT** (INTAKE confirmed; TAX concurs — PO is a required field for linking this claim to an import entry)
+
+**Rate Variance:** Brazil — 10% assigned. Notes indicate "Sample table shows 10% reciprocal for Brazil." No FTA claimed. Rate appears internally consistent.
+
+**Determination: HOLD — Documentation Flags**
+PO absent — claim cannot be linked to an import entry. OC absent.
+
+---
+
+### Invoice 106781 | PO: 453D27A2 | India | Tariff Rate: 20% | Refund Claimed: $133,136.80
+
+**Regulatory Basis Assessment:**
+- HTS_CODE: 8532.29.00.00 — format valid
+- OC Present: N — **DOCUMENTATION FLAG — OC ABSENT**
+- FTA Claimed: NA — no FTA conflict
+- Tariff Rate: 20% (Tier 2 — India)
+
+**Rate Variance:** India — 20% assigned. Notes indicate "plausibly above baseline." No independent comparison rate available from the dataset. The "plausibly" characterization introduces ambiguity.
+- **AMBIGUITY FLAG — TARIFF BASIS:** Rate characterized as "plausibly above baseline." Requires confirmation against published rate for HTS 8532.29.00.00, India origin.
+
+**Determination: HOLD — Documentation and Ambiguity Flags**
+OC absent. Rate basis ambiguous.
+
+---
+
+### Invoice 106782 | PO: 47804C92 | Canada | Tariff Rate: 10% | Refund Claimed: $5,528.20
+
+**Regulatory Basis Assessment:**
+- HTS_CODE: 8512.90.40.00 — format valid
+- OC Present: N — **DOCUMENTATION FLAG — OC ABSENT**
+- FTA Claimed: NA — no FTA conflict
+- Tariff Rate: 10% (Tier 1 — USMCA)
+
+**Rate Variance — Canada/USMCA:** Same USMCA preference ambiguity as 106777.
+- **AMBIGUITY FLAG — USMCA PREFERENCE APPLICABILITY:** 10% rate applied to Canada-origin goods. If USMCA preference applies, correct rate may be 0%, creating a variance exceeding 2%.
+
+**Note:** This invoice shares PO 47804C92 with Invoice

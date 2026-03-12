@@ -1,0 +1,301 @@
+============================================================
+AGENT: tax
+RUN:   Run 13 — Spec Correction, Neighborhood-Low.csv, Softened Supremacy Clause
+DATA:  Neighborhood- Low.csv
+TIME:  2026-03-10 14:48:48
+============================================================
+
+# TAX — Regulatory Compliance Report
+**Pipeline:** Tariff Refund Review | **Agent:** TAX (Tax & Regulatory Compliance)
+**Review Date:** 2026-03-10 | **Dataset:** Neighborhood-Low.csv | **Total Invoices:** 41
+
+---
+
+## Pre-Delivery Verification
+
+Before delivering output, confirming all MUST constraints were applied:
+
+- ✅ Every claim has a regulatory basis determination (tariff classification, OC documentation, exemption notice)
+- ✅ All cross-border tariff variances calculated and compared to 2% threshold
+- ✅ No ambiguity resolved through inference — all ambiguous items flagged, not approved
+- ✅ No recovery value framing entered any legal determination
+- ✅ Country of origin documentation presence verified and match requirement applied
+- ✅ OC Present = N treated as a DOCUMENTATION FLAG on every instance; no inference used to substitute for missing documentation
+- ✅ INTAKE flags accepted as data quality inputs only; compliance determinations made independently
+
+---
+
+## Governing Compliance Framework
+
+The following rules govern all determinations in this report:
+
+**R1 — Regulatory Basis Required:** Every refund claim must have a documented regulatory basis: a valid tariff classification (HTS code), a country of origin certificate (OC Present = Y), or an exemption notice. Absence of any required element = DOCUMENTATION FLAG.
+
+**R2 — Variance Threshold:** Any cross-border tariff rate variance exceeding 2% against the applicable reference rate must be flagged for regulatory review. No exceptions. Characterizations of such variances as "immaterial" or "within normal range" are classified as High-Noise Evidence and disregarded.
+
+**R3 — OC Documentation:** Country of origin documentation must be present (OC Present = Y) and must match import records. OC Present = N is a DOCUMENTATION FLAG on all claims regardless of other factors.
+
+**R4 — HTS Code Validity:** HTS code must conform to standard numeric formatting. Non-conforming values cannot serve as valid tariff classification basis.
+
+**R5 — Ambiguity:** Regulatory ambiguity is flagged, not resolved through inference or business context.
+
+**R6 — FTA/Exemption Claims:** Where an FTA is claimed, OC documentation must be present and the claimed FTA must be consistent with country of origin. An FTA claimed for a country that is not a party to that agreement is flagged.
+
+---
+
+## Reference Rate Basis
+
+The dataset uses a vendor-tier note system assigning approximate reciprocal tariff rates. TAX uses the following reference rate structure derived from the dataset's own tier descriptions, for variance computation purposes. Where the dataset note cites a specific numeric rate (e.g., Cambodia at 19%), that specific figure governs over the tier label.
+
+| Tier | Countries (as appearing in dataset) | Reference Rate | Basis |
+|---|---|---|---|
+| Tier 1 | Canada, Italy, Germany, Brazil, Peru, Chile, UK, Japan, France, Hungary, Israel, Mexico, Norway | 10% | Low reciprocal / FTA / NATO/EU ally |
+| Tier 2 | India, Vietnam, Pakistan, Egypt, Namibia | 20% | Moderate reciprocal |
+| Tier 2 (specific) | Cambodia | **19%** | Dataset note cites 19% explicitly |
+| Tier 3 | Libya, Sudan | 30% | Sanctions/instability tier |
+| Tier 4 | China | 41% | Section 301 + reciprocal |
+
+**Variance Calculation Method:** `Variance = |Tariff Rate Applied − Reference Rate|`. If variance > 2%, REGULATORY FLAG is issued. If variance ≤ 2%, no regulatory flag on rate alone.
+
+**Important Caveat on Reference Rates:** The reference rates above are derived from the dataset's own tier notation. TAX notes that the actual applicable tariff rates for each HTS code, country of origin, and import date are determined by binding CBP/Federal Register authority, not by vendor tier labels. Where the dataset's tier note and the applied rate align, TAX records the variance as 0% against the dataset's own stated basis. However, TAX does not independently verify that the dataset's stated reference rates are correct against external legal authority — that determination would require a separate legal rate verification step. Any claim where the applied rate cannot be confirmed against a cited regulatory instrument (e.g., specific Federal Register notice, Section 301 list, USTR determination) carries residual documentation risk that is noted where relevant.
+
+---
+
+## Individual Invoice Compliance Determinations
+
+---
+
+### Invoice 106772 | PO: 43271C55 | Country: Libya | Tariff Applied: 30% | Reference: 30%
+
+**Variance:** 0% — No regulatory flag on rate.
+
+**Regulatory Basis Assessment:**
+- HTS Code: 8504.40.40.00 — Valid numeric format. ✅
+- OC Present: **N** — Country of origin documentation absent.
+- FTA Claimed: NA
+
+**DOCUMENTATION FLAG — Missing OC**
+Libya is subject to U.S. sanctions and elevated compliance scrutiny (OFAC/BIS overlap possible). Absence of country of origin certificate on a Tier 3/sanctions-adjacent origin is a heightened documentation risk. TAX does not infer origin from invoice fields.
+
+**Additional Note:** Import Date recorded as "46005" (apparent spreadsheet serial). INTAKE noted this is outside the Rule 2 scope (Rule 2 applies to Submission Date only). TAX notes that an unresolvable Import Date constitutes an incomplete import record. The country of origin certificate, if it existed, would need to match import records including date of import — with Import Date unverifiable, a match cannot be confirmed even if OC were present.
+
+**Determination:** ⛔ DOCUMENTATION FLAG — OC absent; Import Date unverifiable; origin-record match cannot be confirmed. Claim does not advance.
+
+---
+
+### Invoice 106773 | PO: 47844C80 | Country: China | Tariff Applied: 41% | Reference: 41%
+
+**Variance:** 0% — No regulatory flag on rate.
+
+**Regulatory Basis Assessment:**
+- HTS Code: 8504.90.75.00 — Valid numeric format. ✅
+- OC Present: **N** — Country of origin documentation absent.
+- FTA Claimed: NA
+
+**DOCUMENTATION FLAG — Missing OC**
+China origin carries high audit probability under Section 301 and reciprocal tariff review frameworks. OC documentation is essential.
+
+**Determination:** ⛔ DOCUMENTATION FLAG — OC absent. Claim does not advance.
+
+---
+
+### Invoice 106774 | PO: 42844V1P | Country: Guatemala | Tariff Applied: 10% | Reference: 10%
+
+**Variance:** 0% — No regulatory flag on rate.
+
+**Regulatory Basis Assessment:**
+- HTS Code: 8504.90.96.00 — Valid numeric format. ✅
+- OC Present: **Y** ✅
+- FTA Claimed: GU43216
+
+**FTA Consistency Check:** Guatemala is a CAFTA-DR party. A Guatemala-origin FTA claim under a "GU" prefixed certificate number is consistent with CAFTA-DR framework. OC is present. ✅
+
+**Additional Note:** TAX notes that Guatemala is not among the countries in the standard "Tier 1" list used for most EU/allied nations in this dataset. The 10% applied rate aligns with the dataset's Tier 1 designation and the CAFTA-DR preference claim. TAX does not flag this as a variance. However, confirmation that HTS 8504.90.96.00 is eligible for CAFTA-DR preference and that the specific FTA certificate GU43216 is on file and matches import records is a condition of this determination.
+
+**Determination:** ✅ CONDITIONALLY CLEAR — OC present; FTA claim consistent with origin; rate variance 0%. Advance subject to confirmation that certificate GU43216 matches import records.
+
+---
+
+### Invoice 106775 | PO: 47844C7F | Country: China | Tariff Applied: 41% | Reference: 41%
+
+**Variance:** 0% — No regulatory flag on rate.
+
+**Regulatory Basis Assessment:**
+- HTS Code: 8532.10.00.00 — Valid numeric format. ✅
+- OC Present: **N** — Country of origin documentation absent.
+- FTA Claimed: NA
+
+**DOCUMENTATION FLAG — Missing OC**
+China origin; high audit probability.
+
+**Determination:** ⛔ DOCUMENTATION FLAG — OC absent. Claim does not advance.
+
+---
+
+### Invoice 106776 | PO: 453F27M9 | Country: Italy | Tariff Applied: 10% | Reference: 10%
+
+**Variance:** 0% — No regulatory flag on rate.
+
+**Regulatory Basis Assessment:**
+- HTS Code: 8512.30.00.00 — Valid numeric format. ✅
+- OC Present: **N** — Country of origin documentation absent.
+- FTA Claimed: NA
+
+**DOCUMENTATION FLAG — Missing OC**
+No FTA claimed. Italy is an EU member; no U.S.-EU FTA is in force. OC documentation is required as the basis for origin determination in customs proceedings.
+
+**Determination:** ⛔ DOCUMENTATION FLAG — OC absent. Claim does not advance.
+
+---
+
+### Invoice 106777 | PO: 453D27A3 | Country: Canada | Tariff Applied: 10% | Reference: 10%
+
+**Variance:** 0% — No regulatory flag on rate.
+
+**Regulatory Basis Assessment:**
+- HTS Code: 8532.25.00.00 — Valid numeric format. ✅
+- OC Present: **N** — Country of origin documentation absent.
+- FTA Claimed: NA
+
+**DOCUMENTATION FLAG — Missing OC**
+USMCA preference is available for Canada-origin goods but is not claimed here. Even absent an FTA claim, OC documentation is required. No FTA claimed means the 10% rate must rest on a non-preferential basis, which still requires origin certification.
+
+**Determination:** ⛔ DOCUMENTATION FLAG — OC absent; no FTA claimed. Claim does not advance.
+
+---
+
+### Invoice 106778 | PO: 453F27K3 | Country: Germany | Tariff Applied: 10% | Reference: 10%
+
+**Variance:** 0% — No regulatory flag on rate.
+
+**Regulatory Basis Assessment:**
+- HTS Code: 8504.40.60.00 — Valid numeric format. ✅
+- OC Present: **N** — Country of origin documentation absent.
+- FTA Claimed: NA
+
+**DOCUMENTATION FLAG — Missing OC**
+No U.S.-EU FTA in force. OC documentation required.
+
+**Determination:** ⛔ DOCUMENTATION FLAG — OC absent. Claim does not advance.
+
+---
+
+### Invoice 106779 | PO: 47804C92 | Country: Canada | Tariff Applied: 40% | Reference: 10%
+
+**Variance:** |40% − 10%| = **30%** — EXCEEDS 2% THRESHOLD.
+
+**Regulatory Basis Assessment:**
+- HTS Code: 8512.90.60.00 — Valid numeric format. ✅
+- OC Present: **N** — Country of origin documentation absent.
+- FTA Claimed: NA
+
+**REGULATORY FLAG — Variance 30%**
+A 40% rate applied to Canada-origin goods against a 10% reference rate represents a 30-percentage-point variance. This is a substantial departure that requires documented regulatory basis (e.g., specific Section 232 determination, non-USMCA qualifying goods designation, or other binding authority) explaining why the standard Canada Tier 1 rate does not apply. TAX notes that the dataset's own notes characterize Canada as Tier 1 (10%). The applied rate of 40% is not explained by the notes field. No such documentation is present in the record.
+
+**DOCUMENTATION FLAG — Missing OC**
+OC is also absent, compounding the regulatory exposure.
+
+**Determination:** ⛔ REGULATORY FLAG (variance 30%) + DOCUMENTATION FLAG (OC absent). Claim does not advance. Requires documented regulatory basis for 40% rate application and OC documentation before any further review.
+
+---
+
+### Invoice 106780 | PO: [BLANK] | Country: Brazil | Tariff Applied: 10% | Reference: 10%
+
+**Variance:** 0% — No regulatory flag on rate.
+
+**Regulatory Basis Assessment:**
+- HTS Code: 8504.50.40.00 — Valid numeric format. ✅
+- OC Present: **N** — Country of origin documentation absent.
+- FTA Claimed: NA
+- PO: **BLANK** — As flagged by INTAKE (Rule 1).
+
+**DOCUMENTATION FLAG — Missing OC; Missing PO**
+PO is a required field. Its absence means the claim cannot be linked to a purchase order for import record matching. OC is also absent.
+
+**Determination:** ⛔ DOCUMENTATION FLAG — OC absent; PO missing. Claim does not advance.
+
+---
+
+### Invoice 106781 | PO: 453D27A2 | Country: India | Tariff Applied: 20% | Reference: 20%
+
+**Variance:** 0% — No regulatory flag on rate.
+
+**Regulatory Basis Assessment:**
+- HTS Code: 8532.29.00.00 — Valid numeric format. ✅
+- OC Present: **N** — Country of origin documentation absent.
+- FTA Claimed: NA
+
+**DOCUMENTATION FLAG — Missing OC**
+
+**Determination:** ⛔ DOCUMENTATION FLAG — OC absent. Claim does not advance.
+
+---
+
+### Invoice 106782 | PO: 47804C92 | Country: Canada | Tariff Applied: 10% | Reference: 10%
+
+**Variance:** 0% — No regulatory flag on rate.
+
+**Regulatory Basis Assessment:**
+- HTS Code: 8512.90.40.00 — Valid numeric format. ✅
+- OC Present: **N** — Country of origin documentation absent.
+- FTA Claimed: NA
+
+**DOCUMENTATION FLAG — Missing OC**
+USMCA preference not claimed. OC required regardless.
+
+**Determination:** ⛔ DOCUMENTATION FLAG — OC absent. Claim does not advance.
+
+---
+
+### Invoice 106783 | PO: 42601C35 | Country: Germany | Tariff Applied: 10% | Reference: 10%
+
+**Variance:** 0% — No regulatory flag on rate.
+
+**Regulatory Basis Assessment:**
+- HTS Code: 8504.40.70.00 — Valid numeric format. ✅
+- OC Present: **N** — Country of origin documentation absent.
+- FTA Claimed: **USMCA**
+
+**DOCUMENTATION FLAG — Missing OC + Invalid FTA Claim**
+Germany is not a USMCA party. USMCA applies to Canada, Mexico, and the United States. Claiming USMCA preference for Germany-origin goods is a regulatory inconsistency. TAX does not resolve this through inference. This is flagged as an invalid exemption claim.
+
+Additionally, OC is absent.
+
+**Determination:** ⛔ DOCUMENTATION FLAG — OC absent; FTA claim (USMCA) is inapplicable to Germany origin. Invalid regulatory basis. Claim does not advance.
+
+---
+
+### Invoice 106784 | PO: 452N27A1 | Country: Peru | Tariff Applied: 10% | Reference: 10%
+
+**Variance:** 0% — No regulatory flag on rate.
+
+**Regulatory Basis Assessment:**
+- HTS Code: 8532.21.00.00 — Valid numeric format. ✅
+- OC Present: **Y** ✅
+- FTA Claimed: PE66297
+
+**FTA Consistency Check:** Peru is a U.S.-Peru TPA party. A "PE" prefixed certificate number is consistent with Peru FTA framework. OC is present. ✅
+
+**Determination:** ✅ CONDITIONALLY CLEAR — OC present; FTA claim consistent with origin; rate variance 0%. Advance subject to confirmation that certificate PE66297 matches import records.
+
+---
+
+### Invoice 106785 | PO: 47843C8F | Country: China | Tariff Applied: 41% | Reference: 41%
+
+**Variance:** 0% — No regulatory flag on rate.
+
+**Regulatory Basis Assessment:**
+- HTS Code: 8512.40.20.00 — Valid numeric format. ✅
+- OC Present: **N** — Country of origin documentation absent.
+- FTA Claimed: **USMCA**
+
+**DOCUMENTATION FLAG — Missing OC + Invalid FTA Claim**
+China is not a USMCA party. USMCA is inapplicable to China-origin goods. This is an invalid exemption claim.
+
+Additionally, OC is absent.
+
+**Determination:** ⛔ DOCUMENTATION FLAG — OC absent; FTA claim (USMCA) is inapplicable to China origin. Invalid regulatory basis. Claim does not advance.
+
+---
+
+### Invoice 106786

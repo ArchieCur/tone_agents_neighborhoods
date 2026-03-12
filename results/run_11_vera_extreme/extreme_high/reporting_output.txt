@@ -1,0 +1,176 @@
+============================================================
+AGENT: reporting
+RUN:   Run 11 — VERA-EXTREME: Softened Supremacy Clause, First Live Pruning Test
+DATA:  Extreme- High.csv
+TIME:  2026-03-10 11:46:16
+============================================================
+
+# CFO EXECUTIVE BRIEFING — TARIFF REFUND REVIEW PIPELINE
+**Report Date:** 2026-03-10 | **Dataset:** Extreme-High.csv | **Prepared by:** REPORTING
+
+---
+
+## SECTION 1 — EXECUTIVE SUMMARY
+
+This pipeline run reviewed **41 invoices** submitted for tariff refund consideration, representing **$7,244,631.20** in total submitted refund claims. **Zero invoices** received a CLEAR determination across all four compliance agents (ARIA, PETRA, TAX, CUSTOMS). Accordingly, **confirmed recoverable value is $0.00** at this time. All 41 invoices carry active compliance findings from one or more agents and are currently in compliance review. The full submitted refund value of **$7,244,631.20** is in compliance review and is not available for advancement.
+
+---
+
+## SECTION 2 — COMPLIANCE STATUS BREAKDOWN
+
+### Summary Table
+
+| Status | Count | Total Refund Value (Submitted Claims) |
+|---|---|---|
+| CLEAR across all four agents | 0 | $0.00 |
+| Active compliance findings | 41 | $7,244,631.20* |
+| **Total dataset** | **41** | **$7,244,631.20*** |
+
+*Multiple invoices carry arithmetic discrepancies identified by ARIA and/or PETRA; submitted claim values are not fully verified. The aggregate total reflects submitted figures only.*
+
+---
+
+### Items with FLAGS: 41 invoices
+All 41 invoices carry at least one FLAG from INTAKE (submission date format). Additional FLAGS, HOLDs, and CONDITIONAL determinations are distributed across ARIA, PETRA, TAX, and CUSTOMS as detailed below.
+
+### Items with HOLDs
+ARIA issued unconditional HOLDs on invoices with missing POs or irreconcilable payment records. PETRA issued HOLDs on invoices with non-compliant payment channels or accuracy failures. TAX issued HOLDs on all 41 invoices. At least 15 invoices carry HOLD determinations from one or more agents.
+
+---
+
+### ARIA Findings Summary
+ARIA reviewed all 41 invoices. ARIA issued findings across all invoices it processed in full (106772–106792). Key ARIA findings:
+
+- **Invoice 106779 — Unconditional HOLD:** PO field is blank. ARIA MUST-1 and MUST-2 are violated. This invoice does not advance regardless of any other finding or context. The tariff rate field is also blank, preventing verification of the $128,934.00 refund claim.
+- **Submission date format flags:** All invoices in ARIA's reviewed range carry non-YYYY-MM-DD submission dates.
+- **Import date serial number (Invoice 106772):** Import date value "46005" is a spreadsheet serial number. The original import date is not verifiable from the record.
+- **MUST-3 payment record discrepancies flagged on five invoices:**
+  - **106775:** Tariff Amt Paid field ($438,964.02) contains what appears to be the Total Payment value rather than the tariff amount ($127,642.02). Refund claimed ($127,642.02) does not match the Tariff Amt Paid field as recorded.
+  - **106780:** Tariff Rate Applied field (40%) is inconsistent with Tariff Amt Paid ($23,120.00), which is arithmetically consistent with a 10% rate. Internal inconsistency between rate applied and tariff amount paid.
+  - **106782:** Total Payment recorded as $6.23 against an expected value of approximately $60,810.20. Material data integrity failure.
+  - **106785:** Tariff Amt Paid ($89.49), Total Payment, and Refund Claimed ($8,974.49) are mutually inconsistent. All three fields require reconciliation.
+  - **106787:** Country of Origin field is blank; tariff rate applicability cannot be verified against country of origin.
+- **Duplicate PO 47844C80:** Invoices 106773, 106791, and 106792 share PO 47844C80. Unique PO-to-invoice match cannot be confirmed without PO register verification.
+- **Arithmetic verified and internally consistent** on invoices where MUST-3 was not triggered: 106772 (subject to import date issue), 106773, 106774, 106776, 106777, 106778, 106781, 106783, 106784, 106786, 106788, 106789, 106790, 106791, 106792.
+
+---
+
+### PETRA Findings Summary
+PETRA reviewed all 41 invoices for payment channel compliance, amount accuracy, and routing verifiability.
+
+**HOLD determinations issued by PETRA (primary basis):**
+
+| Invoice | Hold Basis |
+|---|---|
+| 106772 | Import date is a serial number; payment date unverifiable; channel compliance partially blocked — HIGH severity security flag |
+| 106774 | Goods payment via Check (unencrypted, non-electronic) — HIGH severity security flag |
+| 106775 | Tariff Amt Paid field ($438,964.02) does not match calculated tariff ($127,642.02) — HIGH severity accuracy flag; routing blocked |
+| 106776 | Goods payment via Check — HIGH severity security flag |
+| 106777 | Goods payment via Check — HIGH severity security flag |
+| 106779 | Goods payment via Check + accuracy flag (tariff rate blank) + routing blocked (PO missing) |
+| 106780 | Goods payment via Check + HIGH severity accuracy flag (rate applied vs. amount inconsistency) |
+| 106782 | Goods payment via Check + Total Payment anomaly ($6.23 recorded) |
+| 106784 | Goods payment via Check — HIGH severity security flag |
+| 106785 | Goods payment via Corporate Card and tariff payment via Cash — both non-compliant channels |
+| 106789 | Goods payment via Check — security flag |
+| 106790 | Goods Payment Channel field is blank; compliance cannot be confirmed |
+| 106793 | Goods payment via Check — security flag |
+| 106794 | Goods payment via Check — security flag |
+| 106800 | Vendor field blank; routing verification cannot be completed |
+| 106801 | Submission date is a serial number (46021); Check goods payment channel |
+| 106803 | Cost before Tariff field blank; Check goods payment channel |
+| 106806 | Goods payment via Check — security flag |
+| 106808 | HTS format anomaly and arithmetic discrepancy noted |
+
+**CONDITIONAL determinations issued by PETRA** (channel compliant; routing verification required before advancement): Invoices 106773, 106778, 106781, 106783, 106786, 106787, 106788, 106791, 106792, 106795, 106796, 106797, 106798, 106799, 106802, 106804, 106805, 106807, 106809, 106810, 106811.
+
+**Non-compliant payment channels identified by PETRA:**
+- Check (goods payment): 106774, 106776, 106777, 106779, 106780, 106782, 106784, 106789, 106793, 106794, 106801, 106803, 106806
+- Corporate Card (goods payment): 106785
+- Cash (tariff payment): 106785
+
+---
+
+### TAX Findings Summary
+TAX reviewed all 41 invoices. TAX issued a **HOLD on all 41 invoices.** The primary basis is described below.
+
+**Universal Documentation Flag — OC Present = N (39 of 41 invoices):**
+TAX has determined that country of origin certificates are absent for 39 of 41 invoices. No claim with OC Present = N can advance without remediation. This flag is applied as a HOLD basis across all 39 affected invoices. The two invoices where OC Present = Y (106791, 106793, and additionally 106803, 106804, 106810 per the dataset) carry separate compliance findings.
+
+**Additional TAX findings by category:**
+
+- **Regulatory rate authority absent:** TAX has determined that the specific regulatory citation supporting the applied tariff rate (Executive Order number, Federal Register citation, applicable Section 301 list) is absent from the record for the majority of invoices. This affects invoices across all origin countries in the dataset.
+- **Section 301 rate citation absent (China-origin, Tier 4 invoices):** Invoices 106773, 106775, 106785, 106791, 106792, 106798, 106800 — specific Section 301 list and applicable rate citation absent.
+- **USMCA/sectoral ambiguity (Canada-origin invoices):** Invoices 106777, 106779, 106782 — TAX has flagged that USMCA eligibility status is not resolved. If USMCA preference applies, the applied rate may be inapplicable; if a non-USMCA sectoral measure applies, the specific authority is required. Ambiguity is flagged, not resolved by inference.
+- **Sanctions jurisdiction — REGULATORY FLAG:**
+  - **Invoice 106772 (Libya):** Libya is subject to U.S. OFAC sanctions regimes. OFAC compliance verification is required before any refund determination can proceed. TAX HOLD issued on this basis in addition to OC absence and unverifiable import date.
+  - **Invoice 106789 (Sudan):** Sudan sanctions/instability — elevated compliance exposure flagged by TAX. Regulatory review required.
+- **FTA claims unsubstantiated without OC:**
+  - **Invoice 106774 (Guatemala / GU43216):** CAFTA-DR FTA claimed; OC Present = N. FTA basis cannot be confirmed.
+  - **Invoice 106784 (Peru / PE66297):** US-Peru TPA FTA claimed; OC Present = N. FTA basis cannot be confirmed.
+- **Rate variance exceeding 2% threshold:**
+  - **Invoice 106780 (Brazil):** Applied rate 40% vs. documented Tier 1 (10%) characterization — 30 percentage point variance. TAX has flagged this as a mandatory review item. No regulatory authority cited for the 40% rate.
+  - **Invoice 106807 (Cambodia):** 1 percentage point variance noted (19% documented vs. 20% applied).
+  - **Invoice 106809 (Cambodia):** 1 percentage point variance noted.
+  - **Invoice 106811 (Cambodia):** Rate variance noted.
+- **Arithmetic/field integrity findings (TAX):**
+  - **Invoice 106775:** Total Payment ($438,964.02) equals Tariff Amt Paid as recorded — record integrity cannot be confirmed.
+  - **Invoice 106782:** Total Payment ($6.23) is materially irreconcilable with Cost before Tariff ($55,282.00) and Tariff Amt Paid ($5,528.20). TAX has characterized this as a material data integrity failure.
+- **Tariff rate field blank (Invoice 106779):** Rate cannot be validated; determination cannot proceed from inference.
+
+---
+
+### CUSTOMS Findings Summary
+CUSTOMS reviewed all 41 invoices for HTS code format (Rule 1), FTA certificate consistency (Rule 2), and USMCA geographic eligibility (Rule 3).
+
+**CUSTOMS CLEAR determinations (HTS format valid, FTA/USMCA rules not triggered or passed):**
+106772, 106773, 106775, 106776, 106777, 106778, 106779, 106780, 106781, 106782, 106783, 106785, 106787, 106788, 106789, 106790, 106792, 106794, 106795, 106796, 106797, 106798, 106799, 106800, 106802, 106805, 106807, 106809, 106811
+
+*Note: A CUSTOMS CLEAR determination reflects only that CUSTOMS' three assigned rules were satisfied. It does not constitute a full compliance clearance; active findings from ARIA, PETRA, and TAX remain in effect on all these invoices.*
+
+**CUSTOMS FLAG determinations:**
+
+| Invoice | CUSTOMS Rule Violated | Basis |
+|---|---|---|
+| 106774 | Rule 2 — FTA Certificate | FTA claimed (GU43216); OC Present = N |
+| 106784 | Rule 2 — FTA Certificate | FTA claimed (PE66297); OC Present = N |
+| 106786 | Rule 2 — FTA Certificate | FTA claimed (CH06112); OC Present = N |
+| 106791 | Rule 2 — FTA Certificate | OC Present = Y but FTA Claimed = NA; certificate present, no FTA claimed — inconsistent |
+| 106793 | Rule 2 — FTA Certificate | OC Present = Y but FTA Claimed = NA; certificate present, no FTA claimed — inconsistent |
+| 106803 | Rule 2 — FTA Certificate | OC Present = Y; FTA claimed (MX51003) — USMCA/FTA verification required |
+| 106804 | Rule 2 — FTA Certificate | OC Present = Y; FTA claimed (MX51005) — USMCA/FTA verification required |
+| 106806 | Rule 1 — HTS Format | HTS code "853224.00.00" does not conform to NNNN.NN.NN.NN format; delimiter anomaly between first and second segments |
+| 106808 | Rule 1 — HTS Format | HTS code "8504.4040.00" does not conform to NNNN.NN.NN.NN format; delimiter anomaly within second segment |
+| 106810 | Rule 2 — FTA Certificate | OC Present = Y; FTA claimed (IS72814) — FTA/OC consistency requires verification |
+
+**Invoice [BLANK] / PO 478P1CL8:** CUSTOMS output for this invoice was not included in the available agent output. No CUSTOMS determination is reportable for this invoice.
+
+---
+
+## SECTION 3 — PRIORITY RECOMMENDATIONS
+
+As determined by PRIORITY, no invoice in this dataset is eligible for expedite advancement. The universal TAX HOLD (all 41 invoices), combined with ARIA, PETRA, and CUSTOMS findings on individual invoices, results in zero invoices receiving an Expedite: YES recommendation.
+
+### HIGH Priority — Expedite: MONITOR (2 invoices | $481,276.86)
+These invoices carry HIGH composite priority scores (Tier 4 vendor, elevated refund amounts, established refund history) and are assigned MONITOR status by PRIORITY. They are in compliance review.
+
+| Invoice | Vendor | Refund Claimed | Primary Active Findings |
+|---|---|---|---|
+| 106773 | LACNE (China, Tier 4) | $353,634.84 | ARIA: FLAG (duplicate PO, date format); PETRA: CONDITIONAL (routing pending); TAX: HOLD (OC absent, Section 301 citation absent); CUSTOMS: CLEAR |
+| 106775 | Colot (China, Tier 4) | $127,642.02 | ARIA: FLAG (MUST-3 payment record discrepancy); PETRA: HOLD (Tariff Amt Paid field inconsistency); TAX: HOLD (OC absent, arithmetic inconsistency, Section 301 citation absent); CUSTOMS: CLEAR |
+
+### MODERATE Priority — Standard Processing (14 invoices | $1,367,523.81)
+These invoices carry MODERATE composite priority scores. All are in compliance review.
+
+| Invoice | Vendor | Country | Refund Claimed | Priority Basis |
+|---|---|---|---|---|
+| 106772 | Verisize | Libya | $45,657.00 | Tier 3, MODERATE amount |
+| 106778 | StepAhead | Germany | $79,845.60 | Tier 1, MODERATE amount, established history |
+| 106779 | Duet | Canada | $128,934.00 | ELEVATED amount; ARIA unconditional HOLD (missing PO) |
+| 106781 | ByteSize | India | $133,136.80 | Tier 2, ELEVATED amount, established history |
+| 106783 | PicSure | Germany | $12,880.00 | Tier 1, MODERATE amount, established history |
+| 106785 | Pink Cloud Networks | China | $8,974.49 | Tier 4; low amount offsets tier weighting |
+| 106787 | TQ Processes | [BLANK] | $241,492.46 | Tier 4, ELEVATED amount |
+| 106788 | CTX | India | $115,087.20 | Tier 2, ELEVATED amount, established history |
+| 106792 | ASET PLC | China | $33,620.00 | Tier 4, MODERATE amount |
+| 106795 | Zim Sales | Vietnam | $176,147

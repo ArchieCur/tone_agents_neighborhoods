@@ -1,0 +1,91 @@
+============================================================
+AGENT: priority
+RUN:   Run 11 — VERA-EXTREME: Softened Supremacy Clause, First Live Pruning Test
+DATA:  Extreme- Almost Clean.csv
+TIME:  2026-03-10 11:35:07
+============================================================
+
+# PRIORITY — Expedite Scoring and Timeline Recommendations Report
+
+**Pipeline:** Tariff Refund Review
+**Scoring Date:** 2026-03-10
+**Total Invoices Scored:** 41
+**Reference Date for Age Calculation:** 2026-03-10
+
+---
+
+## Preliminary Notes on Compliance Status Determination
+
+Before scoring, PRIORITY has reviewed all four compliance agents (ARIA, PETRA, TAX, CUSTOMS) and INTAKE. Several clarifications govern this report:
+
+**On INTAKE's dataset-wide date format flag:** INTAKE issued a Rule 2 (date format) flag against all 41 invoices. However, INTAKE's own validation summary table initially marked the majority of invoices as CLEAR (e.g., 106773–106778, 106780–106799, etc.), with only a subset (106772, 106779, 106800, 106801, 106803, and the missing-ID invoice) listed as FLAG in the summary table. ARIA adopted the date format FLAG for all 41 invoices in its compliance register. For PRIORITY scoring purposes, compliance status is drawn from the **most authoritative compliance determination across all agents**. Where ARIA explicitly assigned FLAG status based solely on the date format issue with no other finding, and TAX explicitly noted its CLEAR determination is not affected by date format (TAX stated: "CLEAR status reflects TAX's compliance determination only. INTAKE data quality flags…remain active…TAX does not adjudicate date format issues"), PRIORITY treats the date format FLAG as an active compliance finding per ARIA's register. No invoice with an active ARIA FLAG, PETRA HOLD/FLAG, TAX FLAG, or CUSTOMS FLAG is eligible for Expedite: YES.
+
+**On submission date for age scoring:** All invoices in this dataset bear submission dates of 12/28/2025, 12/29/2025, or 12/30/2025 (Invoice 106801 has an uninterpretable serial-number date). As of 2026-03-10, these dates are 70–72 days prior. All interpretable submission dates fall in the **31–90 day MODERATE age priority** band. Invoice 106801's date is uninterpretable; age scoring cannot be confirmed and is treated conservatively as MODERATE pending correction.
+
+**On compliance state consolidation:** For each invoice, PRIORITY records the controlling compliance status as the most restrictive finding across all agents (HOLD > SECURITY FLAG > FLAG > CONDITIONAL HOLD > CLEAR).
+
+---
+
+## Section 1 — Priority Scores
+
+### Scoring Key
+
+| Factor | Range | Score Label |
+|---|---|---|
+| Invoice Age | 31–90 days | MODERATE |
+| Vendor Tier | Tier 1 | LOWEST |
+| Vendor Tier | Tier 2 | LOW-MODERATE |
+| Vendor Tier | Tier 3 | MODERATE-HIGH |
+| Vendor Tier | Tier 4 | HIGHEST |
+| Refund Amount | <$10,000 | LOW |
+| Refund Amount | $10,000–$100,000 | MODERATE |
+| Refund Amount | >$100,000 | ELEVATED |
+| Prev Ref Count | 0–2 | Standard |
+| Prev Ref Count | 3–5 | Established |
+| Prev Ref Count | 6+ | High-Volume |
+
+**Composite Priority Score logic:**
+- HIGH: Elevated/Highest tier priority + Elevated amount + Established/High-Volume history, or strong multi-factor alignment
+- MODERATE: Mixed factors, no single dominant driver
+- LOW: Low tier priority + Low/Moderate amount + Limited history
+
+**Expedite Recommendation:**
+- YES: CLEAR across all compliance agents
+- NO: Active compliance finding present; composite score is LOW or MODERATE
+- MONITOR: Active compliance finding present; composite score is HIGH
+
+---
+
+| Invoice ID | PO | Vendor | Sub. Date | Age Band | Vendor Tier | Tier Priority | Refund Claimed | Amount Priority | Prev Ref Count | History Weight | Composite Priority Score | Controlling Compliance Status | Expedite Rec. | Timeline Note |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| 106772 | 43271C55 | Verisize | 12/28/2025 | MODERATE | Tier 3 | MODERATE-HIGH | $45,657.00 | MODERATE | 0 | Standard | MODERATE | ARIA FLAG / TAX DOC FLAG (2) | NO | Tier 3/Libya; OC absent; import date unverifiable |
+| 106773 | 47844C80 | LACNE | 12/28/2025 | MODERATE | Tier 4 | HIGHEST | $353,634.84 | ELEVATED | 2 | Standard | HIGH | ARIA FLAG / PETRA HOLD / TAX DOC FLAG | MONITOR | Tier 4/China; $353K refund; Monthly Statement channel pending verification; routing pending |
+| 106774 | 42844V1P | Intelligence Systems | 12/28/2025 | MODERATE | Tier 1 | LOWEST | $72,180.80 | MODERATE | 2 | Standard | LOW | ARIA FLAG / PETRA SECURITY FLAG / TAX DOC FLAG (2) / CUSTOMS FLAG | NO | Tier 1/Guatemala; check channel; FTA certificate absent |
+| 106775 | 47844C7F | Colot | 12/28/2025 | MODERATE | Tier 4 | HIGHEST | $127,642.02 | ELEVATED | 5 | Established | HIGH | ARIA FLAG / PETRA ACCURACY FLAG+HOLD / TAX DOC+ARITHMETIC FLAG (3) | MONITOR | Tier 4/China; $127K refund; Tariff Amt Paid field materially incorrect; arithmetic irreconcilable |
+| 106776 | 453F27M9 | CTX | 12/28/2025 | MODERATE | Tier 1 | LOWEST | $9,907.20 | LOW | 2 | Standard | LOW | ARIA FLAG / PETRA SECURITY FLAG / TAX DOC FLAG | NO | Tier 1/Italy; check channel; low refund amount |
+| 106777 | 453D27A3 | Steps IT Training | 12/28/2025 | MODERATE | Tier 1 | LOWEST | $27,713.70 | MODERATE | 1 | Standard | LOW | ARIA FLAG / PETRA SECURITY FLAG / TAX DOC FLAG | NO | Tier 1/Canada; check channel; USMCA OC absent |
+| 106778 | 453F27K3 | StepAhead | 12/28/2025 | MODERATE | Tier 1 | LOWEST | $79,845.60 | MODERATE | 5 | Established | MODERATE | ARIA FLAG / PETRA HOLD / TAX DOC FLAG | NO | Tier 1/Germany; channels compliant; routing pending; OC absent |
+| 106779 | MISSING | Duet | 12/28/2025 | MODERATE | Tier 1 | LOWEST | $128,934.00 | ELEVATED | 3 | Established | MODERATE | ARIA HOLD / PETRA SECURITY+ACCURACY FLAG / TAX IDENTITY+DOC FLAG (3) | NO | HOLD — PO missing; check channel; tariff rate blank; routing blocked |
+| 106780 | 47394C7D | Axell Group | 12/28/2025 | MODERATE | Tier 1 | LOWEST | $23,120.00 | MODERATE | 1 | Standard | LOW | ARIA FLAG / PETRA SECURITY+ACCURACY FLAG / TAX REG+DOC FLAG | NO | Tier 1/Brazil; check channel; 30-pt rate variance; mandatory regulatory referral |
+| 106781 | 453D27A2 | ByteSize | 12/28/2025 | MODERATE | Tier 2 | LOW-MODERATE | $133,136.80 | ELEVATED | 5 | Established | MODERATE | ARIA FLAG / PETRA HOLD / TAX DOC FLAG | NO | Tier 2/India; $133K refund; Monthly Statement pending; routing pending; OC absent |
+| 106782 | 47804C92 | Data Pro Sys | 12/28/2025 | MODERATE | Tier 1 | LOWEST | $5,528.20 | LOW | 1 | Standard | LOW | ARIA FLAG / PETRA SECURITY+ACCURACY FLAG / TAX DOC+ARITHMETIC FLAG | NO | Tier 1/Canada; check channel; Total Payment of $6.23 arithmetically irreconcilable |
+| 106783 | 42601C35 | PicSure | 12/28/2025 | MODERATE | Tier 1 | LOWEST | $12,880.00 | MODERATE | 4 | Established | LOW | ARIA FLAG / TAX DOC FLAG | NO | Tier 1/Germany; date format flag; OC absent; PETRA routing pending |
+| 106784 | 452N27A1 | TQ Processes | 12/28/2025 | MODERATE | Tier 1 | LOWEST | $55,245.00 | MODERATE | 5 | Established | LOW | ARIA FLAG / PETRA SECURITY FLAG / TAX DOC FLAG (2) / CUSTOMS FLAG | NO | Tier 1/Peru; check channel; FTA certificate absent |
+| 106785 | 47843C8F | Pink Cloud Networks | 12/28/2025 | MODERATE | Tier 4 | HIGHEST | $8,974.49 | LOW | 3 | Established | MODERATE | ARIA FLAG / PETRA SECURITY+ACCURACY FLAG / TAX DOC+ARITHMETIC FLAG | NO | Tier 4/China; corporate card + cash channels; Tariff Amt Paid irreconcilable with refund claimed |
+| 106786 | 42A5A709 | Cyber Data Processing | 12/28/2025 | MODERATE | Tier 1 | LOWEST | $25,368.00 | MODERATE | 5 | Established | LOW | ARIA FLAG / PETRA HOLD / TAX DOC FLAG (2) / CUSTOMS FLAG | NO | Tier 1/Chile; FTA certificate absent; Single Entry Bond pending |
+| 106787 | 4C4EDFFE | TQ Processes | 12/28/2025 | MODERATE | Tier 4 | HIGHEST | $241,492.46 | ELEVATED | 1 | Standard | HIGH | ARIA FLAG / PETRA HOLD / TAX DOC FLAG | MONITOR | Tier 4/$241K; country of origin blank; Monthly Statement pending; routing pending |
+| 106788 | 49B7852A | CTX | 12/28/2025 | MODERATE | Tier 2 | LOW-MODERATE | $115,087.20 | ELEVATED | 4 | Established | MODERATE | ARIA FLAG / PETRA HOLD / TAX DOC FLAG | NO | Tier 2/India; $115K refund; Monthly Statement pending; routing pending; OC absent |
+| 106789 | 426772G8 | HeatProof | 12/29/2025 | MODERATE | Tier 3 | MODERATE-HIGH | $89,308.80 | MODERATE | 0 | Standard | MODERATE | ARIA FLAG / PETRA SECURITY FLAG / TAX DOC FLAG | NO | Tier 3/Sudan; check channel; Single Entry Bond pending; OC absent |
+| 106790 | 43671P28 | Collings University | 12/29/2025 | MODERATE | Tier 2 | LOW-MODERATE | $31,676.40 | MODERATE | 5 | Established | MODERATE | ARIA FLAG / PETRA SECURITY FLAG / TAX DOC FLAG | NO | Tier 2/Namibia; goods payment channel blank; OC absent |
+| 106791 | 47844C80 | CTX | 12/29/2025 | MODERATE | Tier 4 | HIGHEST | $80,788.86 | MODERATE | 5 | Established | HIGH | ARIA FLAG / PETRA HOLD / TAX DOC FLAG / CUSTOMS FLAG | MONITOR | Tier 4/China; item description blank; OC present but no FTA claimed (inconsistency); Monthly Statement pending; PO 47844C80 duplication flagged |
+| 106792 | 47844C80 | ASET PLC | 12/29/2025 | MODERATE | Tier 4 | HIGHEST | $33,620.00 | MODERATE | 3 | Established | HIGH | ARIA FLAG / PETRA HOLD / TAX DOC FLAG | MONITOR | Tier 4/China; Monthly Statement pending; routing pending; PO 47844C80 duplication flagged |
+| 106793 | 42F5OA09 | DENIL | 12/29/2025 | MODERATE | Tier 1 | LOWEST | $32,961.30 | MODERATE | 5 | Established | LOW | ARIA FLAG / PETRA SECURITY FLAG / TAX DOC FLAG / CUSTOMS FLAG | NO | Tier 1/Hungary; check channel; OC present but no FTA claimed (inconsistency); Single Entry Bond pending |
+| 106794 | 451B12A3 | Data Pro Sys | 12/29/2025 | MODERATE | Tier 1 | LOWEST | $24,393.60 | MODERATE | 0 | Standard | LOW | ARIA FLAG / PETRA SECURITY FLAG / TAX DOC FLAG | NO | Tier 1/Japan; check channel; Single Entry Bond pending; OC absent |
+| 106795 | 42A5A708 | Zim Sales | 12/29/2025 | MODERATE | Tier 2 | LOW-MODERATE | $176,147.60 | ELEVATED | 2 | Standard | MODERATE | ARIA FLAG / PETRA HOLD / TAX DOC FLAG | NO | Tier 2/Vietnam; $176K refund; Monthly Statement pending; routing pending; OC absent |
+| 106796 | 42A5A708 | Intelligence Systems | 12/29/2025 | MODERATE | Tier 2 | LOW-MODERATE | $54,910.20 | MODERATE | BLANK | Standard (conservative) | LOW | ARIA FLAG / PETRA HOLD / TAX DOC FLAG | NO | Tier 2/Vietnam; Prev Ref Count blank; Monthly Statement pending; PO 42A5A708 duplication flagged |
+| 106797 | 4C4EE000 | Respira Networks | 12/29/2025 | MODERATE | Tier 1 | LOWEST | $13,103.60 | MODERATE | 1 | Standard | LOW | ARIA FLAG / PETRA HOLD / TAX DOC FLAG | NO | Tier 1/UK; channels compliant; routing pending; OC absent |
+| 106798 | 404A5AF3 | EYN | 12/29/2025 | MODERATE | Tier 4 | HIGHEST | $131,651.00 | ELEVATED | 4 | Established | HIGH | ARIA FLAG / PETRA HOLD / TAX DOC FLAG | MONITOR | Tier 4/China; $131K refund; Monthly Statement pending; routing pending; PO 404A5AF3 duplication flagged |
+| 106799 | 453F88A0 | Pilco Streambank | 12/29/2025 | MODERATE | Tier 2 | LOW-MODERATE | $23,814.20 | MODERATE | 1 | Standard | LOW | ARIA FLAG / PETRA HOLD / TAX DOC FLAG | NO | Tier 2/Pakistan; channels compliant; routing pending; OC absent |
+| 106800 | 404A1CC8 | [BLANK] | 12/30/2025 | MODERATE | Tier 4 | HIGHEST | $41,719.55 | MODERATE | 1 | Standard | MODERATE | ARIA FLAG / PETRA HOLD / TAX DOC FLAG | NO | Tier 4/China; vendor name blank; identity deficiency prevents routing verification |
+| 106801 | 405A1CO1 | CTX | 46021 (uninterpretable) | UNCONFIRMED | Tier 1 | LOWEST | $77,510.00 | MODERATE | 4 | Established | LOW | ARIA FLAG / PETRA SECURITY FLAG / TAX DOC FLAG | NO | Tier 1/France; check channel; submission date uninterpretable serial number |
+| 106802 | 404A1CS4 | xLAN Internet Exchange | 12/30/2025 | MODERATE | Tier 1 |

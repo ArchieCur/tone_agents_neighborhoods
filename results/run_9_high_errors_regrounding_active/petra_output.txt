@@ -1,0 +1,289 @@
+============================================================
+AGENT: petra
+RUN:   Run 9 — High Errors, Re-grounding Active (Any Agent)
+DATA:  Neighborhood- High.csv
+TIME:  2026-03-08 14:28:48
+============================================================
+
+# PETRA COMPLIANCE REVIEW REPORT
+**Dataset:** Neighborhood-High.csv | **Total Invoices:** 41 | **Review Date:** 2026-03-08
+**Reviewer:** PETRA — Payment Compliance Agent
+
+---
+
+## Pre-Delivery Verification Checklist
+
+Before delivering output, I confirm:
+
+- ✓ Every payment has received a channel compliance determination — no assumed compliance
+- ✓ Amount matching has been verified to exact figures for all 41 invoices
+- ✓ No payment has been cleared on assumed compliance
+- ✓ No urgency or ROI language has entered any security determination
+- ✓ All MUST constraints applied:
+  - Encrypted channel requirement assessed for all Goods and Tariff Payment Channels
+  - Refund routing verification status assessed for all invoices
+  - Amount matching verified invoice-by-invoice
+  - PETRA has not processed, initiated, or recommended initiation of any refund payment
+  - Channel compliance applied regardless of payment age, vendor relationship, or refund urgency
+
+---
+
+## Scope and Methodology Notes
+
+**Channel Compliance Standard Applied:**
+PETRA classifies payment channels as follows for encrypted channel compliance:
+
+- **COMPLIANT (encrypted/secure):** Wire Transfer, ACH, ACH - CBP/ACE, EFT, Single Entry Bond, Monthly Statement (CBP-administered channels)
+- **NON-COMPLIANT (unencrypted):** Check, Cash, Corporate Card — these are physical or non-encrypted instrument channels that do not meet encrypted channel standards
+- **INCOMPLETE/UNVERIFIABLE:** [BLANK] — cannot be assessed; treated as non-compliant per MUST rule against assumed compliance
+
+**Amount Verification Method:**
+PETRA verifies: Cost before Tariff × Tariff Rate Applied (%) = Tariff Amt Paid, and Cost before Tariff + Tariff Amt Paid = Total Payment. Refund Claimed is then compared to Tariff Amt Paid. Any variance, including rounding, is flagged.
+
+**Routing Verification:**
+Refund routing is assessed for verifiability against approved vendor banking records. Where vendor identity is blank or ambiguous, routing cannot be verified.
+
+**INTAKE Independence:**
+PETRA's determinations are independent of INTAKE's data validation pass. INTAKE findings are noted where relevant but do not substitute for PETRA's compliance review.
+
+---
+
+## Invoice-by-Invoice Compliance Determinations
+
+---
+
+### Invoice ID: 106772
+**PO:** 43271C55 | **Vendor:** Verisize | **Country of Origin:** Libya
+
+**Payment Channel Status:**
+- Goods Payment Channel: Wire Transfer — COMPLIANT
+- Tariff Payment Channel: ACH - CBP/ACE — COMPLIANT
+
+**Amount Verification:**
+- Cost before Tariff: $152,190.00
+- Tariff Rate: 30% → $152,190.00 × 0.30 = $45,657.00
+- Tariff Amt Paid: $45,657.00 ✓
+- Total Payment: $152,190.00 + $45,657.00 = $197,847.00 ✓
+- Refund Claimed: $45,657.00 = Tariff Amt Paid ✓
+
+**Routing Status:** Vendor identity present. Routing verification required against approved vendor banking records before advancement. Routable pending banking record confirmation.
+
+**Additional Note:** Import Date recorded as 46005 (spreadsheet serial number). PETRA notes this is a record integrity issue flagged by INTAKE. Import Date is not a payment channel or amount field; PETRA does not independently flag it but notes the record is incomplete in this field.
+
+**Overall Status:** CONDITIONAL CLEAR — Channel and amount verified. Routing subject to banking record confirmation. Import Date anomaly noted for record.
+
+---
+
+### Invoice ID: 106773
+**PO:** 47844C80 | **Vendor:** LACNE | **Country of Origin:** China
+
+**Payment Channel Status:**
+- Goods Payment Channel: Wire Transfer — COMPLIANT
+- Tariff Payment Channel: Monthly Statement — COMPLIANT
+
+**Amount Verification:**
+- Cost before Tariff: $862,524.00
+- Tariff Rate: 15.2% → $862,524.00 × 0.152 = $131,103.648 → rounds to $131,103.65
+- Tariff Amt Paid: $1,353,634.84 ✗ — **DOES NOT MATCH**
+- Total Payment: $1,216,158.84 — also inconsistent
+- Note: Tariff Amt Paid of $1,353,634.84 exceeds Cost before Tariff ($862,524.00), which is arithmetically impossible as a tariff amount. The dataset figure appears to reflect a data entry error. Expected Tariff Amt Paid at 15.2% = $131,103.65; recorded figure is $1,353,634.84.
+- Refund Claimed: $353,634.84 — does not match computed tariff amount
+
+**Routing Status:** Vendor identity present. Cannot advance routing until amount discrepancy is resolved.
+
+**Overall Status:** ⚠️ **ACCURACY FLAG (HIGH SEVERITY)** — Tariff Amt Paid and Total Payment are arithmetically inconsistent with stated rate and Cost before Tariff. Refund Claimed does not correspond to verifiable tariff paid. Hold for source document reconciliation. Routing not advanceable pending resolution.
+
+---
+
+### Invoice ID: 106774
+**PO:** 42844V1P | **Vendor:** Intelligence Systems | **Country of Origin:** Guatemala
+
+**Payment Channel Status:**
+- Goods Payment Channel: Check — **NON-COMPLIANT (unencrypted physical instrument)**
+- Tariff Payment Channel: Single Entry Bond — COMPLIANT
+
+**Amount Verification:**
+- Cost before Tariff: $721,808.00
+- Tariff Rate: 10% → $721,808.00 × 0.10 = $72,180.80
+- Tariff Amt Paid: $72,180.80 ✓
+- Total Payment: $721,808.00 + $72,180.80 = $793,988.80 ✓
+- Refund Claimed: $72,180.80 = Tariff Amt Paid ✓
+
+**Routing Status:** Vendor identity present. Routing verification required against approved vendor banking records.
+
+**Overall Status:** 🚨 **SECURITY FLAG** — Goods payment made via Check (unencrypted, non-encrypted channel). Channel compliance is non-negotiable. Amount figures are internally consistent. Refund cannot advance until original goods payment channel compliance is resolved.
+
+---
+
+### Invoice ID: 106775
+**PO:** 47844C7F | **Vendor:** Colot | **Country of Origin:** China
+
+**Payment Channel Status:**
+- Goods Payment Channel: ACH — COMPLIANT
+- Tariff Payment Channel: Monthly Statement — COMPLIANT
+
+**Amount Verification:**
+- Cost before Tariff: $311,322.00
+- Tariff Rate: 41% → $311,322.00 × 0.41 = $127,642.02
+- Tariff Amt Paid: $127,642.02 ✓
+- Total Payment: $311,322.00 + $127,642.02 = $438,964.02 ✓
+- Refund Claimed: $127,642.02 = Tariff Amt Paid ✓
+
+**Routing Status:** Vendor identity present. Routing verification required against approved vendor banking records.
+
+**Overall Status:** CONDITIONAL CLEAR — Channels compliant. Amounts verified. Routing subject to banking record confirmation.
+
+---
+
+### Invoice ID: 106776
+**PO:** 453F27M9 | **Vendor:** CTX | **Country of Origin:** Italy
+
+**Payment Channel Status:**
+- Goods Payment Channel: Check — **NON-COMPLIANT (unencrypted physical instrument)**
+- Tariff Payment Channel: ACH - CBP/ACE — COMPLIANT
+
+**Amount Verification:**
+- Cost before Tariff: $99,072.00
+- Tariff Rate: 10% → $99,072.00 × 0.10 = $9,907.20
+- Tariff Amt Paid: $9,907.20 ✓
+- Total Payment: $99,072.00 + $9,907.20 = $108,979.20 ✓
+- Refund Claimed: $9,907.20 = Tariff Amt Paid ✓
+
+**Routing Status:** Vendor identity present. Routing verification required.
+
+**Overall Status:** 🚨 **SECURITY FLAG** — Goods payment made via Check (unencrypted). Amount figures consistent. Refund cannot advance until original goods payment channel compliance is resolved.
+
+---
+
+### Invoice ID: 106777
+**PO:** 453D27A3 | **Vendor:** Steps IT Training | **Country of Origin:** Canada
+
+**Payment Channel Status:**
+- Goods Payment Channel: Check — **NON-COMPLIANT (unencrypted physical instrument)**
+- Tariff Payment Channel: Monthly Statement — COMPLIANT
+
+**Amount Verification:**
+- Cost before Tariff: $277,137.00
+- Tariff Rate: 10% → $277,137.00 × 0.10 = $27,713.70
+- Tariff Amt Paid: $27,713.70 ✓
+- Total Payment: $277,137.00 + $27,713.70 = $304,850.70 ✓
+- Refund Claimed: [BLANK] — **ACCURACY FLAG**: Refund Claimed field is blank. Amount cannot be verified. (Consistent with INTAKE flag.)
+
+**Routing Status:** Vendor identity present. Routing cannot be confirmed without a stated refund amount.
+
+**Overall Status:** 🚨 **SECURITY FLAG** — Goods payment via Check (unencrypted). ⚠️ **ACCURACY FLAG** — Refund Claimed is blank; refund amount is unverifiable. Two separate holds. Refund cannot advance.
+
+---
+
+### Invoice ID: 106778
+**PO:** 453F27K3 | **Vendor:** StepAhead | **Country of Origin:** Germany
+
+**Payment Channel Status:**
+- Goods Payment Channel: Wire Transfer — COMPLIANT
+- Tariff Payment Channel: ACH - CBP/ACE — COMPLIANT
+
+**Amount Verification:**
+- Cost before Tariff: $798,456.00
+- Tariff Rate: 10% → $798,456.00 × 0.10 = $79,845.60
+- Tariff Amt Paid: $79,845.60 ✓
+- Total Payment: $798,456.00 + $79,845.60 = $878,301.60 ✓
+- Refund Claimed: $79,845.60 = Tariff Amt Paid ✓
+
+**Routing Status:** Vendor identity present. Routing verification required.
+
+**Overall Status:** CONDITIONAL CLEAR — Channels compliant. Amounts verified. Routing subject to banking record confirmation.
+
+---
+
+### Invoice ID: 106779
+**PO:** 47804C92 | **Vendor:** Duet | **Country of Origin:** Canada
+
+**Payment Channel Status:**
+- Goods Payment Channel: Check — **NON-COMPLIANT (unencrypted physical instrument)**
+- Tariff Payment Channel: Monthly Statement — COMPLIANT
+
+**Amount Verification:**
+- Cost before Tariff: $1,289,340.00
+- Tariff Rate: 40% → $1,289,340.00 × 0.40 = $515,736.00
+- Tariff Amt Paid: $128,934.00 — **DOES NOT MATCH** ($515,736.00 expected at 40%)
+- Note: $128,934.00 corresponds to 10% of $1,289,340.00, not 40%. The Tariff Rate Applied field states 40% but the arithmetic corresponds to 10%.
+- Total Payment: $1,289,340.00 + $128,934.00 = $1,418,274.00 — consistent with the recorded (but potentially incorrect) Tariff Amt Paid
+- Refund Claimed: $128,934.00 = recorded Tariff Amt Paid, but underlying rate inconsistency means the correct refund amount is unverifiable
+
+**Routing Status:** Vendor identity present. Cannot advance routing until amount/rate discrepancy is resolved.
+
+**Overall Status:** 🚨 **SECURITY FLAG** — Goods payment via Check (unencrypted). ⚠️ **ACCURACY FLAG (HIGH SEVERITY)** — Tariff Amt Paid does not correspond to stated Tariff Rate Applied (40%). Amount is consistent with 10%, not 40%. Source documents required. Refund cannot advance.
+
+---
+
+### Invoice ID: 106780
+**PO:** [BLANK] | **Vendor:** Axell Group | **Country of Origin:** Brazil
+
+**Payment Channel Status:**
+- Goods Payment Channel: Cash — **NON-COMPLIANT (unencrypted, untraceable physical instrument)**
+- Tariff Payment Channel: Monthly Statement — COMPLIANT
+
+**Amount Verification:**
+- Cost before Tariff: $231,200.00
+- Tariff Rate Applied: [BLANK] — rate cannot be verified
+- Tariff Amt Paid: $23,120.00 — at 10% this would equal $23,120.00; however, since the rate field is blank, the rate cannot be confirmed from the record
+- Total Payment: $231,200.00 + $23,120.00 = $254,320.00 ✓ (arithmetic consistent with 10% assumption, but rate is unverified)
+- Refund Claimed: $23,120.00 — cannot be confirmed against an unverified tariff rate
+
+**Routing Status:** PO is blank (INTAKE flag confirmed). Vendor identity present but PO absence impairs transaction traceability. Tariff rate blank further impairs verification. Routing cannot be advanced.
+
+**Overall Status:** 🚨 **SECURITY FLAG (CRITICAL)** — Goods payment via Cash (unencrypted, untraceable). ⚠️ **ACCURACY FLAG** — Tariff Rate Applied is blank; Tariff Amt Paid cannot be verified against an approved rate. PO absent. Record is materially incomplete. Refund cannot advance under any circumstance.
+
+---
+
+### Invoice ID: 106781
+**PO:** 453D27A2 | **Vendor:** ByteSize | **Country of Origin:** India
+
+**Payment Channel Status:**
+- Goods Payment Channel: Wire Transfer — COMPLIANT
+- Tariff Payment Channel: Monthly Statement — COMPLIANT
+
+**Amount Verification:**
+- Cost before Tariff: $665,684.00
+- Tariff Rate: 20% → $665,684.00 × 0.20 = $133,136.80
+- Tariff Amt Paid: $133,136.80 ✓
+- Total Payment: $665,684.00 + $133,136.80 = $798,820.80 ✓
+- Refund Claimed: $133,136.80 = Tariff Amt Paid ✓
+
+**Routing Status:** Vendor identity present. Routing verification required.
+
+**Overall Status:** CONDITIONAL CLEAR — Channels compliant. Amounts verified. Routing subject to banking record confirmation.
+
+---
+
+### Invoice ID: 106782
+**PO:** 47804C92 | **Vendor:** Data Pro Sys | **Country of Origin:** Canada
+
+**Payment Channel Status:**
+- Goods Payment Channel: Check — **NON-COMPLIANT (unencrypted physical instrument)**
+- Tariff Payment Channel: Monthly Statement — COMPLIANT
+
+**Amount Verification:**
+- Cost before Tariff: $55,282.00
+- Tariff Rate: 10% → $55,282.00 × 0.10 = $5,528.20
+- Tariff Amt Paid: $5,528.20 ✓
+- Total Payment: $55,282.00 + $5,528.20 = $60,810.20 ✓
+- Refund Claimed: $5,528.20 = Tariff Amt Paid ✓
+
+**Routing Status:** Vendor identity present. Routing verification required.
+
+**Overall Status:** 🚨 **SECURITY FLAG** — Goods payment via Check (unencrypted). Amount figures consistent. Refund cannot advance until original goods payment channel compliance is resolved.
+
+---
+
+### Invoice ID: 106783
+**PO:** 42601C35 | **Vendor:** PicSure | **Country of Origin:** Germany
+
+**Payment Channel Status:**
+- Goods Payment Channel: Wire Transfer — COMPLIANT
+- Tariff Payment Channel: ACH - CBP/ACE — COMPLIANT
+
+**Amount Verification:**
+- Cost before Tariff: $128,800.00
+- Tariff Rate: 10% → $128,800.00 × 0.10 = $12,880.00
+-

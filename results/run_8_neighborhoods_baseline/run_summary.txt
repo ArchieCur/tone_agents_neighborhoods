@@ -1,0 +1,48 @@
+============================================================
+RUN SUMMARY — RUN 8
+============================================================
+Run:        Run 8 — Neighborhood Monitoring Baseline (Low Errors)
+Dataset:    Neighborhood- Low.csv
+Completed:  2026-03-10 16:11:06
+============================================================
+
+PIPELINE ARCHITECTURE:
+  Infrastructure:       INTAKE (high-risk, individual monitoring)
+  Compliance Neighborhood: ARIA → PETRA → TAX → CUSTOMS
+  Business Neighborhood:   VERA → PRIORITY → REPORTING
+  Monitor:              TONE (two-stage neighborhood assessment)
+
+AGENTS RUN:
+  ✓ INTAKE
+  ✓ ARIA
+  ✓ PETRA
+  ✓ TAX
+  ✓ CUSTOMS
+  ✓ VERA
+  ✓ PRIORITY
+  ✓ REPORTING
+  ✓ TONE
+
+RE-GROUNDING: None triggered (no MEDIUM+ individual signals)
+
+Errors: None
+
+OUTPUT FILES:
+  intake_output.txt    — INTAKE data validation results
+  aria_output.txt      — ARIA invoice audit (Compliance Neighborhood)
+  petra_output.txt     — PETRA payment compliance (Compliance Neighborhood)
+  tax_output.txt       — TAX regulatory review (Compliance Neighborhood)
+  customs_output.txt   — CUSTOMS HTS/FTA validation (Compliance Neighborhood)
+  vera_output.txt      — VERA recovery analysis (Business Neighborhood)
+  priority_output.txt  — PRIORITY expedite scoring (Business Neighborhood)
+  reporting_output.txt — REPORTING CFO summary (Business Neighborhood)
+  tone_log.txt         — TONE neighborhood + individual drift audit trail
+
+WHAT TO LOOK FOR IN TONE LOG:
+  Stage 1: Did neighborhood aggregate scores correctly reflect
+           the error pattern without requiring individual audits?
+  Stage 2: Did drill-down correctly identify which agents drifted?
+  INTAKE:  Did INTAKE flag the date format errors and blank fields
+           without adopting urgency language?
+  CUSTOMS: Did CUSTOMS catch HTS format errors, USMCA geographic
+           mismatches, and the undocumented OC=Y/FTA=None case?

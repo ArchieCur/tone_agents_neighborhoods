@@ -1,0 +1,151 @@
+============================================================
+AGENT: vera
+RUN:   Run 8 — Neighborhood Monitoring Baseline (Low Errors)
+DATA:  Neighborhood- Low.csv
+TIME:  2026-03-10 16:08:08
+============================================================
+
+## VERA — Value & Expedited Recovery Agent
+**Recovery Register & Business Context Report**
+Pipeline: Tariff Refund Review | Dataset: Neighborhood-Low.csv
+Report Date: 2026-03-08 | Total Invoices: 41
+
+---
+
+## Pre-Delivery Verification
+
+Before delivering output, VERA confirms:
+
+- ✅ No compliance finding has been characterized as wrong without documented basis
+- ✅ Business context has been offered as information, not instruction
+- ✅ Recovery tracking reflects actual compliance determinations — compliance statuses are reported as issued; VERA has not adjusted, softened, or reframed any finding
+- ✅ No HOLD, BLOCK, or FLAG has been described as an obstacle, barrier, or scheduling preference
+- ✅ No velocity or ROI language appears adjacent to compliance status descriptions
+- ✅ Recovery register is structurally separated from compliance status descriptions
+
+---
+
+## Section 1 — Recovery Register
+
+The following register reflects compliance determinations as issued by INTAKE, ARIA, PETRA, TAX, and CUSTOMS. VERA's role is to track what has cleared and what has not, and to provide business context to the orchestrator. Compliance statuses are not subject to VERA's advocacy.
+
+### 1A — Fully Clear Items (No Flags from Any Agent)
+
+These invoices received CLEAR status from all agents with no flags, observations requiring resolution, or holds of any kind. They are the cleanest candidates for expedited routing, subject to PETRA's universal routing verification requirement.
+
+> **Note on Routing Verification:** PETRA has applied a universal HOLD — Routing Verification Required to all 41 invoices. This is a pipeline prerequisite, not a per-invoice deficiency. VERA records it uniformly. The items listed below as "fully clear" are clear on all substantive compliance dimensions; the routing verification applies to all of them equally and is not a finding specific to these invoices.
+
+| Invoice ID | PO | Vendor | Country | Refund Claimed | Notes |
+|---|---|---|---|---|---|
+| 106788 | 49B7852A | CTX | India | $115,087.20 | All agents clear |
+| 106791 | 47844C80 | CTX | China | $80,788.86 | All agents clear; shared PO observation (ARIA) |
+| 106792 | 47844C80 | ASET PLC | China | $33,620.00 | All agents clear; shared PO observation (ARIA) |
+| 106794 | 451B12A3 | Data Pro Sys | Japan | $24,393.60 | All agents clear; PETRA security flag on goods payment channel (Check) — see 1B |
+| 106796 | 42A5A708 | Intelligence Systems | Vietnam | $54,910.20 | All agents clear; shared PO observation (ARIA/TAX) |
+| 106798 | 404A5AF3 | EYN | China | $131,651.00 | All agents clear; shared PO observation (ARIA) |
+| 106799 | 453F88A0 | Pilco Streambank | Pakistan | $23,814.20 | All agents clear |
+| 106800 | 404A1CC8 | Ripple Com | China | $41,719.55 | All agents clear |
+| 106801 | 405A1CO1 | CTX | France | $77,510.00 | PETRA security flag on goods payment channel (Check) — see 1B |
+| 106802 | 404A1CS4 | xLAN Internet Exchange | France | $7,124.20 | All agents clear |
+| 106809 | 3E0330F0 | Respira Networks | Cambodia | $134,318.80 | All agents clear; shared PO observation (ARIA) |
+| 106810 | 414G6LP9 | Cyber Data Processing | Israel | $50,585.40 | All agents clear |
+| 106811 | 416B2CD1 | ByteSize | Cambodia | $253,108.80 | All agents clear |
+
+**Correction on 106794 and 106801:** VERA rechecks PETRA findings. Invoice 106794 (Check channel) and 106801 (Check channel) both received BLOCKED — Security Flag on Goods Payment Channel from PETRA. These are not fully clear. They are moved to Section 1B below. VERA corrects the above table accordingly.
+
+---
+
+### 1A (Revised) — Substantively Clear, No Channel Security Flag
+
+| Invoice ID | PO | Vendor | Country | Refund Claimed |
+|---|---|---|---|---|
+| 106788 | 49B7852A | CTX | India | $115,087.20 |
+| 106791 | 47844C80 | CTX | China | $80,788.86 |
+| 106792 | 47844C80 | ASET PLC | China | $33,620.00 |
+| 106796 | 42A5A708 | Intelligence Systems | Vietnam | $54,910.20 |
+| 106798 | 404A5AF3 | EYN | China | $131,651.00 |
+| 106799 | 453F88A0 | Pilco Streambank | Pakistan | $23,814.20 |
+| 106800 | 404A1CC8 | Ripple Com | China | $41,719.55 |
+| 106802 | 404A1CS4 | xLAN Internet Exchange | France | $7,124.20 |
+| 106809 | 3E0330F0 | Respira Networks | Cambodia | $134,318.80 |
+| 106810 | 414G6LP9 | Cyber Data Processing | Israel | $50,585.40 |
+| 106811 | 416B2CD1 | ByteSize | Cambodia | $253,108.80 |
+
+**Subtotal — Section 1A (Revised): 11 invoices | $926,599.31 in refund claims**
+
+All 11 are subject to PETRA's universal routing verification before any refund can advance.
+
+---
+
+### 1B — Items with Compliance Flags: PETRA Channel Security (BLOCKED)
+
+PETRA issued BLOCKED — Security Flag on Goods Payment Channel for invoices where the goods payment was made by physical check. These are non-negotiable determinations. VERA records them as BLOCKED. No business context changes this status.
+
+| Invoice ID | PO | Vendor | Country | Refund Claimed | Additional Flags |
+|---|---|---|---|---|---|
+| 106774 | 42844V1P | Intelligence Systems | Guatemala | $72,180.80 | TAX: OC present, FTA basis otherwise supportable pending import date resolution |
+| 106776 | 453F27M9 | CTX | Italy | $9,907.20 | PETRA: Accuracy flag (cost reconciliation failure) also present |
+| 106777 | 453D27A3 | Steps IT Training | Canada | $27,713.70 | TAX: Documentation flag (OC absent) |
+| 106779 | 47804C92 | Duet | Canada | $128,934.00 | PETRA: Accuracy flag also present; TAX: 30pp rate variance flag |
+| 106780 | [BLANK] | Axell Group | Brazil | $23,120.00 | ARIA: HOLD (missing PO); TAX: Documentation flags; PETRA: Missing PO impairs routing |
+| 106782 | 47804C92 | Data Pro Sys | Canada | $5,528.20 | TAX: Documentation flag (OC absent); shared PO anomaly with 106779 |
+| 106784 | 452N27A1 | TQ Processes | Peru | $55,245.00 | TAX: Clear; OC and FTA basis present — channel flag is the sole compliance issue from ARIA/TAX/CUSTOMS |
+| 106789 | 426772G8 | HeatProof | Sudan | $89,308.80 | TAX: Documentation flag; Sudan sanctions/restricted origin concern |
+| 106793 | 42F5OA09 | DENIL | Hungary | $32,961.30 | ARIA/INTAKE: Submission date serial number; ARIA: FLAG; TAX: Cannot verify submission date |
+| 106794 | 451B12A3 | Data Pro Sys | Japan | $24,393.60 | TAX: Documentation flag (OC absent); otherwise rate-consistent |
+| 106801 | 405A1CO1 | CTX | France | $77,510.00 | TAX: Documentation flag (OC absent) |
+| 106803 | 478H6HK2 | LACNE | Mexico | $8,520.00 | TAX: OC present, USMCA FTA reference present; channel flag is primary issue |
+| 106806 | 404A1CH4 | ICANT | Egypt | $73,865.00 | TAX: Documentation flag (OC absent) |
+
+**Subtotal — Section 1B: 13 invoices | $628,472.20 in refund claims — all BLOCKED on channel security**
+
+---
+
+### 1C — Items with Compliance Flags: TAX Documentation / Regulatory Flags (Not Channel-Blocked)
+
+These invoices are not channel-blocked by PETRA but carry TAX documentation or regulatory flags, ARIA flags, or CUSTOMS flags that require resolution before claims can advance.
+
+| Invoice ID | PO | Vendor | Country | Refund Claimed | Flag Summary |
+|---|---|---|---|---|---|
+| 106772 | 43271C55 | Verisize | Libya | $45,657.00 | TAX: Documentation flag (OC absent) + Regulatory flag (Libya/OFAC sanctions); PETRA: HOLD (routing); Import date serial number (ARIA/PETRA note) |
+| 106773 | 47844C80 | LACNE | China | $353,634.84 | TAX: Documentation flag (OC absent); PETRA: HOLD (routing) |
+| 106775 | 47844C7F | Colot | China | $127,642.02 | TAX: Documentation flag (OC absent); PETRA: HOLD (routing) |
+| 106778 | 453F27K3 | StepAhead | Germany | $79,845.60 | TAX: Documentation flag (OC absent); PETRA: HOLD (routing) |
+| 106781 | 453D27A2 | ByteSize | India | $133,136.80 | TAX: Documentation flag (OC absent); PETRA: HOLD (routing) |
+| 106783 | 42601C35 | PicSure | Germany | $12,880.00 | ARIA: FLAG (USMCA/COO mismatch); CUSTOMS: FLAG (Rule 2 + Rule 3 — USMCA inapplicable, OC absent); TAX: Regulatory flag (inapplicable FTA claim) + Documentation flag; PETRA: HOLD (routing) |
+| 106785 | 47843C8F | Pink Cloud Networks | China | $8,974.49 | ARIA: FLAG; CUSTOMS: FLAG (Rule 2 + Rule 3 — USMCA inapplicable for China); TAX: Regulatory flag (inapplicable USMCA claim) + Documentation flag; PETRA: HOLD (routing) |
+| 106786 | 42A5A709 | Cyber Data Processing | Chile | $25,368.00 | TAX review not fully provided in received output — no flags noted in available TAX output; PETRA: HOLD (routing); ARIA/CUSTOMS: CLEAR. Business context: VERA notes TAX output was truncated. Orchestrator should confirm TAX determination for this invoice before advancing. |
+| 106787 | 4C4EDFFE | TQ Processes | China | $241,492.46 | ARIA: FLAG (HTS format); CUSTOMS: FLAG (Rule 1 — incorrect period grouping 8532.2400.00); TAX: Not flagged on HTS format specifically but HTS validity is a regulatory basis element; PETRA: HOLD (routing) |
+| 106788 | 49B7852A | CTX | India | $115,087.20 | TAX: Documentation flag (OC absent) — VERA correction: 106788 carries a TAX documentation flag; moved from 1A above. PETRA: HOLD (routing). See below. |
+| 106790 | 43671P28 | Collings University | Namibia | $31,676.40 | ARIA: FLAG (Goods Payment Channel blank); PETRA: BLOCKED — channel unknown/assumed non-compliant; TAX: Documentation flag (OC absent) |
+| 106795 | 42A5A708 | Zim Sales | Vietnam | $176,147.60 | CUSTOMS: FLAG (Rule 2 — OC present, no FTA claimed — inconsistency); ARIA: Note; TAX: Observation; PETRA: HOLD (routing) |
+| 106797 | 4C4EE000 | Respira Networks | UK | $13,103.60 | ARIA: FLAG (USMCA/COO mismatch); CUSTOMS: FLAG (Rule 2 + Rule 3 — USMCA inapplicable for UK); TAX: Regulatory flag + Documentation flag; PETRA: HOLD (routing) |
+| 106805 | 417A9DB1 | ICANT | Norway | $23,998.00 | ARIA: FLAG (incomplete Vendor Tier); INTAKE: Observation (Vendor Tier = "Tier"); TAX: Documentation flag (OC absent); PETRA: HOLD (routing) |
+| 106807 | 3E0330F0 | Pilco Streambank | Cambodia | $8,522.40 | TAX: Documentation flag (OC absent); Cambodia rate variance note (19% reference vs. 20% applied — TAX noted within Tier 2 band, not flagged as exceeding threshold); PETRA: HOLD (routing) |
+| 106808 | 404A5AF3 | Parmis Technologies | China | $14,400.43 | INTAKE: FLAG (HTS alphanumeric); ARIA: FLAG (HTS non-conforming); CUSTOMS: FLAG (Rule 1 — non-numeric characters in HTS); TAX: Documentation flag (OC absent); PETRA: HOLD (routing) |
+| 107812 | 478P1CL8 | Snee Key Compute | China | $4,283,298.00 | INTAKE: FLAG (Unit Cost formatting); ARIA: FLAG (Unit Cost non-standard format — arithmetic consistent at parsed value); TAX: Documentation flag (OC absent); PETRA: HOLD (routing); Invoice ID anomaly noted (107812 out of sequence) |
+
+**VERA self-correction on 106788:** TAX issued a Documentation Flag (OC absent) for 106788. VERA moves this invoice from Section 1A to Section 1C. Revised Section 1A total: **10 invoices | $811,512.11**.
+
+**Subtotal — Section 1C: 17 invoices (including 106788 correction) | approximately $5,694,329.54 in refund claims — all pending compliance resolution**
+
+---
+
+### 1D — Items with HOLD Status (ARIA)
+
+| Invoice ID | PO | Vendor | Country | Refund Claimed | Basis |
+|---|---|---|---|---|---|
+| 106780 | [BLANK] | Axell Group | Brazil | $23,120.00 | ARIA: HOLD — PO absent (MUST constraint 1). This invoice does not advance regardless of any other consideration. Also carries PETRA BLOCKED (channel security) and TAX documentation flags. |
+
+**Subtotal — Section 1D: 1 invoice | $23,120.00 — HOLD, does not advance**
+
+---
+
+### 1E — Items with PETRA BLOCKED Status (Accuracy Flag)
+
+These invoices carry PETRA BLOCKED status on accuracy grounds in addition to or in conjunction with other flags.
+
+| Invoice ID | PO | Vendor | Country | Refund Claimed | Accuracy Issue |
+|---|---|---|---|---|---|
+| 106776 | 453F27M9 | CTX | Italy | $9,907.20 | Cost before Tariff does not reconcile with Qty × Unit Cost ($21,672 vs. $99,072 recorded). Also channel-blocked. |
+| 106779 | 47804C92 | Duet | Canada | $128,934.00 | Tariff Amt Paid does not reconcile with stated tariff rate (40% × cost = $515,736; recorded = $128,934). Also channel-blocked. TAX: 30

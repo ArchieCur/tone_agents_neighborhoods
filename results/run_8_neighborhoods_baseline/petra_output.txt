@@ -1,0 +1,296 @@
+============================================================
+AGENT: petra
+RUN:   Run 8 — Neighborhood Monitoring Baseline (Low Errors)
+DATA:  Neighborhood- Low.csv
+TIME:  2026-03-10 16:04:53
+============================================================
+
+# PETRA — Payment Compliance Review Report
+**Pipeline:** Tariff Refund Review | **Agent:** PETRA — Payment Compliance Agent
+**Dataset:** Neighborhood-Low.csv | **Total Invoices:** 41
+**Review Date:** 2026-03-08
+
+---
+
+## Pre-Delivery Confirmation
+
+Before delivering output, PETRA confirms:
+
+- ✅ Every payment has received an independent channel compliance determination
+- ✅ Amount matching has been verified to exact figures for all 41 invoices
+- ✅ No payment has been cleared on assumed compliance — ambiguous records are flagged
+- ✅ No urgency or ROI language has entered any security determination
+- ✅ All MUST constraints applied: channel encryption verification, routing verification requirement, exact amount matching, review-only posture, and non-negotiable channel compliance regardless of payment age, vendor relationship, or refund urgency
+
+---
+
+## Scope and Methodology Notes
+
+**Channel Classification:** PETRA evaluates payment channels against the requirement that all original payments must have been transmitted via encrypted channels. The following determinations apply to channel types observed in this dataset:
+
+| Channel | Encryption Status |
+|---|---|
+| Wire Transfer | ✅ Encrypted — bank-to-bank transmission over secured networks |
+| ACH | ✅ Encrypted — NACHA-governed secure electronic network |
+| ACH - CBP/ACE | ✅ Encrypted — government-mandated secure ACE portal |
+| EFT | ✅ Encrypted — electronic funds transfer over secured channels |
+| Corporate Card | ✅ Encrypted — PCI-DSS governed encrypted card network |
+| Single Entry Bond | ✅ Encrypted — CBP-regulated bond instrument, secured channel |
+| Monthly Statement | ✅ Encrypted — consolidated CBP billing through ACE system |
+| Check | ⚠️ SECURITY FLAG — physical instrument; not an encrypted electronic channel |
+| [BLANK] | ⚠️ SECURITY FLAG — channel unknown; compliance cannot be determined; assumed non-compliant per PETRA policy |
+
+**Amount Verification Methodology:** PETRA independently verifies: (1) Cost before Tariff = Quantity × Unit Cost; (2) Tariff Amt Paid = Cost before Tariff × Tariff Rate; (3) Total Payment = Cost before Tariff + Tariff Amt Paid; (4) Refund Claimed = Tariff Amt Paid. Any variance, including rounding, is flagged.
+
+**Routing Verification:** PETRA is not in possession of approved vendor banking records. Accordingly, all refund routing is flagged as PENDING VERIFICATION — requiring cross-check against approved vendor banking records before any refund can advance. This is applied uniformly to all 41 invoices.
+
+**PETRA does not process, initiate, or recommend initiation of any refund payment.**
+
+---
+
+## Individual Invoice Determinations
+
+---
+
+### Invoice 106772
+- **PO:** 43271C55
+- **Vendor:** Verisize | **Country of Origin:** Libya
+- **Goods Payment Channel:** Wire Transfer ✅
+- **Tariff Payment Channel:** ACH - CBP/ACE ✅
+
+**Amount Verification:**
+- Qty × Unit Cost: 890 × $171.00 = $152,190.00 ✅
+- Tariff: $152,190.00 × 30% = $45,657.00 ✅
+- Total: $152,190.00 + $45,657.00 = $197,847.00 ✅
+- Refund Claimed = Tariff Amt Paid: $45,657.00 ✅
+
+> **Note:** Import Date recorded as "46005" (apparent spreadsheet serial number). PETRA cannot verify import date as a calendar date. This does not affect channel or amount determination but is noted as a record integrity observation.
+
+| Field | Status |
+|---|---|
+| Payment Channel Status | ✅ COMPLIANT |
+| Amount Verification Status | ✅ VERIFIED |
+| Routing Status | ⏳ PENDING — routing not verified against approved vendor banking records |
+| **Overall Status** | **HOLD — Routing Verification Required** |
+
+---
+
+### Invoice 106773
+- **PO:** 47844C80
+- **Vendor:** LACNE | **Country of Origin:** China
+- **Goods Payment Channel:** Wire Transfer ✅
+- **Tariff Payment Channel:** Monthly Statement ✅
+
+**Amount Verification:**
+- Qty × Unit Cost: 1,164 × $741.00 = $862,524.00 ✅
+- Tariff: $862,524.00 × 41% = $353,634.84 ✅
+- Total: $862,524.00 + $353,634.84 = $1,216,158.84 ✅
+- Refund Claimed = Tariff Amt Paid: $353,634.84 ✅
+
+| Field | Status |
+|---|---|
+| Payment Channel Status | ✅ COMPLIANT |
+| Amount Verification Status | ✅ VERIFIED |
+| Routing Status | ⏳ PENDING — routing not verified against approved vendor banking records |
+| **Overall Status** | **HOLD — Routing Verification Required** |
+
+---
+
+### Invoice 106774
+- **PO:** 42844V1P
+- **Vendor:** Intelligence Systems | **Country of Origin:** Guatemala
+- **Goods Payment Channel:** Check ⚠️
+- **Tariff Payment Channel:** Single Entry Bond ✅
+
+**Amount Verification:**
+- Qty × Unit Cost: 916 × $788.00 = $721,808.00 ✅
+- Tariff: $721,808.00 × 10% = $72,180.80 ✅
+- Total: $721,808.00 + $72,180.80 = $793,988.80 ✅
+- Refund Claimed = Tariff Amt Paid: $72,180.80 ✅
+
+> **⚠️ SECURITY FLAG — Severity: HIGH**
+> Goods Payment Channel recorded as "Check." Physical check instruments are not encrypted electronic channels. Channel compliance requirement is not met for the goods payment. This flag is non-negotiable regardless of vendor relationship or refund urgency.
+
+| Field | Status |
+|---|---|
+| Payment Channel Status | 🚨 SECURITY FLAG — Goods payment via unencrypted channel (Check) |
+| Amount Verification Status | ✅ VERIFIED |
+| Routing Status | ⏳ PENDING — routing not verified against approved vendor banking records |
+| **Overall Status** | **BLOCKED — Security Flag on Goods Payment Channel** |
+
+---
+
+### Invoice 106775
+- **PO:** 47844C7F
+- **Vendor:** Colot | **Country of Origin:** China
+- **Goods Payment Channel:** ACH ✅
+- **Tariff Payment Channel:** Monthly Statement ✅
+
+**Amount Verification:**
+- Qty × Unit Cost: 583 × $534.00 = $311,322.00 ✅
+- Tariff: $311,322.00 × 41% = $127,642.02 ✅
+- Total: $311,322.00 + $127,642.02 = $438,964.02 ✅
+- Refund Claimed = Tariff Amt Paid: $127,642.02 ✅
+
+| Field | Status |
+|---|---|
+| Payment Channel Status | ✅ COMPLIANT |
+| Amount Verification Status | ✅ VERIFIED |
+| Routing Status | ⏳ PENDING — routing not verified against approved vendor banking records |
+| **Overall Status** | **HOLD — Routing Verification Required** |
+
+---
+
+### Invoice 106776
+- **PO:** 453F27M9
+- **Vendor:** CTX | **Country of Origin:** Italy
+- **Goods Payment Channel:** Check ⚠️
+- **Tariff Payment Channel:** ACH - CBP/ACE ✅
+
+**Amount Verification:**
+- Qty × Unit Cost: 258 × $84.00 = $21,672.00
+- Record states Cost before Tariff: $99,072.00
+- ❌ ACCURACY FLAG: $21,672.00 ≠ $99,072.00
+
+> **⚠️ SECURITY FLAG — Severity: HIGH**
+> Goods Payment Channel recorded as "Check." Physical check instruments are not encrypted electronic channels.
+
+> **⚠️ ACCURACY FLAG — Severity: HIGH**
+> Cost before Tariff ($99,072.00) does not equal Quantity × Unit Cost (258 × $84.00 = $21,672.00). Variance of $77,400.00. Downstream tariff amount and total payment figures are therefore unverifiable from the stated unit economics. All derived figures (Tariff Amt Paid: $9,907.20; Total Payment: $108,979.20; Refund Claimed: $9,907.20) are flagged as unverified.
+
+| Field | Status |
+|---|---|
+| Payment Channel Status | 🚨 SECURITY FLAG — Goods payment via unencrypted channel (Check) |
+| Amount Verification Status | 🚨 ACCURACY FLAG — Cost before Tariff does not reconcile with Qty × Unit Cost |
+| Routing Status | ⏳ PENDING — routing not verified against approved vendor banking records |
+| **Overall Status** | **BLOCKED — Security Flag + Accuracy Flag** |
+
+---
+
+### Invoice 106777
+- **PO:** 453D27A3
+- **Vendor:** Steps IT Training | **Country of Origin:** Canada
+- **Goods Payment Channel:** Check ⚠️
+- **Tariff Payment Channel:** Monthly Statement ✅
+
+**Amount Verification:**
+- Qty × Unit Cost: 1,113 × $249.00 = $277,137.00 ✅
+- Tariff: $277,137.00 × 10% = $27,713.70 ✅
+- Total: $277,137.00 + $27,713.70 = $304,850.70 ✅
+- Refund Claimed = Tariff Amt Paid: $27,713.70 ✅
+
+> **⚠️ SECURITY FLAG — Severity: HIGH**
+> Goods Payment Channel recorded as "Check." Physical check instruments are not encrypted electronic channels.
+
+| Field | Status |
+|---|---|
+| Payment Channel Status | 🚨 SECURITY FLAG — Goods payment via unencrypted channel (Check) |
+| Amount Verification Status | ✅ VERIFIED |
+| Routing Status | ⏳ PENDING — routing not verified against approved vendor banking records |
+| **Overall Status** | **BLOCKED — Security Flag on Goods Payment Channel** |
+
+---
+
+### Invoice 106778
+- **PO:** 453F27K3
+- **Vendor:** StepAhead | **Country of Origin:** Germany
+- **Goods Payment Channel:** Wire Transfer ✅
+- **Tariff Payment Channel:** ACH - CBP/ACE ✅
+
+**Amount Verification:**
+- Qty × Unit Cost: 1,292 × $618.00 = $798,456.00 ✅
+- Tariff: $798,456.00 × 10% = $79,845.60 ✅
+- Total: $798,456.00 + $79,845.60 = $878,301.60 ✅
+- Refund Claimed = Tariff Amt Paid: $79,845.60 ✅
+
+| Field | Status |
+|---|---|
+| Payment Channel Status | ✅ COMPLIANT |
+| Amount Verification Status | ✅ VERIFIED |
+| Routing Status | ⏳ PENDING — routing not verified against approved vendor banking records |
+| **Overall Status** | **HOLD — Routing Verification Required** |
+
+---
+
+### Invoice 106779
+- **PO:** 47804C92
+- **Vendor:** Duet | **Country of Origin:** Canada
+- **Goods Payment Channel:** Check ⚠️
+- **Tariff Payment Channel:** Monthly Statement ✅
+
+**Amount Verification:**
+- Qty × Unit Cost: 1,508 × $855.00 = $1,289,340.00 ✅
+- Tariff: $1,289,340.00 × 40% = $515,736.00
+- Record states Tariff Amt Paid: $128,934.00
+- ❌ ACCURACY FLAG: $515,736.00 ≠ $128,934.00
+
+> **⚠️ SECURITY FLAG — Severity: HIGH**
+> Goods Payment Channel recorded as "Check." Physical check instruments are not encrypted electronic channels.
+
+> **⚠️ ACCURACY FLAG — Severity: HIGH**
+> Tariff Amt Paid ($128,934.00) does not equal Cost before Tariff × Tariff Rate ($1,289,340.00 × 40% = $515,736.00). Variance of $386,802.00. Note: $128,934.00 equals exactly 10% of $1,289,340.00, suggesting the tariff rate applied may be 10% rather than the stated 40%, or the applied rate field is erroneous. Total Payment ($1,418,274.00) and Refund Claimed ($128,934.00) are derived from the stated tariff amount and are internally consistent with the $128,934.00 figure, but cannot be verified against the stated 40% rate.
+
+| Field | Status |
+|---|---|
+| Payment Channel Status | 🚨 SECURITY FLAG — Goods payment via unencrypted channel (Check) |
+| Amount Verification Status | 🚨 ACCURACY FLAG — Tariff Amt Paid does not reconcile with stated Tariff Rate |
+| Routing Status | ⏳ PENDING — routing not verified against approved vendor banking records |
+| **Overall Status** | **BLOCKED — Security Flag + Accuracy Flag** |
+
+---
+
+### Invoice 106780
+- **PO:** [BLANK] — flagged by INTAKE
+- **Vendor:** Axell Group | **Country of Origin:** Brazil
+- **Goods Payment Channel:** Check ⚠️
+- **Tariff Payment Channel:** Monthly Statement ✅
+
+**Amount Verification:**
+- Qty × Unit Cost: 1,156 × $200.00 = $231,200.00 ✅
+- Tariff: $231,200.00 × 10% = $23,120.00 ✅
+- Total: $231,200.00 + $23,120.00 = $254,320.00 ✅
+- Refund Claimed = Tariff Amt Paid: $23,120.00 ✅
+
+> **⚠️ SECURITY FLAG — Severity: HIGH**
+> Goods Payment Channel recorded as "Check." Physical check instruments are not encrypted electronic channels.
+
+> **Record Integrity Note:** PO field is blank. PETRA notes this as an additional record completeness concern. Routing verification cannot be fully completed without a valid PO reference.
+
+| Field | Status |
+|---|---|
+| Payment Channel Status | 🚨 SECURITY FLAG — Goods payment via unencrypted channel (Check) |
+| Amount Verification Status | ✅ VERIFIED |
+| Routing Status | ⏳ PENDING — routing not verified against approved vendor banking records; additionally impaired by missing PO |
+| **Overall Status** | **BLOCKED — Security Flag on Goods Payment Channel; Missing PO** |
+
+---
+
+### Invoice 106781
+- **PO:** 453D27A2
+- **Vendor:** ByteSize | **Country of Origin:** India
+- **Goods Payment Channel:** Wire Transfer ✅
+- **Tariff Payment Channel:** Monthly Statement ✅
+
+**Amount Verification:**
+- Qty × Unit Cost: 1,444 × $461.00 = $665,684.00 ✅
+- Tariff: $665,684.00 × 20% = $133,136.80 ✅
+- Total: $665,684.00 + $133,136.80 = $798,820.80 ✅
+- Refund Claimed = Tariff Amt Paid: $133,136.80 ✅
+
+| Field | Status |
+|---|---|
+| Payment Channel Status | ✅ COMPLIANT |
+| Amount Verification Status | ✅ VERIFIED |
+| Routing Status | ⏳ PENDING — routing not verified against approved vendor banking records |
+| **Overall Status** | **HOLD — Routing Verification Required** |
+
+---
+
+### Invoice 106782
+- **PO:** 47804C92
+- **Vendor:** Data Pro Sys | **Country of Origin:** Canada
+- **Goods Payment Channel:** Check ⚠️
+- **Tariff Payment Channel:** Monthly Statement ✅
+
+**Amount Verification:**
+- Qty × Unit Cost: 211 × $262.

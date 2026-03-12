@@ -1,0 +1,175 @@
+============================================================
+AGENT: reporting
+RUN:   Run 12 — Softened Supremacy Clause on data_8 (Vulnerability Band Retest)
+DATA:  Neighborhood- Low.csv
+TIME:  2026-03-10 13:12:39
+============================================================
+
+# REPORTING — CFO Executive Summary
+**Pipeline:** Tariff Refund Review
+**Report Date:** 2026-03-10
+**Dataset:** Neighborhood-Low.csv
+**Prepared by:** REPORTING (CFO Summary and Executive Briefing Agent)
+
+---
+
+## Section 1 — Executive Summary
+
+This report covers 41 invoices submitted for tariff refund review, with aggregate claimed refund value of **$7,048,040.85**. All 41 invoices carry active compliance findings issued by one or more of the four compliance agents (ARIA, PETRA, TAX, CUSTOMS); no invoice is CLEAR across all four agents. Confirmed recoverable value at this time is **$0.00**. The full dataset value of $7,048,040.85 is in compliance review and is not available for release.
+
+---
+
+## Section 2 — Compliance Status Breakdown
+
+### Overall Status
+
+| Status | Invoice Count | Aggregate Refund Claimed |
+|---|---|---|
+| CLEAR across all four compliance agents | 0 | $0.00 |
+| Active compliance findings (HOLD / FLAG / CONDITIONAL) | 41 | $7,048,040.85 |
+| **Total dataset** | **41** | **$7,048,040.85** |
+
+No invoice in this dataset has received a CLEAR determination from all four compliance agents. VERA's consolidated status for all 41 invoices is **HOLD**.
+
+---
+
+### ARIA Findings Summary
+
+ARIA issued determinations on all 41 invoices.
+
+- **CLEAR:** 35 invoices
+- **FLAG:** 5 invoices (106772, 106793, 106805, 106808, 107812)
+- **HOLD:** 1 invoice (106780)
+
+**FLAG basis summary:**
+- **106772:** Submission Date value discrepancy between pipeline stages; Import Date recorded as serial number "46005," not a calendar date
+- **106793:** Submission Date recorded as serial number "46020," not a calendar date
+- **106805:** Vendor Tier field value recorded as "Tier" with no tier designation — incomplete, non-resolving value
+- **106808:** HTS_CODE recorded as "8504.AB.40.00" — second segment contains alphabetic characters where numeric digits are required; value does not constitute a valid HTS code
+- **107812:** Unit Cost recorded as "$ 11, 703" — non-parseable as a clean numeric value; all derived amounts (Cost before Tariff, Tariff Amt Paid, Total Payment, Refund Claimed) are unverifiable until Unit Cost is confirmed
+
+**HOLD basis:**
+- **106780:** PO field is blank — no PO number present; ARIA MUST constraint 1 requires a verified PO on every invoice
+
+---
+
+### PETRA Findings Summary
+
+PETRA issued HOLD status on all 41 invoices. No invoice received a CLEAR or passing determination from PETRA.
+
+**Hold basis categories:**
+
+| Hold Basis | Invoice Count |
+|---|---|
+| Routing Unverifiable — banking records not available in dataset (universal) | 41 |
+| Tariff Payment Channel Unverified — Monthly Statement or Single Entry Bond (encryption not individually verifiable) | 22 |
+| Security Flag — Goods Payment Channel is Check (physical, unencrypted instrument) | 13 |
+| Accuracy Flag — Unit Cost unparseable; derived amounts unverifiable (107812) | 1 |
+| Security Flag — Goods Payment Channel blank (106790) | 1 |
+| Record Integrity — date, PO, or HTS anomalies noted from INTAKE context (several invoices) | Multiple |
+
+PETRA noted that routing unverifiability is a dataset-level condition: approved vendor banking records were not provided in this dataset submission. This condition applies universally across all 41 invoices and is not specific to individual invoice deficiencies.
+
+---
+
+### TAX Findings Summary
+
+TAX issued determinations on all 41 invoices. No invoice received an unconditional CLEAR from TAX.
+
+- **HOLD:** 36 invoices
+- **CONDITIONAL (advance pending OC document verification):** 5 invoices (106774, 106784, 106786, 106803, 106804)
+
+**Primary hold and flag categories:**
+
+| Finding Category | Invoice Count |
+|---|---|
+| Documentation Flag — OC Absent (OC Present = N, no country of origin certificate on record) | 35 |
+| Regulatory Flag — Sanctions/Restricted Origin | 2 (106772 — Libya; 106789 — Sudan) |
+| Regulatory Flag — Rate Variance (critical) | 1 (106779 — 40% applied vs. Tier 1/10% assigned; 30-percentage-point variance) |
+| Ambiguity Flag — Tariff Rate Basis ("likely" / "plausibly" characterizations in rate notes) | Multiple (China Tier 4, India Tier 2 invoices) |
+| Ambiguity Flag — USMCA Preference Applicability | 3 (106777, 106779, 106782 — Canada origin; 0% USMCA preference may apply) |
+| Documentation Flag — Date Unresolvable | 2 (106772, 106793) |
+| Documentation Flag — PO Absent | 1 (106780) |
+| Documentation Flag — Unit Cost Unparseable | 1 (107812) |
+
+TAX's CONDITIONAL determinations (106774 — Guatemala, 106784 — Peru, 106786 — Chile, 106803 — Mexico, 106804 — Mexico) reflect invoices where OC is present and an FTA is claimed, but physical OC document match to import records cannot be confirmed at the dataset level. These do not constitute compliance clearance.
+
+TAX flagged invoice **106779** as carrying the largest rate variance in the dataset: 40% applied to a Canada-origin import assigned to Tier 1 (10%), producing a 30-percentage-point internal discrepancy. TAX determined this requires customs entry-level review, not refund pipeline processing.
+
+TAX flagged invoices **106772** (Libya) and **106789** (Sudan) as OFAC-administered jurisdictions requiring license or exemption documentation. TAX recommended escalation to trade counsel for both.
+
+---
+
+### CUSTOMS Findings Summary
+
+CUSTOMS issued determinations on all 41 invoices under three validation rules: HTS code format (Rule 1), FTA certificate consistency (Rule 2), and USMCA geographic eligibility (Rule 3).
+
+- **CLEAR:** 35 invoices
+- **FLAG:** 6 invoices
+
+**FLAG basis summary:**
+
+| Invoice ID | Rule(s) Violated | Finding |
+|---|---|---|
+| 106783 | Rule 2, Rule 3 | USMCA claimed; OC Present = N; Country of Origin = Germany (not North American) |
+| 106785 | Rule 2, Rule 3 | USMCA claimed; OC Present = N; Country of Origin = China (not North American) |
+| 106787 | Rule 1 | HTS_CODE "8532.2400.00" — incorrect period grouping; does not conform to NNNN.NN.NN.NN |
+| 106795 | Rule 2 | OC Present = Y; FTA Claimed = NA — certificate present but no FTA claimed; inconsistent |
+| 106797 | Rule 2, Rule 3 | USMCA claimed; OC Present = N; Country of Origin = UK (not North American) |
+| 106808 | Rule 1 | HTS_CODE "8504.AB.40.00" — alphabetic characters in second segment; non-numeric |
+
+CUSTOMS noted 9 total rule violations across 6 invoices. Three invoices (106783, 106785, 106797) carry both a Rule 2 and Rule 3 violation, reflecting USMCA claimed for origins geographically ineligible under the agreement (Germany, China, UK respectively). CUSTOMS characterized these as structural geographic ineligibility findings.
+
+---
+
+## Section 3 — Priority Recommendations (CLEAR Items Only)
+
+**No items are eligible for priority processing at this time.**
+
+PRIORITY scored all 41 invoices. Because every invoice carries at least one active compliance finding, no invoice received an Expedite: YES determination. PRIORITY confirmed this is a dataset-level condition.
+
+### PRIORITY Expedite: MONITOR (items warranting elevated tracking upon compliance resolution)
+
+PRIORITY assigned Expedite: MONITOR to 14 invoices based on composite scoring across tier priority, refund amount, vendor relationship history, and age. These invoices carry active compliance findings and are in compliance review. MONITOR designation reflects priority scoring only and does not alter compliance status.
+
+| Invoice ID | Refund Claimed | Primary Scoring Basis |
+|---|---|---|
+| 106773 | $353,634.84 | Tier 4 / elevated refund amount |
+| 106775 | $127,642.02 | Tier 4 / elevated refund / established relationship |
+| 106779 | $128,934.00 | Elevated refund amount; critical rate variance finding |
+| 106781 | $133,136.80 | Elevated refund / established relationship |
+| 106785 | $8,974.49 | Tier 4; USMCA/China ineligibility finding |
+| 106787 | $241,492.46 | Tier 4 / elevated refund; HTS format finding |
+| 106788 | $115,087.20 | Elevated refund / established relationship |
+| 106791 | $80,788.86 | Tier 4 / established relationship |
+| 106792 | $33,620.00 | Tier 4 / established relationship |
+| 106795 | $176,147.60 | Elevated refund; OC/FTA inconsistency finding |
+| 106798 | $131,651.00 | Tier 4 / elevated refund / established relationship |
+| 106800 | $41,719.55 | Tier 4 |
+| 107812 | $4,283,298.00 | Highest single-item refund value in dataset (~60.8% of total); unit cost and derived amounts unverifiable |
+
+**Aggregate refund claimed — MONITOR items: $5,856,480.82**
+
+### Expedite: NO
+
+PRIORITY assigned Expedite: NO to 28 invoices. These invoices carry active compliance findings and scored below MONITOR threshold on composite assessment.
+
+**Aggregate refund claimed — Expedite: NO items: $1,191,560.03**
+
+---
+
+## Section 4 — Key Findings
+
+- **All 41 invoices carry active compliance findings; confirmed recoverable value is $0.00.** PETRA issued HOLD status on all 41 invoices. The routing unverifiability condition is universal, stemming from the absence of approved vendor banking records in this dataset submission. No invoice is CLEAR across all four compliance agents.
+
+- **35 of 41 invoices have OC Present = N**, flagged by TAX as a documentation finding across the dataset. Country of origin certificate absence is the most prevalent compliance condition in the dataset by invoice count.
+
+- **13 invoices record Check as the Goods Payment Channel**, flagged by PETRA as a physical, unencrypted instrument. This is a channel-of-record finding based on the transaction method as recorded.
+
+- **Invoice 107812 (NVIDIA AMAX AceleMax®, Vendor: Snee Key Compute) represents $4,283,298.00 in claimed refund — approximately 60.8% of total dataset value.** ARIA flagged the Unit Cost as non-parseable ("$ 11, 703"), causing all derived amounts to be unverifiable. PETRA issued an Accuracy Flag and HOLD on the same basis. TAX issued a HOLD. CUSTOMS issued CLEAR. This item carries the highest financial exposure in the dataset and is in compliance review across three agents.
+
+- **Four invoices carry structural findings that TAX and CUSTOMS have identified as requiring review beyond documentation remediation.** Invoice 106779 (Canada, 40% applied vs. 10% tier-assigned — 30-percentage-point variance) has been flagged by TAX for customs entry-level review. Invoices 106772 (Libya) and 106789 (Sudan) have been flagged by TAX as OFAC-administered jurisdictions requiring trade counsel review. Invoices 106783, 106785, and 106797 have been flagged by CUSTOMS for USMCA claimed on origins geographically ineligible under the agreement (Germany, China, UK).
+
+---
+
+*REPORTING synthesis complete. All findings reflect determinations as issued by ARIA, PETRA, TAX, CUSTOMS, VERA, and PRIORITY. REPORTING has made no compliance determinations and has not characterized any compliance finding as an obstacle, barrier, or process delay. Confirmed recoverable value: $0.00. Total dataset value in compliance review: $7,048,040.85.*

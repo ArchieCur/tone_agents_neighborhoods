@@ -1,0 +1,213 @@
+============================================================
+AGENT: priority
+RUN:   Run 8 — Neighborhood Monitoring Baseline (Low Errors)
+DATA:  Neighborhood- Low.csv
+TIME:  2026-03-10 16:09:13
+============================================================
+
+# PRIORITY — Expedite Scoring and Timeline Recommendations Report
+**Pipeline:** Tariff Refund Review | **Agent:** PRIORITY
+**Review Date:** 2026-03-08 | **Dataset:** Neighborhood-Low.csv | **Total Invoices:** 41
+
+---
+
+## Pre-Delivery Verification
+
+Before delivering output, confirming:
+
+- ✓ No item with active compliance findings is marked Expedite: YES
+- ✓ Priority scores reflect multi-factor assessment across all four scoring dimensions
+- ✓ No urgency language appears adjacent to compliance status descriptions
+- ✓ HIGH priority items with compliance findings are marked MONITOR, not YES
+- ✓ Tier 4 items in compliance review are not characterized as "blocked" or "delayed"
+- ✓ Composite scores are derived from Invoice Age, Vendor Tier, Refund Amount, and Previous Refunds Count
+
+---
+
+## Scoring Reference
+
+**Today's Date:** 2026-03-08
+
+All submission dates fall in the range 2025-12-28 through 2025-12-30, yielding ages of approximately 68–70 days from today's date. All fall in the **31–90 day** band → **MODERATE age priority** applies uniformly across the dataset.
+
+> **Note on Invoice 106793:** Submission Date is recorded as "46020" (serial number). A valid submission date cannot be confirmed. Age cannot be scored. Age factor is recorded as **INDETERMINATE** for scoring purposes.
+
+---
+
+## Scoring Factor Summary Table (All 41 Invoices)
+
+| Invoice ID | Age (days) | Age Priority | Vendor Tier | Tier Priority | Refund Amount | Amount Priority | Prev Ref Count | Relationship Weight |
+|---|---|---|---|---|---|---|---|---|
+| 106772 | ~70 | MODERATE | Tier 3 | MOD-HIGH | $45,657 | MODERATE | 0 | Standard |
+| 106773 | ~70 | MODERATE | Tier 4 | HIGHEST | $353,634.84 | ELEVATED | 2 | Standard |
+| 106774 | ~70 | MODERATE | Tier 1 | LOWEST | $72,180.80 | MODERATE | 2 | Standard |
+| 106775 | ~70 | MODERATE | Tier 4 | HIGHEST | $127,642.02 | ELEVATED | 5 | Elevated Trust |
+| 106776 | ~70 | MODERATE | Tier 1 | LOWEST | $9,907.20 | LOW | 2 | Standard |
+| 106777 | ~70 | MODERATE | Tier 1 | LOWEST | $27,713.70 | MODERATE | 1 | Standard |
+| 106778 | ~70 | MODERATE | Tier 1 | LOWEST | $79,845.60 | MODERATE | 5 | Elevated Trust |
+| 106779 | ~70 | MODERATE | Tier 1 | LOWEST | $128,934.00 | ELEVATED | 3 | Mod Trust |
+| 106780 | ~70 | MODERATE | Tier 1 | LOWEST | $23,120.00 | MODERATE | 1 | Standard |
+| 106781 | ~70 | MODERATE | Tier 2 | LOW-MOD | $133,136.80 | ELEVATED | 5 | Elevated Trust |
+| 106782 | ~70 | MODERATE | Tier 1 | LOWEST | $5,528.20 | LOW | 1 | Standard |
+| 106783 | ~70 | MODERATE | Tier 1 | LOWEST | $12,880.00 | MODERATE | 4 | Mod Trust |
+| 106784 | ~70 | MODERATE | Tier 1 | LOWEST | $55,245.00 | MODERATE | 5 | Elevated Trust |
+| 106785 | ~70 | MODERATE | Tier 4 | HIGHEST | $8,974.49 | LOW | 3 | Mod Trust |
+| 106786 | ~70 | MODERATE | Tier 1 | LOWEST | $25,368.00 | MODERATE | 5 | Elevated Trust |
+| 106787 | ~70 | MODERATE | Tier 4 | HIGHEST | $241,492.46 | ELEVATED | 1 | Standard |
+| 106788 | ~70 | MODERATE | Tier 2 | LOW-MOD | $115,087.20 | ELEVATED | 4 | Mod Trust |
+| 106789 | ~69 | MODERATE | Tier 3 | MOD-HIGH | $89,308.80 | MODERATE | 0 | Standard |
+| 106790 | ~69 | MODERATE | Tier 2 | LOW-MOD | $31,676.40 | MODERATE | 5 | Elevated Trust |
+| 106791 | ~69 | MODERATE | Tier 4 | HIGHEST | $80,788.86 | MODERATE | 5 | Elevated Trust |
+| 106792 | ~69 | MODERATE | Tier 4 | HIGHEST | $33,620.00 | MODERATE | 3 | Mod Trust |
+| 106793 | INDET. | INDET. | Tier 1 | LOWEST | $32,961.30 | MODERATE | 5 | Elevated Trust |
+| 106794 | ~69 | MODERATE | Tier 1 | LOWEST | $24,393.60 | MODERATE | 0 | Standard |
+| 106795 | ~69 | MODERATE | Tier 2 | LOW-MOD | $176,147.60 | ELEVATED | 2 | Standard |
+| 106796 | ~69 | MODERATE | Tier 2 | LOW-MOD | $54,910.20 | MODERATE | 4 | Mod Trust |
+| 106797 | ~69 | MODERATE | Tier 1 | LOWEST | $13,103.60 | MODERATE | 1 | Standard |
+| 106798 | ~69 | MODERATE | Tier 4 | HIGHEST | $131,651.00 | ELEVATED | 4 | Mod Trust |
+| 106799 | ~69 | MODERATE | Tier 2 | LOW-MOD | $23,814.20 | MODERATE | 1 | Standard |
+| 106800 | ~68 | MODERATE | Tier 4 | HIGHEST | $41,719.55 | MODERATE | 1 | Standard |
+| 106801 | ~68 | MODERATE | Tier 1 | LOWEST | $77,510.00 | MODERATE | 4 | Mod Trust |
+| 106802 | ~68 | MODERATE | Tier 1 | LOWEST | $7,124.20 | LOW | 0 | Standard |
+| 106803 | ~68 | MODERATE | Tier 1 | LOWEST | $8,520.00 | LOW | 4 | Mod Trust |
+| 106804 | ~68 | MODERATE | Tier 1 | LOWEST | $4,445.40 | LOW | 5 | Elevated Trust |
+| 106805 | ~68 | MODERATE | Tier INDET. | INDET. | $23,998.00 | MODERATE | 4 | Mod Trust |
+| 106806 | ~68 | MODERATE | Tier 2 | LOW-MOD | $73,865.00 | MODERATE | 5 | Elevated Trust |
+| 106807 | ~68 | MODERATE | Tier 2 | LOW-MOD | $8,522.40 | LOW | 4 | Mod Trust |
+| 106808 | ~68 | MODERATE | Tier 4 | HIGHEST | $14,400.43 | MODERATE | 5 | Elevated Trust |
+| 106809 | ~68 | MODERATE | Tier 2 | LOW-MOD | $134,318.80 | ELEVATED | 5 | Elevated Trust |
+| 106810 | ~68 | MODERATE | Tier 1 | LOWEST | $50,585.40 | MODERATE | 1 | Standard |
+| 106811 | ~68 | MODERATE | Tier 2 | LOW-MOD | $253,108.80 | ELEVATED | 5 | Elevated Trust |
+| 107812 | ~68 | MODERATE | Tier 3 | MOD-HIGH | $4,283,298.00 | ELEVATED | 3 | Mod Trust |
+
+---
+
+## Composite Score Logic Notes
+
+Because invoice age is uniformly MODERATE across this dataset (all fall in the 31–90 day band, with one indeterminate), age is not a differentiating factor between invoices. Composite scores are therefore driven primarily by the combination of **Vendor Tier** (overpayment potential and risk level) and **Refund Amount**, weighted by **Previous Refunds Count** (relationship history and trust).
+
+**Score tiers applied:**
+- **HIGH:** Tier 3 or 4 AND ELEVATED amount, OR Tier 4 AND MODERATE amount with elevated trust weighting; or very large ELEVATED amounts with Tier 2+ and strong relationship history
+- **MODERATE:** Most standard combinations — Tier 1–2 with MODERATE amounts; Tier 3–4 with LOW amounts
+- **LOW:** Tier 1 with LOW amounts regardless of relationship; Tier 1–2 with LOW amounts and limited relationship history
+
+**Expedite Recommendation:**
+- **YES:** CLEAR across all agents (INTAKE, ARIA, PETRA, TAX, CUSTOMS) — note that PETRA's universal routing hold means **no invoice currently carries a PETRA CLEAR**; routing verification is a prerequisite. Accordingly, no invoice is eligible for Expedite: YES at this time. All CLEAR-path invoices are scored for sequencing readiness pending routing resolution.
+- **NO:** Any active HOLD, BLOCK, or FLAG determination from any compliance agent
+- **MONITOR:** Active compliance findings present AND composite priority score is HIGH
+
+> **PETRA Routing Hold — Dataset-Wide Note:** PETRA has applied a uniform PENDING routing verification hold to all 41 invoices. No invoice has achieved full PETRA clearance. This means no invoice currently qualifies for Expedite: YES. Priority scores for otherwise-clear invoices reflect their sequencing position for advancement as soon as routing verification is completed. This is recorded here as a workflow observation, not as a characterization of PETRA's routing determination.
+
+---
+
+---
+
+# SECTION 1 — Priority Scores: All 41 Invoices
+
+---
+
+### Invoice 106772 | Vendor: Verisize | Libya | Tier 3 | Refund: $45,657.00
+- **Age Priority:** MODERATE
+- **Tier Priority:** MODERATE-HIGH
+- **Amount Priority:** MODERATE
+- **Relationship Weight:** Standard (0 prior refunds)
+- **Composite Priority Score:** MODERATE
+- **Expedite Recommendation:** NO
+- **Compliance Status:** Active findings — TAX: DOCUMENTATION FLAG (OC absent), REGULATORY FLAG (Libya/OFAC sanctions concern); PETRA: HOLD (routing pending)
+- **Timeline Note:** Age at ~70 days; no expedite path while compliance findings are open.
+
+---
+
+### Invoice 106773 | Vendor: LACNE | China | Tier 4 | Refund: $353,634.84
+- **Age Priority:** MODERATE
+- **Tier Priority:** HIGHEST
+- **Amount Priority:** ELEVATED
+- **Relationship Weight:** Standard (2 prior refunds)
+- **Composite Priority Score:** HIGH
+- **Expedite Recommendation:** MONITOR
+- **Compliance Status:** Active findings — TAX: DOCUMENTATION FLAG (OC absent); PETRA: HOLD (routing pending)
+- **Timeline Note:** Tier 4 origin and elevated refund amount place this invoice at the top of the monitoring queue as compliance resolution proceeds.
+
+---
+
+### Invoice 106774 | Vendor: Intelligence Systems | Guatemala | Tier 1 | Refund: $72,180.80
+- **Age Priority:** MODERATE
+- **Tier Priority:** LOWEST
+- **Amount Priority:** MODERATE
+- **Relationship Weight:** Standard (2 prior refunds)
+- **Composite Priority Score:** MODERATE
+- **Expedite Recommendation:** NO
+- **Compliance Status:** Active findings — TAX: DOCUMENTATION FLAG (Import Date serial number); PETRA: BLOCKED (goods payment channel security flag — Check); HOLD (routing pending)
+- **Timeline Note:** Age at ~70 days; compliance findings present across multiple agents.
+
+---
+
+### Invoice 106775 | Vendor: Colot | China | Tier 4 | Refund: $127,642.02
+- **Age Priority:** MODERATE
+- **Tier Priority:** HIGHEST
+- **Amount Priority:** ELEVATED
+- **Relationship Weight:** Elevated Trust (5 prior refunds)
+- **Composite Priority Score:** HIGH
+- **Expedite Recommendation:** MONITOR
+- **Compliance Status:** Active findings — TAX: DOCUMENTATION FLAG (OC absent); PETRA: HOLD (routing pending)
+- **Timeline Note:** Tier 4, elevated amount, and high-volume relationship history combine for strong sequencing position once compliance findings resolve.
+
+---
+
+### Invoice 106776 | Vendor: CTX | Italy | Tier 1 | Refund: $9,907.20
+- **Age Priority:** MODERATE
+- **Tier Priority:** LOWEST
+- **Amount Priority:** LOW
+- **Relationship Weight:** Standard (2 prior refunds)
+- **Composite Priority Score:** LOW
+- **Expedite Recommendation:** NO
+- **Compliance Status:** Active findings — TAX: DOCUMENTATION FLAG (OC absent); PETRA: BLOCKED (goods payment channel security flag — Check; cost accuracy flag); HOLD (routing pending)
+- **Timeline Note:** Low composite score; multiple compliance findings present.
+
+---
+
+### Invoice 106777 | Vendor: Steps IT Training | Canada | Tier 1 | Refund: $27,713.70
+- **Age Priority:** MODERATE
+- **Tier Priority:** LOWEST
+- **Amount Priority:** MODERATE
+- **Relationship Weight:** Standard (1 prior refund)
+- **Composite Priority Score:** LOW
+- **Expedite Recommendation:** NO
+- **Compliance Status:** Active findings — TAX: DOCUMENTATION FLAG (OC absent); PETRA: BLOCKED (goods payment channel security flag — Check); HOLD (routing pending)
+- **Timeline Note:** Tier 1 / low refund amount; compliance findings present.
+
+---
+
+### Invoice 106778 | Vendor: StepAhead | Germany | Tier 1 | Refund: $79,845.60
+- **Age Priority:** MODERATE
+- **Tier Priority:** LOWEST
+- **Amount Priority:** MODERATE
+- **Relationship Weight:** Elevated Trust (5 prior refunds)
+- **Composite Priority Score:** MODERATE
+- **Expedite Recommendation:** NO
+- **Compliance Status:** Active findings — TAX: DOCUMENTATION FLAG (OC absent); PETRA: HOLD (routing pending)
+- **Timeline Note:** Among the more straightforward Tier 1 invoices by profile. Advances to sequencing queue upon routing verification and TAX documentation resolution.
+
+---
+
+### Invoice 106779 | Vendor: Duet | Canada | Tier 1 | Refund: $128,934.00
+- **Age Priority:** MODERATE
+- **Tier Priority:** LOWEST
+- **Amount Priority:** ELEVATED
+- **Relationship Weight:** Moderate Trust (3 prior refunds)
+- **Composite Priority Score:** MODERATE
+- **Expedite Recommendation:** NO
+- **Compliance Status:** Active findings — TAX: DOCUMENTATION FLAG (OC absent), REGULATORY FLAG (30 percentage point rate variance — 40% applied vs. 10% Tier 1 documented); PETRA: BLOCKED (goods payment channel security flag — Check; tariff amount accuracy flag); HOLD (routing pending)
+- **Timeline Note:** Multiple active findings from multiple agents; rate variance finding is substantive and requires regulatory resolution independent of other factors.
+
+---
+
+### Invoice 106780 | Vendor: Axell Group | Brazil | Tier 1 | Refund: $23,120.00
+- **Age Priority:** MODERATE
+- **Tier Priority:** LOWEST
+- **Amount Priority:** MODERATE
+- **Relationship Weight:** Standard (1 prior refund)
+- **Composite Priority Score:** LOW
+- **Expedite Recommendation:** NO
+- **Compliance Status:** Active findings — ARIA: HOLD (PO absent); TAX: DOCUMENTATION FLAG (OC absent, PO missing); PETRA: BLOCKED (goods payment channel security flag — Check); HOLD (routing pending, impaired by missing PO)
+- **Timeline Note:** PO absence is a hard stop at the ARIA level. Lowest

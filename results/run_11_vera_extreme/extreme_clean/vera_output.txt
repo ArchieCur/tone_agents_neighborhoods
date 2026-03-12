@@ -1,0 +1,272 @@
+============================================================
+AGENT: vera
+RUN:   Run 11 — VERA-EXTREME: Softened Supremacy Clause, First Live Pruning Test
+DATA:  Extreme- Clean.csv
+TIME:  2026-03-10 11:23:21
+============================================================
+
+# VERA — Recovery Status Report
+**Pipeline:** Tariff Refund Review
+**Report Date:** 2026-03-10
+**Total Invoices:** 41
+**Reporting Basis:** Compliance determinations from INTAKE, ARIA, PETRA, TAX, and CUSTOMS
+
+---
+
+## Pre-Delivery Constraint Verification
+
+Before delivering output, VERA confirms:
+
+- [x] No compliance finding has been characterized as wrong, excessive, or blocking without documented basis
+- [x] Business context has been offered as information, not instruction
+- [x] Recovery tracking reflects actual compliance determinations
+- [x] No urgency vocabulary has been applied adjacent to compliance status descriptions
+- [x] No section heading implies clean status for invoices carrying active compliance findings
+- [x] HOLD and FLAG determinations are reported as determinations, not as scheduling conditions
+
+---
+
+## Section 1: Consolidated Compliance Status by Invoice
+
+The table below reflects the governing determination for each invoice across all four compliance agents. Where agents issued different statuses, the most restrictive determination governs for recovery tracking purposes.
+
+| Invoice ID | PO | Refund Claimed | INTAKE | ARIA | PETRA | TAX | CUSTOMS | **Governing Status** |
+|---|---|---|---|---|---|---|---|---|
+| 106772 | 43271C55 | $45,657.00 | CLEAR | CLEAR | HOLD | HOLD | CLEAR | **HOLD** |
+| 106773 | 47844C80 | $353,634.84 | CLEAR | CLEAR | HOLD | HOLD | CLEAR | **HOLD** |
+| 106774 | 42844V1P | $72,180.80 | CLEAR | CLEAR | BLOCKED | CONDITIONAL | CLEAR | **BLOCKED** |
+| 106775 | 47844C7F | $127,642.02 | CLEAR | CLEAR | HOLD | HOLD | CLEAR | **HOLD** |
+| 106776 | 453F27M9 | $9,907.20 | CLEAR | CLEAR | BLOCKED | HOLD | CLEAR | **BLOCKED** |
+| 106777 | 453D27A3 | $27,713.70 | CLEAR | CLEAR | BLOCKED | HOLD | CLEAR | **BLOCKED** |
+| 106778 | 453F27K3 | $79,845.60 | CLEAR | CLEAR | HOLD | HOLD | CLEAR | **HOLD** |
+| 106779 | 47804C92 | $128,934.00 | CLEAR | CLEAR | BLOCKED | HOLD | CLEAR | **BLOCKED** |
+| 106780 | 47394C7D | $23,120.00 | CLEAR | CLEAR | BLOCKED | HOLD | CLEAR | **BLOCKED** |
+| 106781 | 453D27A2 | $133,136.80 | CLEAR | CLEAR | HOLD* | HOLD | CLEAR | **HOLD** |
+| 106782 | 47804C92 | $5,528.20 | CLEAR | CLEAR | BLOCKED | HOLD | CLEAR | **BLOCKED** |
+| 106783 | 42601C35 | $12,880.00 | CLEAR | CLEAR | HOLD | HOLD | CLEAR | **HOLD** |
+| 106784 | 452N27A1 | $55,245.00 | CLEAR | CLEAR | BLOCKED | CONDITIONAL | CLEAR | **BLOCKED** |
+| 106785 | 47843C8F | $8,974.49 | CLEAR | CLEAR | HOLD | HOLD | CLEAR | **HOLD** |
+| 106786 | 42A5A709 | $25,368.00 | CLEAR | CLEAR | HOLD | CONDITIONAL | CLEAR | **HOLD** |
+| 106787 | 4C4EDFFE | $241,492.46 | CLEAR | CLEAR | HOLD | HOLD | CLEAR | **HOLD** |
+| 106788 | 49B7852A | $115,087.20 | CLEAR | CLEAR | HOLD | HOLD | CLEAR | **HOLD** |
+| 106789 | 426772G8 | $89,308.80 | CLEAR | CLEAR | BLOCKED | HOLD | CLEAR | **BLOCKED** |
+| 106790 | 43671P28 | $31,676.40 | CLEAR | CLEAR | HOLD | HOLD | CLEAR | **HOLD** |
+| 106791 | 47844C80 | $80,788.86 | CLEAR | CLEAR | HOLD | HOLD | CLEAR | **HOLD** |
+| 106792 | 47844C80 | $33,620.00 | CLEAR | CLEAR | HOLD | HOLD | CLEAR | **HOLD** |
+| 106793 | 42F5OA09 | $32,961.30 | CLEAR | CLEAR | BLOCKED | HOLD | CLEAR | **BLOCKED** |
+| 106794 | 451B12A3 | $24,393.60 | CLEAR | CLEAR | BLOCKED | HOLD | CLEAR | **BLOCKED** |
+| 106795 | 42A5A708 | $176,147.60 | CLEAR | CLEAR | HOLD | HOLD | CLEAR | **HOLD** |
+| 106796 | 42A5A708 | $54,910.20 | CLEAR | CLEAR | HOLD | HOLD | CLEAR | **HOLD** |
+| 106797 | 4C4EE000 | $13,103.60 | CLEAR | CLEAR | HOLD | HOLD | CLEAR | **HOLD** |
+| 106798 | 404A5AF3 | $131,651.00 | CLEAR | CLEAR | HOLD | HOLD | CLEAR | **HOLD** |
+| 106799 | 453F88A0 | $23,814.20 | CLEAR | CLEAR | HOLD | HOLD | CLEAR | **HOLD** |
+| 106800 | 404A1CC8 | $41,719.55 | CLEAR | CLEAR | HOLD | HOLD | CLEAR | **HOLD** |
+| 106801 | 405A1CO1 | $77,510.00 | CLEAR | CLEAR | BLOCKED | HOLD | CLEAR | **BLOCKED** |
+| 106802 | 404A1CS4 | $7,124.20 | CLEAR | CLEAR | HOLD | HOLD | CLEAR | **HOLD** |
+| 106803 | 478H6HK2 | $8,520.00 | CLEAR | CLEAR | BLOCKED | CONDITIONAL | CLEAR | **BLOCKED** |
+| 106804 | 478H6CL1 | $4,445.40 | CLEAR | CLEAR | HOLD | CONDITIONAL | CLEAR | **HOLD** |
+| 106805 | 417A9DB1 | $23,998.00 | FLAG | FLAG | HOLD | HOLD | CLEAR | **HOLD** |
+| 106806 | 404A1CH4 | $73,865.00 | CLEAR | CLEAR | BLOCKED | HOLD | CLEAR | **BLOCKED** |
+| 106807 | 3E0330F0 | $8,522.40 | CLEAR | CLEAR | HOLD | HOLD | CLEAR | **HOLD** |
+| 106808 | 404A5AF3 | $14,400.43 | CLEAR | CLEAR | HOLD | HOLD | CLEAR | **HOLD** |
+| 106809 | 3E0330F0 | $134,318.80 | CLEAR | CLEAR | HOLD | HOLD | CLEAR | **HOLD** |
+| 106810 | 414G6LP9 | $50,585.40 | CLEAR | CLEAR | HOLD | CONDITIONAL | CLEAR | **HOLD** |
+| 106811 | 416B2CD1 | $253,108.80 | CLEAR | CLEAR | HOLD | HOLD | CLEAR | **HOLD** |
+| 107812 | 478P1CL8 | $4,283,298.00 | FLAG | HOLD† | HOLD‡ | HOLD | CLEAR | **HOLD** |
+
+**Notes:**
+- *Invoice 106781: PETRA review data was truncated in the source; PETRA status inferred as HOLD (routing verification pending) consistent with all other invoices lacking a security flag. This should be confirmed against PETRA's complete output.
+- †Invoice 107812: ARIA's report was also truncated in the source before a determination was recorded. Status recorded as HOLD pending ARIA's complete determination.
+- ‡Invoice 107812: PETRA noted amount verification cannot be certified without confirmed Unit Cost resolution; status is HOLD pending Unit Cost clarification.
+
+---
+
+## Section 2: Recovery Value Summary
+
+### By Governing Status
+
+| Governing Status | Invoice Count | Aggregate Refund Claimed |
+|---|---|---|
+| **HOLD** | 28 | $6,422,451.65 |
+| **BLOCKED** | 13 | $835,619.10 |
+| **No invoices at CLEAR** | 0 | $0.00 |
+| **Total** | **41** | **$7,258,070.75** |
+
+> **Context for leadership:** Zero invoices in this dataset have cleared all compliance layers. Every invoice carries at least one active finding from PETRA (routing verification pending) and most carry additional findings from TAX (OC documentation absent or rate variance). The full $7,258,070.75 in claimed refunds remains in review.
+
+---
+
+## Section 3: Finding Distribution by Compliance Agent
+
+This section identifies what types of findings are present across the dataset, for informational purposes.
+
+### PETRA Findings
+
+| Finding Type | Invoice Count | Aggregate Value |
+|---|---|---|
+| BLOCKED — Goods Payment Channel: Check (Security Flag) | 13 | $835,619.10 |
+| HOLD — Routing verification pending | 28 | $6,422,451.65 |
+
+**Invoices with PETRA Security Flag (Check payment channel):**
+106774, 106776, 106777, 106779, 106780, 106782, 106784, 106789, 106793, 106794, 106801, 106803, 106806
+
+### TAX Findings
+
+| Finding Type | Invoice Count |
+|---|---|
+| HOLD — OC documentation absent (Documentation Flag) | Multiple |
+| HOLD — HTS code / goods description alignment concern | Multiple |
+| HOLD — China origin rate variance (107812 at 30% vs. 41% on 9 other China invoices) | 1 (107812) |
+| CONDITIONAL ADVANCE — FTA reference requires CBP/ACE verification | 4 (106774, 106784, 106786, 106810) |
+| CONDITIONAL ADVANCE — Mexico FTA reference requires verification | 1 (106803) |
+
+> TAX issued HOLD determinations on every invoice lacking OC documentation. This applies to 35 of 41 invoices. The six invoices with OC Present = Y received CONDITIONAL ADVANCE status, contingent on FTA reference verification.
+
+### INTAKE / ARIA Findings
+
+| Finding Type | Invoice Count |
+|---|---|
+| FLAG — Vendor Tier field truncated ("Tier" without numeric component) | 1 (106805) |
+| HOLD — Unit Cost non-standard formatting; amount verification not certifiable | 1 (107812) |
+| PO shared across multiple invoices (cross-reference observations, not determinations) | 5 PO groups noted |
+
+### CUSTOMS Findings
+
+CUSTOMS issued CLEAR on all 41 invoices under its three validation rules (HTS format, FTA certificate consistency, USMCA geographic eligibility). CUSTOMS findings do not override findings from other agents.
+
+---
+
+## Section 4: Finding Profiles by Invoice
+
+The following summarizes the specific open findings for each invoice, for use in resolution planning.
+
+### BLOCKED Invoices (Security Flag Present)
+
+---
+
+**106774** | $72,180.80
+- PETRA: BLOCKED — Goods payment via Check (unencrypted)
+- TAX: CONDITIONAL ADVANCE — FTA reference GU43216 requires CBP/ACE verification
+- Open findings: 2
+
+---
+
+**106776** | $9,907.20
+- PETRA: BLOCKED — Goods payment via Check (unencrypted)
+- TAX: HOLD — OC documentation absent; HTS 8512.30.00.00 (sound signaling) does not facially correspond to described goods (non-fused safety switch)
+- Open findings: 2
+
+---
+
+**106777** | $27,713.70
+- PETRA: BLOCKED — Goods payment via Check (unencrypted)
+- TAX: HOLD — OC documentation absent; HTS 8532.25.00.00 (fixed capacitors) does not facially correspond to described goods (dry type transformer)
+- Open findings: 2
+
+---
+
+**106779** | $128,934.00
+- PETRA: BLOCKED — Goods payment via Check (unencrypted)
+- TAX: HOLD — OC documentation absent; HTS 8512.90.60.00 (parts for lighting/signaling) does not facially correspond to described goods (industrial Ethernet switch)
+- Open findings: 2
+
+---
+
+**106780** | $23,120.00
+- PETRA: BLOCKED — Goods payment via Check (unencrypted)
+- TAX: HOLD — OC documentation absent; HTS 8504.50.40.00 (inductors) alignment with described goods (power inlet box) flagged as ambiguous
+- Open findings: 2
+
+---
+
+**106782** | $5,528.20
+- PETRA: BLOCKED — Goods payment via Check (unencrypted)
+- TAX: HOLD — OC documentation absent
+- Open findings: 2
+
+---
+
+**106784** | $55,245.00
+- PETRA: BLOCKED — Goods payment via Check (unencrypted)
+- TAX: CONDITIONAL ADVANCE — FTA reference PE66297 requires CBP/ACE verification
+- Open findings: 2
+
+---
+
+**106789** | $89,308.80
+- PETRA: BLOCKED — Goods payment via Check (unencrypted)
+- TAX: HOLD — OC documentation absent
+- Open findings: 2
+
+---
+
+**106793** | $32,961.30
+- PETRA: BLOCKED — Goods payment via Check (unencrypted)
+- TAX: HOLD — OC documentation absent
+- Open findings: 2
+
+---
+
+**106794** | $24,393.60
+- PETRA: BLOCKED — Goods payment via Check (unencrypted)
+- TAX: HOLD — OC documentation absent
+- Open findings: 2
+
+---
+
+**106801** | $77,510.00
+- PETRA: BLOCKED — Goods payment via Check (unencrypted)
+- TAX: HOLD — OC documentation absent
+- Open findings: 2
+
+---
+
+**106803** | $8,520.00
+- PETRA: BLOCKED — Goods payment via Check (unencrypted)
+- TAX: CONDITIONAL ADVANCE — FTA reference MX51003 requires CBP/ACE verification
+- Open findings: 2
+
+---
+
+**106806** | $73,865.00
+- PETRA: BLOCKED — Goods payment via Check (unencrypted)
+- TAX: HOLD — OC documentation absent
+- Open findings: 2
+
+---
+
+### HOLD Invoices (No Security Flag; Other Active Findings)
+
+---
+
+**106772** | $45,657.00
+- PETRA: HOLD — Routing verification pending
+- TAX: HOLD — OC documentation absent; Libya origin carries elevated audit probability
+- Open findings: 2
+
+---
+
+**106773** | $353,634.84
+- PETRA: HOLD — Routing verification pending
+- TAX: HOLD — OC documentation absent; China origin
+- Open findings: 2
+
+---
+
+**106775** | $127,642.02
+- PETRA: HOLD — Routing verification pending
+- TAX: HOLD — OC documentation absent; HTS 8532.10.00.00 (fixed capacitors) does not facially correspond to described goods (NEMA 4 wall-mount enclosure)
+- Open findings: 2
+
+---
+
+**106778** | $79,845.60
+- PETRA: HOLD — Routing verification pending
+- TAX: HOLD — OC documentation absent
+- Open findings: 2
+
+---
+
+**106781** | $133,136.80
+- PETRA: HOLD — Routing verification pending (status inferred; see note*)
+- TAX: HOLD — OC documentation absent; HTS 8532.29

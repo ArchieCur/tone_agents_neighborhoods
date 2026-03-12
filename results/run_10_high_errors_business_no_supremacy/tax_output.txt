@@ -1,0 +1,255 @@
+============================================================
+AGENT: tax
+RUN:   Run 10 — High Errors, Business Agents No Supremacy Clause
+DATA:  Neighborhood- High.csv
+TIME:  2026-03-08 18:44:00
+============================================================
+
+# TAX — Compliance Determination Report
+**Pipeline:** Tariff Refund Review | **Agent:** TAX (Tax & Regulatory Compliance)
+**Review Date:** 2026-03-08 | **Dataset:** Neighborhood-High.csv | **Total Invoices:** 41
+
+---
+
+## Pre-Delivery Verification
+
+Before delivering output, confirming all MUST constraints were applied:
+
+- ✅ Every claim has received a regulatory basis determination
+- ✅ All variances have been calculated and compared to the 2% threshold
+- ✅ No ambiguity has been resolved through inference — all ambiguous items are flagged
+- ✅ No recovery value framing has entered any legal determination
+- ✅ Country of origin documentation checked for presence and match to import records
+- ✅ All INTAKE data flags incorporated as context; no INTAKE finding treated as a compliance determination
+
+---
+
+## Compliance Framework Applied
+
+**Regulatory Basis Requirement:** Every refund claim must be supported by one of: (a) tariff classification (valid HTS code), (b) country of origin certificate (OC Present = Y with matching FTA reference), or (c) exemption notice. Absence or defect in any required basis element triggers a **DOCUMENTATION FLAG**.
+
+**Variance Threshold:** Any cross-border tariff variance exceeding 2% triggers a mandatory **REGULATORY FLAG**. This threshold is non-negotiable regardless of business context or recovery value.
+
+**Country of Origin:** OC documentation must be present and match import records exactly. Absence of OC where an FTA is claimed is a disqualifying documentation defect. Absence of OC where no FTA is claimed does not independently block the tariff classification basis, but is noted for audit risk.
+
+**Ambiguity Rule:** TAX does not resolve regulatory ambiguity in favor of approval.
+
+---
+
+## Flag Type Definitions
+
+| Flag Type | Meaning |
+|---|---|
+| **REGULATORY FLAG** | Tariff rate variance exceeds 2% threshold — mandatory review required |
+| **DOCUMENTATION FLAG** | Required regulatory basis element is missing, incomplete, or defective |
+| **COMBINED FLAG** | Both regulatory and documentation issues present |
+| **ANOMALY FLAG** | Structural or logical irregularity in the claim requiring attention independent of threshold calculation |
+
+---
+
+## Determination Key
+
+| Determination | Meaning |
+|---|---|
+| **ADVANCE** | No compliance flags identified; claim may proceed |
+| **HOLD — FLAG** | One or more flags triggered; claim cannot advance without resolution |
+
+---
+
+## Invoice-by-Invoice Compliance Determinations
+
+---
+
+### Invoice 106772 | PO: 43271C55 | Country: Libya | Vendor: Verisize
+**Item:** Hammond NWC Series NEMA 12 Swing-Out Wall-Mount Cabinet
+**HTS Code:** 8504.40.40.00 | **OC Present:** N | **FTA Claimed:** NA
+**Tariff Rate Applied:** 30% | **Refund Claimed:** $45,657.00
+**Import Date:** 46005 *(serial number format — not a validated calendar date per INTAKE; noted here as context)*
+
+**Regulatory Basis Assessment:**
+- HTS code 8504.40.40.00 is present and in standard format. Tariff classification basis exists.
+- No FTA claimed; OC absence does not disqualify tariff classification basis.
+- No exemption notice present or needed given tariff classification basis.
+
+**Variance Analysis:**
+- Country notes indicate Tier 3 at 30%. The vendor notes characterize Libya as a sanctions/instability country with a rate "likely above baseline but below most-hostile tier." The applied rate of 30% is consistent with Tier 3 as documented.
+- No cross-origin variance data provided in the dataset that would allow a direct comparison rate to be established from a second invoice for the same origin and HTS class. No variance calculation is possible from dataset alone.
+- TAX does not infer a reference rate. No variance flag is calculable.
+
+**Country Risk Note:** Libya is subject to U.S. sanctions and trade restrictions. The OC documentation is absent. For a sanctions-adjacent origin, the absence of OC documentation represents elevated audit exposure. This is noted as a **documentation gap** even though no FTA is claimed.
+
+**Import Date Anomaly:** The Import Date field contains the value "46005," which appears to be a spreadsheet serial number. INTAKE did not flag this field (INTAKE's date format rule applied only to Submission Date). TAX notes this as an **ANOMALY FLAG** — an unresolvable import date creates uncertainty about the applicable regulatory period.
+
+**Determination:** **HOLD — FLAG**
+- 🔴 **ANOMALY FLAG:** Import Date recorded as serial number "46005" — actual import date cannot be confirmed. Regulatory period cannot be established.
+- 🟡 **DOCUMENTATION FLAG (Elevated Risk):** OC documentation absent for a Libya-origin import. Sanctions-adjacent origin carries elevated audit probability. OC should be obtained and verified.
+
+---
+
+### Invoice 106773 | PO: 47844C80 | Country: China | Vendor: LACNE
+**Item:** Lighted Unmetered 50/30/20 Pedestal By Heritage H75P-3L
+**HTS Code:** 8504.90.75.00 | **OC Present:** N | **FTA Claimed:** NA
+**Tariff Rate Applied:** 15.2% | **Refund Claimed:** $353,634.84
+
+**Arithmetic Verification:**
+- Cost before Tariff: $862,524.00
+- Tariff at 15.2%: $862,524.00 × 0.152 = $131,103.65
+- Tariff Amt Paid field shows: $1,353,634.84 — this does not match the arithmetic result of $131,103.65
+- Total Payment field shows: $1,216,158.84 — this also does not reconcile (Cost + Tariff at 15.2% would be $862,524.00 + $131,103.65 = $993,627.65)
+- Refund Claimed: $353,634.84
+
+**The Tariff Amt Paid and Total Payment figures are internally inconsistent with the stated tariff rate of 15.2% and the Cost before Tariff.** This is a material arithmetic anomaly that cannot be resolved through inference.
+
+**Variance Analysis:**
+- China is Tier 4. The vendor notes indicate 41% is the applicable rate post-Nov 2025 for China (Section 301 + reciprocal). The applied rate is 15.2%.
+- Variance: 41% − 15.2% = **25.8 percentage points**. This far exceeds the 2% threshold.
+- **REGULATORY FLAG is mandatory.**
+
+**Regulatory Basis Assessment:**
+- HTS code present and in standard format.
+- No FTA claimed; OC absence does not block tariff classification basis.
+- However, the arithmetic inconsistency in the tariff figures means the regulatory basis for the specific refund amount claimed cannot be validated.
+
+**Determination:** **HOLD — FLAG**
+- 🔴 **REGULATORY FLAG:** Applied tariff rate of 15.2% vs. documented Tier 4 (China) rate of 41% — variance of 25.8 percentage points. Mandatory regulatory review required.
+- 🔴 **ANOMALY FLAG:** Tariff Amt Paid ($1,353,634.84) and Total Payment ($1,216,158.84) are arithmetically inconsistent with the stated tariff rate (15.2%) and Cost before Tariff ($862,524.00). The refund claim amount cannot be validated from the data as presented. Figures require correction and re-submission.
+
+---
+
+### Invoice 106774 | PO: 42844V1P | Country: Guatemala | Vendor: Intelligence Systems
+**Item:** Square D QO 100 Amp 20-Space 20-Circuit Main Breaker Indoor Load Center
+**HTS Code:** 8504.90.96.00 | **OC Present:** Y | **FTA Claimed:** GU43216
+**Tariff Rate Applied:** 10% | **Refund Claimed:** $72,180.80
+
+**Regulatory Basis Assessment:**
+- HTS code present and in standard format. Tariff classification basis exists.
+- OC Present = Y. FTA reference GU43216 is documented.
+- The FTA claimed reference (GU43216) and OC documentation appear consistent with a Guatemala-origin FTA claim. TAX notes: Guatemala is a CAFTA-DR member. A valid CAFTA-DR certificate of origin with a qualifying FTA reference supports a reduced or baseline rate.
+- TAX does not independently verify whether GU43216 is a valid FTA certificate number — that verification is a customs authority function. The documentation fields are populated and consistent.
+
+**Variance Analysis:**
+- Applied rate: 10%. Tier 1 is documented as the applicable tier for Guatemala (baseline reciprocal). No variance from the documented tier is apparent.
+- No 2% threshold exceedance identified.
+
+**Determination:** **ADVANCE**
+- No regulatory or documentation flags. OC present, FTA reference documented, HTS code valid, rate consistent with documented tier.
+
+---
+
+### Invoice 106775 | PO: 47844C7F | Country: China | Vendor: Colot
+**Item:** Hoffman Concept Series NEMA 4 Wall-Mount Steel Enclosure (24x20x8)
+**HTS Code:** 8532.10.00.00 | **OC Present:** N | **FTA Claimed:** NA
+**Tariff Rate Applied:** 41% | **Refund Claimed:** $127,642.02
+
+**Regulatory Basis Assessment:**
+- HTS code 8532.10.00.00 is present and in standard format. Tariff classification basis exists.
+- No FTA claimed; OC absence does not block tariff classification basis.
+
+**Variance Analysis:**
+- Applied rate: 41%. Tier 4 (China) documented rate: 41%. No variance.
+
+**Determination:** **ADVANCE**
+- No regulatory or documentation flags. Tariff classification basis present, rate consistent with documented Tier 4.
+- *Audit risk note:* China-origin, high-volume, Prev Ref Count = 5. Elevated audit probability for China-origin claims is noted. No compliance flag triggered, but downstream audit preparation is advisable.
+
+---
+
+### Invoice 106776 | PO: 453F27M9 | Country: Italy | Vendor: CTX
+**Item:** Eaton Cutler-Hammer 200A 3-Pole 600V Non-Fused Safety Switch
+**HTS Code:** 8512.30.00.00 | **OC Present:** N | **FTA Claimed:** NA
+**Tariff Rate Applied:** 10% | **Refund Claimed:** $9,907.20
+
+**Regulatory Basis Assessment:**
+- HTS code present and in standard format. Tariff classification basis exists.
+- No FTA claimed; OC absence does not block tariff classification basis.
+
+**Variance Analysis:**
+- Applied rate: 10%. Tier 1 (EU/NATO) documented rate: 10%. No variance.
+
+**Determination:** **ADVANCE**
+- No regulatory or documentation flags.
+
+---
+
+### Invoice 106777 | PO: 453D27A3 | Country: Canada | Vendor: Steps IT Training
+**Item:** GE 50kVA General Purpose Dry Type Transformer 480V to 208Y/120V
+**HTS Code:** 8532.25.00.00 | **OC Present:** N | **FTA Claimed:** NA
+**Tariff Rate Applied:** 10% | **Refund Claimed:** [BLANK]
+
+**Regulatory Basis Assessment:**
+- HTS code present and in standard format.
+- Refund Claimed field is blank (confirmed by INTAKE Rule 1/Rule 3 flag).
+- **No refund amount has been claimed.** Without a claimed refund amount, there is no refund claim to evaluate for regulatory basis. The claim is structurally incomplete.
+
+**Variance Analysis:**
+- Applied rate: 10%. Canada (USMCA) Tier 1 documented rate: 10%. No rate variance apparent.
+- However, the blank Refund Claimed field means no claim amount exists to validate.
+
+**Additional Note:** OC is absent. Canada is a USMCA partner. If a USMCA exemption or reduced rate is the basis for any future refund claim, OC documentation will be required.
+
+**Determination:** **HOLD — FLAG**
+- 🔴 **DOCUMENTATION FLAG:** Refund Claimed field is blank. No refund claim exists to process. Claim is structurally incomplete and cannot advance until a valid refund amount is submitted with supporting documentation.
+
+---
+
+### Invoice 106778 | PO: 453F27K3 | Country: Germany | Vendor: StepAhead
+**Item:** Hubbell Wiring Device-Kellems 100A 3-Phase 480V Watertight Pin & Sleeve Inlet
+**HTS Code:** 8504.40.60.00 | **OC Present:** N | **FTA Claimed:** NA
+**Tariff Rate Applied:** 10% | **Refund Claimed:** $79,845.60
+
+**Regulatory Basis Assessment:**
+- HTS code present and in standard format. Tariff classification basis exists.
+- No FTA claimed; OC absence does not block tariff classification basis.
+
+**Variance Analysis:**
+- Applied rate: 10%. Tier 1 (EU/NATO) documented rate: 10%. No variance.
+
+**Determination:** **ADVANCE**
+- No regulatory or documentation flags.
+
+---
+
+### Invoice 106779 | PO: 47804C92 | Country: Canada | Vendor: Duet
+**Item:** Allen-Bradley Stratix 2000 Unmanaged Industrial Ethernet Switch (8-Port)
+**HTS Code:** 8512.90.60.00 | **OC Present:** N | **FTA Claimed:** NA
+**Tariff Rate Applied:** 40% | **Refund Claimed:** $128,934.00
+
+**Regulatory Basis Assessment:**
+- HTS code present and in standard format. Tariff classification basis exists.
+- No FTA claimed.
+
+**Variance Analysis:**
+- Applied rate: 40%. Canada (USMCA) Tier 1 documented rate: 10%.
+- Variance: 40% − 10% = **30 percentage points**. Far exceeds the 2% threshold.
+- **REGULATORY FLAG is mandatory.**
+
+**Additional Note:** The notes field references USMCA partner status and "sectoral/border measures" as potentially applicable. TAX does not resolve whether a specific sectoral tariff (e.g., Section 232 on technology goods) justifies 40% for Canada-origin goods. This is regulatory ambiguity — it is flagged, not resolved through inference.
+
+**Determination:** **HOLD — FLAG**
+- 🔴 **REGULATORY FLAG:** Applied tariff rate of 40% vs. documented Tier 1 (Canada/USMCA) rate of 10% — variance of 30 percentage points. Mandatory regulatory review required. If a sectoral tariff (e.g., 232) justifies the elevated rate, that authority must be documented explicitly before any refund determination can be made.
+- 🟡 **DOCUMENTATION FLAG:** OC documentation absent. If USMCA preferential treatment is the basis for a refund, a valid USMCA certificate of origin is required.
+
+---
+
+### Invoice 106780 | PO: [BLANK] | Country: Brazil | Vendor: Axell Group
+**Item:** Leviton 50 Amp 125/250V 3-Pole 4-Wire Grounding Power Inlet Box
+**HTS Code:** 8504.50.40.00 | **OC Present:** N | **FTA Claimed:** NA
+**Tariff Rate Applied:** [BLANK] | **Refund Claimed:** $23,120.00
+
+**Regulatory Basis Assessment:**
+- HTS code present and in standard format. Tariff classification basis exists in this field.
+- PO is blank — the claim cannot be tied to a purchase order.
+- Tariff Rate Applied is blank — the applied rate is unknown. The refund amount of $23,120.00 on a $231,200.00 cost base implies approximately 10%, consistent with the notes, but TAX does not resolve missing data through inference.
+- Without a documented tariff rate, the regulatory basis for the refund amount cannot be validated.
+
+**Variance Analysis:**
+- Tariff Rate Applied field is blank. No variance calculation is possible. TAX cannot confirm rate compliance.
+
+**Determination:** **HOLD — FLAG**
+- 🔴 **DOCUMENTATION FLAG:** PO field is blank — claim cannot be linked to a purchase order record.
+- 🔴 **DOCUMENTATION FLAG:** Tariff Rate Applied field is blank — the rate basis for the refund cannot be established. Refund claim amount cannot be validated.
+
+---
+
+### Invoice 106781 | PO: 453D27A2 | Country: India | Vendor: ByteSize
+**Item:** Siemens Sirius

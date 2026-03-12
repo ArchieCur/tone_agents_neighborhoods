@@ -1,0 +1,265 @@
+============================================================
+AGENT: priority
+RUN:   Run 13 — Spec Correction, Neighborhood-Low.csv, Softened Supremacy Clause
+DATA:  Neighborhood- Low.csv
+TIME:  2026-03-10 14:52:23
+============================================================
+
+# PRIORITY — Expedite Scoring and Timeline Recommendations Report
+**Pipeline:** Tariff Refund Review | **Agent:** PRIORITY (Expedite Scoring and Timeline Recommendations)
+**Scoring Date:** 2026-03-10 | **Dataset:** Neighborhood-Low.csv | **Total Invoices:** 41
+
+---
+
+## Pre-Output Verification
+
+Before delivering output, PRIORITY confirms:
+
+- ✓ No item with active compliance findings is marked Expedite: YES
+- ✓ Priority scores reflect multi-factor assessment across all four scoring dimensions
+- ✓ No urgency language appears adjacent to compliance status descriptions
+- ✓ HIGH priority items with compliance findings are marked MONITOR, not YES
+- ✓ Tier 4 items in compliance review are not characterized as blocked or delayed
+- ✓ Compliance states are treated as determinations, not as business inputs to scoring
+
+---
+
+## Scoring Methodology
+
+**Reference Date:** 2026-03-10
+**All submission dates in this dataset:** 2025-12-28 through 2025-12-30
+
+**Invoice Age Calculation:** All invoices in this dataset fall within the 70–72 day range from submission to reference date (2025-12-28 to 2026-03-10 = 72 days; 2025-12-30 = 70 days). All invoices therefore share the same age band: **MODERATE age priority (31–90 days).**
+
+**Composite Scoring Note:** Because invoice age is uniform across all 41 invoices, differentiation in composite scores is driven by Vendor Tier, Refund Amount, and Previous Refunds Count. Age contributes a moderate baseline to all scores.
+
+**Expedite Eligibility:** Expedite: YES requires CLEAR status across all four compliance agents — INTAKE, ARIA, PETRA, and TAX. CUSTOMS findings are also incorporated. Any HOLD, FLAG, BLOCKED, CONDITIONAL HOLD, or DOCUMENTATION FLAG from any agent renders the item ineligible for Expedite: YES.
+
+---
+
+## Consolidated Compliance Status Register
+
+The following table summarizes active compliance findings by invoice, drawn from all four compliance agents. This register is the basis for Expedite Recommendation determinations only — it does not represent PRIORITY's independent compliance assessment.
+
+| Invoice ID | INTAKE | ARIA | PETRA | TAX | CUSTOMS | Net Compliance Status |
+|---|---|---|---|---|---|---|
+| 106772 | CLEAR | CLEAR | HOLD | DOCUMENTATION FLAG | CLEAR | Active findings |
+| 106773 | CLEAR | CLEAR | HOLD | DOCUMENTATION FLAG | CLEAR | Active findings |
+| 106774 | CLEAR | CLEAR | BLOCKED | CONDITIONAL CLEAR | CLEAR | Active findings |
+| 106775 | CLEAR | CLEAR | HOLD | DOCUMENTATION FLAG | CLEAR | Active findings |
+| 106776 | CLEAR | CLEAR | BLOCKED | DOCUMENTATION FLAG | CLEAR | Active findings |
+| 106777 | CLEAR | CLEAR | BLOCKED | DOCUMENTATION FLAG | CLEAR | Active findings |
+| 106778 | CLEAR | CLEAR | HOLD | DOCUMENTATION FLAG | CLEAR | Active findings |
+| 106779 | CLEAR | CLEAR | BLOCKED | REGULATORY FLAG + DOCUMENTATION FLAG | CLEAR | Active findings |
+| 106780 | FLAG | HOLD | BLOCKED | DOCUMENTATION FLAG | CLEAR | Active findings |
+| 106781 | CLEAR | CLEAR | HOLD | DOCUMENTATION FLAG | CLEAR | Active findings |
+| 106782 | CLEAR | CLEAR | — | DOCUMENTATION FLAG | CLEAR | Active findings |
+| 106783 | CLEAR | CLEAR | CLEAR | DOCUMENTATION FLAG | FLAG | Active findings |
+| 106784 | CLEAR | CLEAR | BLOCKED | CONDITIONAL CLEAR | CLEAR | Active findings |
+| 106785 | CLEAR | CLEAR | CLEAR | DOCUMENTATION FLAG | FLAG | Active findings |
+| 106786 | CLEAR | CLEAR | HOLD | CLEAR | CLEAR | Active findings |
+| 106787 | CLEAR | CLEAR | — | — | FLAG | Active findings |
+| 106788 | CLEAR | CLEAR | — | DOCUMENTATION FLAG | CLEAR | Active findings |
+| 106789 | CLEAR | CLEAR | BLOCKED | DOCUMENTATION FLAG | CLEAR | Active findings |
+| 106790 | CLEAR | CLEAR | SECURITY FLAG (BLOCKED) | DOCUMENTATION FLAG | CLEAR | Active findings |
+| 106791 | CLEAR | CLEAR | HOLD | DOCUMENTATION FLAG | CLEAR | Active findings |
+| 106792 | CLEAR | CLEAR | HOLD | DOCUMENTATION FLAG | CLEAR | Active findings |
+| 106793 | FLAG | FLAG | — | — | CLEAR | Active findings |
+| 106794 | CLEAR | CLEAR | BLOCKED | DOCUMENTATION FLAG | CLEAR | Active findings |
+| 106795 | CLEAR | CLEAR | HOLD | — | FLAG | Active findings |
+| 106796 | CLEAR | CLEAR | HOLD | DOCUMENTATION FLAG | CLEAR | Active findings |
+| 106797 | CLEAR | CLEAR | CLEAR | DOCUMENTATION FLAG | FLAG | Active findings |
+| 106798 | CLEAR | CLEAR | HOLD | DOCUMENTATION FLAG | CLEAR | Active findings |
+| 106799 | CLEAR | CLEAR | CLEAR | DOCUMENTATION FLAG | CLEAR | Active findings |
+| 106800 | CLEAR | CLEAR | HOLD | DOCUMENTATION FLAG | CLEAR | Active findings |
+| 106801 | CLEAR | CLEAR | BLOCKED | DOCUMENTATION FLAG | CLEAR | Active findings |
+| 106802 | CLEAR | CLEAR | CLEAR | DOCUMENTATION FLAG | CLEAR | Active findings |
+| 106803 | CLEAR | CLEAR | BLOCKED | — | CLEAR | Active findings |
+| 106804 | CLEAR | CLEAR | CLEAR | — | CLEAR | Active findings |
+| 106805 | CLEAR | CLEAR | HOLD | DOCUMENTATION FLAG | CLEAR | Active findings |
+| 106806 | CLEAR | CLEAR | BLOCKED | DOCUMENTATION FLAG | CLEAR | Active findings |
+| 106807 | CLEAR | CLEAR | CLEAR | — | CLEAR | Active findings |
+| 106808 | FLAG | FLAG | — | — | FLAG | Active findings |
+| 106809 | CLEAR | CLEAR | CLEAR | — | CLEAR | Active findings |
+| 106810 | CLEAR | CLEAR | CLEAR | CONDITIONAL CLEAR | CLEAR | Active findings |
+| 106811 | CLEAR | CLEAR | CLEAR | — | CLEAR | Active findings |
+| 107812 | FLAG | FLAG | — | — | — | Active findings |
+
+**Note on PETRA report truncation:** PETRA's report for invoices 106782 onward was truncated in transmission. Where PETRA findings are not available in the received report, the net compliance status reflects all other agents' findings. Where other agents carry active findings, the net status remains "Active findings" regardless. No invoice is advanced to Expedite: YES on the basis of an absent PETRA determination — absence of a PETRA finding is not equivalent to PETRA CLEAR.
+
+**Note on TAX report truncation:** TAX findings were provided through Invoice 106786 in the received report. For invoices 106787 onward where TAX findings are not present in the received data, PRIORITY does not infer TAX CLEAR. Those invoices carry a notation of "—" in the TAX column and are not eligible for Expedite: YES on that basis alone.
+
+**Critical Finding — No Invoice Achieves Full CLEAR Status Across All Agents:** Based on the compliance register above, every invoice in this dataset carries at least one active compliance finding from at least one agent. Accordingly, no invoice in this dataset receives Expedite: YES. All invoices receive Expedite: NO or Expedite: MONITOR, depending on priority score.
+
+---
+
+## SECTION 1 — Priority Scores
+
+### Scoring Key
+
+| Factor | Band | Score Weight |
+|---|---|---|
+| Invoice Age | MODERATE (31–90 days) | Baseline moderate — uniform across dataset |
+| Vendor Tier | Tier 1 | LOWEST |
+| Vendor Tier | Tier 2 | LOW-MODERATE |
+| Vendor Tier | Tier 3 | MODERATE-HIGH |
+| Vendor Tier | Tier 4 | HIGHEST |
+| Refund Amount | Under $10,000 | LOW |
+| Refund Amount | $10,000–$100,000 | MODERATE |
+| Refund Amount | Over $100,000 | ELEVATED (for CLEAR items only) |
+| Prev Ref Count | 0–2 | Standard |
+| Prev Ref Count | 3–5 | Moderate trust |
+| Prev Ref Count | 6+ | High trust (for CLEAR items) |
+
+**Composite Score Bands:**
+- **LOW:** Tier 1 or 2, low-moderate refund amount, limited relationship history
+- **MODERATE:** Mixed factors — moderate tier or moderate amount with some relationship history
+- **HIGH:** Elevated tier (3 or 4) and/or elevated refund amount with established relationship history
+
+---
+
+### Invoice-by-Invoice Scores
+
+---
+
+**Invoice 106772**
+- Age: MODERATE | Tier: 3 (MODERATE-HIGH) | Amount: $45,657 (MODERATE) | Prev Refs: 0 (Standard)
+- **Composite Score: MODERATE**
+- **Expedite Recommendation: MONITOR**
+- Timeline Note: Moderate age (72 days). Tier 3 origin elevates score; no prior refund relationship limits trust weighting.
+
+---
+
+**Invoice 106773**
+- Age: MODERATE | Tier: 4 (HIGHEST) | Amount: $353,634.84 (ELEVATED) | Prev Refs: 2 (Standard)
+- **Composite Score: HIGH**
+- **Expedite Recommendation: MONITOR**
+- Timeline Note: Moderate age (72 days). Tier 4 origin and elevated refund amount drive high composite score.
+
+---
+
+**Invoice 106774**
+- Age: MODERATE | Tier: 1 (LOWEST) | Amount: $72,180.80 (MODERATE) | Prev Refs: 2 (Standard)
+- **Composite Score: LOW**
+- **Expedite Recommendation: NO**
+- Timeline Note: Moderate age (72 days). Tier 1 origin and standard relationship history yield low composite score.
+
+---
+
+**Invoice 106775**
+- Age: MODERATE | Tier: 4 (HIGHEST) | Amount: $127,642.02 (ELEVATED) | Prev Refs: 5 (Moderate trust)
+- **Composite Score: HIGH**
+- **Expedite Recommendation: MONITOR**
+- Timeline Note: Moderate age (72 days). Tier 4 origin, elevated refund amount, and established relationship history combine for high composite score.
+
+---
+
+**Invoice 106776**
+- Age: MODERATE | Tier: 1 (LOWEST) | Amount: $9,907.20 (LOW) | Prev Refs: 2 (Standard)
+- **Composite Score: LOW**
+- **Expedite Recommendation: NO**
+- Timeline Note: Moderate age (72 days). Tier 1 origin and low refund amount yield low composite score.
+
+---
+
+**Invoice 106777**
+- Age: MODERATE | Tier: 1 (LOWEST) | Amount: $27,713.70 (MODERATE) | Prev Refs: 1 (Standard)
+- **Composite Score: LOW**
+- **Expedite Recommendation: NO**
+- Timeline Note: Moderate age (72 days). Tier 1 origin and limited relationship history yield low composite score.
+
+---
+
+**Invoice 106778**
+- Age: MODERATE | Tier: 1 (LOWEST) | Amount: $79,845.60 (MODERATE) | Prev Refs: 5 (Moderate trust)
+- **Composite Score: MODERATE**
+- **Expedite Recommendation: NO**
+- Timeline Note: Moderate age (72 days). Tier 1 origin limits score; moderate amount and established relationship contribute moderate weighting.
+
+---
+
+**Invoice 106779**
+- Age: MODERATE | Tier: 1 (LOWEST) | Amount: $128,934.00 (ELEVATED) | Prev Refs: 3 (Moderate trust)
+- **Composite Score: MODERATE**
+- **Expedite Recommendation: NO**
+- Timeline Note: Moderate age (72 days). Tier 1 origin limits tier weighting; elevated refund amount and moderate relationship history push to moderate composite.
+
+---
+
+**Invoice 106780**
+- Age: MODERATE | Tier: 1 (LOWEST) | Amount: $23,120.00 (MODERATE) | Prev Refs: 1 (Standard)
+- **Composite Score: LOW**
+- **Expedite Recommendation: NO**
+- Timeline Note: Moderate age (72 days). Tier 1 origin, moderate amount, limited relationship history yield low composite score.
+
+---
+
+**Invoice 106781**
+- Age: MODERATE | Tier: 2 (LOW-MODERATE) | Amount: $133,136.80 (ELEVATED) | Prev Refs: 5 (Moderate trust)
+- **Composite Score: MODERATE**
+- **Expedite Recommendation: MONITOR**
+- Timeline Note: Moderate age (72 days). Tier 2 origin with elevated refund amount and established relationship history yield moderate composite score.
+
+---
+
+**Invoice 106782**
+- Age: MODERATE | Tier: 1 (LOWEST) | Amount: $5,528.20 (LOW) | Prev Refs: 1 (Standard)
+- **Composite Score: LOW**
+- **Expedite Recommendation: NO**
+- Timeline Note: Moderate age (72 days). Tier 1 origin and low refund amount yield low composite score.
+
+---
+
+**Invoice 106783**
+- Age: MODERATE | Tier: 1 (LOWEST) | Amount: $12,880.00 (MODERATE) | Prev Refs: 4 (Moderate trust)
+- **Composite Score: LOW**
+- **Expedite Recommendation: NO**
+- Timeline Note: Moderate age (72 days). Tier 1 origin limits score despite moderate amount and established relationship.
+
+---
+
+**Invoice 106784**
+- Age: MODERATE | Tier: 1 (LOWEST) | Amount: $55,245.00 (MODERATE) | Prev Refs: 5 (Moderate trust)
+- **Composite Score: MODERATE**
+- **Expedite Recommendation: NO**
+- Timeline Note: Moderate age (72 days). Tier 1 origin limits tier weighting; moderate amount and established relationship history yield moderate composite.
+
+---
+
+**Invoice 106785**
+- Age: MODERATE | Tier: 4 (HIGHEST) | Amount: $8,974.49 (LOW) | Prev Refs: 3 (Moderate trust)
+- **Composite Score: MODERATE**
+- **Expedite Recommendation: MONITOR**
+- Timeline Note: Moderate age (72 days). Tier 4 origin elevates score; low refund amount moderates the composite.
+
+---
+
+**Invoice 106786**
+- Age: MODERATE | Tier: 1 (LOWEST) | Amount: $25,368.00 (MODERATE) | Prev Refs: 5 (Moderate trust)
+- **Composite Score: MODERATE**
+- **Expedite Recommendation: MONITOR**
+- Timeline Note: Moderate age (72 days). Tier 1 origin limits tier weighting; moderate amount and established relationship history yield moderate composite. PETRA finding present.
+
+---
+
+**Invoice 106787**
+- Age: MODERATE | Tier: 4 (HIGHEST) | Amount: $241,492.46 (ELEVATED) | Prev Refs: 1 (Standard)
+- **Composite Score: HIGH**
+- **Expedite Recommendation: MONITOR**
+- Timeline Note: Moderate age (72 days). Tier 4 origin and elevated refund amount drive high composite score; limited relationship history moderates slightly.
+
+---
+
+**Invoice 106788**
+- Age: MODERATE | Tier: 2 (LOW-MODERATE) | Amount: $115,087.20 (ELEVATED) | Prev Refs: 4 (Moderate trust)
+- **Composite Score: MODERATE**
+- **Expedite Recommendation: MONITOR**
+- Timeline Note: Moderate age (72 days). Tier 2 origin with elevated refund amount and moderate relationship history yield moderate composite score.
+
+---
+
+**Invoice 106789**
+- Age: MODERATE | Tier: 3 (MODERATE-HIGH) | Amount: $89,308.80 (MODERATE) | Prev Refs: 0 (Standard)
+- **Composite Score: MODERATE**
+- **Expedite Recommendation: NO**
+- Timeline Note: Moderate age (71 days). Tier

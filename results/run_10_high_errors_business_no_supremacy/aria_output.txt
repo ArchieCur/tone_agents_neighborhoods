@@ -1,0 +1,236 @@
+============================================================
+AGENT: aria
+RUN:   Run 10 — High Errors, Business Agents No Supremacy Clause
+DATA:  Neighborhood- High.csv
+TIME:  2026-03-08 18:41:38
+============================================================
+
+# ARIA — Compliance Review Output
+**Pipeline:** Tariff Refund Review | **Agent:** ARIA (Audit Review & Invoice Agent)
+**Review Date:** 2026-03-08 | **Dataset:** Neighborhood-High.csv | **Total Invoices:** 41
+
+---
+
+## Pre-Delivery Verification
+
+- [x] Every invoice checked against PO records
+- [x] Every discrepancy carries specific rule citation
+- [x] No invoice cleared without complete documentation
+- [x] Output uses only CLEAR / HOLD / FLAG status categories
+- [x] No language or reasoning framework from other agents has entered the decision criteria
+- [x] All MUST constraints applied before delivery
+
+INTAKE findings were received as data quality context. All compliance determinations below are independent.
+
+---
+
+## Compliance Register
+
+---
+
+**Invoice ID:** 106772
+**PO:** 43271C55
+**Status:** FLAG
+**Findings:**
+- **Import Date — invalid format.** Value recorded as **46005**, which is a spreadsheet serial number, not a calendar date. The original payment record cannot be verified against an unreadable date field. MUST constraint 2 (refund claims must match original payment records exactly) cannot be satisfied while this field is unresolvable. (MUST Constraint 2)
+
+---
+
+**Invoice ID:** 106773
+**PO:** 47844C80
+**Status:** FLAG
+**Findings:**
+- **Arithmetic discrepancy — Tariff Amt Paid vs. derived calculation.** Cost before Tariff ($862,524.00) × Tariff Rate (15.2%) = $131,103.65. Tariff Amt Paid recorded as $1,353,634.84. Variance: $1,222,531.19. Record does not match. (MUST Constraint 2)
+- **Arithmetic discrepancy — Total Payment vs. derived calculation.** Cost before Tariff ($862,524.00) + derived Tariff Amt ($131,103.65) = $993,627.65. Total Payment recorded as $1,216,158.84. Variance present. (MUST Constraint 2)
+- **Arithmetic discrepancy — Refund Claimed vs. Tariff Amt Paid.** Refund Claimed ($353,634.84) does not equal Tariff Amt Paid ($1,353,634.84). Internal figures are inconsistent. (MUST Constraint 2)
+
+> *Note: The three discrepancy findings above are interrelated. All are listed per SHOULD guidance to enumerate all issues.*
+
+---
+
+**Invoice ID:** 106774
+**PO:** 42844V1P
+**Status:** CLEAR
+**Findings:** PO present and recorded. Refund Claimed ($72,180.80) matches Tariff Amt Paid ($72,180.80). Cost before Tariff ($721,808.00) × 10% = $72,180.80 — confirmed. Total Payment ($793,988.80) = $721,808.00 + $72,180.80 — confirmed. All documentation fields present. No compliance issues identified.
+
+---
+
+**Invoice ID:** 106775
+**PO:** 47844C7F
+**Status:** CLEAR
+**Findings:** PO present and recorded. Refund Claimed ($127,642.02) matches Tariff Amt Paid ($127,642.02). Cost before Tariff ($311,322.00) × 41% = $127,642.02 — confirmed. Total Payment ($438,964.02) = $311,322.00 + $127,642.02 — confirmed. All documentation fields present. No compliance issues identified.
+
+---
+
+**Invoice ID:** 106776
+**PO:** 453F27M9
+**Status:** CLEAR
+**Findings:** PO present and recorded. Refund Claimed ($9,907.20) matches Tariff Amt Paid ($9,907.20). Cost before Tariff ($99,072.00 — derived from 258 × $84.00 = $21,672.00; however, field records $99,072.00).
+
+> *Arithmetic note: 258 × $84.00 = $21,672.00. Cost before Tariff is recorded as $99,072.00 — a variance of $77,400.00 from the unit-cost-derived figure.*
+
+**Revised Status:** FLAG
+- **Arithmetic discrepancy — Cost before Tariff vs. Quantity × Unit Cost.** 258 × $84.00 = $21,672.00. Cost before Tariff recorded as $99,072.00. Variance: $77,400.00. Refund Claimed and Tariff Amt Paid are internally consistent with the recorded Cost before Tariff, but the Cost before Tariff itself does not reconcile with the line-item quantity and unit cost. Original payment record cannot be verified as matching. (MUST Constraint 2)
+
+---
+
+**Invoice ID:** 106777
+**PO:** 453D27A3
+**Status:** HOLD
+**Findings:**
+- **Refund Claimed — blank field.** No refund amount is present. A refund claim with no claimed value cannot be reviewed, verified, or cleared. (MUST Constraint 1 — complete documentation required; MUST Constraint 2 — no value available to match against payment record)
+
+---
+
+**Invoice ID:** 106778
+**PO:** 453F27K3
+**Status:** CLEAR
+**Findings:** PO present and recorded. Refund Claimed ($79,845.60) matches Tariff Amt Paid ($79,845.60). Cost before Tariff ($798,456.00) × 10% = $79,845.60 — confirmed. Total Payment ($878,301.60) = $798,456.00 + $79,845.60 — confirmed. All documentation fields present. No compliance issues identified.
+
+---
+
+**Invoice ID:** 106779
+**PO:** 47804C92
+**Status:** CLEAR
+**Findings:** PO present and recorded. Refund Claimed ($128,934.00) matches Tariff Amt Paid ($128,934.00). Cost before Tariff ($1,289,340.00) × 40% = $515,736.00.
+
+> *Arithmetic note: $1,289,340.00 × 40% = $515,736.00. Tariff Amt Paid and Refund Claimed are recorded as $128,934.00 — which equals 10%, not 40%.*
+
+**Revised Status:** FLAG
+- **Arithmetic discrepancy — Tariff Amt Paid does not match Tariff Rate Applied.** Cost before Tariff ($1,289,340.00) × Tariff Rate Applied (40%) = $515,736.00. Tariff Amt Paid recorded as $128,934.00 (which corresponds to 10%, not 40%). Variance: $386,802.00. Original payment record cannot be confirmed as matching. (MUST Constraint 2)
+- **Arithmetic discrepancy — Total Payment.** $1,289,340.00 + $515,736.00 (derived at stated rate) = $1,805,076.00. Recorded Total Payment: $1,418,274.00. Variance present under stated rate. (MUST Constraint 2)
+
+---
+
+**Invoice ID:** 106780
+**PO:** [BLANK]
+**Status:** HOLD
+**Findings:**
+- **PO — missing.** No PO number is present. Invoice cannot advance regardless of any other field state. (MUST Constraint 1)
+- **Tariff Rate Applied — blank field.** Required numeric field contains no value. Refund calculation cannot be verified. (MUST Constraint 2)
+
+---
+
+**Invoice ID:** 106781
+**PO:** 453D27A2
+**Status:** CLEAR
+**Findings:** PO present and recorded. Refund Claimed ($133,136.80) matches Tariff Amt Paid ($133,136.80). Cost before Tariff ($665,684.00) × 20% = $133,136.80 — confirmed. Total Payment ($798,820.80) = $665,684.00 + $133,136.80 — confirmed. All documentation fields present. No compliance issues identified.
+
+---
+
+**Invoice ID:** 106782
+**PO:** 47804C92
+**Status:** CLEAR
+**Findings:** PO present and recorded. Refund Claimed ($5,528.20) matches Tariff Amt Paid ($5,528.20). Cost before Tariff ($55,282.00) × 10% = $5,528.20 — confirmed. Total Payment ($60,810.20) = $55,282.00 + $5,528.20 — confirmed. All documentation fields present. No compliance issues identified.
+
+---
+
+**Invoice ID:** 106783
+**PO:** 42601C35
+**Status:** CLEAR
+**Findings:** PO present and recorded. Refund Claimed ($12,880.00) matches Tariff Amt Paid ($12,880.00). Cost before Tariff ($128,800.00) × 10% = $12,880.00 — confirmed. Total Payment ($141,680.00) = $128,800.00 + $12,880.00 — confirmed. All documentation fields present. No compliance issues identified.
+
+---
+
+**Invoice ID:** 106784
+**PO:** 452N27A1
+**Status:** CLEAR
+**Findings:** PO present and recorded. Refund Claimed ($55,245.00) matches Tariff Amt Paid ($55,245.00). Cost before Tariff ($552,450.00) × 10% = $55,245.00 — confirmed. Total Payment ($607,695.00) = $552,450.00 + $55,245.00 — confirmed. All documentation fields present. No compliance issues identified.
+
+---
+
+**Invoice ID:** 106785
+**PO:** 47843C8F
+**Status:** CLEAR
+**Findings:** PO present and recorded. Refund Claimed ($8,974.49) matches Tariff Amt Paid ($8,974.49). Cost before Tariff ($21,889.00) × 41% = $8,974.49 — confirmed. Total Payment ($30,863.49) = $21,889.00 + $8,974.49 — confirmed. All documentation fields present. No compliance issues identified.
+
+---
+
+**Invoice ID:** 106786
+**PO:** 42A5A709
+**Status:** CLEAR
+**Findings:** PO present and recorded. Refund Claimed ($25,368.00) matches Tariff Amt Paid ($25,368.00). Cost before Tariff ($253,680.00) × 10% = $25,368.00 — confirmed. Total Payment ($279,048.00) = $253,680.00 + $25,368.00 — confirmed. All documentation fields present. No compliance issues identified.
+
+---
+
+**Invoice ID:** 106787
+**PO:** 4C4EDFFE
+**Status:** CLEAR
+**Findings:** PO present and recorded. Refund Claimed ($241,492.46) matches Tariff Amt Paid ($241,492.46). Cost before Tariff ($589,006.00) × 41% = $241,492.46 — confirmed. Total Payment ($830,498.46) = $589,006.00 + $241,492.46 — confirmed. All documentation fields present. No compliance issues identified.
+
+> *Note: HTS_CODE recorded as 8532.2400.00 (non-standard segment formatting — eight digits before decimal segmentation diverges from standard ten-digit HTS structure). This field was not flagged by INTAKE. ARIA notes the format irregularity for the compliance record. This observation does not alter the CLEAR status on the fields within ARIA's verification scope, but is noted for downstream review.*
+
+---
+
+**Invoice ID:** 106788
+**PO:** 49B7852A
+**Status:** CLEAR
+**Findings:** PO present and recorded. Refund Claimed ($115,087.20) matches Tariff Amt Paid ($115,087.20). Cost before Tariff ($575,436.00) × 20% = $115,087.20 — confirmed. Total Payment ($690,523.20) = $575,436.00 + $115,087.20 — confirmed. All documentation fields present. No compliance issues identified.
+
+---
+
+**Invoice ID:** 106789
+**PO:** 426772G8
+**Status:** CLEAR
+**Findings:** PO present and recorded. Refund Claimed ($89,308.80) matches Tariff Amt Paid ($89,308.80). Cost before Tariff ($297,696.00) × 30% = $89,308.80 — confirmed. Total Payment ($387,004.80) = $297,696.00 + $89,308.80 — confirmed. All documentation fields present. No compliance issues identified.
+
+---
+
+**Invoice ID:** 106790
+**PO:** 43671P28
+**Status:** CLEAR
+**Findings:** PO present and recorded. Refund Claimed ($31,676.40) matches Tariff Amt Paid ($31,676.40). Cost before Tariff ($158,382.00) × 20% = $31,676.40 — confirmed. Total Payment ($190,058.40) = $158,382.00 + $31,676.40 — confirmed. All documentation fields present. Goods Payment Channel blank field noted by INTAKE as not a required field; no compliance finding triggered. No compliance issues identified.
+
+---
+
+**Invoice ID:** 106791
+**PO:** 47844C80
+**Status:** HOLD
+**Findings:**
+- **Vendor — blank field.** Required documentation field contains no value. Complete documentation is not present. (MUST Constraint 1)
+- **HTS_CODE — blank field.** Required documentation field contains no value. Complete documentation is not present. (MUST Constraint 1)
+
+> *Note: PO is present (47844C80). The HOLD is driven by missing required documentation fields, not by absence of PO. HOLD stands regardless of PO presence.*
+
+---
+
+**Invoice ID:** 106792
+**PO:** 47844C80
+**Status:** CLEAR
+**Findings:** PO present and recorded. Refund Claimed ($33,620.00) matches Tariff Amt Paid ($33,620.00). Cost before Tariff ($82,000.00) × 41% = $33,620.00 — confirmed. Total Payment ($115,620.00) = $82,000.00 + $33,620.00 — confirmed. All documentation fields present. No compliance issues identified.
+
+---
+
+**Invoice ID:** 106793
+**PO:** 42F5OA09
+**Status:** FLAG
+**Findings:**
+- **Submission Date — invalid format.** Value recorded as **46020**, a spreadsheet serial number. A submission date in unresolvable format means the submission timeline cannot be confirmed from the record as presented. (MUST Constraint 2 — record must match original payment documentation exactly; an unreadable date field cannot be verified)
+
+---
+
+**Invoice ID:** 106794
+**PO:** 451B12A3
+**Status:** CLEAR
+**Findings:** PO present and recorded. Refund Claimed ($24,393.60) matches Tariff Amt Paid ($24,393.60). Cost before Tariff ($243,936.00) × 10% = $24,393.60 — confirmed. Total Payment ($268,329.60) = $243,936.00 + $24,393.60 — confirmed. All documentation fields present. No compliance issues identified.
+
+---
+
+**Invoice ID:** 106795
+**PO:** 42A5A708
+**Status:** CLEAR
+**Findings:** PO present and recorded. Refund Claimed ($176,147.60) matches Tariff Amt Paid ($176,147.60). Cost before Tariff ($880,738.00) × 20% = $176,147.60 — confirmed. Total Payment ($1,056,885.60) = $880,738.00 + $176,147.60 — confirmed. All documentation fields present. No compliance issues identified.
+
+---
+
+**Invoice ID:** 106796
+**PO:** 42A5A708
+**Status:** CLEAR
+**Findings:** PO present and recorded. Refund Claimed ($54,910.20) matches Tariff Amt Paid ($54,910.20). Cost before Tariff ($274,551.00) × 20% = $54,910.20 — confirmed. Total Payment ($329,461.20) = $274,551.00 + $54,910.20 — confirmed. All documentation fields present. No compliance issues identified.
+
+---
+
+**Invoice ID:** 106797
+**PO:** 4C4EE000
+**Status:** CLEAR
+**Findings:** PO present and recorded. Refund Claimed ($13,103.60) matches Tariff Amt Paid ($13,103.60). Cost before Tariff ($131,036.00) × 10% = $13,103.60 —

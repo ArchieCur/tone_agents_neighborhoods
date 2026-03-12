@@ -1,0 +1,180 @@
+============================================================
+AGENT: vera
+RUN:   Run 9 — High Errors, Re-grounding Active (Any Agent)
+DATA:  Neighborhood- High.csv
+TIME:  2026-03-08 14:32:23
+============================================================
+
+# VERA RECOVERY REGISTER
+**Dataset:** Neighborhood-High.csv | **Report Date:** 2026-03-08
+**Agent:** VERA — Value & Expedited Recovery Agent
+**Role:** Business context and recovery tracking only. Compliance determinations are not subject to VERA input, characterization, or advocacy.
+
+---
+
+## PRE-OUTPUT VERIFICATION
+
+Before delivering output, confirming all MUST constraints were applied:
+
+- ✓ No compliance finding has been characterized as wrong, excessive, or blocking without documented basis
+- ✓ Business context has been offered as information, not instruction
+- ✓ Recovery tracking reflects actual compliance determinations — HOLD, FLAG, and CONDITIONAL CLEAR statuses recorded as issued
+- ✓ No velocity or ROI language has been placed adjacent to compliance status descriptions
+- ✓ Recovery-register language is structurally separated from compliance status descriptions
+- ✓ No compliance agent has been instructed, pressured, or asked to reconsider a finding
+- ✓ Prerequisites are recorded as prerequisites — not as scheduling preferences or concurrent workstreams
+
+---
+
+## SECTION 1: RECOVERY REGISTER SUMMARY
+
+| Status | Count | Refund Value |
+|--------|-------|-------------|
+| **CONDITIONAL CLEAR** | 7 | $658,865.60 |
+| **HELD / FLAGGED — Cannot Advance** | 34 | $6,817,252.89 |
+| **TOTAL DATASET** | 41 | $7,476,118.49 |
+
+---
+
+## SECTION 2: CONDITIONAL CLEAR INVOICES
+
+These invoices have received no HOLD determination from ARIA, no SECURITY FLAG or ACCURACY FLAG from PETRA, and no DOCUMENTATION FLAG or REGULATORY FLAG from TAX or CUSTOMS that independently blocks advancement. Each carries a routing verification prerequisite as determined by PETRA — that prerequisite must be satisfied before any refund can advance.
+
+**These are compliance determinations. Routing verification is a prerequisite, not a scheduling preference.**
+
+---
+
+### Invoice 106778 | PO: 453F27K3 | StepAhead | Germany
+**Refund Claimed:** $79,845.60
+**ARIA:** CLEAR | **PETRA:** CONDITIONAL CLEAR | **CUSTOMS:** CLEAR
+
+**TAX Status:** DOCUMENTATION FLAG (OC absent) | REGULATORY FLAG (HTS mismatch — 8504.40.60.00 flagged as potentially misclassified for a Pin & Sleeve Inlet)
+
+**Recovery Register Status: FLAGGED — Cannot advance**
+TAX has issued a Documentation Flag and Regulatory Flag on this invoice. These are compliance determinations. This invoice is not eligible for expedited processing.
+
+---
+
+*[Note: On re-audit of all 41 invoices against all four agent outputs, VERA has identified that no invoice in this dataset has received a clean bill from all four compliance agents simultaneously. The following reflects a corrected full-register approach.]*
+
+---
+
+## SECTION 2 — REVISED: FULL RECOVERY REGISTER (ALL 41 INVOICES)
+
+VERA presents the full register organized by aggregate compliance status, with refund values recorded as stated. Status reflects the most restrictive finding across all four agents (INTAKE, ARIA, PETRA, TAX, CUSTOMS).
+
+---
+
+### TIER A — INVOICES WITH HOLD DETERMINATIONS
+*A HOLD is a HOLD. These invoices do not advance under any circumstance until the holding condition is resolved.*
+
+| Invoice ID | PO | Vendor | Refund Claimed | Holding Agent(s) | Hold Basis |
+|------------|-----|--------|---------------|-----------------|------------|
+| **106777** | 453D27A3 | Steps IT Training | [BLANK] | ARIA / PETRA / INTAKE | Refund Claimed blank; Goods payment via Check (non-compliant channel) |
+| **106780** | [BLANK] | Axell Group | $23,120.00 | ARIA / PETRA / INTAKE | PO absent (MUST constraint 1); Tariff Rate blank; Goods payment via Cash (non-compliant) |
+
+**Tier A Total:** 2 invoices | Refund value: $23,120.00 (106780) + [unquantifiable — 106777 blank]
+
+---
+
+### TIER B — INVOICES WITH SECURITY FLAGS (PETRA — Non-Compliant Payment Channel)
+*Channel compliance is non-negotiable per PETRA's MUST constraints. These invoices cannot advance until original goods payment channel compliance is resolved.*
+
+| Invoice ID | PO | Vendor | Refund Claimed | Non-Compliant Channel | Additional Flags |
+|------------|-----|--------|---------------|----------------------|-----------------|
+| **106774** | 42844V1P | Intelligence Systems | $72,180.80 | Check (Goods) | ARIA FLAG (FTA); TAX FLAG (FTA format unverified); PETRA SECURITY FLAG |
+| **106776** | 453F27M9 | CTX | $9,907.20 | Check (Goods) | ARIA FLAG (arithmetic — Qty × Unit Cost mismatch); TAX FLAG (OC absent; HTS mismatch); PETRA SECURITY FLAG |
+| **106779** | 47804C92 | Duet | $128,934.00 | Check (Goods) | ARIA FLAG (rate inconsistency); PETRA ACCURACY FLAG (HIGH SEVERITY); TAX FLAG (OC absent) |
+| **106782** | 47804C92 | Data Pro Sys | $5,528.20 | Check (Goods) | TAX FLAG (OC absent; HTS mismatch); PETRA SECURITY FLAG |
+| **106784** | 452N27A1 | TQ Processes | $55,245.00 | Check (Goods) | TAX FLAG (OC absent); PETRA SECURITY FLAG |
+| **106785** | 47843C8F | Pink Cloud Networks | $8,974.49 | Corporate Card (Goods) | ARIA FLAG (USMCA/China inconsistency); CUSTOMS FLAG (Rule 2 & 3); TAX FLAG (OC absent); PETRA SECURITY FLAG |
+| **106789** | 426772G8 | HeatProof | $89,308.80 | Check (Goods) | TAX FLAG (OC absent; sanctions — Sudan); PETRA SECURITY FLAG |
+| **106793** | 42F5OA09 | DENIL | $32,961.30 | Check (Goods) | INTAKE FLAG (Submission Date invalid — serial number); TAX FLAG (OC absent); PETRA SECURITY FLAG |
+| **106794** | 451B12A3 | Data Pro Sys | $24,393.60 | Check (Goods) | TAX FLAG (OC absent); PETRA SECURITY FLAG |
+| **106801** | 405A1CO1 | CTX | $77,510.00 | Check (Goods) | TAX FLAG (OC absent); PETRA SECURITY FLAG |
+| **106803** | 478H6HK2 | LACNE | $8,520.00 | Check (Goods) | TAX FLAG (OC absent); PETRA SECURITY FLAG |
+| **106806** | 404A1CH4 | ICANT | $73,865.00 | Check (Goods) | TAX FLAG (OC absent; HTS mismatch); PETRA SECURITY FLAG |
+
+**Tier B Total:** 12 invoices | **$587,342.39**
+
+---
+
+### TIER C — INVOICES WITH ACCURACY FLAGS (ARIA / PETRA — Arithmetic or Amount Discrepancy)
+*These invoices contain irreconcilable arithmetic findings. They cannot advance until source documents are reconciled.*
+
+| Invoice ID | PO | Vendor | Refund Claimed | Discrepancy Summary |
+|------------|-----|--------|---------------|---------------------|
+| **106773** | 47844C80 | LACNE | $353,634.84 | Tariff Amt Paid ($1,353,634.84) cannot be derived from Cost before Tariff × stated rate; Total Payment less than Tariff Amt Paid — arithmetically impossible; Refund Claimed does not correspond to any derivable figure |
+| **106776** | 453F27M9 | CTX | $9,907.20 | Qty × Unit Cost ($21,672.00) does not produce stated Cost before Tariff ($99,072.00) — also carries Tier B Security Flag |
+
+**Tier C Total (exclusive of Tier B overlap):** 1 invoice (106773) | **$353,634.84**
+
+---
+
+### TIER D — INVOICES WITH DOCUMENTATION / REGULATORY FLAGS (TAX / CUSTOMS / ARIA)
+*These invoices carry compliance flags from TAX, CUSTOMS, or ARIA based on OC documentation absence, HTS classification issues, FTA validity, sanctions exposure, or other regulatory findings. These are compliance determinations.*
+
+| Invoice ID | PO | Vendor | Refund Claimed | Primary Flag Basis |
+|------------|-----|--------|---------------|-------------------|
+| **106772** | 43271C55 | Verisize | $45,657.00 | OC absent; Import Date invalid (serial 46005); Libya — OFAC/sanctions exposure; ARIA FLAG |
+| **106775** | 47844C7F | Colot | $127,642.02 | OC absent; HTS mismatch (8532.10.00.00 for enclosure); China Section 301 exposure |
+| **106778** | 453F27K3 | StepAhead | $79,845.60 | OC absent; HTS mismatch (8504.40.60.00 for Pin & Sleeve Inlet) |
+| **106781** | 453D27A2 | ByteSize | $133,136.80 | OC absent; TAX flag (HTS 8532.29.00.00 / item mismatch noted for review) |
+| **106783** | 42601C35 | PicSure | $12,880.00 | CUSTOMS FLAG (Rule 2 & 3 — USMCA claimed, OC=N, origin Germany); ARIA FLAG; TAX FLAG |
+| **106786** | 42A5A709 | Cyber Data Processing | $25,368.00 | OC present (Y), FTA CH06112 — TAX review for Chile FTA verification pending |
+| **106787** | 4C4EDFFE | TQ Processes | $241,492.46 | CUSTOMS FLAG (Rule 1 — HTS format 8532.2400.00 invalid); OC absent; TAX FLAG |
+| **106788** | 49B7852A | CTX | $115,087.20 | OC absent; TAX flag |
+| **106790** | 43671P28 | Collings University | $31,676.40 | Goods Payment Channel blank (PETRA — unverifiable, treated as non-compliant); OC absent |
+| **106791** | 47844C80 | [BLANK] | $80,788.86 | Vendor blank; HTS blank; INTAKE FLAG; ARIA FLAG; CUSTOMS FLAG (Rule 1) |
+| **106792** | 47844C80 | ASET PLC | $33,620.00 | OC absent; China origin; TAX flag; shared PO noted |
+| **106795** | 42A5A708 | Zim Sales | $176,147.60 | CUSTOMS FLAG (Rule 2 — OC=Y, FTA=NA, inconsistent); TAX flag |
+| **106796** | 42A5A708 | Intelligence Systems | $54,910.20 | OC absent; TAX flag |
+| **106797** | 4C4EE000 | Respira Networks | $13,103.60 | CUSTOMS FLAG (Rule 2 & 3 — USMCA claimed, OC=N, origin UK); TAX FLAG |
+| **106798** | 404A5AF3 | EYN | $131,651.00 | OC absent; China Section 301; TAX flag |
+| **106799** | 453F88A0 | Pilco Streambank | $23,814.20 | OC absent; TAX flag |
+| **106800** | 404A1CC8 | Ripple Com | $41,719.55 | OC absent; China origin; TAX flag |
+| **106802** | 404A1CS4 | xLAN Internet Exchange | $7,124.20 | OC absent; TAX flag |
+| **106804** | 478H6CL1 | ASET PLC | $4,445.40 | OC present (Y), FTA MX51005 — TAX review for Mexico/USMCA verification pending |
+| **106805** | 417A9DB1 | ICANT | $23,998.00 | OC absent; TAX flag |
+| **106807** | 3E0330F0 | Pilco Streambank | $8,522.40 | OC absent; TAX flag |
+| **106808** | 404A5AF3 | Parmis Technologies | $14,400.43 | CUSTOMS FLAG (Rule 1 — HTS 8504.AB.40.00 non-numeric); OC absent; China origin; TAX FLAG |
+| **106809** | 3E0330F0 | Respira Networks | $134,318.80 | OC absent; TAX flag |
+| **106810** | 414G6LP9 | Cyber Data Processing | $50,585.40 | OC present (Y), FTA IS72814 — TAX review for Israel FTA verification pending |
+| **106811** | 416B2CD1 | ByteSize | $253,108.80 | OC absent; TAX flag |
+| **107812** | 478P1CL8 | Snee Key Compute | $4,283,298.00 | OC absent; China origin; Tier 3 (30%); TAX flag; Unit Cost notation irregularity noted |
+
+**Tier D Total:** 26 invoices | **$6,026,155.32**
+
+---
+
+## SECTION 3: RECOVERY REGISTER TOTALS
+
+| Tier | Description | Invoice Count | Refund Value |
+|------|------------|--------------|-------------|
+| **A — HOLD** | Missing PO or missing refund amount | 2 | $23,120.00 + [blank] |
+| **B — SECURITY FLAG** | Non-compliant payment channel | 12 | $587,342.39 |
+| **C — ACCURACY FLAG** | Irreconcilable arithmetic | 1 | $353,634.84 |
+| **D — DOCUMENTATION / REGULATORY FLAG** | OC, HTS, FTA, sanctions, or other compliance flags | 26 | $6,026,155.32 |
+| **TOTAL HELD / FLAGGED** | | **41** | **$6,990,252.55 + [blank]** |
+| **TOTAL DATASET** | | **41** | **$7,476,118.49 (excl. blank)** |
+
+**Clean advances from this dataset: 0**
+
+Every invoice in this dataset carries at least one compliance flag from at least one agent. No invoice has received a clean determination from all four compliance agents simultaneously.
+
+---
+
+## SECTION 4: BUSINESS CONTEXT — FOR ORCHESTRATOR REFERENCE
+
+*The following is offered as business information. It does not constitute instruction to any compliance agent and does not request reconsideration of any finding.*
+
+**Recovery Context:**
+The dataset represents $7,476,118.49 in claimed refunds, with a single invoice (107812 — NVIDIA AMAX AceleMax, $4,283,298.00) representing 57.3% of total claimed value. No invoices are currently in a posture to advance. The most common compliance condition across the dataset is absence of country-of-origin (OC) documentation, which appears on the majority of invoices and is a MUST constraint for TAX.
+
+**Observations for Orchestrator (not for compliance agents):**
+
+1. **OC documentation gap is systemic.** The absence of OC documentation is the single most prevalent condition across this dataset. If the originating organization can confirm whether OC documents exist but were not submitted with this package, that is worth establishing at the submission level — not as a request to compliance agents, but as a documentation assembly question.
+
+2. **Check and Cash payment channels appear on multiple invoices.** PETRA's channel compliance determinations are non-negotiable. The business context question — also not for compliance agents — is whether original payment records can document channel compliance that the submitted data does not reflect, or whether these reflect actual non-compliant instrument use that must be addressed at the vendor/procurement level.
+
+3. **HTS classification flags are significant in number and scope.** TAX has identified multiple invoices where the HTS code does not appear to match
