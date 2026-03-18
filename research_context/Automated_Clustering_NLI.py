@@ -1,6 +1,6 @@
-#The "Probe": Automated Clustering with NLI  
-#To make this a "Probe" that can sit in your workflow, you need a way to group those responses.  
-#We use a Natural Language Inference (NLI) model to check for "Entailment" (does Statement A mean the same as Statement B?).  
+# The "Probe": Automated Clustering with NLI  
+# To make this a "Probe" that can sit in your workflow, you need a way to group those responses.  
+# We use a Natural Language Inference (NLI) model to check for "Entailment" (does Statement A mean the same as Statement B?).  
 
 from transformers import AutoTokenizer, AutoModelForSequenceClassification
 import torch
